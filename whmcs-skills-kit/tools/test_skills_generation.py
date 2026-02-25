@@ -7,8 +7,35 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 KIT_ROOT = os.path.dirname(SCRIPT_DIR)
 MODULES_DIR = os.path.join(KIT_ROOT, "modules")
 GUIDE_DIR = os.path.join(KIT_ROOT, "guide")
+SAMPLES_DIR = os.path.join(KIT_ROOT, "samples")
 
 class TestSkillsGeneration(unittest.TestCase):
+    def test_samples_directory(self):
+        self.assertTrue(os.path.exists(SAMPLES_DIR), "Samples directory not found")
+        files = os.listdir(SAMPLES_DIR)
+        self.assertTrue(len(files) > 0, "Samples directory should not be empty")
+
+        # Check if sample files are php
+        has_php = any(f.endswith(".php") for f in files)
+        self.assertTrue(has_php, "Samples directory should contain PHP files")
+
+    def test_module_examples(self):
+        # Check if examples are present in a generated JSON file (e.g. addon_modules)
+        file_path = os.path.join(MODULES_DIR, "addon_modules.json")
+        with open(file_path, "r") as f:
+            data = json.load(f)
+
+        # At least one function should have an example if docs had code blocks
+        has_examples = False
+        for func in data["functions"]:
+            if "examples" in func and len(func["examples"]) > 0:
+                has_examples = True
+                break
+
+        # Not asserting True because if no code blocks found it might fail,
+        # but in this repo we expect them.
+        self.assertTrue(has_examples, "Addon modules should have examples extracted")
+
     def test_provisioning_skills(self):
         file_path = os.path.join(MODULES_DIR, "provisioning_modules.json")
         self.assertTrue(os.path.exists(file_path), "Provisioning skills file not found")

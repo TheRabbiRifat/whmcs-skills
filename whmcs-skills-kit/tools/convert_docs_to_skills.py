@@ -9,11 +9,27 @@ REPO_ROOT = os.path.dirname(KIT_ROOT)
 
 MODULES_DIR = os.path.join(KIT_ROOT, "modules")
 GUIDE_DIR = os.path.join(KIT_ROOT, "guide")
+SAMPLES_DIR = os.path.join(KIT_ROOT, "samples")
 
 # Ensure directories exist
-for d in [MODULES_DIR, GUIDE_DIR]:
+for d in [MODULES_DIR, GUIDE_DIR, SAMPLES_DIR]:
     if not os.path.exists(d):
         os.makedirs(d)
+
+def extract_php_blocks(content):
+    """
+    Extracts PHP code blocks from markdown content.
+    Returns a list of code strings.
+    """
+    code_blocks = []
+    # Match ```php ... ``` or ``` ... ``` if it looks like PHP
+    matches = re.findall(r'```(?:php)?(.*?)```', content, re.DOTALL)
+    for match in matches:
+        code = match.strip()
+        # Basic heuristic to check if it's likely PHP if not explicitly tagged
+        if "<?php" in code or "$" in code or "array(" in code or "function " in code:
+            code_blocks.append(code)
+    return code_blocks
 
 def parse_markdown_table(file_path):
     """
@@ -131,6 +147,10 @@ def generate_provisioning_skills():
             "return_value": "string 'success' or error message"
         })
 
+    # Extract samples from source files
+    generate_samples_from_file(params_file, "provisioning")
+    generate_samples_from_file(funcs_file, "provisioning")
+
     output_path = os.path.join(MODULES_DIR, "provisioning_modules.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(skill_data, f, indent=2)
@@ -186,11 +206,16 @@ def generate_addon_skills():
             else:
                 description = "Defines admin area output. Receives $vars array."
 
+        # Extract samples
+        samples = extract_php_blocks(content)
+        generate_samples_from_file(file_path, "addon")
+
         skill_data["functions"].append({
             "name": func_name,
             "description": description,
             "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
-            "source_file": rel_path
+            "source_file": rel_path,
+            "examples": samples
         })
 
     output_path = os.path.join(MODULES_DIR, "addon_modules.json")
@@ -217,6 +242,8 @@ def generate_payment_skills():
         funcs = parse_markdown_sections(merchant_file)
         # The file structure might not be strictly H2 sections for functions.
         # Let's just manually add known ones if parsing fails or returns little.
+
+        generate_samples_from_file(merchant_file, "payment_merchant")
 
         if not funcs:
              skill_data["functions"].append({
@@ -255,6 +282,7 @@ def generate_payment_skills():
     # Third Party Gateway functions (Link)
     third_party_file = get_source_path("payment-gateways/third-party-gateway.md")
     if os.path.exists(third_party_file):
+        generate_samples_from_file(third_party_file, "payment_thirdparty")
         # usually just 'link' function
         skill_data["functions"].append({
             "name": "link",
@@ -285,6 +313,16 @@ def generate_registrar_skills():
     # Parse functions
     funcs_file = get_source_path("domain-registrars/function-index.md")
     funcs = parse_markdown_table(funcs_file)
+
+    # Try to find specific function files for examples
+    # The function-index.md points to them but we don't parse links yet.
+    # We'll just look for standard names in domain-registrars dir.
+
+    reg_dir = get_source_path("domain-registrars")
+    if os.path.exists(reg_dir):
+        for filename in os.listdir(reg_dir):
+            if filename.endswith(".md") and filename != "function-index.md" and filename != "index.md":
+                generate_samples_from_file(os.path.join(reg_dir, filename), "registrar")
 
     for row in funcs:
         # Assuming the table columns are roughly "Parameter" (Function Name) and "Description"
@@ -324,7 +362,16 @@ def generate_hook_skills():
             # Use sections parser. Each section is usually a hook name.
             sections = parse_markdown_sections(filepath)
 
+            # Extract samples
+            generate_samples_from_file(filepath, "hooks")
+
+            with open(filepath, "r", encoding="utf-8") as f:
+                content = f.read()
+
             for hook_name, desc in sections.items():
+                # Try to extract code block from specific section description
+                # Note: parse_markdown_sections might have stripped some code blocks or context
+                # So we rely on generate_samples_from_file for the file-based samples.
                 skill_data["hooks"].append({
                     "name": hook_name,
                     "description": desc,
@@ -386,6 +433,9 @@ def generate_api_skills():
             # Actually, let's use the file path for `parse_markdown_table`.
             # It grabs the FIRST table. In API docs, first table is usually Request Parameters.
             params = parse_markdown_table(filepath)
+
+            # Extract samples (often curl examples)
+            generate_samples_from_file(filepath, "api")
 
             skill_data["functions"].append({
                 "command": command_name,
@@ -450,10 +500,36 @@ def generate_generic_skills(source_rel_path, output_filename, description):
                 "file": os.path.join(source_rel_path, filename)
             })
 
+            # Extract samples
+            generate_samples_from_file(filepath, source_rel_path.replace("/", "_"))
+
     output_path = os.path.join(MODULES_DIR, output_filename)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
+
+def generate_samples_from_file(file_path, prefix):
+    if not os.path.exists(file_path):
+        return
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    blocks = extract_php_blocks(content)
+    base_name = os.path.basename(file_path).replace(".md", "")
+
+    for i, code in enumerate(blocks):
+        # Create a filename
+        # e.g. addon_configuration_example_1.php
+        filename = f"{prefix}_{base_name}_sample_{i+1}.php"
+        output_path = os.path.join(SAMPLES_DIR, filename)
+
+        # Ensure it starts with <?php if not present and not a fragment
+        if "<?php" not in code and ("function" in code or "$" in code):
+             code = "<?php\n\n" + code
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            f.write(code)
 
 def generate_manifest():
     print("Generating Skills Manifest...")

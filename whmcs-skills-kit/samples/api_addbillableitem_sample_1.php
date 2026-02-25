@@ -1,0 +1,27 @@
+<?php
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://www.example.com/includes/api.php');
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS,
+    http_build_query(
+        array(
+            'action' => 'AddBillableItem',
+            // See https://developers.whmcs.com/api/authentication
+            'username' => 'IDENTIFIER_OR_ADMIN_USERNAME',
+            'password' => 'SECRET_OR_HASHED_PASSWORD',
+            'clientid' => '1',
+            'description' => 'This is a billable item',
+            'amount' => '10.00',
+            'invoiceaction' => 'recur',
+            'recur' => '1',
+            'recurcycle' => 'Months',
+            'recurfor' => '12',
+            'duedate' => '2021-01-01',
+            'responsetype' => 'json',
+        )
+    )
+);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$response = curl_exec($ch);
+curl_close($ch);
