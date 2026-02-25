@@ -42,5 +42,32 @@ class TestSkillsGeneration(unittest.TestCase):
         self.assertEqual(data.get("module_type"), "payment_gateway")
         self.assertTrue(len(data.get("functions")) > 0, "Functions list should not be empty")
 
+    def test_registrar_skills(self):
+        file_path = "skills/registrar_modules.json"
+        self.assertTrue(os.path.exists(file_path), "Registrar skills file not found")
+
+        with open(file_path, "r") as f:
+            data = json.load(f)
+
+        self.assertEqual(data.get("module_type"), "registrar")
+        self.assertTrue(len(data.get("common_parameters")) > 0, "Common parameters should not be empty")
+        self.assertTrue(len(data.get("functions")) > 0, "Functions list should not be empty")
+
+        register_domain = next((f for f in data["functions"] if f["name"] == "RegisterDomain"), None)
+        self.assertIsNotNone(register_domain, "RegisterDomain function not found")
+
+    def test_hook_skills(self):
+        file_path = "skills/hooks.json"
+        self.assertTrue(os.path.exists(file_path), "Hooks skills file not found")
+
+        with open(file_path, "r") as f:
+            data = json.load(f)
+
+        self.assertEqual(data.get("type"), "hooks")
+        self.assertTrue(len(data.get("hooks")) > 0, "Hooks list should not be empty")
+
+        client_add = next((h for h in data["hooks"] if h["name"] == "ClientAdd"), None)
+        self.assertIsNotNone(client_add, "ClientAdd hook not found")
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,332 @@
+{
+  "module_type": "registrar",
+  "description": "Skills for developing WHMCS Domain Registrar Modules.",
+  "common_parameters": [
+    {
+      "Variable": "userid",
+      "Description": "The client ID who owns the domain"
+    },
+    {
+      "Variable": "domainid",
+      "Description": "The unique ID of the domain"
+    },
+    {
+      "Variable": "sld",
+      "Description": "eg. `yourdomain`"
+    },
+    {
+      "Variable": "tld",
+      "Description": "eg. `.com`"
+    },
+    {
+      "Variable": "regperiod",
+      "Description": "The registration term for the domain (1-10 years)"
+    },
+    {
+      "Variable": "eppcode",
+      "Description": "Present only for incoming domain transfer orders (Transfers only)"
+    },
+    {
+      "Variable": "ns1",
+      "Description": "First Nameserver (Registrations, Transfers and Nameserver Updates only)"
+    },
+    {
+      "Variable": "ns2",
+      "Description": "Second Nameserver"
+    },
+    {
+      "Variable": "ns3",
+      "Description": "Third Nameserver"
+    },
+    {
+      "Variable": "ns4",
+      "Description": "Fourth Nameserver"
+    },
+    {
+      "Variable": "ns5",
+      "Description": "Fifth Nameserver"
+    },
+    {
+      "Variable": "fullname",
+      "Description": "First name and last name combined"
+    },
+    {
+      "Variable": "state",
+      "Description": "State code eg. TX"
+    },
+    {
+      "Variable": "fullstate",
+      "Description": "State name eg. Texas"
+    },
+    {
+      "Variable": "postcode",
+      "Description": "Postcode/Zip code"
+    },
+    {
+      "Variable": "countrycode",
+      "Description": "Country code eg. GB"
+    },
+    {
+      "Variable": "countryname",
+      "Description": "Country name eg. United Kingdom"
+    },
+    {
+      "Variable": "phonenumber",
+      "Description": "Phone number as the user provided it"
+    },
+    {
+      "Variable": "phonecc",
+      "Description": "Country code determined based on country"
+    },
+    {
+      "Variable": "fullphonenumber",
+      "Description": "Format: +CC.xxxxxxxxxxxx"
+    },
+    {
+      "Variable": "additionalfields",
+      "Description": "An array of additional registrant information fields and their values"
+    },
+    {
+      "Variable": "adminstate",
+      "Description": "State code eg. TX"
+    },
+    {
+      "Variable": "adminfullstate",
+      "Description": "State name eg. Texas"
+    },
+    {
+      "Variable": "adminpostcode",
+      "Description": "Postcode/Zip code"
+    },
+    {
+      "Variable": "admincountry",
+      "Description": "eg. GB"
+    },
+    {
+      "Variable": "adminphonenumber",
+      "Description": "Phone number as the user provided it"
+    },
+    {
+      "Variable": "adminfullphonenumber",
+      "Description": "Format: +CC.xxxxxxxxxxxx"
+    },
+    {
+      "Variable": "dnsmanagement",
+      "Description": "True/false for if DNS Management add-on is active"
+    },
+    {
+      "Variable": "emailforwarding",
+      "Description": "True/false for if Email Forwarding add-on is active"
+    },
+    {
+      "Variable": "idprotection",
+      "Description": "True/false for if ID Protection add-on is active"
+    },
+    {
+      "Variable": "premiumEnabled",
+      "Description": "True if premium domain orders are enabled in WHMCS (Registration/Transfers only)"
+    },
+    {
+      "Variable": "premiumCost",
+      "Description": "The cost price fetched at the time of the order being placed"
+    },
+    {
+      "Variable": "isInGracePeriod",
+      "Description": "True if domain is within the renewal grace period. Available in the module renewal function only"
+    },
+    {
+      "Variable": "isInRedemptionGracePeriod",
+      "Description": "True if the domain is within the redemption grace period. Available in the module renewal function only"
+    },
+    {
+      "Variable": "idnlanguage",
+      "Description": "The language code for the domain."
+    },
+    {
+      "Variable": "domain_punycode",
+      "Description": "The Punycode version of the domain name."
+    },
+    {
+      "Variable": "sld_punycode",
+      "Description": "The SLD with the Punycode domain name."
+    },
+    {
+      "Variable": "tld_punycode",
+      "Description": "The TLD with the Punycode domain name."
+    },
+    {
+      "Variable": "is_idn",
+      "Description": "Whether the domain is an IDN."
+    }
+  ],
+  "functions": [
+    {
+      "name": "RegisterDomain",
+      "description": "Called when the registration of a new domain is initiated within WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "TransferDomain",
+      "description": "Called when a domain transfer request is initiated within WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "RenewDomain",
+      "description": "Called when a request to renew a domain is initiated within WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "GetDomainInformation",
+      "description": "Called when a domain is viewed within WHMCS. Recommended instead of GetNameservers and GetRegistrarLock in WHMCS 7.6 and later.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "GetEmailForwarding",
+      "description": "Called when Email Forwarding is displayed within WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "SaveEmailForwarding",
+      "description": "Called when changes to Email Forwarding are submitted.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "GetNameservers",
+      "description": "Called when a domain is viewed within WHMCS. It can return up to 5 nameservers that are set for the domain.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "SaveNameservers",
+      "description": "Called when a change is submitted for a domains nameservers.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "GetRegistrarLock",
+      "description": "Called when a domains details are viewed within WHMCS. It should return the current lock status of a domain.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "SaveRegistrarLock",
+      "description": "Called when the lock status setting is toggled within WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "GetContactDetails",
+      "description": "Called when the WHOIS information is displayed within WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "SaveContactDetails",
+      "description": "Called when revised WHOIS information is submitted.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "ResendIRTPVerificationEmail",
+      "description": "Called when a request is made to resend the IRTP contact verification emails.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "GetDNS",
+      "description": "Called when the DNS Host Records are requested to be viewed within WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "SaveDNS",
+      "description": "Called when any changes to DNS Host Records information is submitted.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "IDProtectToggle",
+      "description": "Called when the ID Protection setting is toggled on or off.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "GetEPPCode",
+      "description": "Called when the EPP Code is requested for a transfer out.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "ReleaseDomain",
+      "description": "Called when a domain release is requested (eg. UK IPSTag Changes).",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "RegisterNameserver",
+      "description": "Called when a child nameserver registration request comes from WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "ModifyNameserver",
+      "description": "Called when a child nameserver modification request comes from WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "DeleteNameserver",
+      "description": "Called when a child nameserver deletion request comes from WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "RequestDelete",
+      "description": "Called when a domain deletion request comes from WHMCS.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "ClientArea",
+      "description": "Used to define module specific client area output. It accepts a return of HTML for display on the domain details page of the client area. Output via a template file within the module folder named \"clientarea.tpl\" is also possible. This function is discussed in more detail later on in the docs.",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "ClientAreaCustomButtonArray",
+      "description": "Used to define custom functions that the module supports. Customers can invoke and run these from the client area. The functions can perform actions or product page output in the client area. Example usages for this are to provide domain management pages, bandwidth reporting pages, etc...",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "ClientAreaAllowedFunctions",
+      "description": "Like the above, used to define custom functions. These are functions that customers can invoke, but are not shown as buttons by default. (i.e. custom client area output will invoke them).",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "Sync",
+      "description": "Called when a domain name's expiry date and status change at registry level is requested for propagation into WHMCS. (i.e by the Domain Synchronization feature).",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "TransferSync",
+      "description": "Called when the status of a domain transfer at registry level is requested for propagation into WHMCS. (i.e by the Domain Synchronization feature).",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    },
+    {
+      "name": "GetTldPricing",
+      "description": "Called when the importation and synchronising of TLD pricing, into WHMCS, from a registrar is requested. (i.e by the Registrar TLD & Pricing Sync Utility).",
+      "arguments": "$params (array)",
+      "return_value": "Various (see docs)"
+    }
+  ]
+}

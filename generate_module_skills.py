@@ -255,6 +255,74 @@ def generate_payment_skills():
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
 
+def generate_registrar_skills():
+    print("Generating Registrar Module skills...")
+
+    skill_data = {
+        "module_type": "registrar",
+        "description": "Skills for developing WHMCS Domain Registrar Modules.",
+        "common_parameters": [],
+        "functions": []
+    }
+
+    # Parse parameters
+    params_file = "domain-registrars/module-parameters.md"
+    skill_data["common_parameters"] = parse_markdown_table(params_file)
+
+    # Parse functions
+    funcs_file = "domain-registrars/function-index.md"
+    funcs = parse_markdown_table(funcs_file)
+
+    for row in funcs:
+        # Assuming the table columns are roughly "Parameter" (Function Name) and "Description"
+        # We need to adapt based on exact headers found.
+        name_key = next((k for k in row.keys() if "Parameter" in k or "Function" in k), None)
+        desc_key = next((k for k in row.keys() if "Description" in k), None)
+
+        if name_key and desc_key:
+            skill_data["functions"].append({
+                "name": row[name_key],
+                "description": row[desc_key],
+                "arguments": "$params (array)",
+                "return_value": "Various (see docs)"
+            })
+
+    output_path = os.path.join(SKILLS_DIR, "registrar_modules.json")
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(skill_data, f, indent=2)
+    print(f"Created {output_path}")
+
+def generate_hook_skills():
+    print("Generating Hook skills...")
+
+    skill_data = {
+        "type": "hooks",
+        "description": "List of WHMCS Hooks.",
+        "hooks": []
+    }
+
+    hooks_dir = "hooks-reference"
+    if os.path.exists(hooks_dir):
+        for filename in os.listdir(hooks_dir):
+            if not filename.endswith(".md") or filename == "index.md":
+                continue
+
+            filepath = os.path.join(hooks_dir, filename)
+            # Use sections parser. Each section is usually a hook name.
+            sections = parse_markdown_sections(filepath)
+
+            for hook_name, desc in sections.items():
+                skill_data["hooks"].append({
+                    "name": hook_name,
+                    "description": desc,
+                    "category": filename.replace(".md", "")
+                })
+
+    output_path = os.path.join(SKILLS_DIR, "hooks.json")
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(skill_data, f, indent=2)
+    print(f"Created {output_path}")
+
 def generate_index():
     index_content = """# WHMCS Module Development Skills
 
@@ -263,6 +331,8 @@ This directory contains modular skills for developing WHMCS modules.
 * [Provisioning Modules](provisioning_modules.json)
 * [Addon Modules](addon_modules.json)
 * [Payment Gateways](payment_gateways.json)
+* [Registrar Modules](registrar_modules.json)
+* [Hooks](hooks.json)
 """
     with open(os.path.join(SKILLS_DIR, "skills.md"), "w", encoding="utf-8") as f:
         f.write(index_content)
@@ -272,4 +342,6 @@ if __name__ == "__main__":
     generate_provisioning_skills()
     generate_addon_skills()
     generate_payment_skills()
+    generate_registrar_skills()
+    generate_hook_skills()
     generate_index()
