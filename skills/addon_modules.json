@@ -1,0 +1,48 @@
+{
+  "module_type": "addon",
+  "description": "Skills for developing WHMCS Addon Modules. These modules provide additional functionality within WHMCS.",
+  "functions": [
+    {
+      "name": "Config",
+      "description": "Defines module configuration. Example:\nfunction demo_config() {\n    $configarray = array(\n    \"name\" => \"Addon Example\",\n    \"description\" => \"This is a sample config function for an addon module\",\n    \"version\" => \"1.0\",\n    \"author\" => \"WHMCS\",\n    \"fields\" => array(\n        \"option1\" => array (\"FriendlyName\" => \"Option1\", \"Type\" => \"text\", \"Size\" => \"25\",\n                              \"Description\" => \"Textbox\", \"Default\" => \"Example\", ),\n        \"option2\" => array (\"FriendlyName\" => \"Option2\", \"Type\" => \"password\", \"Size\" => \"25\",\n                              \"Description\" => \"Password\", ),\n        \"option3\" => array (\"FriendlyName\" => \"Option3\", \"Type\" => \"yesno\", \"Size\" => \"25\",\n                              \"Description\" => \"Sample Check Box\", ),\n        \"option4\" => array (\"FriendlyName\" => \"Option4\", \"Type\" => \"dropdown\", \"Options\" =>\n                              \"1,2,3,4,5\", \"Description\" => \"Sample Dropdown\", \"Default\" => \"3\", ),\n        \"option5\" => array (\"FriendlyName\" => \"Option5\", \"Type\" => \"radio\", \"Options\" =>\n                              \"Demo1,Demo2,Demo3\", \"Description\" => \"Radio Options Demo\", ),\n        \"option6\" => array (\"FriendlyName\" => \"Option6\", \"Type\" => \"textarea\", \"Rows\" => \"3\",\n                              \"Cols\" => \"50\", \"Description\" => \"Description goes here\", \"Default\" => \"Test\", ),\n    ));\n    return $configarray;\n}",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/configuration.md"
+    },
+    {
+      "name": "Activate",
+      "description": "See addon-modules/installation-uninstallation.md for details.",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/installation-uninstallation.md"
+    },
+    {
+      "name": "Deactivate",
+      "description": "See addon-modules/installation-uninstallation.md for details.",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/installation-uninstallation.md"
+    },
+    {
+      "name": "Upgrade",
+      "description": "See addon-modules/upgrades.md for details.",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/upgrades.md"
+    },
+    {
+      "name": "Output",
+      "description": "Defines admin area output. Example:\nfunction demo_output($vars) {\n\n    $modulelink = $vars['modulelink'];\n    $version = $vars['version'];\n    $option1 = $vars['option1'];\n    $option2 = $vars['option2'];\n    $option3 = $vars['option3'];\n    $option4 = $vars['option4'];\n    $option5 = $vars['option5'];\n    $option6 = $vars['option6'];\n    $LANG = $vars['_lang'];\n\n    echo '<p>The date & time are currently ' . date(\"Y-m-d H:i:s\") . '</p>';\n\n}",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/admin-area-output.md"
+    },
+    {
+      "name": "Sidebar",
+      "description": "See addon-modules/admin-area-output.md for details.",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/admin-area-output.md"
+    },
+    {
+      "name": "ClientArea",
+      "description": "See addon-modules/client-area-output.md for details.",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/client-area-output.md"
+    }
+  ]
+}

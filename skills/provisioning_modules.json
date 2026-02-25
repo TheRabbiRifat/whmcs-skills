@@ -1,0 +1,206 @@
+{
+  "module_type": "provisioning",
+  "description": "Skills for developing WHMCS Provisioning Modules. These modules allow you to provision and manage products and services.",
+  "common_parameters": [
+    {
+      "Variable Name": "serviceid",
+      "Description": "The unique ID of the service.<br />Database Field: tblhosting.id"
+    },
+    {
+      "Variable Name": "userid",
+      "Description": "The unique ID of the account that owns the service.<br />Database Field: tblclients.id<br />This variable uses naming conventions that originated prior to WHMCS 8.0."
+    },
+    {
+      "Variable Name": "pid",
+      "Description": "The product ID for the service.<br />Database Field: tblproducts.id"
+    },
+    {
+      "Variable Name": "serverid",
+      "Description": "The assigned server ID for the service.<br />Database Field: tblservers.id"
+    },
+    {
+      "Variable Name": "domain",
+      "Description": "The domain entered by the customer when ordering.<br />Database Field: tblhosting.domain"
+    },
+    {
+      "Variable Name": "username",
+      "Description": "Username generated for the service. (defaults to first 8 letters of the domain)<br />Database Field: tblhosting.username"
+    },
+    {
+      "Variable Name": "password",
+      "Description": "Password generated for the service. (10 char generated on first creation consisting of letters & numbers, both upper & lowercase).  <br />Database Field: tblhosting.password"
+    },
+    {
+      "Variable Name": "producttype",
+      "Description": "The product type which can be one of hostingaccount, reselleraccount, server or other."
+    },
+    {
+      "Variable Name": "moduletype",
+      "Description": "The module name (will match filename of module)."
+    },
+    {
+      "Variable Name": "configoptionX",
+      "Description": "with X being from 1 to 24. <br />These fields contain the module settings for the product defined in the ConfigOptions function."
+    },
+    {
+      "Variable Name": "clientsdetails",
+      "Description": "Contains an array of all client details service owner. This contains things like firstname, lastname, email, address1, country, etc\u2026"
+    },
+    {
+      "Variable Name": "customfields",
+      "Description": "Contains an array of all custom fields defined on the product.  <br />The key is the custom field name - $params\\['customfields']\\['Field Name']."
+    },
+    {
+      "Variable Name": "configoptions",
+      "Description": "Contains an array of all the configurable options defined on the product.  <br />Again the key being the option name in this case - $params\\['configoptions']\\['Option Name Here']."
+    },
+    {
+      "Variable Name": "server",
+      "Description": "true/false - Is the product assigned to a server."
+    },
+    {
+      "Variable Name": "serverip",
+      "Description": "The IP Address of the selected server."
+    },
+    {
+      "Variable Name": "serverhostname",
+      "Description": "The Hostname of the selected server."
+    },
+    {
+      "Variable Name": "serverusername",
+      "Description": "The Username of the selected server."
+    },
+    {
+      "Variable Name": "serverpassword",
+      "Description": "The Password of the selected server."
+    },
+    {
+      "Variable Name": "serveraccesshash",
+      "Description": "The Access Hash of the selected server."
+    },
+    {
+      "Variable Name": "serversecure",
+      "Description": "true/false - Is an SSL connection enabled in the Server Configuration."
+    },
+    {
+      "Variable Name": "serverport",
+      "Description": "The server port if module supports override with custom port"
+    }
+  ],
+  "functions": [
+    {
+      "name": "CreateAccount",
+      "description": "This function runs when a new product provisions.\nThis can be by WHMCS upon checkout or payment for a new order.\nAlso, by an admin user from the Products/Services tab in a clients profile of the admin area.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "SuspendAccount",
+      "description": "This function runs when a suspension is requested.\nRequested by the WHMCS Cron when a product becomes overdue, or by admin user in the Client Profile.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "UnsuspendAccount",
+      "description": "This function runs when an unsuspension is requested.\nRequested upon payment of an overdue invoice for a product.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "TerminateAccount",
+      "description": "This function runs when a termination is requested.\nRequested by the WHMCS Cron for long overdue products when enabled ([Automation Settings][automation-settings-termination]).\nAlso requested by an admin user in the Client Profile.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "Renew",
+      "description": "This function runs each time a renewal invoice for a product becomes paid.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "ChangePassword",
+      "description": "This function runs as a client requests a password change.\nThe option will not show up if the function is not defined in the module.\nThe status of the product must also be active.\nAdmins can also invoke this command from the admin area.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "ChangePackage",
+      "description": "This function runs for upgrading and downgrading of products.\nThis function runs when an upgrade or downgrade order placed by the client becomes paid.\nAdmins can also invoke this from the product management pages.\nThe same function runs for upgrades and downgrades of both products and configurable options.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "ClientArea",
+      "description": "This function can be used to define module specific client area output.\nIt accepts a return of HTML for display on the product details page of the client area.\nOutput via a template file within the module folder named \"clientarea.tpl\" is also possible.\nDiscussion of this function in more detail later on in the docs.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "AdminLink",
+      "description": "Used to define HTML code that displays on server configuration page (**Setup** > **Products/Services** > **Servers**).\nUsed to provide an automated shortcut/login link to the integrated server control panel.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "LoginLink",
+      "description": "Used to define HTML code to link to the customers account on a server control panel.\nDisplayed on the product management page of the admin area.\nThe return must be HTML output or link (no forms).",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "ClientAreaCustomButtonArray",
+      "description": "Used to define custom functions that your module supports.\nCustomers can invoke and run these from the client area.\nThe functions can perform actions or product page output in the client area.\nExample usages for this are to provide product management pages, bandwidth reporting pages, etc\u2026",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "ClientAreaAllowedFunctions",
+      "description": "Like the above, used to define custom functions.\nCustomers can invoke, but are not shown as buttons by default (i.e. custom client area output will invoke them).",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "AdminCustomButtonArray",
+      "description": "Used to define custom functions in your module for admin users.\nThis can contain more functions than the client area equivalent.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "UsageUpdate",
+      "description": "Used to perform a daily import of the disk and bandwidth usage from a server.\nThe data imported is then used to display the usage stats both within the client and admin areas of WHMCS.\nThe data is also used in disk and bandwidth overage billing calculations if enabled for a product.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "MetricProvider",
+      "description": "Used to list the names of and collect usage for metric stats of a server.\nThe name data is used for product price configuration within the admin areas of WHMCS.\nThe usage data is periodically collected and stored in WHMCS for display within\nboth the client and admin area.  That stored usage is also used for generating\ninvoice line items, if enabled in the Invoicing section of General Setting.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "AdminServicesTabFields",
+      "description": "Used to define extra fields or output to display within admin product pages.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "AdminServicesTabFieldsSave",
+      "description": "Used in conjunction with the above.\nThis function handles the values submitted in any custom fields when a save occurs.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "MetaData",
+      "description": "Used to define a number of meta data configuration parameters.\nThis function returns an array, consisting key-value pairs, where the key is the parameter name and the value is the parameter value.",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    },
+    {
+      "name": "CustomActions",
+      "description": "Used to define a list of items that perform a function and redirect the user to a specified URL. Customers can invoke items from within the Client Area. The defined function can perform actions that need to take place before redirecting the customer. Currently, this supports adding buttons to the \"Active Products/Services\" panel on the Client Area homepage.\n\n[automation-settings-termination]: http://docs.whmcs.com/Automation_Settings#Enable_Termination \"Automation Settings\"",
+      "arguments": "$params (array)",
+      "return_value": "string 'success' or error message"
+    }
+  ]
+}

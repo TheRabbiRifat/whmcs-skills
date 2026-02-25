@@ -1,0 +1,36 @@
+{
+  "module_type": "payment_gateway",
+  "description": "Skills for developing WHMCS Payment Gateway Modules.",
+  "functions": [
+    {
+      "name": "Implementation guide",
+      "description": "1. Delete the `yourmodulename_link` function from the module template since this is only required for [Third Party Gateway][thirdparty] modules.\n2. Enter the gateway-specific code for processing the payment capture into the `yourmodulename_capture` function. Typically, this takes the format of an HTTP/Curl request to the gateway provider's API.\n3. If the gateway supports 3D Secure (Verified by Visa or MasterCard Secure Code) refer to [3D Secure][3d-secure].\n4. If your payment gateway supports refunds, implement support for [Refunds][refunds].",
+      "arguments": "$params",
+      "return_value": "See description"
+    },
+    {
+      "name": "Variables",
+      "description": "The following parameters are passed to the `_capture` function along with all [defined configuration parameters][configuration] and their values.\n\nParameter | Type | Description\n---|---|---\ninvoiceid|integer|Invoice ID number.\ndescription|string|Description (for example, `Company Name - Invoice #xxx`).\namount|float|Format: `xxx.xx`\ncurrency|string|Currency code (for example, GBP or USD).\ncardtype|string|The card type (for example, Visa or MasterCard).\ncardnum|string|The card number.\ncardexp|string|The card expiry date (format: MMYY).\ncardstart|string|The card start date (format: MMYY).\ncardissuenum|string|The card issue number.\ncccvv|string|Only available for card holder present initiated payment attempts.\nclientdetails|array|An array of client details that includes the following indices: firstname, lastname, email, address1, address2, city, state, postcode, country (ISO code), model (an instance of `<a href=\"https://classdocs.whmcs.com/\">WHMCS/User/Client</a>`), and phonenumber.\ncompanyname|string|The *Company Name* setting in WHMCS.\nsystemurl|string|The URL to the client area of the WHMCS installation.",
+      "arguments": "$params",
+      "return_value": "See description"
+    },
+    {
+      "name": "Response",
+      "description": "The following return parameters are supported.\n\nParameter | Type | Description\n---|---|---\nstatus|string|One of either `success`, `pending`, or `declined`.\ndeclinereason|string|The reason why a transaction was declined.\ntransid|string|The Transaction ID returned by the payment gateway.\nfee|float|(Optional) The transaction fee returned by the payment gateway.\nrawdata|string or array|The raw data returned by the payment gateway for logging to the gateway log to aid in debugging.\ngatewayid|string|See [Tokenised Remote Storage][tokenised-remote-storage].\n\n### Example Return\n\nThe capture function should always return an array containing information about the transaction attempt. This should take the following format:\n\n```\nreturn array(\n    'status' => 'success',\n    'rawdata' => $responseData,\n    'transid' => $transactionId,\n    'fee' => $feeAmount,\n);\n```\n\nFor a successful capture, the status should be returned as the string `success`.\n\nFor payments that are pending and do not require an immediate payment in WHMCS, the status should be `pending`.\n\nFor anything else, return a status that indicates the reason for failure. Common failure response status values include `declined` and `error`.\n\nThe raw data you return will be recorded to the gateway log to aid in debugging. It can accept either a string or an array.",
+      "arguments": "$params",
+      "return_value": "See description"
+    },
+    {
+      "name": "Simple Example",
+      "description": "Below is a demonstration of a capture function that submits a payment capture request and receives a JSON response. For a more complete example, please refer to the [Sample Merchant Gateway module on GitHub][githubsample].\n\n```\nfunction yourmodulename_capture($params) {\n\n    $postfields = [\n        'invoiceid' => $params['invoiceid'],\n        'amount' => $params['amount'],\n        'currency' => $params['currency'],\n        'cardnumber' => $params['cardnum'],\n        'cardexpiry' => $params['cardexp'],\n        'cardcvv' => $params['cccvv'],\n        'card_holder_name' => $params['clientdetails']['firstname']\n            . ' - ' . $params['clientdetails']['lastname'],\n        'card_address' => [\n            'address_line_1' => $params['clientdetails']['address1'],\n            'city' => $params['clientdetails']['city'],\n            'state' => $params['clientdetails']['state'],\n            'postcode' => $params['clientdetails']['postcode'],\n            'country' => $params['clientdetails']['country'],\n        ],\n    ];\n\n    $ch = curl_init();\n    curl_setopt($ch, CURLOPT_URL, 'https://www.example.com/api/capture');\n    curl_setopt($ch, CURLOPT_POST, 1);\n    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postfields));\n    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);\n    $response = curl_exec($ch);\n    curl_close($ch);\n\n    $data = json_decode($response);\n\n    if ($data->success == 1) {\n        $return = [\n            'status' => 'success',\n            'transid' => $data->transaction_id,\n            'fee' => $data->fee,\n            'rawdata' => $data,\n        ];\n    } else {\n        $return = [\n            'status' => 'declined',\n            'declinereason' => $data->decline_reason,\n            'rawdata' => $data,\n        ];\n    }\n    return $return;\n}\n```\n\n[configuration]: /payment-gateways/configuration \"Configuration Parameters\"\n[thirdparty]: /payment-gateways/third-party-gateway \"Third Party Gateways\"\n[githubsample]: https://github.com/WHMCS/sample-merchant-gateway \"Sample Merchant Gateway module on GitHub\"\n[refunds]: /payment-gateways/refunds \"Refunding Transactions\"\n[3d-secure]: /payment-gateways/3d-secure \"3D Secure Process\"\n[tokenised-remote-storage]: /payment-gateways/tokenised-remote-storage \"Tokenised Remote Storage\"",
+      "arguments": "$params",
+      "return_value": "See description"
+    },
+    {
+      "name": "link",
+      "description": "Returns HTML code for a button/form to redirect user to payment gateway.",
+      "arguments": "$params",
+      "return_value": "HTML String"
+    }
+  ]
+}
