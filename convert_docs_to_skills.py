@@ -323,6 +323,123 @@ def generate_hook_skills():
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
 
+def generate_api_skills():
+    print("Generating API skills...")
+
+    skill_data = {
+        "type": "api",
+        "description": "WHMCS API Reference.",
+        "functions": []
+    }
+
+    api_dir = "api-reference"
+    if os.path.exists(api_dir):
+        for filename in os.listdir(api_dir):
+            if not filename.endswith(".md") or filename == "index.md":
+                continue
+
+            filepath = os.path.join(api_dir, filename)
+
+            # Simple parsing: Title is command name. Tables are parameters.
+            with open(filepath, "r", encoding="utf-8") as f:
+                content = f.read()
+
+            title_match = re.search(r'title\s*=\s*"([^"]+)"', content)
+            command_name = title_match.group(1) if title_match else filename.replace(".md", "")
+
+            # Extract description (text before first header or table)
+            # This is a bit rough but works for most files
+            description = ""
+            desc_match = re.search(r'\+\+\+\n\n([\s\S]+?)(?:###|##|\|)', content)
+            if desc_match:
+                 description = desc_match.group(1).strip()
+
+            # Parse tables
+            # Assuming first table is Request Parameters, second is Response (if exists)
+            # But parse_markdown_table only gets one.
+            # We might need to split content by "### Request Parameters" etc.
+
+            request_params = []
+            req_match = re.search(r'Request Parameters\s*\n\s*(\|[\s\S]+?)\n\n', content)
+            if req_match:
+                # We need a temporary way to parse a string table
+                # Reuse existing logic by writing to temp file or refactoring.
+                # Refactoring `parse_markdown_table` to accept string content is better.
+                pass
+
+            # For now, let's just grab the whole file content as "documentation"
+            # and maybe try to parse the first table if it looks like params.
+
+            # Actually, let's use the file path for `parse_markdown_table`.
+            # It grabs the FIRST table. In API docs, first table is usually Request Parameters.
+            params = parse_markdown_table(filepath)
+
+            skill_data["functions"].append({
+                "command": command_name,
+                "description": description,
+                "parameters": params,
+                "documentation_file": filepath
+            })
+
+    output_path = os.path.join(SKILLS_DIR, "api.json")
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(skill_data, f, indent=2)
+    print(f"Created {output_path}")
+
+def generate_theme_skills():
+    print("Generating Theme skills...")
+    # Just list files and sections as themes are more about guides
+    generate_generic_skills("themes", "themes.json", "WHMCS Theme Development")
+
+def generate_mail_provider_skills():
+    print("Generating Mail Provider skills...")
+    generate_generic_skills("mail-providers", "mail_providers.json", "WHMCS Mail Provider Modules")
+
+def generate_notification_provider_skills():
+    print("Generating Notification Provider skills...")
+    generate_generic_skills("notification-providers", "notification_providers.json", "WHMCS Notification Provider Modules")
+
+def generate_advanced_skills():
+    print("Generating Advanced skills...")
+    generate_generic_skills("advanced", "advanced.json", "Advanced WHMCS Development")
+
+def generate_oauth_skills():
+    print("Generating OAuth skills...")
+    generate_generic_skills("oauth", "oauth.json", "WHMCS OAuth Integration")
+
+def generate_language_skills():
+    print("Generating Language skills...")
+    generate_generic_skills("languages", "languages.json", "WHMCS Language Files")
+
+def generate_generic_skills(source_dir, output_filename, description):
+    skill_data = {
+        "type": "guide",
+        "category": source_dir,
+        "description": description,
+        "topics": []
+    }
+
+    if os.path.exists(source_dir):
+        for filename in os.listdir(source_dir):
+            if not filename.endswith(".md") or filename == "index.md":
+                continue
+
+            filepath = os.path.join(source_dir, filename)
+            sections = parse_markdown_sections(filepath)
+
+            topic_name = filename.replace(".md", "").replace("-", " ").title()
+
+            skill_data["topics"].append({
+                "title": topic_name,
+                "content": sections, # This might be large, but it's modular by file at least
+                "file": filepath
+            })
+
+    output_path = os.path.join(SKILLS_DIR, output_filename)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(skill_data, f, indent=2)
+    print(f"Created {output_path}")
+
 def generate_index():
     index_content = """# WHMCS Module Development Skills
 
@@ -333,6 +450,13 @@ This directory contains modular skills for developing WHMCS modules.
 * [Payment Gateways](payment_gateways.json)
 * [Registrar Modules](registrar_modules.json)
 * [Hooks](hooks.json)
+* [API](api.json)
+* [Themes](themes.json)
+* [Mail Providers](mail_providers.json)
+* [Notification Providers](notification_providers.json)
+* [Advanced](advanced.json)
+* [OAuth](oauth.json)
+* [Languages](languages.json)
 """
     with open(os.path.join(SKILLS_DIR, "skills.md"), "w", encoding="utf-8") as f:
         f.write(index_content)
@@ -344,4 +468,11 @@ if __name__ == "__main__":
     generate_payment_skills()
     generate_registrar_skills()
     generate_hook_skills()
+    generate_api_skills()
+    generate_theme_skills()
+    generate_mail_provider_skills()
+    generate_notification_provider_skills()
+    generate_advanced_skills()
+    generate_oauth_skills()
+    generate_language_skills()
     generate_index()

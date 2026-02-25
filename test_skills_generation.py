@@ -69,5 +69,65 @@ class TestSkillsGeneration(unittest.TestCase):
         client_add = next((h for h in data["hooks"] if h["name"] == "ClientAdd"), None)
         self.assertIsNotNone(client_add, "ClientAdd hook not found")
 
+    def test_api_skills(self):
+        file_path = "skills/api.json"
+        self.assertTrue(os.path.exists(file_path), "API skills file not found")
+
+        with open(file_path, "r") as f:
+            data = json.load(f)
+
+        self.assertEqual(data.get("type"), "api")
+        self.assertTrue(len(data.get("functions")) > 0, "API Functions list should not be empty")
+
+        add_client = next((f for f in data["functions"] if f["command"] == "AddClient"), None)
+        self.assertIsNotNone(add_client, "AddClient command not found")
+        self.assertTrue(len(add_client["parameters"]) > 0, "AddClient parameters should not be empty")
+
+    def test_theme_skills(self):
+        file_path = "skills/themes.json"
+        self.assertTrue(os.path.exists(file_path), "Theme skills file not found")
+        with open(file_path, "r") as f:
+            data = json.load(f)
+        self.assertEqual(data.get("category"), "themes")
+        self.assertTrue(len(data.get("topics")) > 0, "Topics should not be empty")
+
+    def test_mail_provider_skills(self):
+        file_path = "skills/mail_providers.json"
+        self.assertTrue(os.path.exists(file_path), "Mail Provider skills file not found")
+        with open(file_path, "r") as f:
+            data = json.load(f)
+        self.assertEqual(data.get("category"), "mail-providers")
+
+    def test_notification_provider_skills(self):
+        file_path = "skills/notification_providers.json"
+        self.assertTrue(os.path.exists(file_path), "Notification Provider skills file not found")
+        with open(file_path, "r") as f:
+            data = json.load(f)
+        self.assertEqual(data.get("category"), "notification-providers")
+
+    def test_advanced_skills(self):
+        file_path = "skills/advanced.json"
+        self.assertTrue(os.path.exists(file_path), "Advanced skills file not found")
+        with open(file_path, "r") as f:
+            data = json.load(f)
+        self.assertEqual(data.get("category"), "advanced")
+
+    def test_oauth_skills(self):
+        file_path = "skills/oauth.json"
+        self.assertTrue(os.path.exists(file_path), "OAuth skills file not found")
+        with open(file_path, "r") as f:
+            data = json.load(f)
+        self.assertEqual(data.get("category"), "oauth")
+
+    def test_language_skills(self):
+        file_path = "skills/languages.json"
+        self.assertTrue(os.path.exists(file_path), "Language skills file not found")
+        with open(file_path, "r") as f:
+            data = json.load(f)
+        self.assertEqual(data.get("category"), "languages")
+
+    def test_index_exists(self):
+        self.assertTrue(os.path.exists("skills/skills.md"), "skills.md index file not found")
+
 if __name__ == "__main__":
     unittest.main()
