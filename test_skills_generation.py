@@ -137,8 +137,8 @@ class TestSkillsGeneration(unittest.TestCase):
         self.assertEqual(data.get("role"), "WHMCS Expert Developer")
         self.assertTrue(len(data.get("skills")) > 0, "Skills list should not be empty")
 
-    def test_system_prompt_exists(self):
-        self.assertTrue(os.path.exists("skills/system_prompt.md"), "system_prompt.md file not found")
+    def test_skill_md_exists(self):
+        self.assertTrue(os.path.exists("skills/SKILL.md"), "SKILL.md file not found")
 
 if __name__ == "__main__":
     unittest.main()
