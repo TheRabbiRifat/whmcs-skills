@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "DomainRequestEPP",
+  "description": "Sends the Request EPP command to the registrar for the domain",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainRequestEPP\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The id of the domain to obtain the EPP for",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/domainrequestepp.md"
+}

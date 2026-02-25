@@ -1,0 +1,62 @@
+{
+  "type": "api_command",
+  "name": "AcceptOrder",
+  "description": "Accepts a pending order",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AcceptOrder\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "orderid",
+      "Type": "int",
+      "Description": "The order id to be accepted",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serverid",
+      "Type": "int",
+      "Description": "The specific server to assign to products within the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "serviceusername",
+      "Type": "string",
+      "Description": "The specific username to assign to products within the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "servicepassword",
+      "Type": "string",
+      "Description": "The specific password to assign to products within the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "registrar",
+      "Type": "string",
+      "Description": "The specific registrar to assign to domains within the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "sendregistrar",
+      "Type": "bool",
+      "Description": "Send the request to the registrar to register the domain.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "autosetup",
+      "Type": "bool",
+      "Description": "Send the request to the product module to activate the service. This can override the product configuration.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "sendemail",
+      "Type": "bool",
+      "Description": "Send any automatic emails. This can be Product Welcome, Domain Renewal, Domain Transfer etc.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/acceptorder.md"
+}

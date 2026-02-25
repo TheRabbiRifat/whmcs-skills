@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "DeactivateModule",
+  "description": "Deactivates a given module.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeactivateModule\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "moduleType",
+      "Type": "string",
+      "Description": "The module type to be deactivated",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "moduleName",
+      "Type": "string",
+      "Description": "The module name to be deactivated",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "newGateway",
+      "Type": "string",
+      "Description": "The Gateway to switch respective entities to when deactivating a Gateway Module.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/deactivatemodule.md"
+}

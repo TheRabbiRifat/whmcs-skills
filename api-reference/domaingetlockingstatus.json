@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "DomainGetLockingStatus",
+  "description": "Obtains the current lock status of the domain.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainGetLockingStatus\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The id of the domain to obtain the lock status for",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/domaingetlockingstatus.md"
+}

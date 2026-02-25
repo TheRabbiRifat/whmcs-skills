@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "GetToDoItems",
+  "description": "Get To-Do List Items.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetToDoItems\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned log data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "Status to filter for. Possible values include: Incomplete, New, Pending, In Progress, Completed",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/gettodoitems.md"
+}

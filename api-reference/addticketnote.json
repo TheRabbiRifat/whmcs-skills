@@ -1,0 +1,50 @@
+{
+  "type": "api_command",
+  "name": "AddTicketNote",
+  "description": "Add a note to a ticket by Ticket ID or Ticket Number.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddTicketNote\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "message",
+      "Type": "string",
+      "Description": "The content of the ticket note",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ticketnum",
+      "Type": "string",
+      "Description": "The Client Ticket Number ID to apply the note to",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ticketid",
+      "Type": "int",
+      "Description": "The id of the ticket in the database. Either $ticketnum or $ticketid is required",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "markdown",
+      "Type": "bool",
+      "Description": "Should markdown be used on the ticket note output",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "attachments",
+      "Type": "array",
+      "Description": "Optional base64 json encoded array of file attachments. Can be the direct output of a multipart-form-data form submission ($_FILES superglobal in PHP) or an array of arrays consisting of both a filename and data keys (see example below).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "created",
+      "Type": "string",
+      "Description": "The date and time the ticket note will show as created. Format: ISO8601 or YYYY-MM-DD HH:mm:ss",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addticketnote.md"
+}

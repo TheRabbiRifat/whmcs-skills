@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "ApplyCredit",
+  "description": "Applies the Client's Credit to an invoice",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"ApplyCredit\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "invoiceid",
+      "Type": "int",
+      "Description": "The ID of the invoice to apply credit",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "amount",
+      "Type": "float\\",
+      "Description": "string",
+      "Required": "The amount of credit to apply to the invoice."
+    },
+    {
+      "Parameter": "noemail",
+      "Type": "bool",
+      "Description": "Set to true to stop the invoice payment email being sent if the invoice becomes paid",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/applycredit.md"
+}

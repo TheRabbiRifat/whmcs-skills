@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "CreateClientInvite",
+  "description": "Send an invite to manage a client.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"CreateClientInvite\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "client_id",
+      "Type": "string",
+      "Description": "The ID of the client the invite is for",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "The email address to invite",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "permissions",
+      "Type": "string",
+      "Description": "A comma separated list of permissions.",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/createclientinvite.md"
+}

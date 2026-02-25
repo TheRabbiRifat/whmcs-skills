@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "DeleteTicketReply",
+  "description": "Deletes a ticket reply.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeleteTicketReply\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ticketid",
+      "Type": "int",
+      "Description": "The ticket the reply belongs to",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "replyid",
+      "Type": "int",
+      "Description": "The ticket reply to be deleted",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/deleteticketreply.md"
+}

@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "GetServers",
+  "description": "Get servers.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetServers\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serviceId",
+      "Type": "int",
+      "Description": "Pass a Product/Service ID to fetch available servers for its module type.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "addonId",
+      "Type": "int",
+      "Description": "Pass a Addon/Service ID to fetch available servers for its module type.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "fetchStatus",
+      "Type": "bool",
+      "Description": "Pass as true to attempt to fetch server status values.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getservers.md"
+}

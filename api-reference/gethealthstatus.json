@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetHealthStatus",
+  "description": "Get health status.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetHealthStatus\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "fetchStatus",
+      "Type": "bool",
+      "Description": "Pass as true to attempt to fetch server status values.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/gethealthstatus.md"
+}

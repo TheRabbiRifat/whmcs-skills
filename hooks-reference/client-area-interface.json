@@ -1,0 +1,5279 @@
+[
+  {
+    "type": "hook",
+    "name": "ClientAreaDomainDetails",
+    "description": "Executes when the domain details page is loaded within the client area. This hook runs regardless of domain status, so be sure to check for the appropriate statuses if required.",
+    "parameters": [
+      {
+        "Variable": "domain",
+        "Type": "\\WHMCS\\Domain\\Domain",
+        "Notes": "A domain object representing the domain being rendered."
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaHomepage",
+    "description": "Executes on rendering of the client area homepage.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaHomepagePanels",
+    "description": "Executes prior to rendering the Client Area Homepage panels. This can be used to manipulate and add additional panels. For more information on working with Homepage Panels, and further examples, please see [Client Area Homepage Panels](https://go.whmcs.com/1965/client-area-homepage-panels)",
+    "parameters": [
+      {
+        "Variable": "item",
+        "Type": "\\WHMCS\\View\\Menu\\Item",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaNavbars",
+    "description": "Executes when generating the navigation bars in the client area",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPage",
+    "description": "Executes on all pages of the client area and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageAddContact",
+    "description": "Executes on the client area add contact page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageAddFunds",
+    "description": "Executes on the client area add funds page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageAddonModule",
+    "description": "Executes on client pages created by an addon module and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageAffiliates",
+    "description": "Executes on the client area affiliates page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageAnnouncements",
+    "description": "Executes on the client area announcements page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageBanned",
+    "description": "Executes on the banned user page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageBulkDomainManagement",
+    "description": "Executes on the client area bulk domain management page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageCancellation",
+    "description": "Executes on the client area cancellation request page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageCart",
+    "description": "Executes on the shopping cart page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageChangePassword",
+    "description": "Executes on the client area change password page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageConfigureSSL",
+    "description": "Executes on the client area SSL configuration page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageContact",
+    "description": "Executes on the contact form page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageContacts",
+    "description": "Executes on the client area contacts/sub-accounts management page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageCreditCard",
+    "description": "Executes on the client area manage credit card page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageCreditCardCheckout",
+    "description": "Executes on the credit card payment page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageDomainAddons",
+    "description": "Executes on the client area domain add-ons page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageDomainContacts",
+    "description": "Executes on the client area domain WHOIS contact information page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageDomainDNSManagement",
+    "description": "Executes on the client area domain DNS Host Record management page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageDomainDetails",
+    "description": "Executes on the client area domain overview page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageDomainEPPCode",
+    "description": "Executes on the client area domain EPP Code page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageDomainEmailForwarding",
+    "description": "Executes on the client area domain Email Forwarding rules page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageDomainRegisterNameservers",
+    "description": "Executes on the client area domain Register Private Nameservers page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageDomains",
+    "description": "Executes on the client area domains list page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageDownloads",
+    "description": "Executes on the client area downloads page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageEmails",
+    "description": "Executes on the client area email history page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageHome",
+    "description": "Executes on the client area homepage and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageInvoices",
+    "description": "Executes on the client area invoices page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageKnowledgebase",
+    "description": "Executes on the client area knowledgebase page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageLogin",
+    "description": "Executes on the login page of the client area. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageLogout",
+    "description": "Executes on the client area logout page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageMassPay",
+    "description": "Executes on the client area mass invoice payment page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageNetworkIssues",
+    "description": "Executes on the client area network issues page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPagePasswordReset",
+    "description": "Executes on the client area password reset page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageProductDetails",
+    "description": "Executes on the client area product overview page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageProductsServices",
+    "description": "Executes on the client area product and services list page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageProfile",
+    "description": "Executes on the client area profile page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageQuotes",
+    "description": "Executes on the client area quotes page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageRegister",
+    "description": "Executes on the client registration page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageSecurity",
+    "description": "Executes on the client area security page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageServerStatus",
+    "description": "Executes on the client area server status page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageUnsubscribe",
+    "description": "Executes on the email unsubscribe page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageUpgrade",
+    "description": "Executes on the client area upgrade/downgrade page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageViewEmail",
+    "description": "Executes on the client area view email page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageViewInvoice",
+    "description": "Executes on the client area view invoice page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageViewQuote",
+    "description": "Executes on the client area view quote page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPaymentMethods",
+    "description": "Executes on the client area payment methods management page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPrimaryNavbar",
+    "description": "Executes when generating the primary navigation bar in the client area",
+    "parameters": [
+      {
+        "Variable": "N/A",
+        "Type": "\\WHMCS\\View\\Menu\\Item",
+        "Notes": "The currently defined items so further additions can be made"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPrimarySidebar",
+    "description": "Executes when generating the primary side bar in the client area",
+    "parameters": [
+      {
+        "Variable": "N/A",
+        "Type": "\\WHMCS\\View\\Menu\\Item",
+        "Notes": "The currently defined items so further additions can be made"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaProductDetails",
+    "description": "Executes when the product details page is loaded within the client area. This hook runs regardless of service status, so be sure to check for the appropriate statuses if required.",
+    "parameters": [
+      {
+        "Variable": "service",
+        "Type": "\\WHMCS\\Service\\Service",
+        "Notes": "A service object representing the service being rendered."
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaProductDetailsPreModuleTemplate",
+    "description": "Executes when rendering the client area product details page prior to module template invocation allowing to define additional template parameters.",
+    "parameters": [
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "groupname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "product",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "modulename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "domain",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemStatus",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "username",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "password",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaRegister",
+    "description": "Executes after a client has used the register.php file to create a client account.",
+    "parameters": [
+      {
+        "Variable": "user_id",
+        "Type": "int",
+        "Notes": "The id of the user owning the newly created client."
+      },
+      {
+        "Variable": "client_id",
+        "Type": "int",
+        "Notes": "The id of the newly created client."
+      },
+      {
+        "Variable": "~~userid~~",
+        "Type": "~~int~~",
+        "Notes": "~~The id of the newly created client.~~"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaSecondaryNavbar",
+    "description": "Executes when generating the secondary navigation bar in the client area",
+    "parameters": [
+      {
+        "Variable": "N/A",
+        "Type": "\\WHMCS\\View\\Menu\\Item",
+        "Notes": "The currently defined items so further additions can be made"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaSecondarySidebar",
+    "description": "Executes when generating the secondary side bar in the client area",
+    "parameters": [
+      {
+        "Variable": "N/A",
+        "Type": "\\WHMCS\\View\\Menu\\Item",
+        "Notes": "The currently defined items so further additions can be made"
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaSidebars",
+    "description": "Executes when generating the side bars in the client area",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/client-area-interface.md"
+  }
+]

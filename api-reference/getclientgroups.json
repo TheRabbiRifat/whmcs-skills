@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "GetClientGroups",
+  "description": "Obtain an array of client groups",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetClientGroups\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getclientgroups.md"
+}

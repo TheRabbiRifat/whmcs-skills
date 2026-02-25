@@ -1,0 +1,44 @@
+{
+  "type": "api_command",
+  "name": "AddUser",
+  "description": "Add a user.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddUser\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "firstname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "lastname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "password2",
+      "Type": "string",
+      "Description": "The password for the newly created user account",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "language",
+      "Type": "string",
+      "Description": "Default language setting. Provide full name: 'english', 'french', etc...",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/adduser.md"
+}

@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "FraudOrder",
+  "description": "Marks an order as fraudulent.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"FraudOrder\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "orderid",
+      "Type": "int",
+      "Description": "The Order ID to set as fraud",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "cancelsub",
+      "Type": "bool",
+      "Description": "Pass as true to cancel any PayPal Subscription(s) associated with the products & services that belong to the given order.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/fraudorder.md"
+}

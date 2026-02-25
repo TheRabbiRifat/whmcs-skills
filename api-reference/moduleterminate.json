@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "ModuleTerminate",
+  "description": "Runs a terminate action for a given service.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"ModuleTerminate\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The service ID to run the action for",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/moduleterminate.md"
+}

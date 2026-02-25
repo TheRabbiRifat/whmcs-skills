@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "GetTicketCounts",
+  "description": "Get ticket counts.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetTicketCounts\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ignoreDepartmentAssignments",
+      "Type": "bool",
+      "Description": "Pass as true to not adhere to the departments the API user is a member of.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "includeCountsByStatus",
+      "Type": "bool",
+      "Description": "Pass as true to include detailed counts by statuses",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getticketcounts.md"
+}

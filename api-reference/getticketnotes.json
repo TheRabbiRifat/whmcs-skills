@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetTicketNotes",
+  "description": "Obtain a specific ticket notes",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetTicketNotes\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ticketid",
+      "Type": "int",
+      "Description": "Obtain the ticket for the specific ticket id",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getticketnotes.md"
+}

@@ -1,0 +1,44 @@
+{
+  "type": "api_command",
+  "name": "GenInvoices",
+  "description": "Generate any invoices that are due to be generated",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GenInvoices\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "noemails",
+      "Type": "bool",
+      "Description": "Stop any invoice created emails being sent",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "Pass to generate invoices only for a single client id",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "serviceids",
+      "Type": "int[]",
+      "Description": "An array of service ids to generate invoices for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domainids",
+      "Type": "int[]",
+      "Description": "An array of domain ids to generate invoices for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "addonids",
+      "Type": "int[]",
+      "Description": "An array of addon ids to generate invoices for",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/geninvoices.md"
+}

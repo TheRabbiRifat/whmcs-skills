@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "DeleteClient",
+  "description": "Deletes a client.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeleteClient\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The client id to be deleted",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "deleteusers",
+      "Type": "bool",
+      "Description": "Delete any users not associated with any other client.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "deletetransactions",
+      "Type": "bool",
+      "Description": "Delete all transactions on this account",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/deleteclient.md"
+}

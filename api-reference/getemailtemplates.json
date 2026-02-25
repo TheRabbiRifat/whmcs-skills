@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "GetEmailTemplates",
+  "description": "Obtain a list of email templates from the system",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetEmailTemplates\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "type",
+      "Type": "string",
+      "Description": "The type of email template to retrieve",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "language",
+      "Type": "string",
+      "Description": "The language of the email template to retrieve, if none provided will return default language templates.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getemailtemplates.md"
+}

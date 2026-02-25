@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "UpdateModuleConfiguration",
+  "description": "Activates a given module.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateModuleConfiguration\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "moduleType",
+      "Type": "string",
+      "Description": "The module type to be activated",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "moduleName",
+      "Type": "string",
+      "Description": "The module name to be activated",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "parameters",
+      "Type": "array",
+      "Description": "An array of configuration parameters to set for the given module. Use *GetModuleConfigurationParameters* to obtain a list of fields for a given module.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updatemoduleconfiguration.md"
+}

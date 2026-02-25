@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "ModuleSuspend",
+  "description": "Runs the module suspend action for a given service.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"ModuleSuspend\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The service ID to run the action for",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "suspendreason",
+      "Type": "string",
+      "Description": "A reason for the suspension",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/modulesuspend.md"
+}

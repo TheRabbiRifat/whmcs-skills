@@ -1,0 +1,581 @@
+[
+  {
+    "type": "hook",
+    "name": "AffiliateActivation",
+    "description": "Executes as an affiliate is being activated.",
+    "parameters": [
+      {
+        "Variable": "affid",
+        "Type": "int",
+        "Notes": "The new unique id for the affiliate (tblaffiliates)."
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "AffiliateClickthru",
+    "description": "Executes when a user has clicked an affiliate referral link.",
+    "parameters": [
+      {
+        "Variable": "affiliateId",
+        "Type": "int",
+        "Notes": "The unique id of the affiliate that the link belongs to"
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "AffiliateCommission",
+    "description": "Executes as affiliate commission is being applied to an affiliate to clear later.",
+    "parameters": [
+      {
+        "Variable": "affiliateId",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "referralId",
+        "Type": "int",
+        "Notes": "The id of the referral"
+      },
+      {
+        "Variable": "serviceId",
+        "Type": "int",
+        "Notes": "The id of the referred service"
+      },
+      {
+        "Variable": "commissionAmount",
+        "Type": "float",
+        "Notes": "The amount of commission to be appplied"
+      },
+      {
+        "Variable": "commissionDelayed",
+        "Type": "bool",
+        "Notes": "Will the commission be delayed"
+      },
+      {
+        "Variable": "clearingDate",
+        "Type": "null",
+        "Notes": "string"
+      },
+      {
+        "Variable": "payout",
+        "Type": "bool",
+        "Notes": "Will this commission be applied to the affiliate commissions"
+      },
+      {
+        "Variable": "message",
+        "Type": "string",
+        "Notes": "The reason commission will not be applied if `payout` is false"
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "AffiliateWithdrawalRequest",
+    "description": "Executes when an affiliate withdrawal request is submitted.",
+    "parameters": [
+      {
+        "Variable": "affiliateId",
+        "Type": "int",
+        "Notes": "The unique id of the affiliate making the request"
+      },
+      {
+        "Variable": "userId",
+        "Type": "int",
+        "Notes": "The user id of the user making the request"
+      },
+      {
+        "Variable": "clientId",
+        "Type": "int",
+        "Notes": "The client id being acted on"
+      },
+      {
+        "Variable": "balance",
+        "Type": "float",
+        "Notes": "The amount of commission the withdrawal request is for"
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterConfigOptionsUpgrade",
+    "description": "Executes after a product configurable options upgrade has been processed",
+    "parameters": [
+      {
+        "Variable": "upgradeid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "CCUpdate",
+    "description": "Executes after CC details have been stored for a client or the remote storage functions completed.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "cardtype",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "cardnum",
+        "Type": "string",
+        "Notes": "Only if stored locally"
+      },
+      {
+        "Variable": "cardcvv",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "expdate",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "cardstart",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "cardissue",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "CalcAffiliateCommission",
+    "description": "Executes as the amount of commission is being calculated",
+    "parameters": [
+      {
+        "Variable": "affid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "relid",
+        "Type": "int",
+        "Notes": "The id of the referred service"
+      },
+      {
+        "Variable": "amount",
+        "Type": "float",
+        "Notes": "The amount the commission is being calculated on"
+      },
+      {
+        "Variable": "commission",
+        "Type": "float",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "CustomFieldLoad",
+    "description": "Executes when custom fields are being loaded",
+    "parameters": [
+      {
+        "Variable": "fieldid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "relid",
+        "Type": "int",
+        "Notes": "The related id for the field type."
+      },
+      {
+        "Variable": "value",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "CustomFieldSave",
+    "description": "Executes when custom fields are being saved",
+    "parameters": [
+      {
+        "Variable": "fieldid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "relid",
+        "Type": "int",
+        "Notes": "The related id for the field type."
+      },
+      {
+        "Variable": "value",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "EmailPreLog",
+    "description": "Runs prior to email being logged.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "date",
+        "Type": "string",
+        "Notes": "Current timestamp"
+      },
+      {
+        "Variable": "to",
+        "Type": "string",
+        "Notes": "Comma separated list of recipients"
+      },
+      {
+        "Variable": "cc",
+        "Type": "string",
+        "Notes": "Comma separated list of CC recipients"
+      },
+      {
+        "Variable": "bcc",
+        "Type": "string",
+        "Notes": "Comma separated list of BCC recipients"
+      },
+      {
+        "Variable": "subject",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "message",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "attachments",
+        "Type": "array",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "EmailPreSend",
+    "description": "Runs prior to any templated email being sent.",
+    "parameters": [
+      {
+        "Variable": "messagename",
+        "Type": "string",
+        "Notes": "The name of the email template being sent"
+      },
+      {
+        "Variable": "relid",
+        "Type": "int",
+        "Notes": "The related entity ID for the email being sent."
+      },
+      {
+        "Variable": "mergefields",
+        "Type": "array",
+        "Notes": "Original mergefield data"
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "EmailTplMergeFields",
+    "description": "Executes when editing an email template.",
+    "parameters": [
+      {
+        "Variable": "type",
+        "Type": "string",
+        "Notes": "The type of email template being edited."
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "FetchCurrencyExchangeRates",
+    "description": "Executes when updating currency exchange rates. All supported automatic update currencies are returned",
+    "parameters": [
+      {
+        "Variable": "USD",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "GBP",
+        "Type": "float",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "IntelligentSearch",
+    "description": "Executes as the Intelligent Search is being completed",
+    "parameters": [
+      {
+        "Variable": "searchTerm",
+        "Type": "string",
+        "Notes": "The term being searched for"
+      },
+      {
+        "Variable": "numResults",
+        "Type": "int",
+        "Notes": "The number of results to return"
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "LinkTracker",
+    "description": "Executes when a link.php link is being used.",
+    "parameters": [
+      {
+        "Variable": "linkid",
+        "Type": "int",
+        "Notes": "The id of the link being followed"
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "LogActivity",
+    "description": "Executes after an activity log entry has been created.",
+    "parameters": [
+      {
+        "Variable": "description",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "user",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "ipaddress",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "NotificationPreSend",
+    "description": "Executes prior to a notification being sent to allow for additional conditional criteria to be applied and manipulation of the notification message.",
+    "parameters": [
+      {
+        "Variable": "eventType",
+        "Type": "string",
+        "Notes": "'Ticket', 'Invoice', 'Order', 'Service', 'Domain', or 'API'"
+      },
+      {
+        "Variable": "eventName",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "rule",
+        "Type": "\\WHMCS\\Notification\\Rule",
+        "Notes": "Notification rule that has been matched."
+      },
+      {
+        "Variable": "hookParameters",
+        "Type": "array",
+        "Notes": ""
+      },
+      {
+        "Variable": "notification",
+        "Type": "\\WHMCS\\Notification\\Contracts\\NotificationInterface",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "PayMethodMigration",
+    "description": "Executes when legacy payment details are being migrated.",
+    "parameters": [
+      {
+        "Variable": "client",
+        "Type": "\\WHMCS\\User\\Client",
+        "Notes": "The Client Model"
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreEmailSendReduceRecipients",
+    "description": "Runs prior to a client email being sent and allows selective removal of CC and BCC recipients.",
+    "parameters": [
+      {
+        "Variable": "messagename",
+        "Type": "string",
+        "Notes": "The name of the email template being sent"
+      },
+      {
+        "Variable": "relid",
+        "Type": "int",
+        "Notes": "The related entity ID for the email being sent"
+      },
+      {
+        "Variable": "recipients",
+        "Type": "array",
+        "Notes": "Array containing 'cc' and 'bcc' recipients. Each recipient will be an array containing 'email' and 'fullname' indices"
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreUpgradeCheckout",
+    "description": "Executes on checkout of an upgrade order, after the price calculation. The upgrade order may have completed already when this hook runs.",
+    "parameters": [
+      {
+        "Variable": "clientId",
+        "Type": "int",
+        "Notes": "The ID of the client for the upgrade order"
+      },
+      {
+        "Variable": "upgradeId",
+        "Type": "int",
+        "Notes": "The ID of the upgrade order"
+      },
+      {
+        "Variable": "serviceId",
+        "Type": "int",
+        "Notes": "The ID of the service for the upgrade order"
+      },
+      {
+        "Variable": "amount",
+        "Type": "float",
+        "Notes": "The upgrade order amount. A negative value denotes a credit calculation."
+      },
+      {
+        "Variable": "discount",
+        "Type": "float",
+        "Notes": "The upgrade order discount."
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "PremiumPriceOverride",
+    "description": "Executes when searching for a premium domain. The return can alter the registration & renewal costs, stop the domain being available for purchase or force the client to contact support.",
+    "parameters": [
+      {
+        "Variable": "domainName",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "tld",
+        "Type": "string",
+        "Notes": "eg com in whmcs.com"
+      },
+      {
+        "Variable": "sld",
+        "Type": "string",
+        "Notes": "eg whmcs in whmcs.com"
+      },
+      {
+        "Variable": "register",
+        "Type": "float",
+        "Notes": "If a registration, the registration price of the premium domain"
+      },
+      {
+        "Variable": "transfer",
+        "Type": "float",
+        "Notes": "If a transfer, the transfer price of the premium domain"
+      },
+      {
+        "Variable": "renew",
+        "Type": "float",
+        "Notes": "The renewal price of the premium domain"
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "PremiumPriceRecalculationOverride",
+    "description": "Executes when a premium domain price is being automatically recalculated.",
+    "parameters": [
+      {
+        "Variable": "domainName",
+        "Type": "string",
+        "Notes": "The full domain name."
+      },
+      {
+        "Variable": "tld",
+        "Type": "string",
+        "Notes": "The TLD of the domain (E.g. com in whmcs.com)"
+      },
+      {
+        "Variable": "sld",
+        "Type": "string",
+        "Notes": "The SLD of the domain (E.g. whmcs in whmcs.com)"
+      },
+      {
+        "Variable": "renew",
+        "Type": "float",
+        "Notes": "The current renewal cost of the domain before any applied markup."
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  },
+  {
+    "type": "hook",
+    "name": "VatNumberVerification",
+    "description": "Verification of a VAT Number.",
+    "parameters": [
+      {
+        "Variable": "vatNumber",
+        "Type": "\\WHMCS\\Billing\\VAT\\VatNumber",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/everything-else.md"
+  }
+]

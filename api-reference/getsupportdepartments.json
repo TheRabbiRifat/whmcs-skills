@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetSupportDepartments",
+  "description": "Get the support departments and associated ticket counts",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetSupportDepartments\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ignore_dept_assignments",
+      "Type": "bool",
+      "Description": "Pass as true to not adhere to the departments the API user is a member of.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getsupportdepartments.md"
+}

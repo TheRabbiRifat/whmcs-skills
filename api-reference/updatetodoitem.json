@@ -1,0 +1,56 @@
+{
+  "type": "api_command",
+  "name": "UpdateToDoItem",
+  "description": "Update To-Do Item.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateToDoItem\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "itemid",
+      "Type": "int",
+      "Description": "The To-Do item's ID.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "adminid",
+      "Type": "int",
+      "Description": "The ID of the admin user updating the To-Do item.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "The status of the To-Do item.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "date",
+      "Type": "int",
+      "Description": "The date for the To-Do item.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "title",
+      "Type": "string",
+      "Description": "The To-Do item's title.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "description",
+      "Type": "string",
+      "Description": "A description of the To-Do item.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "duedate",
+      "Type": "int",
+      "Description": "The To-Do item's due date.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updatetodoitem.md"
+}

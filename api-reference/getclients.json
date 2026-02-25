@@ -1,0 +1,50 @@
+{
+  "type": "api_command",
+  "name": "GetClients",
+  "description": "Obtain the Clients that match passed criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetClients\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned log data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "sorting",
+      "Type": "string",
+      "Description": "The direction to sort the results. ASC or DESC. Default: ASC",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "Optional desired Client Status. 'Active', 'Inactive', or 'Closed'.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "search",
+      "Type": "string",
+      "Description": "The search term to look for at the start of email, firstname, lastname, fullname or companyname",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "orderby",
+      "Type": "string",
+      "Description": "The column to order by. id, firstname, lastname, companyname, email, groupid, datecreated, status",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getclients.md"
+}

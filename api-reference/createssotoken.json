@@ -1,0 +1,50 @@
+{
+  "type": "api_command",
+  "name": "CreateSsoToken",
+  "description": "Create a single use, client or user single sign-on access token",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"CreateSsoToken\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "client_id",
+      "Type": "int",
+      "Description": "The id of the client that should be authenticated by the resulting token",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "user_id",
+      "Type": "int",
+      "Description": "The id of the user that should be authenticated by the resulting token. If not provided, the owner of the requested client will be assumed.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "destination",
+      "Type": "string",
+      "Description": "A single valid destination. If not provided, the destination will be the clientarea homepage",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "service_id",
+      "Type": "int",
+      "Description": "The id of the service for respective clientarea $destination",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domain_id",
+      "Type": "int",
+      "Description": "The id of the service for respective clientarea $destination",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "sso_redirect_path",
+      "Type": "string",
+      "Description": "Custom relative path for redirection after authentication when using sso:custom_redirect destination",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/createssotoken.md"
+}

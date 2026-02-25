@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "GetClientsAddons",
+  "description": "Obtain the Clients Product Addons that match passed criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetClientsAddons\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int\\",
+      "Description": "string",
+      "Required": "The service id(s) to obtain the client product addons for. Single number or comma separated list"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The client to obtain the client product addons for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "addonid",
+      "Type": "int",
+      "Description": "The predefined product addon id from tbladdons (tbladdons.id) to obtain client addons for.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getclientsaddons.md"
+}

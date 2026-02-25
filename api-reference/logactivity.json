@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "LogActivity",
+  "description": "Creates an activity log entry.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"LogActivity\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The ID of a client the log entry relates to.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "description",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/logactivity.md"
+}

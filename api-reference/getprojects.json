@@ -1,0 +1,92 @@
+{
+  "type": "api_command",
+  "name": "GetProjects",
+  "description": "Obtain orders matching the passed criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetProjects\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned project data (default: `0`).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: `25`).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "A specific client ID to find projects for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "title",
+      "Type": "string",
+      "Description": "A specific title to find projects for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ticketids",
+      "Type": "string",
+      "Description": "Specific ticket IDs to find projects for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "invoiceids",
+      "Type": "string",
+      "Description": "Specific invoice IDs to find projects for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "Specific notes to find projects for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "adminid",
+      "Type": "int",
+      "Description": "A specific admin ID to find projects for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "A specific status to find projects for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "created",
+      "Type": "string",
+      "Description": "A specific creation date to find projects for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "duedate",
+      "Type": "string",
+      "Description": "A specific due date to find projects for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "completed",
+      "Type": "bool",
+      "Description": "Whether to find projects that are or aren't completed.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lastmodified",
+      "Type": "string",
+      "Description": "A specific last modified date to find projects for.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getprojects.md"
+}

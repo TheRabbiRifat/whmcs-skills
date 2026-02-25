@@ -1,0 +1,296 @@
+{
+  "type": "api_command",
+  "name": "AddOrder",
+  "description": "Adds an order to a client. For more flow control, this method ignores the \"Automatically setup the product as soon",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddOrder\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "paymentmethod",
+      "Type": "string",
+      "Description": "The payment method for the order in the system format. eg. paypal, mailin",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "pid",
+      "Type": "int[]",
+      "Description": "The array of product ids to add the order for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "qty",
+      "Type": "int[]",
+      "Description": "The array of product quantities",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domain",
+      "Type": "string[]",
+      "Description": "The array of domain names associated with the products/domains",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "billingcycle",
+      "Type": "string[]",
+      "Description": "The array of billing cycles for the products",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domaintype",
+      "Type": "string[]",
+      "Description": "For domain registrations, an array of register or transfer values",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "regperiod",
+      "Type": "int[]",
+      "Description": "For domain registrations, the registration periods for the domains in the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "idnlanguage",
+      "Type": "string[]",
+      "Description": "For IDN domain registrations. The language code for the domain being registered",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "eppcode",
+      "Type": "string[]",
+      "Description": "For domain transfers. The epp codes for the domains being transferred in the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "nameserver1",
+      "Type": "string",
+      "Description": "The first nameserver to apply to all domains in the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "nameserver2",
+      "Type": "string",
+      "Description": "The second nameserver to apply to all domains in the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "nameserver3",
+      "Type": "string",
+      "Description": "The third nameserver to apply to all domains in the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "nameserver4",
+      "Type": "string",
+      "Description": "The fourth nameserver to apply to all domains in the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "nameserver5",
+      "Type": "string",
+      "Description": "The fifth nameserver to apply to all domains in the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customfields",
+      "Type": "string[]",
+      "Description": "an array of base64 encoded serialized array of product custom field values",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "configoptions",
+      "Type": "string[]",
+      "Description": "an array of base64 encoded serialized array of product configurable options values",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "priceoverride",
+      "Type": "float[]",
+      "Description": "Override the price of the product being ordered",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "promocode",
+      "Type": "string",
+      "Description": "The promotion code to apply to the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "promooverride",
+      "Type": "bool",
+      "Description": "Should the promotion apply to the order even without matching promotional products",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "affid",
+      "Type": "int",
+      "Description": "The affiliate id to associate with the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "noinvoice",
+      "Type": "bool",
+      "Description": "Set to true to suppress the invoice generating for the whole order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "noinvoiceemail",
+      "Type": "bool",
+      "Description": "Set to true to suppress the Invoice Created email being sent for the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "noemail",
+      "Type": "bool",
+      "Description": "Set to true to suppress the Order Confirmation email being sent",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "addons",
+      "Type": "string[]",
+      "Description": "A comma separated list of addons to create on order with the products",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "addonsqty",
+      "Type": "string[]",
+      "Description": "A comma-separated list of quantities for addons that are associated with products.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "hostname",
+      "Type": "string[]",
+      "Description": "The hostname of the server for VPS/Dedicated Server orders",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns1prefix",
+      "Type": "string[]",
+      "Description": "The first nameserver prefix for the VPS/Dedicated server. Eg. ns1 in ns1.hostname.com",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns2prefix",
+      "Type": "string[]",
+      "Description": "The second nameserver prefix for the VPS/Dedicated server. Eg. ns2 in ns2.hostname.com",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "rootpw",
+      "Type": "string[]",
+      "Description": "The desired root password for the VPS/Dedicated server.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "contactid",
+      "Type": "int",
+      "Description": "The id of the contact, associated with the client, that should apply to all domains in the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "dnsmanagement",
+      "Type": "bool[]",
+      "Description": "Add DNS Management to the Domain Order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domainfields",
+      "Type": "string[]",
+      "Description": "an array of base64 encoded serialized array of TLD Specific Field Values",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "emailforwarding",
+      "Type": "bool[]",
+      "Description": "Add Email Forwarding to the Domain Order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "idprotection",
+      "Type": "bool[]",
+      "Description": "Add ID Protection to the Domain Order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domainpriceoverride",
+      "Type": "float[]",
+      "Description": "Override the price of the registration price on the domain being ordered",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domainrenewoverride",
+      "Type": "float[]",
+      "Description": "Override the price of the renewal price on the domain being ordered",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domainrenewals",
+      "Type": "array",
+      "Description": "A name -> value array of $domainName -> $renewalPeriod renewals to add an order for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clientip",
+      "Type": "string",
+      "Description": "The ip address to associate with the order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "addonid",
+      "Type": "int",
+      "Description": "The Addon ID for an Addon Only Order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "addonidqty",
+      "Type": "int",
+      "Description": "The quantity of addons in an addon-only order.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The service ID for the addon only order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "addonids",
+      "Type": "int[]",
+      "Description": "An Array of addon ids for an Addon Only Order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "addonidsqty",
+      "Type": "int[]",
+      "Description": "An array of quantities for an addon-only order.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "serviceids",
+      "Type": "int[]",
+      "Description": "An array of service ids to associate the addons for an Addon Only order",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "servicerenewals",
+      "Type": "int[]",
+      "Description": "An array of service IDs to be on-demand renewed",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "addonrenewals",
+      "Type": "int[]",
+      "Description": "An array of service addon IDs to be on-demand renewed",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addorder.md"
+}

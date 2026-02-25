@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "GetModuleConfigurationParameters",
+  "description": "Obtains the Module Configuration Parameters",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetModuleConfigurationParameters\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "moduleType",
+      "Type": "string",
+      "Description": "The module type to be activated",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "moduleName",
+      "Type": "string",
+      "Description": "The module name to be activated",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getmoduleconfigurationparameters.md"
+}

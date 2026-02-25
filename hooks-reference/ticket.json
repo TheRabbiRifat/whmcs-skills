@@ -1,0 +1,927 @@
+[
+  {
+    "type": "hook",
+    "name": "AdminAreaViewTicketPage",
+    "description": "Executes when an admin views a support ticket within the admin area.",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminAreaViewTicketPageSidebar",
+    "description": "Executes when an admin views a support ticket within the admin area.",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminSupportTicketPagePreTickets",
+    "description": "Executes prior to aggregation and output of the support tickets listing page within the admin area.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageSubmitTicket",
+    "description": "Executes on the client area ticket submission page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageSupportTickets",
+    "description": "Executes on the client area support tickets overview page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaPageViewTicket",
+    "description": "Executes on the client area view ticket page and accepts a return of key/value pairs to be made available as additional Smarty template parameters. Input parameters include all currently defined template variables. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "SubmitTicketAnswerSuggestions",
+    "description": "Executes prior to looking up knowledgebase article suggestions related to the message body of a ticket. Can be used to override the default knowledgebase lookup. If fewer than 5 results are returned, WHMCS will search the knowldebase and add its own results to the output.",
+    "parameters": [
+      {
+        "Variable": "text",
+        "Type": "string",
+        "Notes": "The message body"
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketAddNote",
+    "description": "Executes when a ticket note is added.",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "message",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "adminid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "attachments",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketAdminReply",
+    "description": "Executes when a reply is added to a ticket by an admin user.",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "replyid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "deptid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "deptname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "subject",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "message",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "priority",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "admin",
+        "Type": "string",
+        "Notes": "Admin user display name"
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": "Ticket status post reply"
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketClose",
+    "description": "Executes when a ticket is closed.",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketDelete",
+    "description": "Executes when a ticket is deleted.",
+    "parameters": [
+      {
+        "Variable": "ticketId",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "adminId",
+        "Type": "int",
+        "Notes": "The admin ID who initiated the action"
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketDeleteReply",
+    "description": "Executes when a ticket reply is deleted.",
+    "parameters": [
+      {
+        "Variable": "ticketId",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "replyId",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "adminId",
+        "Type": "int",
+        "Notes": "The admin ID who initiated the action"
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketDepartmentChange",
+    "description": "Executes as a ticket department is changed",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "deptid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "deptname",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketFlagged",
+    "description": "Executes as a ticket is flagged",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "adminid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "adminname",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketMerge",
+    "description": "Executes when tickets are merged into each other.",
+    "parameters": [
+      {
+        "Variable": "mergedTicketIds",
+        "Type": "array",
+        "Notes": "The ticket IDs to be merged."
+      },
+      {
+        "Variable": "masterTicketId",
+        "Type": "int",
+        "Notes": "The ticket ID of the ticket containing the merged tickets."
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketOpen",
+    "description": "Executes when a ticket is opened by an end user.",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "ticketmask",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "deptid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "deptname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "subject",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "message",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "priority",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketOpenAdmin",
+    "description": "Executes when a ticket is opened by an admin user.",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "ticketmask",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "deptid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "deptname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "subject",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "message",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "priority",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketOpenValidation",
+    "description": "Executes when an end user provides data for a new ticket submission.",
+    "parameters": [
+      {
+        "Variable": "clientId",
+        "Type": "int",
+        "Notes": "Client ID if associated with a client"
+      },
+      {
+        "Variable": "contactId",
+        "Type": "int",
+        "Notes": "Contact ID if associated with a contact"
+      },
+      {
+        "Variable": "name",
+        "Type": "string",
+        "Notes": "Name from email envelope if not a client"
+      },
+      {
+        "Variable": "email",
+        "Type": "string",
+        "Notes": "Email from email envelope if not a client"
+      },
+      {
+        "Variable": "isAdmin",
+        "Type": "bool",
+        "Notes": "TRUE if initiated within Admin Area or via API with input $admin=TRUE"
+      },
+      {
+        "Variable": "departmentId",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "subject",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "message",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "priority",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "relatedService",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "customfields",
+        "Type": "array",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketPiping",
+    "description": "Executes when a ticket is being imported via email.",
+    "parameters": [
+      {
+        "Variable": "to",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "cc",
+        "Type": "array",
+        "Notes": ""
+      },
+      {
+        "Variable": "name",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "email",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "subject",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "body",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "attachments",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketPriorityChange",
+    "description": "Executes when a ticket priority is changed",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "priority",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketSplit",
+    "description": "Executes when ticket replies are being split into a new ticket.",
+    "parameters": [
+      {
+        "Variable": "originalTicketId",
+        "Type": "int",
+        "Notes": "The Ticket ID that replies originally resided within."
+      },
+      {
+        "Variable": "newTicketID",
+        "Type": "int",
+        "Notes": "The new Ticket ID for the split replies."
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketStatusChange",
+    "description": "Executes as a ticket status is changed manually by an admin.",
+    "parameters": [
+      {
+        "Variable": "adminid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketSubjectChange",
+    "description": "Executes when a ticket subject is changed. The 'subject' variable now contains the new subject.",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "subject",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TicketUserReply",
+    "description": "Executes when a reply is added to a ticket by an end user.",
+    "parameters": [
+      {
+        "Variable": "ticketid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "replyid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "deptid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "deptname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "subject",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "message",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "priority",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": "Ticket status post reply"
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  },
+  {
+    "type": "hook",
+    "name": "TransliterateTicketText",
+    "description": "Invoked when a ticket is imported from email.",
+    "parameters": [
+      {
+        "Variable": "subject",
+        "Type": "string",
+        "Notes": "The message subject"
+      },
+      {
+        "Variable": "message",
+        "Type": "string",
+        "Notes": "The message body"
+      }
+    ],
+    "source_file": "hooks-reference/ticket.md"
+  }
+]

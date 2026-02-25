@@ -1,0 +1,128 @@
+{
+  "type": "api_command",
+  "name": "UpdateInvoice",
+  "description": "Update an invoice using the provided parameters.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateInvoice\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "invoiceid",
+      "Type": "int",
+      "Description": "The ID of the invoice to update.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "The status of the invoice being updated.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "paymentmethod",
+      "Type": "string",
+      "Description": "The payment method of the invoice in system format.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "taxrate",
+      "Type": "float",
+      "Description": "The first-level tax rate to apply to the invoice to override the system default.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "taxrate2",
+      "Type": "float",
+      "Description": "The second-level tax rate to apply to the invoice to override the system default.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "credit",
+      "Type": "float",
+      "Description": "Update the credit applied to the invoice.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "date",
+      "Type": "string",
+      "Description": "The date that the invoice should show as its creation date. Format: YYYY-mm-dd",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "duedate",
+      "Type": "string",
+      "Description": "The due date of the invoice. Format: YYYY-mm-dd",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "datepaid",
+      "Type": "string",
+      "Description": "The date paid for the invoice. Format: YYYY-mm-dd",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "The notes to appear on the invoice.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "itemdescription",
+      "Type": "string[]",
+      "Description": "An array of lineItemId => Description of items to change. The lineItemId is the ID of the item from the GetInvoice API command.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "itemamount",
+      "Type": "float[]",
+      "Description": "An array of lineItemId => amount of items to change. Required if itemdescription is provided.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "itemtaxed",
+      "Type": "bool[]",
+      "Description": "An array of lineItemId => taxed of items to change Required if itemdescription is provided.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "newitemdescription",
+      "Type": "string[]",
+      "Description": "The line items description. This should be a numerically indexed array of new line item descriptions.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "newitemamount",
+      "Type": "float[]",
+      "Description": "The line items amount. This should be a numerically indexed array of new line item amounts.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "newitemtaxed",
+      "Type": "bool[]",
+      "Description": "Should the new line items be taxed. This should be a numerically indexed array of new line item taxed values.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "deletelineids",
+      "Type": "int[]",
+      "Description": "An array of line item IDs to remove from the invoice. This is the ID of the line item, from GetInvoice API command.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "publish",
+      "Type": "bool",
+      "Description": "Whether to publish the invoice.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "publishandsendemail",
+      "Type": "bool",
+      "Description": "Whether to publish and email the invoice.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updateinvoice.md"
+}

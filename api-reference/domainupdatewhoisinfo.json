@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "DomainUpdateWhoisInfo",
+  "description": "Sends the Save Whois command to the registrar for the domain",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainUpdateWhoisInfo\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The id of the domain to update the whois information for",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "xml",
+      "Type": "string",
+      "Description": "The xml of the details to update. See DomainGetWhoisInfo",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/domainupdatewhoisinfo.md"
+}

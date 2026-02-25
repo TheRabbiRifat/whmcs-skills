@@ -1,0 +1,176 @@
+{
+  "type": "api_command",
+  "name": "CreateQuote",
+  "description": "Creates a new quote",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"CreateQuote\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "subject",
+      "Type": "string",
+      "Description": "The subject of the new quote",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "stage",
+      "Type": "string",
+      "Description": "The current stage of the quote ('Draft','Delivered','On Hold','Accepted','Lost','Dead')",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "validuntil",
+      "Type": "string",
+      "Description": "The date the quote is valid until in localised format (eg DD/MM/YYYY)",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "datecreated",
+      "Type": "string",
+      "Description": "The date the quote was created in localised format (eg DD/MM/YYYY)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lineitems",
+      "Type": "array",
+      "Description": "A base64 encoded serialized array containing the following keys:",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lineitems[x][desc]",
+      "Type": "string",
+      "Description": "For $lineitems. The description of the line item",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lineitems[x][qty]",
+      "Type": "int",
+      "Description": "For $lineitems. The quantity of the line item being quoted for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lineitems[x][up]",
+      "Type": "float",
+      "Description": "For $lineitems. The Unit Price of the line item",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lineitems[x][discount]",
+      "Type": "float",
+      "Description": "For $lineitems. The amount of discount to provide on the line items",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lineitems[x][taxable]",
+      "Type": "bool",
+      "Description": "For $lineitems. Is the line item taxable",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "If the quote is for an existing client, the client ID the quote is for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "firstname",
+      "Type": "string",
+      "Description": "The first name of the client the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lastname",
+      "Type": "string",
+      "Description": "The last name of the client the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "companyname",
+      "Type": "string",
+      "Description": "The company of the client the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "The email address of the client the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "address1",
+      "Type": "string",
+      "Description": "The address1 of the client the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "address2",
+      "Type": "string",
+      "Description": "The address2 of the client the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "city",
+      "Type": "string",
+      "Description": "The city of the client the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "state",
+      "Type": "string",
+      "Description": "The state of the client the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "postcode",
+      "Type": "string",
+      "Description": "The post code of the client the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "country",
+      "Type": "string",
+      "Description": "The country of the client the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "phonenumber",
+      "Type": "string",
+      "Description": "The phone number of the client (no country code) the quote is for if no $userid. Local format eg 4035551234",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "tax_id",
+      "Type": "string",
+      "Description": "The tax id of the client",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "currency",
+      "Type": "int",
+      "Description": "The id of the currency for the quote is for if no $userid",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "proposal",
+      "Type": "string",
+      "Description": "The proposal text displayed to the end user",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customernotes",
+      "Type": "string",
+      "Description": "The notes on the quote displayed to the end user",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "adminnotes",
+      "Type": "string",
+      "Description": "The notes on the quote displayed to the staff only",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/createquote.md"
+}

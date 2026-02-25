@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "DeleteQuote",
+  "description": "Deletes a quote.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeleteQuote\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "quoteid",
+      "Type": "int",
+      "Description": "The quote id to be deleted",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/deletequote.md"
+}

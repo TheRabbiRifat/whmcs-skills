@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "OrderFraudCheck",
+  "description": "Run a fraud check on a passed Order ID using the active fraud module.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"OrderFraudCheck\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "orderid",
+      "Type": "int",
+      "Description": "The order id to complete the fraud check on",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ipaddress",
+      "Type": "string",
+      "Description": "To override the IP address on the fraud check",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/orderfraudcheck.md"
+}

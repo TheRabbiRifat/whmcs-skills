@@ -1,0 +1,370 @@
+[
+  {
+    "type": "hook",
+    "name": "AddonActivated",
+    "description": "Executes when an addon status is changed to Active.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The addon ID (tblhostingaddons)"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The predefined addon ID (tbladdons)"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonActivation",
+    "description": "Executes when a product addon becomes active as part of invoice payment or order acceptance, following any provisioning or welcome email automation.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The addon ID (tblhostingaddons)"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": "An alias for $clientid maintained for backwards compatibility"
+      },
+      {
+        "Variable": "clientid",
+        "Type": "int",
+        "Notes": "The client associated with the addon's service"
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": "The product service the addon is being activated for (tblhosting)"
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The predefined addon ID (tbladdons)"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonAdd",
+    "description": "Executes when an addon is added to a product/service.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The addon ID (tblhostingaddons)"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The predefined addon ID (tbladdons)"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonCancelled",
+    "description": "Executes when an addon is cancelled.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The addon ID (tblhostingaddons)"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The predefined addon ID (tbladdons)"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonConfig",
+    "description": "Executes as an addon is being displayed.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The id of the created addon (tbladdons)."
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonConfigSave",
+    "description": "Executes as an addon is being saved.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The id of the created addon (tbladdons)."
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonDeleted",
+    "description": "Executes when an addon has been deleted.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The id of the addong that has been deleted. tblhostingaddons"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonEdit",
+    "description": "Executes when an addon is modified or updated except for status updates.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The addon ID (tblhostingaddons)"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The predefined addon ID (tbladdons)"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonRenewal",
+    "description": "Executes when a product addon is being automatically renewed as part of an invoice payment.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The addon ID (tblhostingaddons)"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The predefined addon ID (tbladdons)"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonSuspended",
+    "description": "Executes when an addon is suspended.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The addon ID (tblhostingaddons)"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The predefined addon ID (tbladdons)"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonTerminated",
+    "description": "Executes when an addon is terminated.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The addon ID (tblhostingaddons)"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The predefined addon ID (tbladdons)"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonUnsuspended",
+    "description": "Executes when an addon is unsuspended.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The addon ID (tblhostingaddons)"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The predefined addon ID (tbladdons)"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterAddonUpgrade",
+    "description": "Executes after an addon upgrade has been processed.",
+    "parameters": [
+      {
+        "Variable": "upgradeid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "LicensingAddonReissue",
+    "description": "Executes as a license is being reissued",
+    "parameters": [
+      {
+        "Variable": "licenseid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "addon_id",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "LicensingAddonVerify",
+    "description": "Executes as a license remote check is being completed",
+    "parameters": [
+      {
+        "Variable": "licenseid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "xmlresponse",
+        "Type": "string",
+        "Notes": "The current XML response"
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  },
+  {
+    "type": "hook",
+    "name": "ProductAddonDelete",
+    "description": "Executes when a product addon is being deleted.",
+    "parameters": [
+      {
+        "Variable": "addonId",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/addon.md"
+  }
+]

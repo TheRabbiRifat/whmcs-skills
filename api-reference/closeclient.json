@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "CloseClient",
+  "description": "Close a Client.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"CloseClient\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The ID of the client to close",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/closeclient.md"
+}

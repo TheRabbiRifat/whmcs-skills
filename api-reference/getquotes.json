@@ -1,0 +1,68 @@
+{
+  "type": "api_command",
+  "name": "GetQuotes",
+  "description": "Obtain quotes matching the passed criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetQuotes\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned quote data (default: 0).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "quoteid",
+      "Type": "int",
+      "Description": "A specific quote ID to find quotes for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "A specific client to find quotes for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "subject",
+      "Type": "string",
+      "Description": "A specific subject to find quotes for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "stage",
+      "Type": "string",
+      "Description": "A specific stage ('Draft','Delivered','On Hold','Accepted','Lost', or 'Dead') to find quotes for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "datecreated",
+      "Type": "string",
+      "Description": "A specific created date to find quotes for. Format: Y-m-d",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lastmodified",
+      "Type": "string",
+      "Description": "A specific last modified date to find quotes for. Format: Y-m-d",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "validuntil",
+      "Type": "string",
+      "Description": "A specific valid until date to find quotes for. Format: Y-m-d",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getquotes.md"
+}

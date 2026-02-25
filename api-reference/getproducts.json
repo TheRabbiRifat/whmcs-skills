@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "GetProducts",
+  "description": "Retrieve configured products matching provided criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetProducts\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "pid",
+      "Type": "int\\",
+      "Description": "string",
+      "Required": "Obtain a specific product id configuration. Can be a list of ids comma separated"
+    },
+    {
+      "Parameter": "gid",
+      "Type": "int",
+      "Description": "Retrieve products in a specific group id",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "module",
+      "Type": "string",
+      "Description": "Retrieve products utilising a specific module",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getproducts.md"
+}

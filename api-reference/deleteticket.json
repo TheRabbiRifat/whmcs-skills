@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "DeleteTicket",
+  "description": "Deletes a ticket.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeleteTicket\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ticketid",
+      "Type": "int",
+      "Description": "The ticket to be deleted",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/deleteticket.md"
+}

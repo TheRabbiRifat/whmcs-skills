@@ -1,0 +1,56 @@
+{
+  "type": "api_command",
+  "name": "GetClientsProducts",
+  "description": "Obtain a list of Client Purchased Products matching the provided criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetClientsProducts\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned log data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The client id to obtain the details for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The specific service id to obtain the details for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "pid",
+      "Type": "int",
+      "Description": "The specific product id to obtain the details for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domain",
+      "Type": "string",
+      "Description": "The specific domain to obtain the service details for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "username2",
+      "Type": "string",
+      "Description": "The specific username to obtain the details for",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getclientsproducts.md"
+}

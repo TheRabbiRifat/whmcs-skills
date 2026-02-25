@@ -1,0 +1,102 @@
+[
+  {
+    "type": "hook",
+    "name": "CancellationRequest",
+    "description": "Executes as a cancellation request is being created",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "relid",
+        "Type": "int",
+        "Notes": "The id of the service being cancelled"
+      },
+      {
+        "Variable": "reason",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "type",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/service.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreServiceEdit",
+    "description": "Executes as the service is being saved, before any changes have been made.",
+    "parameters": [
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/service.md"
+  },
+  {
+    "type": "hook",
+    "name": "ServiceDelete",
+    "description": "Executes when the Service has been deleted.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": "An alias for $clientId maintained for backwards compatibility"
+      },
+      {
+        "Variable": "clientId",
+        "Type": "int",
+        "Notes": "The client associated with the service"
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": "The product service ID"
+      }
+    ],
+    "source_file": "hooks-reference/service.md"
+  },
+  {
+    "type": "hook",
+    "name": "ServiceEdit",
+    "description": "Executes when the Service has been edited. After the changes have been made.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/service.md"
+  },
+  {
+    "type": "hook",
+    "name": "ServiceRecurringCompleted",
+    "description": "Executes when the Recurring Cycles Limit is reached for a product.",
+    "parameters": [
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "recurringinvoices",
+        "Type": "int",
+        "Notes": "The total count of invoices generated"
+      }
+    ],
+    "source_file": "hooks-reference/service.md"
+  }
+]

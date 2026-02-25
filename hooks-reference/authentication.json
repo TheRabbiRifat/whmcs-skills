@@ -1,0 +1,46 @@
+[
+  {
+    "type": "hook",
+    "name": "ClientLoginShare",
+    "description": "Executes as part of client login if user does not exist.",
+    "parameters": [
+      {
+        "Variable": "username",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "password",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/authentication.md"
+  },
+  {
+    "type": "hook",
+    "name": "UserLogin",
+    "description": "Executes when a user logs in.",
+    "parameters": [
+      {
+        "Variable": "user",
+        "Type": "\\WHMCS\\User\\User",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/authentication.md"
+  },
+  {
+    "type": "hook",
+    "name": "UserLogout",
+    "description": "Executes when a user logs out.",
+    "parameters": [
+      {
+        "Variable": "user",
+        "Type": "\\WHMCS\\User\\User",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/authentication.md"
+  }
+]

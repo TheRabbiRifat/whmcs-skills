@@ -1,0 +1,50 @@
+{
+  "type": "api_command",
+  "name": "GetInvoices",
+  "description": "Retrieve a list of invoices.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetInvoices\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned invoice data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "Find invoices for a specific client id",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "Find invoices for a specific status. Standard Invoice statuses plus Overdue",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "orderby",
+      "Type": "string",
+      "Description": "The field to sort results by. Accepted values are: id, invoicenumber, date, duedate, total, status",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "order",
+      "Type": "string",
+      "Description": "Order sort attribute. Accepted values are: asc or desc.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getinvoices.md"
+}

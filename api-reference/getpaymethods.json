@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "GetPayMethods",
+  "description": "Obtain the Pay Methods associated with a provided client id.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetPayMethods\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The id of the client to obtain the Pay Methods for",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "paymethodid",
+      "Type": "int",
+      "Description": "The id of a specific Pay Method to retrieve",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "type",
+      "Type": "string",
+      "Description": "The type of Pay Methods to return. 'BankAccount' or 'CreditCard'",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getpaymethods.md"
+}

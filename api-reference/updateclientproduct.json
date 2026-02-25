@@ -1,0 +1,206 @@
+{
+  "type": "api_command",
+  "name": "UpdateClientProduct",
+  "description": "Updates a Client Service",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateClientProduct\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The ID of the client service to update.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "pid",
+      "Type": "int",
+      "Description": "The package ID to associate with the service.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "serverid",
+      "Type": "int",
+      "Description": "The server ID to associate with the service.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "regdate",
+      "Type": "string",
+      "Description": "The registration date of the service. Format: Y-m-d",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "nextduedate",
+      "Type": "string",
+      "Description": "The next due date of the service. Format: Y-m-d",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "terminationdate",
+      "Type": "string",
+      "Description": "Update the termination date of the service. Format: Y-m-d",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domain",
+      "Type": "string",
+      "Description": "The domain name to be changed to.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "firstpaymentamount",
+      "Type": "float",
+      "Description": "The first payment amount on the service.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "recurringamount",
+      "Type": "float",
+      "Description": "The recurring amount for automatic renewal invoices.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "paymentmethod",
+      "Type": "string",
+      "Description": "The payment method to associate, in system format (for example, paypal).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "billingcycle",
+      "Type": "string",
+      "Description": "The term in which the product is billed on (for example, One-Time, Monthly, or Quarterly).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "subscriptionid",
+      "Type": "string",
+      "Description": "The subscription ID to associate with the service.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "The status to change the service to.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "The admin notes for the service.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "serviceusername",
+      "Type": "string",
+      "Description": "The service username.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "servicepassword",
+      "Type": "string",
+      "Description": "The service password.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "overideautosuspend",
+      "Type": "string",
+      "Description": "Whether to provide override auto suspend ('on' or 'off').",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "overidesuspenduntil",
+      "Type": "string",
+      "Description": "Update the Override Suspend date of the service. Format: Y-m-d",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns1",
+      "Type": "string",
+      "Description": "(VPS/Dedicated servers only)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns2",
+      "Type": "string",
+      "Description": "(VPS/Dedicated servers only)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "dedicatedip",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "assignedips",
+      "Type": "string",
+      "Description": "(VPS/Dedicated servers only)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "diskusage",
+      "Type": "int",
+      "Description": "The disk usage in megabytes.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "disklimit",
+      "Type": "int",
+      "Description": "The disk limit in megabytes.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "bwusage",
+      "Type": "int",
+      "Description": "The bandwidth usage in megabytes.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "bwlimit",
+      "Type": "int",
+      "Description": "The bandwidth limit in megabytes.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "suspendreason",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "promoid",
+      "Type": "int",
+      "Description": "The promotion ID to associate.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "unset",
+      "Type": "array",
+      "Description": "An array of items to unset. Can be one of: 'domain', 'serviceusername', 'servicepassword', 'subscriptionid', 'ns1', 'ns2', 'dedicatedip', 'assignedips', 'notes', or 'suspendreason'",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "autorecalc",
+      "Type": "bool",
+      "Description": "Whether to automatically recalculate the recurring amount of the service (this will ignore any passed $recurringamount).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customfields",
+      "Type": "string",
+      "Description": "Base64 encoded serialized array of custom field values - base64_encode(serialize(array(\"1\"=>\"Yahoo\")));",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "configoptions",
+      "Type": "string",
+      "Description": "Base64 encoded serialized array of configurable option field values - base64_encode(serialize(array(configoptionid => dropdownoptionid, XXX => array('optionid' => YYY, 'qty' => ZZZ)))) - XXX is the ID of the configurable option - YYY is the optionid found in tblhostingconfigoption.optionid - ZZZ is the quantity you want to use for that option",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updateclientproduct.md"
+}

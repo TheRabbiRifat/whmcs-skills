@@ -1,0 +1,56 @@
+{
+  "type": "api_command",
+  "name": "TriggerNotificationEvent",
+  "description": "Trigger a Custom Notification Event.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"TriggerNotificationEvent\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "notification_identifier",
+      "Type": "string",
+      "Description": "A unique identifier string, used as a condition when making a notification rule.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "title",
+      "Type": "string",
+      "Description": "The title for the notification",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "message",
+      "Type": "string",
+      "Description": "The message body for the notification",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "url",
+      "Type": "string",
+      "Description": "The follow up URL for the notification",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "A status description for the notification",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "statusStyle",
+      "Type": "string",
+      "Description": "A formatting style for the status of the notification, currently supports \"success\", \"danger\", and \"info\"",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "attributes",
+      "Type": "array",
+      "Description": "An array of Attributes to include in the notification. Requires at least `label` and `value` parameters. Other parameters are optional. See WHMCS\\Notification\\NotificationAttribute.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/triggernotificationevent.md"
+}

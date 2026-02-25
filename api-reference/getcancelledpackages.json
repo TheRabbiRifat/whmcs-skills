@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "GetCancelledPackages",
+  "description": "Obtain an array of cancellation requests",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetCancelledPackages\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned cancellation request data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getcancelledpackages.md"
+}

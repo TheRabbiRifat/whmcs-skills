@@ -1,0 +1,246 @@
+[
+  {
+    "type": "hook",
+    "name": "AnnouncementAdd",
+    "description": "Executes as an announcement is being added.",
+    "parameters": [
+      {
+        "Variable": "announcementid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "date",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "title",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "announcement",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "published",
+        "Type": "bool",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/support-tools.md"
+  },
+  {
+    "type": "hook",
+    "name": "AnnouncementEdit",
+    "description": "Executes as an announcement is being added.",
+    "parameters": [
+      {
+        "Variable": "announcementid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "date",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "title",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "announcement",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "published",
+        "Type": "bool",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/support-tools.md"
+  },
+  {
+    "type": "hook",
+    "name": "FileDownload",
+    "description": "Executes when a file is being downloaded.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/support-tools.md"
+  },
+  {
+    "type": "hook",
+    "name": "NetworkIssueAdd",
+    "description": "Executes as a network issue is being crated.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "startdate",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "enddate",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "title",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "description",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "type",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "server",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "affecting",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "priority",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "lastupdate",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/support-tools.md"
+  },
+  {
+    "type": "hook",
+    "name": "NetworkIssueClose",
+    "description": "Executes as a network issue is being resolved.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/support-tools.md"
+  },
+  {
+    "type": "hook",
+    "name": "NetworkIssueDelete",
+    "description": "Executes as a network issue is being deleted.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/support-tools.md"
+  },
+  {
+    "type": "hook",
+    "name": "NetworkIssueEdit",
+    "description": "Executes as a network issue is being edited.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "startdate",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "enddate",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "title",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "description",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "type",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "server",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "affecting",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "priority",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "lastupdate",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/support-tools.md"
+  },
+  {
+    "type": "hook",
+    "name": "NetworkIssueReopen",
+    "description": "Executes as a network issue is being re-opened.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/support-tools.md"
+  }
+]

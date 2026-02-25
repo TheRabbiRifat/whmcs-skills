@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "DomainToggleIdProtect",
+  "description": "Sends the Toggle ID Protect command to the registrar for the domain",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainToggleIdProtect\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The id of the domain to toggle ID Protection for",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "idprotect",
+      "Type": "bool",
+      "Description": "Should ID Protection be turned on",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/domaintoggleidprotect.md"
+}

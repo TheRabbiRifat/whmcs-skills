@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "GetToDoItemStatuses",
+  "description": "Obtain To Do item statuses and counts",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetToDoItemStatuses\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/gettodoitemstatuses.md"
+}

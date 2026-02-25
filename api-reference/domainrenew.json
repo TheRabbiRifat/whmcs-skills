@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "DomainRenew",
+  "description": "Sends the Renew command to the registrar for the domain",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainRenew\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The id of the domain to be renewed *recommended*",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domain",
+      "Type": "string",
+      "Description": "The domain name to be renewed. This or $domainid is required",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "regperiod",
+      "Type": "int",
+      "Description": "How long to renew the domain for. Defaults to the current stored value.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/domainrenew.md"
+}

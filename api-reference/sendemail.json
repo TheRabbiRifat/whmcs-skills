@@ -1,0 +1,50 @@
+{
+  "type": "api_command",
+  "name": "SendEmail",
+  "description": "Send a client Email Notification.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"SendEmail\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "messagename",
+      "Type": "string",
+      "Description": "The name of the client email template to send",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "id",
+      "Type": "int",
+      "Description": "The related id for the type of email template. Eg this should be the client id for a general type email",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customtype",
+      "Type": "string",
+      "Description": "The type of custom email template to send ('general', 'product', 'domain', 'invoice', 'support', 'affiliate')",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "custommessage",
+      "Type": "string",
+      "Description": "The HTML message body to send for a custom email",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customsubject",
+      "Type": "string",
+      "Description": "The subject to send for a custom email",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customvars",
+      "Type": "array",
+      "Description": "The custom variables to provide to the email template. Can be used for existing and custom emails.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/sendemail.md"
+}

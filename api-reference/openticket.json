@@ -1,0 +1,122 @@
+{
+  "type": "api_command",
+  "name": "OpenTicket",
+  "description": "Open a new ticket",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"OpenTicket\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "deptid",
+      "Type": "int",
+      "Description": "The department to open the ticket in",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "subject",
+      "Type": "string",
+      "Description": "The subject of the ticket",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "message",
+      "Type": "string",
+      "Description": "The message of the ticket",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "If applicable, the Client ID to create the ticket for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "If applicable, the user ID to create the ticket for (if $clientid is also passed).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "contactid",
+      "Type": "int",
+      "Description": "If applicable, the Contact ID to create the ticket for (if $clientid and no $userid is also passed).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "name",
+      "Type": "string",
+      "Description": "The name of the person opening the ticket (if not a client)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "The email address of the person opening the ticket (if not a client)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "priority",
+      "Type": "string",
+      "Description": "The priority of the ticket ('Low', 'Medium', 'High')",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "created",
+      "Type": "string",
+      "Description": "The date and time the ticket message will show as sent. Format: ISO8601 or YYYY-MM-DD HH:mm:ss",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The service to associate the ticket with (only one of $serviceid or $domainid)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The domain to associate the ticket with (only one of $serviceid or $domainid)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "admin",
+      "Type": "bool",
+      "Description": "Whether the ticket opener is an Admin. If you pass this, you must also pass the admin's username with localAPI call arguments. Otherwise, the system still uses the client as the ticket opener.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "noemail",
+      "Type": "bool",
+      "Description": "Pass 'true' for this value to prevent the ticket email from being sent.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "markdown",
+      "Type": "bool",
+      "Description": "Should markdown be used on the ticket output",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customfields",
+      "Type": "string",
+      "Description": "Base64 encoded serialized array of custom field values",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "attachments",
+      "Type": "array",
+      "Description": "Optional base64 json encoded array of file attachments. Can be the direct output of a multipart-form-data form submission ($_FILES superglobal in PHP) or an array of arrays consisting of both a filename and data keys (see example below).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "preventClientClosure",
+      "Type": "bool",
+      "Description": "Whether the client should be allowed to close the ticket. If you do not pass this, the ticket will inherit the department setting.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/openticket.md"
+}

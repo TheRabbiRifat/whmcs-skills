@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "SetConfigurationValue",
+  "description": "Set a System Configuration Value via the local API only.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"SetConfigurationValue\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "setting",
+      "Type": "string",
+      "Description": "The setting name to change",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "value",
+      "Type": "string",
+      "Description": "The value to set. Leave value blank to unset.",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/setconfigurationvalue.md"
+}

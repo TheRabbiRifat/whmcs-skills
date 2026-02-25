@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "UpdateAdminNotes",
+  "description": "Update the admin notes",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateAdminNotes\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "The new value for the admin notes",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/updateadminnotes.md"
+}

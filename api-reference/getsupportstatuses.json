@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetSupportStatuses",
+  "description": "Get the support statuses and number of tickets in each status",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetSupportStatuses\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "deptid",
+      "Type": "int",
+      "Description": "Obtain counts for a specific department id",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getsupportstatuses.md"
+}

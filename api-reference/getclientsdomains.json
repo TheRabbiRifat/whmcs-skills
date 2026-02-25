@@ -1,0 +1,44 @@
+{
+  "type": "api_command",
+  "name": "GetClientsDomains",
+  "description": "Obtain a list of Client Purchased Domains matching the provided criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetClientsDomains\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned log data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The client id to obtain the details for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The specific domain id to obtain the details for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domain",
+      "Type": "string",
+      "Description": "The specific domain to obtain the details for",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getclientsdomains.md"
+}

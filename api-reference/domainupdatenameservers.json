@@ -1,0 +1,56 @@
+{
+  "type": "api_command",
+  "name": "DomainUpdateNameservers",
+  "description": "Sends the Save Nameservers command to the registrar for the domain",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainUpdateNameservers\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The id of the domain to update the nameservers for *recommended*",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domain",
+      "Type": "string",
+      "Description": "The domain name to be update the nameservers for. This or $domainid is required",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns1",
+      "Type": "string",
+      "Description": "The first nameserver",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ns2",
+      "Type": "string",
+      "Description": "The second nameserver",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ns3",
+      "Type": "string",
+      "Description": "The third nameserver",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns4",
+      "Type": "string",
+      "Description": "The fourth nameserver",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns5",
+      "Type": "string",
+      "Description": "The fifth nameserver",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/domainupdatenameservers.md"
+}

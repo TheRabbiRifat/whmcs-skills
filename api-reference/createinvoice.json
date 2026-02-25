@@ -1,0 +1,98 @@
+{
+  "type": "api_command",
+  "name": "CreateInvoice",
+  "description": "Create an invoice using the provided parameters.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"CreateInvoice\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "The ID of the client to create the invoice for.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "The status of the invoice being created. Defaults to `unpaid`.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "draft",
+      "Type": "bool",
+      "Description": "Whether to create the invoice in draft status. (You do not need to pass `$status` with this.)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "sendinvoice",
+      "Type": "bool",
+      "Description": "Whether to send the Invoice Created Email to the client. (You can't use this with `$draft`.)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "paymentmethod",
+      "Type": "string",
+      "Description": "The payment method of the created invoice, in system format.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "taxrate",
+      "Type": "float",
+      "Description": "The first-level tax rate to apply to the invoice to override the system default.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "taxrate2",
+      "Type": "float",
+      "Description": "The second-level tax rate to apply to the invoice to override the system default.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "date",
+      "Type": "string",
+      "Description": "The creation date that the invoice should display. Format: YYYY-mm-dd",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "duedate",
+      "Type": "string",
+      "Description": "The due date of the newly-created invoice. Format: YYYY-mm-dd",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "The notes to appear on the created invoice.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "itemdescriptionx",
+      "Type": "string",
+      "Description": "The line item's description. `X` is an integer to add multiple invoice items.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "itemamountx",
+      "Type": "float",
+      "Description": "The line item's amount.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "itemtaxedx",
+      "Type": "bool",
+      "Description": "The line item's taxed value.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "autoapplycredit",
+      "Type": "bool",
+      "Description": "Whether to automatically apply credit from the client account to the invoice.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/createinvoice.md"
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "type": "hook",
+    "name": "AfterCronJob",
+    "description": "Runs each time that the system calls the system cron job. This occurs after all scheduled tasks finish.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/cron.md"
+  },
+  {
+    "type": "hook",
+    "name": "DailyCronJob",
+    "description": "Runs at the very end of the daily automation cron execution.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/cron.md"
+  },
+  {
+    "type": "hook",
+    "name": "DailyCronJobPreEmail",
+    "description": "Runs after tasks have completed but before email report is sent.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/cron.md"
+  },
+  {
+    "type": "hook",
+    "name": "PopEmailCollectionCronCompleted",
+    "description": "Executes when the POP email collection cron completes.",
+    "parameters": [
+      {
+        "Variable": "connectionErrors",
+        "Type": "array",
+        "Notes": "An array of errors if an error occurred while attempting to connect to one or more mailboxes"
+      }
+    ],
+    "source_file": "hooks-reference/cron.md"
+  },
+  {
+    "type": "hook",
+    "name": "PostAutomationTask",
+    "description": "Executes after an automation task occurs",
+    "parameters": [
+      {
+        "Variable": "task",
+        "Type": "\\Collection",
+        "Notes": ""
+      },
+      {
+        "Variable": "completed",
+        "Type": "bool",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/cron.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreAutomationTask",
+    "description": "Executes before an automation task occurs",
+    "parameters": [
+      {
+        "Variable": "task",
+        "Type": "\\Collection",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/cron.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreCronJob",
+    "description": "Runs before the daily automation cron execution.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/cron.md"
+  }
+]

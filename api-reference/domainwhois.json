@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "DomainWhois",
+  "description": "Retrieve domain whois information.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainWhois\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domain",
+      "Type": "string",
+      "Description": "The domain name to lookup",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/domainwhois.md"
+}

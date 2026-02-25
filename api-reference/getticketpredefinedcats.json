@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "GetTicketPredefinedCats",
+  "description": "Obtain the Predefined Ticket Reply Categories",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetTicketPredefinedCats\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getticketpredefinedcats.md"
+}

@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "AddCancelRequest",
+  "description": "Adds a Cancellation Request",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddCancelRequest\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The Service ID to cancel",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "type",
+      "Type": "string",
+      "Description": "The type of cancellation. 'Immediate' or 'End of Billing Period'",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "reason",
+      "Type": "string",
+      "Description": "The customer reason for cancellation",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addcancelrequest.md"
+}

@@ -1,0 +1,200 @@
+{
+  "type": "api_command",
+  "name": "AddClient",
+  "description": "Adds a client.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddClient\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "owner_user_id",
+      "Type": "int",
+      "Description": "The ID of the user that should own the client. Optional. When not provided, a new user will be created.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "firstname",
+      "Type": "string",
+      "Description": "First name of the client to be created. Also used for the first name of the user when `owner_user_id` is not specified.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "lastname",
+      "Type": "string",
+      "Description": "Last name of the client to be created. Also used for the last name of the user when `owner_user_id` is not specified.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "companyname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "Email address of the client to be created. Also used for the email of the user when `owner_user_id` is not specified.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "address1",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "address2",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "city",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "state",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "postcode",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "country",
+      "Type": "string",
+      "Description": "2 character ISO country code.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "phonenumber",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "tax_id",
+      "Type": "string",
+      "Description": "The client's tax ID.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "password2",
+      "Type": "string",
+      "Description": "The password for the newly-created user account. Required when `owner_user_id` is not specified.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "securityqid",
+      "Type": "int",
+      "Description": "The ID of the security question in `tbladminsecurityquestions`. Required when `owner_user_id` is not specified.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "securityqans",
+      "Type": "string",
+      "Description": "The security question answer for a newly-created user.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "currency",
+      "Type": "int",
+      "Description": "Currency ID from `tblcurrencies`.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "groupid",
+      "Type": "int",
+      "Description": "Client Group ID from `tblclientgroups`.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customfields",
+      "Type": "string",
+      "Description": "Base64 encoded serialized array of custom field values.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "language",
+      "Type": "string",
+      "Description": "Default language setting. Also used for the language of the user when `owner_user_id` is not specified. Provide the full name: 'english', 'french', etc....",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clientip",
+      "Type": "string",
+      "Description": "The originating IP address for the request.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "Admin only notes.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "marketingoptin",
+      "Type": "bool",
+      "Description": "Whether the client should opt-in to receiving marketing emails.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "noemail",
+      "Type": "bool",
+      "Description": "Whether to send the client a welcome email. A true value will not send the email.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "skipvalidation",
+      "Type": "bool",
+      "Description": "Whether to enforce required fields. A true value will not enforce required fields. This does not apply to `email` and `password2` when `owner_user_id` is not specified.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "~~cardtype~~",
+      "Type": "~~string~~",
+      "Description": "~~Credit card type. Provide full name: Visa, Mastercard, American Express, etc....~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~cardnum~~",
+      "Type": "~~string~~",
+      "Description": "~~Credit card number.~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~expdate~~",
+      "Type": "~~string~~",
+      "Description": "~~Format: MMYY.~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~startdate~~",
+      "Type": "~~string~~",
+      "Description": "~~Format: MMYY (if applicable).~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~issuenumber~~",
+      "Type": "~~string~~",
+      "Description": "~~Credit card issue number (if applicable).~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~cvv~~",
+      "Type": "~~string~~",
+      "Description": "~~Credit card CVV number (will not be stored).~~",
+      "Required": "Deprecated"
+    }
+  ],
+  "source_file": "api-reference/addclient.md"
+}

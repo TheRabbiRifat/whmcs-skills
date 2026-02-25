@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "GetCurrencies",
+  "description": "Obtain the Currencies configured in the System",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetCurrencies\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getcurrencies.md"
+}

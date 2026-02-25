@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetTicketPredefinedReplies",
+  "description": "Obtain the Predefined Ticket Replies",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetTicketPredefinedReplies\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "catid",
+      "Type": "int",
+      "Description": "Obtain predefined replies for a specific category id",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getticketpredefinedreplies.md"
+}

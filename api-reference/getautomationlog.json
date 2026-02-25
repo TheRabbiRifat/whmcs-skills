@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "GetAutomationLog",
+  "description": "Get Automation Task Log.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetAutomationLog\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "startdate",
+      "Type": "string",
+      "Description": "Defaults to today",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "enddate",
+      "Type": "string",
+      "Description": "Defaults to today",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "namespace",
+      "Type": "string",
+      "Description": "Optional filter for a specific namespace",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getautomationlog.md"
+}

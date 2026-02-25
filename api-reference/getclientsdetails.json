@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "GetClientsDetails",
+  "description": "Obtain the Clients Details for a specific client",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetClientsDetails\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The client id to obtain the details for. $clientid or $email is required",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "The email address of the client to search for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "stats",
+      "Type": "bool",
+      "Description": "Also return additional client statistics.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getclientsdetails.md"
+}

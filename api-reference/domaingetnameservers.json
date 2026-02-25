@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "DomainGetNameservers",
+  "description": "Obtains the current nameservers for the domain.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainGetNameservers\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The id of the domain to obtain the nameservers for",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/domaingetnameservers.md"
+}

@@ -1,0 +1,56 @@
+{
+  "type": "api_command",
+  "name": "AddProjectTask",
+  "description": "Adds a Task to a project",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddProjectTask\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "projectid",
+      "Type": "int",
+      "Description": "The ID of the project the task is for.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "duedate",
+      "Type": "string",
+      "Description": "The due date for the task. Format: YYYY-mm-dd",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "adminid",
+      "Type": "int",
+      "Description": "The admin ID to associate the task with.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "task",
+      "Type": "string",
+      "Description": "The task title.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "The notes for the task.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "completed",
+      "Type": "bool",
+      "Description": "Whether the task has been completed.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "billed",
+      "Type": "bool",
+      "Description": "Whether the task has been billed.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addprojecttask.md"
+}

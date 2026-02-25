@@ -1,0 +1,940 @@
+[
+  {
+    "type": "hook",
+    "name": "AcceptOrder",
+    "description": "Runs when an order is accepted prior to any acceptance actions being executed.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The order ID"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddonFraud",
+    "description": "Executes when an addon is set as fraud.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "The addon ID (tblhostingaddons)"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The predefined addon ID (tbladdons)"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterCalculateCartTotals",
+    "description": "Executes after the cart totals have been calculated.",
+    "parameters": [
+      {
+        "Variable": "total",
+        "Type": "\\Price",
+        "Notes": "Total due today"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterFraudCheck",
+    "description": "Executes after a fraud check has been completed",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The id of the order that has been fraud checked"
+      },
+      {
+        "Variable": "ordernumber",
+        "Type": "int",
+        "Notes": "The order number"
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The ID of the invoice generated on order"
+      },
+      {
+        "Variable": "amount",
+        "Type": "float",
+        "Notes": "The amount the order was for"
+      },
+      {
+        "Variable": "fraudresults",
+        "Type": "array",
+        "Notes": "The full result from the fraud check"
+      },
+      {
+        "Variable": "isfraud",
+        "Type": "bool",
+        "Notes": "Has the check been deemed as fraud"
+      },
+      {
+        "Variable": "frauderror",
+        "Type": "array",
+        "Notes": "The details of the fraud check if an error occurs"
+      },
+      {
+        "Variable": "clientdetails",
+        "Type": "array",
+        "Notes": "The full details of the client the order is for"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterShoppingCartCheckout",
+    "description": "Upon completion of checkout once the order has been created, invoice generated and all email notifications sent.",
+    "parameters": [
+      {
+        "Variable": "OrderID",
+        "Type": "int",
+        "Notes": "The Order ID"
+      },
+      {
+        "Variable": "OrderNumber",
+        "Type": "int",
+        "Notes": "The randomly generated order number"
+      },
+      {
+        "Variable": "ServiceIDs",
+        "Type": "array",
+        "Notes": "An array of Service IDs created by the order"
+      },
+      {
+        "Variable": "AddonIDs",
+        "Type": "array",
+        "Notes": "An array of Addon IDs created by the order"
+      },
+      {
+        "Variable": "DomainIDs",
+        "Type": "array",
+        "Notes": "An array of Domain IDs created by the order"
+      },
+      {
+        "Variable": "RenewalIDs",
+        "Type": "array",
+        "Notes": "An array of Domain Renewal IDs created by the order"
+      },
+      {
+        "Variable": "PaymentMethod",
+        "Type": "string",
+        "Notes": "The payment gateway selected"
+      },
+      {
+        "Variable": "InvoiceID",
+        "Type": "int",
+        "Notes": "The Invoice ID"
+      },
+      {
+        "Variable": "TotalDue",
+        "Type": "float",
+        "Notes": "The total amount due"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "CancelOrder",
+    "description": "Runs when an order is requested to be cancelled, prior to the change of status actually occurring.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The order ID"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "CartItemsTax",
+    "description": "Invoked as tax is being calculated for both cart and checkout, this can be used to manipulate the tax rate applied to the cart total or relevant checkout payment intents.",
+    "parameters": [
+      {
+        "Variable": "clientData",
+        "Type": "array",
+        "Notes": "null"
+      },
+      {
+        "Variable": "cartData",
+        "Type": "\\ItemInterface[]",
+        "Notes": "An array of all data held within in the shopping cart."
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "CartSubdomainValidation",
+    "description": "Executes when Cart Subdomain Validation is occurring",
+    "parameters": [
+      {
+        "Variable": "subdomain",
+        "Type": "string",
+        "Notes": "eg sub in sub.whmcs.com"
+      },
+      {
+        "Variable": "domain",
+        "Type": "string",
+        "Notes": "eg whmcs.com in sub.whmcs.com"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "CartTotalAdjustment",
+    "description": "Invoked as the order total is being calculated, this can be used to manipulate the final total.",
+    "parameters": [
+      {
+        "Variable": "products",
+        "Type": "array",
+        "Notes": "An indexed array of products in the shopping cart. Keys include `pid`, `domain`, `billingcycle`, `configoptions`, `customfields`, `addons`, `server`, `hostname`"
+      },
+      {
+        "Variable": "domains",
+        "Type": "array",
+        "Notes": "An indexed array of domain registrations & transfers in the shopping cart. Keys include `type`, `domain`, `regperiod`"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "DeleteOrder",
+    "description": "Runs when an order is requested to be deleted, prior to the deletion actually occurring.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The order ID"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "FraudCheckAwaitingUserInput",
+    "description": "Executes when the fraud check is awaiting user input.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The id of the order that has been fraud checked"
+      },
+      {
+        "Variable": "ordernumber",
+        "Type": "int",
+        "Notes": "The order number"
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The ID of the invoice generated on order"
+      },
+      {
+        "Variable": "amount",
+        "Type": "float",
+        "Notes": "The amount the order was for"
+      },
+      {
+        "Variable": "fraudresults",
+        "Type": "array",
+        "Notes": "The full result from the fraud check"
+      },
+      {
+        "Variable": "isfraud",
+        "Type": "array",
+        "Notes": "The details of the fraud check if an error occurs"
+      },
+      {
+        "Variable": "clientdetails",
+        "Type": "array",
+        "Notes": "The full details of the client the order is for"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "FraudCheckFailed",
+    "description": "Executes when the fraud check fails for a new order.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The id of the order that has been fraud checked"
+      },
+      {
+        "Variable": "ordernumber",
+        "Type": "int",
+        "Notes": "The order number"
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The ID of the invoice generated on order"
+      },
+      {
+        "Variable": "amount",
+        "Type": "float",
+        "Notes": "The amount the order was for"
+      },
+      {
+        "Variable": "fraudresults",
+        "Type": "array",
+        "Notes": "The full result from the fraud check"
+      },
+      {
+        "Variable": "isfraud",
+        "Type": "array",
+        "Notes": "The details of the fraud check if an error occurs"
+      },
+      {
+        "Variable": "clientdetails",
+        "Type": "array",
+        "Notes": "The full details of the client the order is for"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "FraudCheckPassed",
+    "description": "Executes when the fraud check passes successfully for a new order.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The id of the order that has been fraud checked"
+      },
+      {
+        "Variable": "ordernumber",
+        "Type": "int",
+        "Notes": "The order number"
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The ID of the invoice generated on order"
+      },
+      {
+        "Variable": "amount",
+        "Type": "float",
+        "Notes": "The amount the order was for"
+      },
+      {
+        "Variable": "fraudresults",
+        "Type": "array",
+        "Notes": "The full result from the fraud check"
+      },
+      {
+        "Variable": "isfraud",
+        "Type": "array",
+        "Notes": "The details of the fraud check if an error occurs"
+      },
+      {
+        "Variable": "clientdetails",
+        "Type": "array",
+        "Notes": "The full details of the client the order is for"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "FraudOrder",
+    "description": "Runs when an order is requested to be set as fraud, prior to the change of status actually occurring.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The order ID"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "OrderAddonPricingOverride",
+    "description": "Executes as an addon price is being calculated in the cart.",
+    "parameters": [
+      {
+        "Variable": "key",
+        "Type": "int",
+        "Notes": "The key for the product in the cart session"
+      },
+      {
+        "Variable": "pid",
+        "Type": "int",
+        "Notes": "The product id"
+      },
+      {
+        "Variable": "addonid",
+        "Type": "int",
+        "Notes": "The addon id"
+      },
+      {
+        "Variable": "proddata",
+        "Type": "array",
+        "Notes": "The product data for an addon with new product purchase"
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": "The service id when purchasing an addon for existing service"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "OrderDomainPricingOverride",
+    "description": "Executes as a domain price is being calculated in the cart.",
+    "parameters": [
+      {
+        "Variable": "type",
+        "Type": "string",
+        "Notes": "Either `register` or `transfer`"
+      },
+      {
+        "Variable": "domain",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "regperiod",
+        "Type": "int",
+        "Notes": "The registration period of the domain (in years)"
+      },
+      {
+        "Variable": "renewalperiod",
+        "Type": "int",
+        "Notes": "The renewal period of the domain (in years)"
+      },
+      {
+        "Variable": "dnsmanagement",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "emailforwarding",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "idprotection",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "eppcode",
+        "Type": "string",
+        "Notes": "Available for transfer only."
+      },
+      {
+        "Variable": "isPremium",
+        "Type": "bool",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "OrderPaid",
+    "description": "Executes when the first invoice for a new order is marked paid. This will execute in addition to the regular invoice payment hooks.",
+    "parameters": [
+      {
+        "Variable": "orderId",
+        "Type": "int",
+        "Notes": "The unique identifier for the order"
+      },
+      {
+        "Variable": "userId",
+        "Type": "int",
+        "Notes": "The unique identifier for the client"
+      },
+      {
+        "Variable": "invoiceId",
+        "Type": "int",
+        "Notes": "The unique identifier for the invoice"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "OrderProductPricingOverride",
+    "description": "Executes as a product price is being calculated in the cart.",
+    "parameters": [
+      {
+        "Variable": "key",
+        "Type": "int",
+        "Notes": "The key for the product in the cart session"
+      },
+      {
+        "Variable": "pid",
+        "Type": "int",
+        "Notes": "The product id"
+      },
+      {
+        "Variable": "proddata",
+        "Type": "array",
+        "Notes": "The product data"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "OrderProductUpgradeOverride",
+    "description": "Executes as a product upgrade order is being calculated.",
+    "parameters": [
+      {
+        "Variable": "oldproductid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "oldproductname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "newproductid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "newproductname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "days",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "totaldays",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "newproductbillingcycle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "price",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "discount",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "promoqualifies",
+        "Type": "bool",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "OverrideOrderNumberGeneration",
+    "description": "Executes prior to checkout. All cart information is passed to the hook.",
+    "parameters": [
+      {
+        "Variable": "products",
+        "Type": "array",
+        "Notes": "An indexed array of product information for each product in the cart."
+      },
+      {
+        "Variable": "domains",
+        "Type": "array",
+        "Notes": "An indexed array of domain information for each domain in the cart."
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "PendingOrder",
+    "description": "Runs when an order is requested to be set back to pending, prior to the change of status actually occurring.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The order ID"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreCalculateCartTotals",
+    "description": "Executes as the cart totals are being calculated. All cart information is passed to the hook. Examples given here.",
+    "parameters": [
+      {
+        "Variable": "products",
+        "Type": "array",
+        "Notes": "An indexed array of product information for each product in the cart."
+      },
+      {
+        "Variable": "domains",
+        "Type": "array",
+        "Notes": "An indexed array of domain information for each domain in the cart."
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreFraudCheck",
+    "description": "",
+    "parameters": [
+      {
+        "Variable": "$params",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreShoppingCartCheckout",
+    "description": "Executes prior to checkout. All cart information is passed to the hook.",
+    "parameters": [
+      {
+        "Variable": "products",
+        "Type": "array",
+        "Notes": "An indexed array of product information for each product in the cart."
+      },
+      {
+        "Variable": "domains",
+        "Type": "array",
+        "Notes": "An indexed array of domain information for each domain in the cart."
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "RunFraudCheck",
+    "description": "Executes as the fraud module is being checked for an order.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "ShoppingCartCheckoutCompletePage",
+    "description": "Executes when the Complete Page is displayed on checkout.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The ID of the order"
+      },
+      {
+        "Variable": "ordernumber",
+        "Type": "int",
+        "Notes": "The order number for the order"
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The id of the invoice for the order"
+      },
+      {
+        "Variable": "ispaid",
+        "Type": "bool",
+        "Notes": "Indicates whether the order has been paid"
+      },
+      {
+        "Variable": "amount",
+        "Type": "float",
+        "Notes": "The amount of order"
+      },
+      {
+        "Variable": "paymentmethod",
+        "Type": "string",
+        "Notes": "The payment method of the order"
+      },
+      {
+        "Variable": "clientdetails",
+        "Type": "array",
+        "Notes": "The full details for the client the order is for"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "ShoppingCartValidateCheckout",
+    "description": "Executes during checkout completion, which occurs before order and invoice creation. Use this to prevent order creation and present errors to the user.",
+    "parameters": [
+      {
+        "Variable": "a",
+        "Type": "string",
+        "Notes": "Value will be `checkout`."
+      },
+      {
+        "Variable": "submit",
+        "Type": "string",
+        "Notes": "Value will be true."
+      },
+      {
+        "Variable": "promocode",
+        "Type": "string",
+        "Notes": "If entered, a promotion code."
+      },
+      {
+        "Variable": "notes",
+        "Type": "string",
+        "Notes": "If enabled, additional order notes"
+      },
+      {
+        "Variable": "paymentmethod",
+        "Type": "string",
+        "Notes": "The selected payment method"
+      },
+      {
+        "Variable": "ccinfo",
+        "Type": "string",
+        "Notes": "Either `new` or `useexisting`."
+      },
+      {
+        "Variable": "cctype",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "ccnumber",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "ccexpirymonth",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "ccexpiryyear",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "cccvv",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "custtype",
+        "Type": "string",
+        "Notes": "Possible values are `new` or `existing`"
+      },
+      {
+        "Variable": "clientId",
+        "Type": "int",
+        "Notes": "A non-zero value if the user is authenticated during checkout."
+      },
+      {
+        "Variable": "loginemail",
+        "Type": "string",
+        "Notes": "Value present only when the client authenticates during checkout."
+      },
+      {
+        "Variable": "loginpassword",
+        "Type": "string",
+        "Notes": "Value present only when the client authenticates during checkout."
+      },
+      {
+        "Variable": "firstname",
+        "Type": "string",
+        "Notes": "Value present when the client is new."
+      },
+      {
+        "Variable": "lastname",
+        "Type": "string",
+        "Notes": "Value present when the client is new."
+      },
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "email",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "address1",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "address2",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "city",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "state",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "country",
+        "Type": "string",
+        "Notes": "Value present when client is new; two letter ISO code"
+      },
+      {
+        "Variable": "tax_id",
+        "Type": "string",
+        "Notes": "The client's tax ID"
+      },
+      {
+        "Variable": "phonenumber",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "password",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "password2",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "securityqid",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "securityqans",
+        "Type": "string",
+        "Notes": "Value present when client is new"
+      },
+      {
+        "Variable": "customfield",
+        "Type": "array",
+        "Notes": "Value present when client is new"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "ShoppingCartValidateDomain",
+    "description": "Executes when Cart Domain Validation is occurring",
+    "parameters": [
+      {
+        "Variable": "domainoption",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "sld",
+        "Type": "string",
+        "Notes": "eg whmcs in whmcs.com"
+      },
+      {
+        "Variable": "tld",
+        "Type": "string",
+        "Notes": "eg com in whmcs.com"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "ShoppingCartValidateDomainsConfig",
+    "description": "Executes when Domain Update is occurring",
+    "parameters": [
+      {
+        "Variable": "N/A",
+        "Type": "array",
+        "Notes": "The REQUEST variables"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "ShoppingCartValidateProductUpdate",
+    "description": "Executes when Product Update is occurring",
+    "parameters": [
+      {
+        "Variable": "N/A",
+        "Type": "array",
+        "Notes": "The REQUEST variables"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  },
+  {
+    "type": "hook",
+    "name": "ShoppingCartValidateUpgrade",
+    "description": "Executes during an upgrade/downgrade request to validate resource limits.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "ID of the existing hosting service"
+      },
+      {
+        "Variable": "pid",
+        "Type": "int",
+        "Notes": "ID of the target product for upgrade"
+      }
+    ],
+    "source_file": "hooks-reference/shopping-cart.md"
+  }
+]

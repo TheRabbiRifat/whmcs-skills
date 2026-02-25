@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "CapturePayment",
+  "description": "Attempt to capture a payment on an unpaid CC Invoice",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"CapturePayment\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "invoiceid",
+      "Type": "int",
+      "Description": "The ID of the pending order",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "cvv",
+      "Type": "string",
+      "Description": "The CVV Number for the card being attempted",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/capturepayment.md"
+}

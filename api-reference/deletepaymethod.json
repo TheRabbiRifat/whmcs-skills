@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "DeletePayMethod",
+  "description": "Delete a Pay Method.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeletePayMethod\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The id of the client matching the Pay Method",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "paymethodid",
+      "Type": "int",
+      "Description": "The id of the Pay Method to delete",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "failonremotefailure",
+      "Type": "bool",
+      "Description": "Pass as true to return an error if a remote token deletion fails",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/deletepaymethod.md"
+}

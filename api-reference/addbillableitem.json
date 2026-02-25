@@ -1,0 +1,74 @@
+{
+  "type": "api_command",
+  "name": "AddBillableItem",
+  "description": "Adds a Billable Item",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddBillableItem\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The client to add the item to.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "description",
+      "Type": "string",
+      "Description": "The description of the Billable Item. This will appear on the invoice.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "amount",
+      "Type": "float",
+      "Description": "The total amount to invoice for.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "unit",
+      "Type": "string",
+      "Description": "Either 'hours' or 'quantity'.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "quantity",
+      "Type": "float",
+      "Description": "The number of units the billable items represents. Defaults to 0.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "invoiceaction",
+      "Type": "string",
+      "Description": "One of 'noinvoice', 'nextcron', 'nextinvoice', 'duedate', or 'recur'.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "recur",
+      "Type": "int",
+      "Description": "When `$invoiceaction=recur`. The frequency of the recurrence.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "recurcycle",
+      "Type": "string",
+      "Description": "How often to recur the Billable Item. Days, Weeks, Months or Years.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "recurfor",
+      "Type": "int",
+      "Description": "How many times the Billable Item should create an invoice.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "duedate",
+      "Type": "string",
+      "Description": "Date the invoice should be due (only required for due date and recur invoice actions). YYYY-mm-dd",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addbillableitem.md"
+}

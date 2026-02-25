@@ -1,0 +1,122 @@
+{
+  "type": "api_command",
+  "name": "UpdateContact",
+  "description": "Updates a contact with the passed parameters.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateContact\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "contactid",
+      "Type": "int",
+      "Description": "The id of the contact to update",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "firstname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lastname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "companyname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "address1",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "address2",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "city",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "state",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "postcode",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "country",
+      "Type": "string",
+      "Description": "2 character ISO country code",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "phonenumber",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[general]",
+      "Type": "bool",
+      "Description": "Should the client receive general emails",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[product]",
+      "Type": "bool",
+      "Description": "Should the client receive product emails",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[domain]",
+      "Type": "bool",
+      "Description": "Should the client receive domain emails",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[invoice]",
+      "Type": "bool",
+      "Description": "Should the client receive invoice emails",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[support]",
+      "Type": "bool",
+      "Description": "Should the client receive support emails",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[affiliate]",
+      "Type": "bool",
+      "Description": "Should the client receive affiliate emails",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updatecontact.md"
+}

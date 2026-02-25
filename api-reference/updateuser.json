@@ -1,0 +1,44 @@
+{
+  "type": "api_command",
+  "name": "UpdateUser",
+  "description": "Update a user.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateUser\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "user_id",
+      "Type": "int",
+      "Description": "The ID of the user to update",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "firstname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lastname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "language",
+      "Type": "string",
+      "Description": "Default language setting. Provide full name: 'english', 'french', etc...",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updateuser.md"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "AcceptQuote",
+  "description": "Accepts a quote",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AcceptQuote\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "quoteid",
+      "Type": "int",
+      "Description": "The quote id to be accepted and converted to an invoice",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/acceptquote.md"
+}

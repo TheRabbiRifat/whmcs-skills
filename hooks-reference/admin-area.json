@@ -1,0 +1,626 @@
+[
+  {
+    "type": "hook",
+    "name": "AdminAreaClientSummaryActionLinks",
+    "description": "Allows returning of links for display on the client summary page in the Action Links section.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": "The id of the user being displayed"
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminAreaClientSummaryPage",
+    "description": "Allows returning of output for display on the client summary page.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": "The id of the user being displayed"
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminAreaPage",
+    "description": "Runs on every admin area page load. All template variables defined at the time the hook is invoked are made available to this hook point. This can vary by page. The list below is not an exhaustive list.",
+    "parameters": [
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": "System charset setting eg. UTF-8"
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": "The admin template being used"
+      },
+      {
+        "Variable": "pagetemplate",
+        "Type": "string",
+        "Notes": "The template for the current page (if applicable)"
+      },
+      {
+        "Variable": "adminid",
+        "Type": "int",
+        "Notes": "The currently logged in admin user ID"
+      },
+      {
+        "Variable": "admin_username",
+        "Type": "string",
+        "Notes": "The username of the current admin user"
+      },
+      {
+        "Variable": "admin_notes",
+        "Type": "string",
+        "Notes": "The private notes for the current admin user"
+      },
+      {
+        "Variable": "admin_perms",
+        "Type": "array",
+        "Notes": "The permissions of the current admin user"
+      },
+      {
+        "Variable": "addon_modules",
+        "Type": "array",
+        "Notes": "A list of add-on modules the current admin user has access to"
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": "The name of the file being called"
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": "The title of the current page"
+      },
+      {
+        "Variable": "helplink",
+        "Type": "string",
+        "Notes": "The documentation url for the current page"
+      },
+      {
+        "Variable": "sidebar",
+        "Type": "string",
+        "Notes": "The sidebar output"
+      },
+      {
+        "Variable": "minsidebar",
+        "Type": "bool",
+        "Notes": "Returns true if the sidebar is minimised"
+      },
+      {
+        "Variable": "jquerycode",
+        "Type": "string",
+        "Notes": "jQuery code for the current page"
+      },
+      {
+        "Variable": "jscode",
+        "Type": "string",
+        "Notes": "Javascript code for the current page"
+      },
+      {
+        "Variable": "datepickerformat",
+        "Type": "string",
+        "Notes": "The format defined for dates in the admin area"
+      },
+      {
+        "Variable": "adminsonline",
+        "Type": "string",
+        "Notes": "A list of currently online admin users"
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminAreaViewQuotePage",
+    "description": "Executes as the quote is being viewed.",
+    "parameters": [
+      {
+        "Variable": "quoteid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminClientDomainsTabFields",
+    "description": "Executes when a domain is being viewed in the Admin area.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "the id of the domain being loaded"
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminClientDomainsTabFieldsSave",
+    "description": "Executes when the Domains tab in the Admin area is being saved. Receives all the $_REQUEST parameters as variables.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminClientFileUpload",
+    "description": "Executes as a client file is being uploaded from the Client Summary.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "title",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": "The filename as stored on the server"
+      },
+      {
+        "Variable": "origfilename",
+        "Type": "string",
+        "Notes": "The original filename"
+      },
+      {
+        "Variable": "adminonly",
+        "Type": "bool",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminClientProfileTabFields",
+    "description": "Executes when a client profile is being viewed in the Admin area.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "uuid",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "firstname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "lastname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "email",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "address1",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "address2",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "city",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "state",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "postcode",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "country",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "phonenumber",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "password",
+        "Type": "string",
+        "Notes": "The encrypted password for the user"
+      },
+      {
+        "Variable": "currency",
+        "Type": "int",
+        "Notes": "The id of the currency"
+      },
+      {
+        "Variable": "notes",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "taxexempt",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "latefeeoveride",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "overideduenotices",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "separateinvoices",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "disableautocc",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "emailoptout",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "marketing_emails_opt_in",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "overrideautoclose",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "billingcid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "groupid",
+        "Type": "int",
+        "Notes": "The id of the client group"
+      },
+      {
+        "Variable": "allow_sso",
+        "Type": "bool",
+        "Notes": "Is Single Sign on enabled for the client?"
+      },
+      {
+        "Variable": "olddata",
+        "Type": "array",
+        "Notes": "An array of the previous contact information"
+      },
+      {
+        "Variable": "authmodule",
+        "Type": "string",
+        "Notes": "The 2Factor Auth Module enabled for the user"
+      },
+      {
+        "Variable": "authdata",
+        "Type": "string",
+        "Notes": "The 2Factor Auth Data for the user"
+      },
+      {
+        "Variable": "email_verified",
+        "Type": "bool",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminClientProfileTabFieldsSave",
+    "description": "Executes when the Profile in the Admin area is being saved. Receives all the $_REQUEST parameters as variables.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminClientServicesTabFields",
+    "description": "Executes when a service is being viewed in the Admin area.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "the id of the service being loaded"
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminClientServicesTabFieldsSave",
+    "description": "Executes when the Services tab in the Admin area is being saved. Receives all the $_REQUEST parameters as variables.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminHomepage",
+    "description": "Allows returning of output for display on the admin homepage",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminLogin",
+    "description": "Executes post successful authentication of an admin user",
+    "parameters": [
+      {
+        "Variable": "adminid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "username",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminLogout",
+    "description": "Executes on Admin log out",
+    "parameters": [
+      {
+        "Variable": "adminid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminPredefinedAddons",
+    "description": "Executes as the Create New Addon page is loaded.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminProductConfigFields",
+    "description": "Executes as a product is being edited.",
+    "parameters": [
+      {
+        "Variable": "pid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminProductConfigFieldsSave",
+    "description": "Executes as a product is being saved. Access The Request variables to save custom config fields.",
+    "parameters": [
+      {
+        "Variable": "pid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminServiceEdit",
+    "description": "Executes when the Service has been edited by an Admin. After the changes have been made.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AuthAdmin",
+    "description": "Executes during Admin form-based password authentication",
+    "parameters": [
+      {
+        "Variable": "userInput",
+        "Type": "string",
+        "Notes": "The user-provided password value"
+      },
+      {
+        "Variable": "",
+        "Type": "\\WHMCS\\User\\Admin",
+        "Notes": "The admin attempting to authenticate"
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "AuthAdminApi",
+    "description": "",
+    "parameters": [
+      {
+        "Variable": "$userInput",
+        "Type": "",
+        "Notes": ""
+      },
+      {
+        "Variable": "$admin",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoiceCreationAdminArea",
+    "description": "Executes as an invoice is being created in the admin area",
+    "parameters": [
+      {
+        "Variable": "source",
+        "Type": "string",
+        "Notes": "When the invoice is being created"
+      },
+      {
+        "Variable": "user",
+        "Type": "int",
+        "Notes": "string"
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The id of the newly created invoice"
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": "The status of the newly created invoice"
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreAdminServiceEdit",
+    "description": "Executes as the service is being saved, before any changes have been made.",
+    "parameters": [
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  },
+  {
+    "type": "hook",
+    "name": "ViewOrderDetailsPage",
+    "description": "Executes as the order details page is being displayed",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "ordernum",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "amount",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "paymentmethod",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "",
+        "Type": "string",
+        "Notes": "status"
+      }
+    ],
+    "source_file": "hooks-reference/admin-area.md"
+  }
+]

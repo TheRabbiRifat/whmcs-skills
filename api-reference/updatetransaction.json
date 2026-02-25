@@ -1,0 +1,98 @@
+{
+  "type": "api_command",
+  "name": "UpdateTransaction",
+  "description": "Updates a transaction in the system",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateTransaction\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "transactionid",
+      "Type": "int",
+      "Description": "The unique ID of the transaction to update.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "refundid",
+      "Type": "int",
+      "Description": "The unique ID of the transaction that this transaction refunds.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "The ID of the user to apply the transaction to.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "invoiceid",
+      "Type": "int",
+      "Description": "The ID of the invoice the transaction is for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "transid",
+      "Type": "string",
+      "Description": "The unique transaction ID for this payment.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "date",
+      "Type": "string",
+      "Description": "The date of the transaction in the Y-m-d format.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "gateway",
+      "Type": "string",
+      "Description": "The gateway of the transaction, in system format.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "currency",
+      "Type": "int",
+      "Description": "The currency ID for the transaction, if not associated with a user.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "description",
+      "Type": "string",
+      "Description": "The description of the transaction.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "amountin",
+      "Type": "float",
+      "Description": "The amount received by the payment.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "fees",
+      "Type": "float",
+      "Description": "The amount of fee charged on the transaction by the merchant. This can be negative.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "amountout",
+      "Type": "float",
+      "Description": "The amount paid out by the payment.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "rate",
+      "Type": "float",
+      "Description": "The exchange rate for the payment based on the default currency.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "credit",
+      "Type": "bool",
+      "Description": "Whether to apply the payment to credit on the client account. Invoice ID must not be provided.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updatetransaction.md"
+}

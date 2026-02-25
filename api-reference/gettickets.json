@@ -1,0 +1,62 @@
+{
+  "type": "api_command",
+  "name": "GetTickets",
+  "description": "Obtain tickets matching the passed criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetTickets\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned quote data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "deptid",
+      "Type": "int",
+      "Description": "Obtain tickets in a specific department",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "Find tickets for a specific client id",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "Find tickets for a specific non-client email address",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "Find tickets matching a specific status. Any configured status plus: `Awaiting Reply`, `All Active Tickets`, `My Flagged Tickets`",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "subject",
+      "Type": "string",
+      "Description": "Find tickets containing a specific subject - uses approximate string matching.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ignore_dept_assignments",
+      "Type": "bool",
+      "Description": "Pass as true to not adhere to the departments the API user is a member of.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/gettickets.md"
+}

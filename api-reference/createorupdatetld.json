@@ -1,0 +1,110 @@
+{
+  "type": "api_command",
+  "name": "CreateOrUpdateTLD",
+  "description": "Create or Update a TLD Extension. If a TLD exists, the existing record will be updated. If it does not, a new TLD will be created. Allows for configuration of TLD related selling parameters, pricing, grace periods and display order. Pricing can be supplied in any active currency and will be automatically converted into all active currencies within the WHMCS installation.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"CreateOrUpdateTLD\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "extension",
+      "Type": "string",
+      "Description": "The extension to add or update eg: .com, .net, etc...",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "id_protection",
+      "Type": "bool",
+      "Description": "Offer ID Protection for the extension",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "dns_management",
+      "Type": "bool",
+      "Description": "Offer DNS Management for the extension",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_forwarding",
+      "Type": "bool",
+      "Description": "Offer Email Forwarding for the extension",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "epp_required",
+      "Type": "bool",
+      "Description": "Is an EPP required for domain transfers",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "auto_registrar",
+      "Type": "string",
+      "Description": "The active registrar the extension should automatically register with on payment",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "group",
+      "Type": "string",
+      "Description": "Specify a group label. One of 'HOT', 'NEW' or 'SALE'. Leave blank for none.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "currency_code",
+      "Type": "string",
+      "Description": "The currency code the pricing is in. Required when defining pricing, grace fee, or redemption fee. Price will be converted for all active currencies. The currency must exist in the target WHMCS install and be configured with an exchange rate.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "grace_period_days",
+      "Type": "int",
+      "Description": "The number of days for the grace period",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "grace_period_fee",
+      "Type": "float",
+      "Description": "The grace period fee for the extension. -1 will disable the grace period",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "redemption_period_days",
+      "Type": "int",
+      "Description": "The number of days for the redemption period",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "redemption_period_fee",
+      "Type": "float",
+      "Description": "The redemption period fee for the extension. -1 will disable the redemption period",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "register",
+      "Type": "array",
+      "Description": "An array of registration pricing. See example below for format.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "renew",
+      "Type": "array",
+      "Description": "An array of renewal pricing. See example below for format. The maximum renewal period for any extension is 9 years.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "transfer",
+      "Type": "array",
+      "Description": "An array of transfer pricing. See example below for format. Only transfers for the minimum register period can be defined.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "display_after",
+      "Type": "string",
+      "Description": "Can be used to modify TLD display order. Specify the existing TLD that this TLD should follow.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/createorupdatetld.md"
+}

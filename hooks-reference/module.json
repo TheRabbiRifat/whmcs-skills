@@ -1,0 +1,535 @@
+[
+  {
+    "type": "hook",
+    "name": "AddonModuleConfigSave",
+    "description": "",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleChangePackage",
+    "description": "Executes upon successful completion of the module function.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleChangePackageFailed",
+    "description": "Executes upon failure of the module function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleChangePassword",
+    "description": "Executes upon successful completion of a remote module API password change.",
+    "parameters": [
+      {
+        "Variable": "serviceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "oldpassword",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "newpassword",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleChangePasswordFailed",
+    "description": "Executes upon failure of the module function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleCreate",
+    "description": "Executes upon successful completion of the module function.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleCreateFailed",
+    "description": "Executes upon failure of the module function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleCustom",
+    "description": "Executes upon successful completion of the module custom function.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleCustomFailed",
+    "description": "Executes upon failure of the module custom function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module."
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleDeprovisionAddOnFeature",
+    "description": "Executes upon successful completion of the module function.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleDeprovisionAddOnFeatureFailed",
+    "description": "Executes upon failure of the module function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleProvisionAddOnFeature",
+    "description": "Executes upon successful completion of the module function.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleProvisionAddOnFeatureFailed",
+    "description": "Executes upon failure of the module function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleSuspend",
+    "description": "Executes upon successful completion of the module function.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleSuspendAddOnFeature",
+    "description": "Executes upon successful completion of the module function.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleSuspendAddOnFeatureFailed",
+    "description": "Executes upon failure of the module function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleSuspendFailed",
+    "description": "Executes upon failure of the module function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleTerminate",
+    "description": "Executes upon successful completion of the module function.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleTerminateFailed",
+    "description": "Executes upon failure of the module function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleUnsuspend",
+    "description": "Executes upon successful completion of the module function.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleUnsuspendAddOnFeature",
+    "description": "Executes upon successful completion of the module function.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleUnsuspendAddOnFeatureFailed",
+    "description": "Executes upon failure of the module function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterModuleUnsuspendFailed",
+    "description": "Executes upon failure of the module function to complete successfully. The failure reason is provided in the input parameters.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      },
+      {
+        "Variable": "failureResponseMessage",
+        "Type": "string",
+        "Notes": "The failure reason error string returned by the provisioning module"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "OverrideModuleUsernameGeneration",
+    "description": "Executes as a username is being generated on module creation.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "The parameters being passed to the module function call"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleChangePackage",
+    "description": "Executes prior to the module change package function being run for a service. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleChangePassword",
+    "description": "Executes prior to the module change password function being run for a service. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleCreate",
+    "description": "Executes prior to the module create function being run for a service. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleCustom",
+    "description": "Executes prior to the module custom function being run for a service. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleDeprovisionAddOnFeature",
+    "description": "Executes prior to the module deprovision function being run for a Add-On Feature. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleProvisionAddOnFeature",
+    "description": "Executes prior to the module provision function being run for an Add-On Feature. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleRenew",
+    "description": "Executes prior to the module create function being run for a service. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleSuspend",
+    "description": "Executes prior to the module suspend function being run for a service. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleSuspendAddOnFeature",
+    "description": "Executes prior to the module suspend function being run for an Add-On Feature. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleTerminate",
+    "description": "Executes prior to the module terminate function being run for a service. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleUnsuspend",
+    "description": "Executes prior to the module unsuspend function being run for a service. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreModuleUnsuspendAddOnFeature",
+    "description": "Executes prior to the module unsuspend function being run for an Add-On Feature. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/provisioning-modules/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/module.md"
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "type": "api_command",
+  "name": "GetActivityLog",
+  "description": "Obtain the Activity Log that matches passed criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetActivityLog\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned log data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The ID of the client to obtain the log for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "date",
+      "Type": "string",
+      "Description": "The date of the activity log to retrieve in localised format (eg 01/01/2016)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "user",
+      "Type": "string",
+      "Description": "The client email, user email, or admin username to retrieve the log entries for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "description",
+      "Type": "string",
+      "Description": "Search the log for a specific string",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ipaddress",
+      "Type": "string",
+      "Description": "The IP Address to search the activity log for",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getactivitylog.md"
+}

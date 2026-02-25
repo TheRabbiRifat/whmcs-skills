@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "PendingOrder",
+  "description": "Sets an order, and all associated order items to Pending status",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"PendingOrder\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "orderid",
+      "Type": "int",
+      "Description": "The order id to be accepted",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/pendingorder.md"
+}

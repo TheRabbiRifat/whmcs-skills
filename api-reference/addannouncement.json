@@ -1,0 +1,38 @@
+{
+  "type": "api_command",
+  "name": "AddAnnouncement",
+  "description": "Adds an announcement.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddAnnouncement\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "date",
+      "Type": "\\datetime",
+      "Description": "Date in the format YYYY-MM-DD HH:MM:SS",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "title",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "announcement",
+      "Type": "string",
+      "Description": "Announcement text",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "published",
+      "Type": "bool",
+      "Description": "Pass as true to publish",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addannouncement.md"
+}

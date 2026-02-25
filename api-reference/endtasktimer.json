@@ -1,0 +1,38 @@
+{
+  "type": "api_command",
+  "name": "EndTaskTimer",
+  "description": "Ends a started timer for a project",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"EndTaskTimer\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "timerid",
+      "Type": "int",
+      "Description": "The id of the task to be ended",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "projectid",
+      "Type": "int",
+      "Description": "The id of the project for the task timer",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "adminid",
+      "Type": "int",
+      "Description": "The admin id to associate the timer with",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "end_time",
+      "Type": "int",
+      "Description": "The end time as a unix time stamp. Defaults to time() if not provided",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/endtasktimer.md"
+}

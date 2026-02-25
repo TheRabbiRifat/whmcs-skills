@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "GetAdminDetails",
+  "description": "Obtain the details for the current Admin User",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetAdminDetails\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getadmindetails.md"
+}

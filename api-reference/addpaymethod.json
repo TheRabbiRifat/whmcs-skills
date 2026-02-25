@@ -1,0 +1,92 @@
+{
+  "type": "api_command",
+  "name": "AddPayMethod",
+  "description": "Add a Pay Method to a given client. Supports the creation of credit card and bank account pay methods. Note that some tokenised payment gateways cannot be utilised via the API. Please refer to individual payment gateway documentation for specifics about supported functionality.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddPayMethod\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The id of the client to add the Pay Method",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "type",
+      "Type": "string",
+      "Description": "The type of Pay Method to add. One of 'BankAccount', 'CreditCard', or 'RemoteCreditCard'. Defaults to 'CreditCard'",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "description",
+      "Type": "string",
+      "Description": "The description for the new Pay Method",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "gateway_module_name",
+      "Type": "string",
+      "Description": "Required for use with tokenised payment gateways eg. authorizecim, sagepaytokens, etc...",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "card_number",
+      "Type": "string",
+      "Description": "Credit Card Number. Required for CreditCard and RemoteCreditCard types",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "card_expiry",
+      "Type": "string",
+      "Description": "The expiry date for the card. Required for cc type. Format 'MMYY' eg 0122",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "card_start",
+      "Type": "string",
+      "Description": "The start date for the card. Not required. Format 'MMYY' eg 0122",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "card_issue_number",
+      "Type": "int",
+      "Description": "The issue_number for the card. Not required",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "bank_name",
+      "Type": "string",
+      "Description": "The name of the bank. Not required",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "bank_account_type",
+      "Type": "string",
+      "Description": "The type of bank account (checking, credit etc). Not required",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "bank_code",
+      "Type": "string",
+      "Description": "The bank code. Also called sort code or routing number. Required for BankAccount type",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "bank_account",
+      "Type": "string",
+      "Description": "The account number. Required for BankAccount type",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "set_as_default",
+      "Type": "bool",
+      "Description": "Should the new Pay Method be the client default",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addpaymethod.md"
+}

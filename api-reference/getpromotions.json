@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetPromotions",
+  "description": "Obtain promotions matching the passed criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetPromotions\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "code",
+      "Type": "string",
+      "Description": "Retrieve a specific promotion code. Do not pass to retrieve all",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getpromotions.md"
+}

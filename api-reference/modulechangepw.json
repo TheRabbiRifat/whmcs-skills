@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "ModuleChangePw",
+  "description": "Runs a change password action for a given service.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"ModuleChangePw\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The service ID to run the action for",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "servicepassword",
+      "Type": "string",
+      "Description": "A new password to assign to the service",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/modulechangepw.md"
+}

@@ -1,0 +1,44 @@
+{
+  "type": "api_command",
+  "name": "GetModuleQueue",
+  "description": "Obtains the Module Queue for Incomplete Failed Actions",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetModuleQueue\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "relatedId",
+      "Type": "int",
+      "Description": "The id of the service to load. Used in conjunction with $serviceType",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "serviceType",
+      "Type": "string",
+      "Description": "The type of service to load ('domain', 'service', 'addon' or ''))",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "moduleName",
+      "Type": "string",
+      "Description": "The module name to obtain the queue for in system format. eg cpanel",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "moduleAction",
+      "Type": "string",
+      "Description": "The module action to obtain the queue for. eg CreateAccount, SuspendAccount",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "since",
+      "Type": "string",
+      "Description": "The date/time since to obtain the items. Format Y-m-d Can include H:i:s",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getmodulequeue.md"
+}

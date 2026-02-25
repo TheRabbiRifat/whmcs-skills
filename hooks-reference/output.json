@@ -1,0 +1,810 @@
+[
+  {
+    "type": "hook",
+    "name": "AdminAreaFooterOutput",
+    "description": "Runs on every admin area page load. All template variables defined at the time the hook is invoked are made available to this hook point. This can vary by page. The list below is not an exhaustive list.",
+    "parameters": [
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": "System charset setting eg. UTF-8"
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": "The admin template being used"
+      },
+      {
+        "Variable": "pagetemplate",
+        "Type": "string",
+        "Notes": "The template for the current page (if applicable)"
+      },
+      {
+        "Variable": "adminid",
+        "Type": "int",
+        "Notes": "The currently logged in admin user ID"
+      },
+      {
+        "Variable": "admin_username",
+        "Type": "string",
+        "Notes": "The username of the current admin user"
+      },
+      {
+        "Variable": "admin_notes",
+        "Type": "string",
+        "Notes": "The private notes for the current admin user"
+      },
+      {
+        "Variable": "admin_perms",
+        "Type": "array",
+        "Notes": "The permissions of the current admin user"
+      },
+      {
+        "Variable": "addon_modules",
+        "Type": "array",
+        "Notes": "A list of add-on modules the current admin user has access to"
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": "The name of the file being called"
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": "The title of the current page"
+      },
+      {
+        "Variable": "helplink",
+        "Type": "string",
+        "Notes": "The documentation url for the current page"
+      },
+      {
+        "Variable": "sidebar",
+        "Type": "string",
+        "Notes": "The sidebar output"
+      },
+      {
+        "Variable": "minsidebar",
+        "Type": "bool",
+        "Notes": "Returns true if the sidebar is minimised"
+      },
+      {
+        "Variable": "jquerycode",
+        "Type": "string",
+        "Notes": "jQuery code for the current page"
+      },
+      {
+        "Variable": "jscode",
+        "Type": "string",
+        "Notes": "Javascript code for the current page"
+      },
+      {
+        "Variable": "datepickerformat",
+        "Type": "string",
+        "Notes": "The format defined for dates in the admin area"
+      },
+      {
+        "Variable": "adminsonline",
+        "Type": "string",
+        "Notes": "A list of currently online admin users"
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminAreaHeadOutput",
+    "description": "Runs on every admin area page load. All template variables defined at the time the hook is invoked are made available to this hook point. This can vary by page. The list below is not an exhaustive list.",
+    "parameters": [
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": "System charset setting eg. UTF-8"
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": "The admin template being used"
+      },
+      {
+        "Variable": "pagetemplate",
+        "Type": "string",
+        "Notes": "The template for the current page (if applicable)"
+      },
+      {
+        "Variable": "adminid",
+        "Type": "int",
+        "Notes": "The currently logged in admin user ID"
+      },
+      {
+        "Variable": "admin_username",
+        "Type": "string",
+        "Notes": "The username of the current admin user"
+      },
+      {
+        "Variable": "admin_notes",
+        "Type": "string",
+        "Notes": "The private notes for the current admin user"
+      },
+      {
+        "Variable": "admin_perms",
+        "Type": "array",
+        "Notes": "The permissions of the current admin user"
+      },
+      {
+        "Variable": "addon_modules",
+        "Type": "array",
+        "Notes": "A list of add-on modules the current admin user has access to"
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": "The name of the file being called"
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": "The title of the current page"
+      },
+      {
+        "Variable": "helplink",
+        "Type": "string",
+        "Notes": "The documentation url for the current page"
+      },
+      {
+        "Variable": "sidebar",
+        "Type": "string",
+        "Notes": "The sidebar output"
+      },
+      {
+        "Variable": "minsidebar",
+        "Type": "bool",
+        "Notes": "Returns true if the sidebar is minimised"
+      },
+      {
+        "Variable": "jquerycode",
+        "Type": "string",
+        "Notes": "jQuery code for the current page"
+      },
+      {
+        "Variable": "jscode",
+        "Type": "string",
+        "Notes": "Javascript code for the current page"
+      },
+      {
+        "Variable": "datepickerformat",
+        "Type": "string",
+        "Notes": "The format defined for dates in the admin area"
+      },
+      {
+        "Variable": "adminsonline",
+        "Type": "string",
+        "Notes": "A list of currently online admin users"
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminAreaHeaderOutput",
+    "description": "Runs on every admin area page load. All template variables defined at the time the hook is invoked are made available to this hook point. This can vary by page. The list below is not an exhaustive list.",
+    "parameters": [
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": "System charset setting eg. UTF-8"
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": "The admin template being used"
+      },
+      {
+        "Variable": "pagetemplate",
+        "Type": "string",
+        "Notes": "The template for the current page (if applicable)"
+      },
+      {
+        "Variable": "adminid",
+        "Type": "int",
+        "Notes": "The currently logged in admin user ID"
+      },
+      {
+        "Variable": "admin_username",
+        "Type": "string",
+        "Notes": "The username of the current admin user"
+      },
+      {
+        "Variable": "admin_notes",
+        "Type": "string",
+        "Notes": "The private notes for the current admin user"
+      },
+      {
+        "Variable": "admin_perms",
+        "Type": "array",
+        "Notes": "The permissions of the current admin user"
+      },
+      {
+        "Variable": "addon_modules",
+        "Type": "array",
+        "Notes": "A list of add-on modules the current admin user has access to"
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": "The name of the file being called"
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": "The title of the current page"
+      },
+      {
+        "Variable": "helplink",
+        "Type": "string",
+        "Notes": "The documentation url for the current page"
+      },
+      {
+        "Variable": "sidebar",
+        "Type": "string",
+        "Notes": "The sidebar output"
+      },
+      {
+        "Variable": "minsidebar",
+        "Type": "bool",
+        "Notes": "Returns true if the sidebar is minimised"
+      },
+      {
+        "Variable": "jquerycode",
+        "Type": "string",
+        "Notes": "jQuery code for the current page"
+      },
+      {
+        "Variable": "jscode",
+        "Type": "string",
+        "Notes": "Javascript code for the current page"
+      },
+      {
+        "Variable": "datepickerformat",
+        "Type": "string",
+        "Notes": "The format defined for dates in the admin area"
+      },
+      {
+        "Variable": "adminsonline",
+        "Type": "string",
+        "Notes": "A list of currently online admin users"
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "AdminInvoicesControlsOutput",
+    "description": "Allows returning of output for display on the invoice edit page",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "subtotal",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "tax",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "tax2",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "credit",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "total",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "balance",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "taxrate",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "taxrate2",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "paymentmethod",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaDomainDetailsOutput",
+    "description": "Allows returning of output for display in the client area domain details page.",
+    "parameters": [
+      {
+        "Variable": "domain",
+        "Type": "\\WHMCS\\Domain\\Domain",
+        "Notes": "A domain object representing the domain being rendered."
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaFooterOutput",
+    "description": "Executes when a client area page is being output. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaHeadOutput",
+    "description": "Executes when a client area page is being output. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaHeaderOutput",
+    "description": "Executes when a client area page is being output. The following is a list of template variables common to all pages. Additional variables will vary depending upon the page being rendered.",
+    "parameters": [
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "logo",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "systemurl",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "charset",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "pagetitle",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "filename",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "template",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "LANG",
+        "Type": "array",
+        "Notes": "Active language translation strings"
+      },
+      {
+        "Variable": "todaysdate",
+        "Type": "string",
+        "Notes": "Human friendly formatted version of todays date"
+      },
+      {
+        "Variable": "date_day",
+        "Type": "string",
+        "Notes": "Current day of the month"
+      },
+      {
+        "Variable": "date_month",
+        "Type": "string",
+        "Notes": "Current month"
+      },
+      {
+        "Variable": "date_year",
+        "Type": "string",
+        "Notes": "Current year"
+      },
+      {
+        "Variable": "WEB_ROOT",
+        "Type": "string",
+        "Notes": "The web path to the WHMCS doc root"
+      },
+      {
+        "Variable": "BASE_PATH_CSS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_JS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_FONTS",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "BASE_PATH_IMG",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "token",
+        "Type": "string",
+        "Notes": "CSRF token value"
+      },
+      {
+        "Variable": "servedOverSsl",
+        "Type": "bool",
+        "Notes": "True if page was loaded via `https://`"
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "ClientAreaProductDetailsOutput",
+    "description": "Allows returning of output for display in the client area product details page.",
+    "parameters": [
+      {
+        "Variable": "service",
+        "Type": "\\WHMCS\\Service\\Service",
+        "Notes": "A service object representing the service being rendered."
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "FormatDateForClientAreaOutput",
+    "description": "Allows for transformation of a date prior to output within the Client Area.",
+    "parameters": [
+      {
+        "Variable": "date",
+        "Type": "\\Carbon",
+        "Notes": "A Carbon object representing the date/time."
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "FormatDateTimeForClientAreaOutput",
+    "description": "Allows for transformation of a date/time prior to output within the Client Area.",
+    "parameters": [
+      {
+        "Variable": "date",
+        "Type": "\\Carbon",
+        "Notes": "A Carbon object representing the date/time."
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "ReportViewPostOutput",
+    "description": "Executes as a report is being displayed, after the output occurs",
+    "parameters": [
+      {
+        "Variable": "report",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "moduleType",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "moduleName",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "ReportViewPreOutput",
+    "description": "Executes as a report is being displayed, before the output occurs",
+    "parameters": [
+      {
+        "Variable": "report",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "moduleType",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "moduleName",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "ShoppingCartCheckoutOutput",
+    "description": "Allows returning of output for display on the Shopping Cart Checkout page.",
+    "parameters": [
+      {
+        "Variable": "cartData",
+        "Type": "array",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "ShoppingCartConfigureProductAddonsOutput",
+    "description": "",
+    "parameters": [
+      {
+        "Variable": "billingCycle",
+        "Type": "",
+        "Notes": ""
+      },
+      {
+        "Variable": "selectedAddons",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  },
+  {
+    "type": "hook",
+    "name": "ShoppingCartViewCartOutput",
+    "description": "Allows returning of output for display on the Shopping Cart View Cart page.",
+    "parameters": [
+      {
+        "Variable": "cartData",
+        "Type": "array",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/output.md"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "GetTicket",
+  "description": "Obtain a specific ticket",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetTicket\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ticketnum",
+      "Type": "string",
+      "Description": "A specific Client Ticket Number to find tickets for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ticketid",
+      "Type": "int",
+      "Description": "A specific ticket ID to find tickets for (either $ticketnum or $ticketid is required).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "repliessort",
+      "Type": "string",
+      "Description": "ASC or DESC. The order to use to organise the ticket replies.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getticket.md"
+}

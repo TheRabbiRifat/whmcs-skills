@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "DeleteUserClient",
+  "description": "Delete relationship between user and client.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeleteUserClient\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "user_id",
+      "Type": "int",
+      "Description": "The id of the user to remove from the client",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "client_id",
+      "Type": "int",
+      "Description": "The id of the client to remove the user from",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/deleteuserclient.md"
+}

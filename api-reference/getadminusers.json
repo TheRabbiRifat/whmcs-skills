@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "GetAdminUsers",
+  "description": "Retrieve a list of administrator user accounts.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetAdminUsers\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "roleid",
+      "Type": "int",
+      "Description": "An administrative role ID to filter for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "An email address to filter for. Partial matching supported.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "include_disabled",
+      "Type": "bool",
+      "Description": "Pass as true to include disabled administrator user accounts in response.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getadminusers.md"
+}

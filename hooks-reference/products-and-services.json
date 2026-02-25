@@ -1,0 +1,310 @@
+[
+  {
+    "type": "hook",
+    "name": "AfterProductUpgrade",
+    "description": "",
+    "parameters": [
+      {
+        "Variable": "upgradeid",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/products-and-services.md"
+  },
+  {
+    "type": "hook",
+    "name": "ProductDelete",
+    "description": "Executes a product is being deleted.",
+    "parameters": [
+      {
+        "Variable": "pid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/products-and-services.md"
+  },
+  {
+    "type": "hook",
+    "name": "ProductEdit",
+    "description": "Executes as a Product is being edited.",
+    "parameters": [
+      {
+        "Variable": "pid",
+        "Type": "int",
+        "Notes": "The id of the product being saved."
+      },
+      {
+        "Variable": "type",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "gid",
+        "Type": "int",
+        "Notes": "The group id the product belongs to"
+      },
+      {
+        "Variable": "name",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "description",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "welcomeemail",
+        "Type": "int",
+        "Notes": "The id of the welcome email"
+      },
+      {
+        "Variable": "showdomainoptions",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "stockcontrol",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "qty",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "tax",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "is_featured",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "hidden",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "retired",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "paytype",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "allowqty",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "recurringcycles",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "autoterminatedays",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "autoterminateemail",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "proratabilling",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "proratadate",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "proratachargenextmonth",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "servertype",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "servergroup",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "autosetup",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "configoptionsupgrade",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "upgradeemail",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "freedomain",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "freedomainpaymentterms",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "freedomaintlds",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "affiliatepaytype",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "affiliatepayamount",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "affiliateonetime",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "subdomain",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "overagesenabled",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "overagesdisklimit",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "overagesbwlimit",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "overagesdiskprice",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "overagesbwprice",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "ondemandrenewalconfigurationoverride",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "ondemandrenewalsenabled",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "ondemandrenewalperiodmonthly",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "ondemandrenewalperiodquarterly",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "ondemandrenewalperiodsemiannually",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "ondemandrenewalperiodannually",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "ondemandrenewalperiodbiennially",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "ondemandrenewalperiodtriennially",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "configoptionX",
+        "Type": "string",
+        "Notes": "int"
+      }
+    ],
+    "source_file": "hooks-reference/products-and-services.md"
+  },
+  {
+    "type": "hook",
+    "name": "ServerAdd",
+    "description": "Executes as a server is created",
+    "parameters": [
+      {
+        "Variable": "serverid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/products-and-services.md"
+  },
+  {
+    "type": "hook",
+    "name": "ServerDelete",
+    "description": "Executes as a server is being deleted.",
+    "parameters": [
+      {
+        "Variable": "serverid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/products-and-services.md"
+  },
+  {
+    "type": "hook",
+    "name": "ServerEdit",
+    "description": "Executes as a server is being edited.",
+    "parameters": [
+      {
+        "Variable": "serverid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/products-and-services.md"
+  }
+]

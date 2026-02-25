@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "DeleteOrder",
+  "description": "Deletes a cancelled or fraud order.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeleteOrder\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "orderid",
+      "Type": "int",
+      "Description": "The order to be deleted",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/deleteorder.md"
+}

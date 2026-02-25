@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "CancelOrder",
+  "description": "Cancel a Pending Order",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"CancelOrder\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "orderid",
+      "Type": "int",
+      "Description": "The ID of the pending order",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "cancelsub",
+      "Type": "bool",
+      "Description": "Attempt to cancel the subscription associated with the products",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "noemail",
+      "Type": "bool",
+      "Description": "Set to true to stop the invoice payment email being sent if the invoice becomes paid",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/cancelorder.md"
+}

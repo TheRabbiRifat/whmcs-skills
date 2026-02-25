@@ -1,0 +1,38 @@
+{
+  "type": "api_command",
+  "name": "AddBannedIp",
+  "description": "Adds an IP to the ban list.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddBannedIp\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ip",
+      "Type": "string",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "reason",
+      "Type": "string",
+      "Description": "Admin only reason",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "days",
+      "Type": "int",
+      "Description": "If passed, expires date is auto calculated",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "expires",
+      "Type": "\\datetime",
+      "Description": "YYYY-MM-DD HH:MM:SS",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addbannedip.md"
+}

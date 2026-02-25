@@ -1,0 +1,44 @@
+{
+  "type": "api_command",
+  "name": "GetEmails",
+  "description": "Obtain a list of emails sent to a specific Client ID",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetEmails\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The client ID to retrieve the emails for.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned log data (default: `0`).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: `25`).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "date",
+      "Type": "string",
+      "Description": "The date to retrieve emails for. Format: Y-m-d H:i:s",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "subject",
+      "Type": "string",
+      "Description": "The subject to retrieve emails for (uses approximate string matching).",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getemails.md"
+}

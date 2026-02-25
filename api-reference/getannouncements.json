@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "GetAnnouncements",
+  "description": "Obtain an array of announcements",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetAnnouncements\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned announcement data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getannouncements.md"
+}

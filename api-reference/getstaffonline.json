@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "GetStaffOnline",
+  "description": "Retrieve a list of currently logged in admin users.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetStaffOnline\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getstaffonline.md"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetProject",
+  "description": "Retrieve a specific Project",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetProject\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "projectid",
+      "Type": "int",
+      "Description": "The project id to obtain",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getproject.md"
+}

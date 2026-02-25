@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "GetOrderStatuses",
+  "description": "Retrieve a list of order statuses and related counts",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetOrderStatuses\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getorderstatuses.md"
+}

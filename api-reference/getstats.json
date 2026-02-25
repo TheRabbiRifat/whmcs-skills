@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetStats",
+  "description": "Get business performance metrics and statistics.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetStats\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "timeline_days",
+      "Type": "int",
+      "Description": "(Optional) The number of days to retrieve timeline values for (max 90).",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getstats.md"
+}

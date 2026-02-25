@@ -1,0 +1,38 @@
+{
+  "type": "api_command",
+  "name": "GetUsers",
+  "description": "Obtain the Users that match passed criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetUsers\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned log data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "sorting",
+      "Type": "string",
+      "Description": "The direction to sort the results. ASC or DESC. Default: ASC",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "search",
+      "Type": "string",
+      "Description": "The search term to look for at the start of email, firstname, lastname, or fullname",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getusers.md"
+}

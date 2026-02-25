@@ -1,0 +1,254 @@
+[
+  {
+    "type": "hook",
+    "name": "ContactAdd",
+    "description": "Executes as a contact is being added to WHMCS.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "contactid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "firstname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "lastname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "email",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "address1",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "address2",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "city",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "state",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "postcode",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "country",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "phonenumber",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "tax_id",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "generalemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "productemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "domainemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "invoiceemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "supportemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "affiliateemails",
+        "Type": "bool",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/contact.md"
+  },
+  {
+    "type": "hook",
+    "name": "ContactDelete",
+    "description": "Executes on Contact Delete after the contact has been removed.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "contactid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/contact.md"
+  },
+  {
+    "type": "hook",
+    "name": "ContactDetailsValidation",
+    "description": "Executes on validation of contact details.",
+    "parameters": [
+      {
+        "Variable": "N/A",
+        "Type": "array",
+        "Notes": "The POSTed variables"
+      }
+    ],
+    "source_file": "hooks-reference/contact.md"
+  },
+  {
+    "type": "hook",
+    "name": "ContactEdit",
+    "description": "Runs when a contact is edited.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "contactid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "firstname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "lastname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "companyname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "email",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "address1",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "address2",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "city",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "state",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "postcode",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "country",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "phonenumber",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "tax_id",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "domainemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "generalemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "invoiceemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "productemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "supportemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "affiliateemails",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "olddata",
+        "Type": "array",
+        "Notes": "An array of the previous contact information"
+      }
+    ],
+    "source_file": "hooks-reference/contact.md"
+  }
+]

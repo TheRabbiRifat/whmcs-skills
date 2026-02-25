@@ -1,0 +1,80 @@
+{
+  "type": "api_command",
+  "name": "UpdateProject",
+  "description": "Updates a project",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateProject\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "projectid",
+      "Type": "int",
+      "Description": "The project ID to update.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "adminid",
+      "Type": "int",
+      "Description": "The adminId the project will be associated with.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "The user that the project is for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "The status of the project as defined in Project Management Settings.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "created",
+      "Type": "string",
+      "Description": "The created date of the project in the Y-m-d format.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "duedate",
+      "Type": "string",
+      "Description": "The due date of the project in the Y-m-d format.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "completed",
+      "Type": "bool",
+      "Description": "Whether the project is completed.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "title",
+      "Type": "string",
+      "Description": "The title of the project.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ticketids",
+      "Type": "string",
+      "Description": "A comma-separated list of ticket IDs to associate with the project.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "invoiceids",
+      "Type": "string",
+      "Description": "A comma-separated list of invoice IDs to associate with the project.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "The notes to associate with the project.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updateproject.md"
+}

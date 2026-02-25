@@ -1,0 +1,482 @@
+[
+  {
+    "type": "hook",
+    "name": "AcceptQuote",
+    "description": "Executes when a client is accepting a quote.",
+    "parameters": [
+      {
+        "Variable": "quoteid",
+        "Type": "int",
+        "Notes": "The id of the quote being accepted."
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The id of the invoice created for the quote (if applicable)."
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddInvoiceLateFee",
+    "description": "Executes when a late fee has been added to an invoice",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddInvoicePayment",
+    "description": "Invoked when a payment is applied to an invoice (including partial payments).",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The invoice id payment was applied to"
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "AddTransaction",
+    "description": "Executes when a transaction is created. Can be a payment or a refund.",
+    "parameters": [
+      {
+        "Variable": "id",
+        "Type": "int",
+        "Notes": "Transaction reference ID"
+      },
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": "Client ID"
+      },
+      {
+        "Variable": "currency",
+        "Type": "int",
+        "Notes": "Currency ID (if not related to a client, otherwise client currency)"
+      },
+      {
+        "Variable": "gateway",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "date",
+        "Type": "\\datetime",
+        "Notes": ""
+      },
+      {
+        "Variable": "description",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "amountin",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "fees",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "amountout",
+        "Type": "float",
+        "Notes": ""
+      },
+      {
+        "Variable": "rate",
+        "Type": "float",
+        "Notes": "Exchange rate"
+      },
+      {
+        "Variable": "transid",
+        "Type": "string",
+        "Notes": "Transaction reference ID provided by gateway or admin user"
+      },
+      {
+        "Variable": "invocieid",
+        "Type": "int",
+        "Notes": "Invoice ID to which the transaction was applied"
+      },
+      {
+        "Variable": "refundid",
+        "Type": "int",
+        "Notes": "ID of original Transaction, if this transaction is a refund"
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterInvoicingGenerateInvoiceItems",
+    "description": "Executes after invoice generation allowing for after invoicing clean-up.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "CancelAndRefundOrder",
+    "description": "Runs when an order is requested to be cancelled and refunded, prior to the change of status actually occurring.",
+    "parameters": [
+      {
+        "Variable": "orderid",
+        "Type": "int",
+        "Notes": "The order ID"
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoiceCancelled",
+    "description": "Executes when an invoice is being cancelled",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoiceChangeGateway",
+    "description": "Executes when changing the gateway on an invoice.",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The id of the invoice being updated."
+      },
+      {
+        "Variable": "paymentmethod",
+        "Type": "string",
+        "Notes": "The new payment method selected."
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoiceCreated",
+    "description": "Executed when an invoice has left \"Draft\" status and is available to its respective client. Execution of this hook occurs after sending the `Invoice Created` email.",
+    "parameters": [
+      {
+        "Variable": "source",
+        "Type": "string",
+        "Notes": "Indicates where the invoice creation action originated, can be one of `adminarea`, `api` or `autogen`"
+      },
+      {
+        "Variable": "user",
+        "Type": "mixed",
+        "Notes": "The user who initiated the invoice creation (either `system` or an admin ID value)."
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The invoice ID."
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": "The status of the released invoice."
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoiceCreation",
+    "description": "Executes when an invoice is first created. The invoice has not been finalised and delivered to the client at this point. Changes can be made to line items at this point. The invoice totals will be recalculated post execution of this hook point.",
+    "parameters": [
+      {
+        "Variable": "source",
+        "Type": "string",
+        "Notes": "Indicates where the invoice creation action originated, can be one of `adminarea`, `api` or `autogen`"
+      },
+      {
+        "Variable": "user",
+        "Type": "mixed",
+        "Notes": "User who initiated the invoice creation, either `system` or an admin ID value"
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The ID of the newly created invoice"
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": "The status of the newly created invoice"
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoiceCreationPreEmail",
+    "description": "Executes as an invoice is being created in the admin area before the email is being sent",
+    "parameters": [
+      {
+        "Variable": "source",
+        "Type": "string",
+        "Notes": "When the invoice is being created"
+      },
+      {
+        "Variable": "user",
+        "Type": "int",
+        "Notes": "string"
+      },
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The id of the newly created invoice"
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": "The status of the newly created invoice"
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoicePaid",
+    "description": "Executes when an invoice is Paid following the email receipt having been sent and any automation tasks associated with the payment action having been run.",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "invoice",
+        "Type": "\\WHMCS\\Billing\\Invoice",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoicePaidPreEmail",
+    "description": "Executes when an invoice is Paid prior to any email or automation tasks associated with the payment action having been run.",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoicePaymentReminder",
+    "description": "Executes when an automated invoice payment reminder is sent.",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "type",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoiceRefunded",
+    "description": "Executes when an invoice status is changed to Refunded.",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "Invoice ID"
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoiceSplit",
+    "description": "Executes as an invoice is being split",
+    "parameters": [
+      {
+        "Variable": "originalinvoiceid",
+        "Type": "int",
+        "Notes": "The id of the original invoice"
+      },
+      {
+        "Variable": "newinvoiceid",
+        "Type": "int",
+        "Notes": "The id of the new invoice"
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "InvoiceUnpaid",
+    "description": "Executes when an invoice is being marked as Unpaid",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "LogTransaction",
+    "description": "Runs any time a payment gateway callback is received and logged.",
+    "parameters": [
+      {
+        "Variable": "gateway",
+        "Type": "string",
+        "Notes": "The payment gateway name"
+      },
+      {
+        "Variable": "data",
+        "Type": "string",
+        "Notes": "A string formatted version of all post data received"
+      },
+      {
+        "Variable": "result",
+        "Type": "string",
+        "Notes": "The status the gateway module returned"
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "ManualRefund",
+    "description": "Executes when an invoice is refunded via the Manual Refund option.",
+    "parameters": [
+      {
+        "Variable": "transid",
+        "Type": "string",
+        "Notes": "Transaction ID of the original payment"
+      },
+      {
+        "Variable": "amount",
+        "Type": "float",
+        "Notes": "The amount to be refunded"
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreInvoiceAutomaticCancellation",
+    "description": "Executes prior to an invoice being automatically cancelled. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The id of the invoice being automatically cancelled."
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreInvoicingGenerateInvoiceItems",
+    "description": "Executes prior to invoice generation to allow for manipulation of stored data prior to aggregation of due items.",
+    "parameters": [
+      {
+        "Variable": "No input parameters for this hook point.",
+        "Type": "",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "QuoteCreated",
+    "description": "Executes when a quote is created.",
+    "parameters": [
+      {
+        "Variable": "quoteid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "QuoteStatusChange",
+    "description": "Executes when a quote status is updated",
+    "parameters": [
+      {
+        "Variable": "quoteid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "status",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "UpdateInvoiceTotal",
+    "description": "Executes when an invoice is updated with changes to or additions of line items. Can be used to manipulate the invoice.",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": "The invoice ID."
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  },
+  {
+    "type": "hook",
+    "name": "ViewInvoiceDetailsPage",
+    "description": "Executes as the invoice is being viewed as a client",
+    "parameters": [
+      {
+        "Variable": "invoiceid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/invoices-and-quotes.md"
+  }
+]

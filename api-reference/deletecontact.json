@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "DeleteContact",
+  "description": "Deletes a contact.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeleteContact\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "contactid",
+      "Type": "int",
+      "Description": "The contact id to be deleted",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/deletecontact.md"
+}

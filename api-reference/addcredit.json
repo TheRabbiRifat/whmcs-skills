@@ -1,0 +1,50 @@
+{
+  "type": "api_command",
+  "name": "AddCredit",
+  "description": "Adds credit to a given client.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddCredit\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "description",
+      "Type": "string",
+      "Description": "Admin only notes for credit justification",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "amount",
+      "Type": "float",
+      "Description": "The amount of credit to add or remove. Must be a positive value.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "date",
+      "Type": "string",
+      "Description": "The date the credit was added. YYYY-mm-dd format.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "adminid",
+      "Type": "int",
+      "Description": "The active admin id to be associated with the credit record. Defaults to current admin.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "type",
+      "Type": "string",
+      "Description": "Whether to add or remove credit. One of 'add' or 'remove'",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addcredit.md"
+}

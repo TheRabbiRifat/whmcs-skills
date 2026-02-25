@@ -1,0 +1,494 @@
+[
+  {
+    "type": "hook",
+    "name": "AfterRegistrarGetContactDetails",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarGetDNS",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarGetEPPCode",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarGetNameservers",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarRegister",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarRegistration",
+    "description": "Executes after a successful domain register command",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Common domain registrar parameters. See http://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarRegistrationFailed",
+    "description": "Executes after a failed domain register command",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Common domain registrar parameters. See http://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "error",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarRenew",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarRenewal",
+    "description": "Executes after a successful domain renewal command",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Common domain registrar parameters. See http://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarRenewalFailed",
+    "description": "Executes after a failed domain renewal command",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Common domain registrar parameters. See http://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "error",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarRequestDelete",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarSaveContactDetails",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarSaveDNS",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarSaveNameservers",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarTransfer",
+    "description": "Executes upon completion of the registrar module function. Will execute regardless of success state.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "results",
+        "Type": "array",
+        "Notes": "An array of results returned from the registrar function call"
+      },
+      {
+        "Variable": "functionExists",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar module supports the given action"
+      },
+      {
+        "Variable": "functionSuccessful",
+        "Type": "bool",
+        "Notes": "Returns true if the registrar function completed without error"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "AfterRegistrarTransferFailed",
+    "description": "Executes after a failed domain transfer command",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Common domain registrar parameters. See http://developers.whmcs.com/domain-registrars/module-parameters/"
+      },
+      {
+        "Variable": "error",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarGetContactDetails",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarGetDNS",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarGetEPPCode",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarGetNameservers",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarRequestDelete",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarSaveContactDetails",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarSaveDNS",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarSaveNameservers",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/registrar-module.md"
+  }
+]

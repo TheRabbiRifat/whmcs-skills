@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "DomainRegister",
+  "description": "Sends the Register command to the registrar for the domain",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainRegister\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The id of the domain to register *recommended*",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domain",
+      "Type": "string",
+      "Description": "The domain name to be registered. This or $domainid is required",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "idnlanguage",
+      "Type": "string",
+      "Description": "The language code for the domain being registered - will override the input already on the domain. Optional",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/domainregister.md"
+}

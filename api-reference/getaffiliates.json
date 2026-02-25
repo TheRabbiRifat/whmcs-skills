@@ -1,0 +1,68 @@
+{
+  "type": "api_command",
+  "name": "GetAffiliates",
+  "description": "Obtain an array of affiliates",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetAffiliates\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned affiliate data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "Obtain affiliate data for a specific client account",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "visitors",
+      "Type": "int",
+      "Description": "Provide affiliates that match a specific visitor count",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "paytype",
+      "Type": "string",
+      "Description": "Provide affiliates matching the paytype provided. One of '', 'percentage', 'fixedamount'",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "payamount",
+      "Type": "float",
+      "Description": "Provide affiliates matching a specific overridden payout amount",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "onetime",
+      "Type": "int",
+      "Description": "Provide affiliates configured to receive one time affiliates",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "balance",
+      "Type": "float",
+      "Description": "Provide affiliates that have this balance",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "withdrawn",
+      "Type": "float",
+      "Description": "Provide affiliates that have withdrawn this amount",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getaffiliates.md"
+}

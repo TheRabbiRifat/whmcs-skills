@@ -1,0 +1,254 @@
+{
+  "type": "api_command",
+  "name": "AddProduct",
+  "description": "Adds a product to the system to be available for purchase",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddProduct\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "name",
+      "Type": "string",
+      "Description": "The name of the product to be added",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "gid",
+      "Type": "int",
+      "Description": "The id of the product group to add the product",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "slug",
+      "Type": "string",
+      "Description": "The friendly name of the product. Will be generated if not supplied.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "type",
+      "Type": "string",
+      "Description": "One of 'hostingaccount', 'reselleraccount', 'server' or 'other'",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "stockcontrol",
+      "Type": "bool",
+      "Description": "Set to true to enable stock control on the product",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "qty",
+      "Type": "int",
+      "Description": "How much of this product is in stock",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "paytype",
+      "Type": "string",
+      "Description": "The payment type of the product. One of 'free', 'onetime', 'recurring'",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "hidden",
+      "Type": "bool",
+      "Description": "Should the product be hidden from the client order form",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "showdomainoptions",
+      "Type": "bool",
+      "Description": "Should the product show the domain registration options.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "tax",
+      "Type": "bool",
+      "Description": "Does tax apply to the product.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "isFeatured",
+      "Type": "bool",
+      "Description": "Should the product be featured in the Product Group.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "proratabilling",
+      "Type": "bool",
+      "Description": "Is pro-rata billing enabled for this product.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "description",
+      "Type": "string",
+      "Description": "The description of the product to show on the product listing in the cart",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "shortdescription",
+      "Type": "string",
+      "Description": "The short description of the product to show in specific areas of the cart.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "tagline",
+      "Type": "string",
+      "Description": "The tagline of the product to show in specific areas of the cart.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "color",
+      "Type": "string",
+      "Description": "The color to associate with the product in specific areas of the cart.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "welcomeemail",
+      "Type": "int",
+      "Description": "The id of the Email Template to use as the welcome email. Product/Service Messages only",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "proratadate",
+      "Type": "int",
+      "Description": "See https://go.whmcs.com/1981/products#pricing",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "proratachargenextmonth",
+      "Type": "int",
+      "Description": "See https://go.whmcs.com/1981/products#pricing",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "subdomain",
+      "Type": "string",
+      "Description": "A comma separated list of subdomains to offer on the domain register page. eg: .domain1.com,.domain2.com",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "autosetup",
+      "Type": "string",
+      "Description": "When should the product be automatically setup. One of '' (never), 'on' (pending order), 'payment' (on payment), 'order' (on order)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "module",
+      "Type": "string",
+      "Description": "The server module system name to associate with the product. eg: cpanel, autorelease, plesk",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "servergroupid",
+      "Type": "int",
+      "Description": "The server group id used on product creation to associate an appropriate server",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "configoption1",
+      "Type": "mixed",
+      "Description": "The first module configuration value",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "configoption2",
+      "Type": "mixed",
+      "Description": "The second module configuration value",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "configoption3",
+      "Type": "mixed",
+      "Description": "The third module configuration value",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "configoption4",
+      "Type": "mixed",
+      "Description": "The fourth module configuration value",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "configoption5",
+      "Type": "mixed",
+      "Description": "The fifth module configuration value",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "configoption6",
+      "Type": "mixed",
+      "Description": "The sixth module configuration value",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "order",
+      "Type": "int",
+      "Description": "The order to in which to display on the order form",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "pricing",
+      "Type": "array",
+      "Description": "The pricing array to associate with the product. Format: $pricing[currencyid][cycle]. See Example.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "recommendations",
+      "Type": "array",
+      "Description": "The recommendations array to associate with the product in the following format: ['id' => productid, 'order' => integer] (See example.)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ondemandrenewalconfigurationoverride",
+      "Type": "bool",
+      "Description": "Whether the product uses custom on-demand renewal settings.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ondemandrenewalsenabled",
+      "Type": "bool",
+      "Description": "Whether on-demand renewals are enabled for the product. Requires $ondemandrenewalconfigurationoverride be set to true.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ondemandrenewalperiodmonthly",
+      "Type": "int",
+      "Description": "The period (in days) during which clients can place early renewal orders for the monthly billing cycle. Requires $ondemandrenewalconfigurationoverride be set to true.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ondemandrenewalperiodquarterly",
+      "Type": "int",
+      "Description": "The period (in days) during which clients can place early renewal orders for the quarterly billing cycle. Requires $ondemandrenewalconfigurationoverride be set to true.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ondemandrenewalperiodsemiannually",
+      "Type": "int",
+      "Description": "The period (in days) during which clients can place early renewal orders for the semi-annually billing cycle. Requires $ondemandrenewalconfigurationoverride be set to true.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ondemandrenewalperiodannually",
+      "Type": "int",
+      "Description": "The period (in days) during which clients can place early renewal orders for the annually billing cycle. Requires $ondemandrenewalconfigurationoverride be set to true.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ondemandrenewalperiodbiennially",
+      "Type": "int",
+      "Description": "The period (in days) during which clients can place early renewal orders for the biennially billing cycle. Requires $ondemandrenewalconfigurationoverride be set to true.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ondemandrenewalperiodtriennially",
+      "Type": "int",
+      "Description": "The period (in days) during which clients can place early renewal orders for the triennially billing cycle. Requires $ondemandrenewalconfigurationoverride be set to true.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addproduct.md"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "GetPaymentMethods",
+  "description": "Retrieve Activated Payment Methods",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetPaymentMethods\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getpaymentmethods.md"
+}

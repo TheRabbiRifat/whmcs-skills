@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetInvoice",
+  "description": "Retrieve a specific invoice",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetInvoice\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "invoiceid",
+      "Type": "int",
+      "Description": "The ID of the invoice to retrieve.",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getinvoice.md"
+}

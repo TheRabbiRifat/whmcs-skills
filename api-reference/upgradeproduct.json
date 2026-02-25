@@ -1,0 +1,62 @@
+{
+  "type": "api_command",
+  "name": "UpgradeProduct",
+  "description": "Upgrade, or calculate an upgrade on, a product",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpgradeProduct\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The ID of the service to update",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "calconly",
+      "Type": "bool",
+      "Description": "Only calculate the upgrade amount",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "paymentmethod",
+      "Type": "string",
+      "Description": "The upgrade payment method in system format (e.g. paypal)",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "type",
+      "Type": "string",
+      "Description": "The type of upgrade ('product', 'configoptions')",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "newproductid",
+      "Type": "int",
+      "Description": "The ID of the new product",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "newproductbillingcycle",
+      "Type": "string",
+      "Description": "The new products billing cycle",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "promocode",
+      "Type": "string",
+      "Description": "The promotion code to apply to the upgrade",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "configoptions",
+      "Type": "array",
+      "Description": "If type=configoptions - Config options to include in the upgrade. Keys represent config option IDs while their values represent the config option choice ID or value (depending on type). In the example provided, config option ID=1 is a dropdown specifying option ID 4, and config option ID=2 is a quantity specifying a desire for 5 units.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/upgradeproduct.md"
+}

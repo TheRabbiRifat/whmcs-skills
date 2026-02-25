@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetConfigurationValue",
+  "description": "Retrieve a System Configuration Value.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetConfigurationValue\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "setting",
+      "Type": "string",
+      "Description": "The name of the setting to be obtained",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getconfigurationvalue.md"
+}

@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "AddClientNote",
+  "description": "Adds a Client Note",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddClientNote\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "The Client ID to apply the note to",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "The note to add",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "sticky",
+      "Type": "bool",
+      "Description": "Should the note be made sticky. Makes the note 'sticky' and displays the note throughout the client's account and on any tickets they submit in the admin area",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addclientnote.md"
+}

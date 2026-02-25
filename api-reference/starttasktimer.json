@@ -1,0 +1,44 @@
+{
+  "type": "api_command",
+  "name": "StartTaskTimer",
+  "description": "Starts a timer for a project",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"StartTaskTimer\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "timerid",
+      "Type": "int",
+      "Description": "The id of the task to be ended",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "projectid",
+      "Type": "int",
+      "Description": "The id of the project for the task timer",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "adminid",
+      "Type": "int",
+      "Description": "The admin id to associate the timer with",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "start_time",
+      "Type": "int",
+      "Description": "The start time as a unix time stamp. Defaults to time() if not provided",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "end_time",
+      "Type": "int",
+      "Description": "The start time as a unix time stamp.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/starttasktimer.md"
+}

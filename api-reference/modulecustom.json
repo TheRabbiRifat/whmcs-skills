@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "ModuleCustom",
+  "description": "Runs a custom module action for a given service.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"ModuleCustom\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The service ID to run the action for",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "func_name",
+      "Type": "string",
+      "Description": "The name of the custom function to run",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/modulecustom.md"
+}

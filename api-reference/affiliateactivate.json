@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "AffiliateActivate",
+  "description": "Activate affiliate referrals for a client.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AffiliateActivate\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "The client ID to activate affiliate status for",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/affiliateactivate.md"
+}

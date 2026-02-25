@@ -1,0 +1,50 @@
+{
+  "type": "api_command",
+  "name": "GetOrders",
+  "description": "Obtain orders matching the passed criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetOrders\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned order data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "id",
+      "Type": "int",
+      "Description": "Find orders for a specific id",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "Find orders for a specific client id",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "requestor_id",
+      "Type": "int",
+      "Description": "Find orders for a specific requestor id",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "Find orders for a specific status",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getorders.md"
+}

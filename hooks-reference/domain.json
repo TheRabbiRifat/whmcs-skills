@@ -1,0 +1,264 @@
+[
+  {
+    "type": "hook",
+    "name": "DomainDelete",
+    "description": "Executes when a domain is being deleted from the client account.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "domainid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "DomainEdit",
+    "description": "Executes when the domain is being edited via the Client Profile Summary and Domains tabs in the Admin Area.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "domainid",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "DomainTransferCompleted",
+    "description": "Executes when a domain transfer is set to completed by the domain sync cron.",
+    "parameters": [
+      {
+        "Variable": "domainId",
+        "Type": "int",
+        "Notes": "The unique identifier for the domain"
+      },
+      {
+        "Variable": "domain",
+        "Type": "string",
+        "Notes": "The domain name"
+      },
+      {
+        "Variable": "registrationPeriod",
+        "Type": "string",
+        "Notes": "The registration period"
+      },
+      {
+        "Variable": "expiryDate",
+        "Type": "string",
+        "Notes": "The expiry date (if returned by the registrar)"
+      },
+      {
+        "Variable": "registrar",
+        "Type": "string",
+        "Notes": "The registrar used"
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "DomainTransferFailed",
+    "description": "Executes when a domain transfer is set to failed by the domain sync cron.",
+    "parameters": [
+      {
+        "Variable": "domainId",
+        "Type": "int",
+        "Notes": "The unique identifier for the domain"
+      },
+      {
+        "Variable": "domain",
+        "Type": "string",
+        "Notes": "The domain name"
+      },
+      {
+        "Variable": "registrationPeriod",
+        "Type": "string",
+        "Notes": "The registration period"
+      },
+      {
+        "Variable": "expiryDate",
+        "Type": "string",
+        "Notes": "The expiry date (if returned by the registrar)"
+      },
+      {
+        "Variable": "registrar",
+        "Type": "string",
+        "Notes": "The registrar used"
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "DomainValidation",
+    "description": "Executes as domain validation is being run",
+    "parameters": [
+      {
+        "Variable": "sld",
+        "Type": "string",
+        "Notes": "The sld of the domain. eg whmcs in whmcs.com"
+      },
+      {
+        "Variable": "tld",
+        "Type": "string",
+        "Notes": "The tld of the domain. eg com in whmcs.com"
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreDomainRegister",
+    "description": "Executes before a domain register command",
+    "parameters": [
+      {
+        "Variable": "domain",
+        "Type": "string",
+        "Notes": "The domain being registered"
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreDomainTransfer",
+    "description": "Executes before a domain transfer command",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Common domain registrar parameters. See http://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarRegisterDomain",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarRenewDomain",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "PreRegistrarTransferDomain",
+    "description": "Executes prior to the registrar function being executed for a domain. Allows the action to be aborted.",
+    "parameters": [
+      {
+        "Variable": "params",
+        "Type": "array",
+        "Notes": "Array of common module parameters. See https://developers.whmcs.com/domain-registrars/module-parameters/"
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "TopLevelDomainAdd",
+    "description": "Executes when a new domain extension is added.",
+    "parameters": [
+      {
+        "Variable": "tld",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "supportsDnsManagement",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "supportsEmailForwarding",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "supportsIdProtection",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "requiresEppCode",
+        "Type": "bool",
+        "Notes": ""
+      },
+      {
+        "Variable": "automaticRegistrar",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "TopLevelDomainDelete",
+    "description": "Executes when a domain extension is deleted.",
+    "parameters": [
+      {
+        "Variable": "tld",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "TopLevelDomainPricingUpdate",
+    "description": "Executes when domain extension pricing is updated.",
+    "parameters": [
+      {
+        "Variable": "tld",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  },
+  {
+    "type": "hook",
+    "name": "TopLevelDomainUpdate",
+    "description": "Executes when domain extensions configuration is updated.",
+    "parameters": [
+      {
+        "Variable": "modifiedTlds",
+        "Type": "string[]",
+        "Notes": "An array of domain extensions that have been modified."
+      }
+    ],
+    "source_file": "hooks-reference/domain.md"
+  }
+]

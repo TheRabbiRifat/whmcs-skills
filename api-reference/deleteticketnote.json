@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "DeleteTicketNote",
+  "description": "Deletes a ticket note.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeleteTicketNote\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "noteid",
+      "Type": "int",
+      "Description": "The ticket note to be deleted",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/deleteticketnote.md"
+}

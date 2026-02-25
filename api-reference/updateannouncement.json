@@ -1,0 +1,44 @@
+{
+  "type": "api_command",
+  "name": "UpdateAnnouncement",
+  "description": "Update a specific announcement",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateAnnouncement\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "announcementid",
+      "Type": "string",
+      "Description": "The ID of the announcement to update.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "title",
+      "Type": "string",
+      "Description": "The title of the announcement (if required to change).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "announcement",
+      "Type": "string",
+      "Description": "The message of the announcement (if required to change).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "date",
+      "Type": "string",
+      "Description": "The date of the announcement (if required to change). Format: Y-m-d H:i:s",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "published",
+      "Type": "bool",
+      "Description": "Whether to publish the announcement (1 or 0) (if required to change).",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updateannouncement.md"
+}

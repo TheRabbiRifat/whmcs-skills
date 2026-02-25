@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "WhmcsDetails",
+  "description": "Obtain details pertaining to the current WHMCS installation",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"WhmcsDetails\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/whmcsdetails.md"
+}

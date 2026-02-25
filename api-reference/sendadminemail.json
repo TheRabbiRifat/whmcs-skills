@@ -1,0 +1,50 @@
+{
+  "type": "api_command",
+  "name": "SendAdminEmail",
+  "description": "Send an Admin Email Notification",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"SendAdminEmail\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "messagename",
+      "Type": "string",
+      "Description": "The name of the admin email template to send",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "custommessage",
+      "Type": "string",
+      "Description": "The HTML message body to send for a custom email",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customsubject",
+      "Type": "string",
+      "Description": "The subject to send for a custom email",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "type",
+      "Type": "string",
+      "Description": "Which type of admin notification will be send ('system', 'account', 'support')",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "deptid",
+      "Type": "int",
+      "Description": "The Id of the department the notification is for if 'support' $type",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "mergefields",
+      "Type": "array",
+      "Description": "The merge fields to be used in the email template",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/sendadminemail.md"
+}

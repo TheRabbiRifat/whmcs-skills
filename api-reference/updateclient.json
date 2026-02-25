@@ -1,0 +1,284 @@
+{
+  "type": "api_command",
+  "name": "UpdateClient",
+  "description": "Updates a client with the passed parameters.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateClient\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The ID of the client to update.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clientemail",
+      "Type": "string",
+      "Description": "The email address of the client to update. Either $clientid or $clientemail is required.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "firstname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lastname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "companyname",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "address1",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "address2",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "city",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "state",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "postcode",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "country",
+      "Type": "string",
+      "Description": "Two-character ISO country code.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "phonenumber",
+      "Type": "string",
+      "Description": "",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "tax_id",
+      "Type": "string",
+      "Description": "The client Tax ID.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "~~cardtype~~",
+      "Type": "~~string~~",
+      "Description": "~~Credit card type. Provide the full name: Visa, Mastercard, American Express, etc.~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~cardnum~~",
+      "Type": "~~string~~",
+      "Description": "~~Credit card number.~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~expdate~~",
+      "Type": "~~string~~",
+      "Description": "~~Format: MMYY~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~startdate~~",
+      "Type": "~~string~~",
+      "Description": "~~Format: MMYY (if applicable)~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~issuenumber~~",
+      "Type": "~~string~~",
+      "Description": "~~Credit card issue number (if applicable).~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~cvv~~",
+      "Type": "~~string~~",
+      "Description": "~~Credit card CVV number (will not be stored).~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~bankcode~~",
+      "Type": "~~string~~",
+      "Description": "~~Client Bank Account Code (if applicable).~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "~~bankacct~~",
+      "Type": "~~string~~",
+      "Description": "~~Client bank Account number (if applicable).~~",
+      "Required": "Deprecated"
+    },
+    {
+      "Parameter": "currency",
+      "Type": "int",
+      "Description": "Currency ID from tblcurrencies.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "groupid",
+      "Type": "int",
+      "Description": "Client Group ID from tblclientgroups.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customfields",
+      "Type": "string",
+      "Description": "Base64-encoded serialized array of custom field values.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "language",
+      "Type": "string",
+      "Description": "Default language setting. Provide the full name: 'english', 'french', etc.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clientip",
+      "Type": "string",
+      "Description": "IP address of the user.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "Admin-only notes.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "The status. For example, \"Active\".",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "paymentmethod",
+      "Type": "string",
+      "Description": "The default payment method.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[general]",
+      "Type": "bool",
+      "Description": "Whether the client should receive general emails.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[product]",
+      "Type": "bool",
+      "Description": "Whether the client should receive product emails.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[domain]",
+      "Type": "bool",
+      "Description": "Whether the client should receive domain emails.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[invoice]",
+      "Type": "bool",
+      "Description": "Whether the client should receive invoice emails.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[support]",
+      "Type": "bool",
+      "Description": "Whether the client should receive support emails.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email_preferences[affiliate]",
+      "Type": "bool",
+      "Description": "Whether the client should receive affiliate emails.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "marketingoptin",
+      "Type": "bool",
+      "Description": "Set this to 'true' to opt the client in to marketing emails.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clearcreditcard",
+      "Type": "bool",
+      "Description": "Set this to 'true' to clear the stored credit card details.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "skipvalidation",
+      "Type": "bool",
+      "Description": "Set this to 'true' to ignore required field validation.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "latefeeoveride",
+      "Type": "bool",
+      "Description": "Whether to override the account's Late Fees setting.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "overideduenotices",
+      "Type": "bool",
+      "Description": "Whether to override the account's Overdue Notices setting.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "taxexempt",
+      "Type": "bool",
+      "Description": "Whether the account is exempt from tax collections.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "separateinvoices",
+      "Type": "bool",
+      "Description": "Whether to group items that share a due date and payment method into one invoice for the account.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "disableautocc",
+      "Type": "bool",
+      "Description": "Whether to enable or disable automatic credit card processing.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "overrideautoclose",
+      "Type": "bool",
+      "Description": "Whether to enable or disable automatic credit card processing.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updateclient.md"
+}

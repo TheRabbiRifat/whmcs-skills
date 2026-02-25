@@ -1,0 +1,142 @@
+[
+  {
+    "type": "hook",
+    "name": "PreUserAdd",
+    "description": "Executes just prior to a user being added to WHMCS. Changes to hook variables will not be honored.",
+    "parameters": [
+      {
+        "Variable": "user_id",
+        "Type": "int",
+        "Notes": "The id of the user that has been added"
+      },
+      {
+        "Variable": "firstname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "lastname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "email",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "password",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/user.md"
+  },
+  {
+    "type": "hook",
+    "name": "UserAdd",
+    "description": "Executes as a user is being added to WHMCS.",
+    "parameters": [
+      {
+        "Variable": "user_id",
+        "Type": "int",
+        "Notes": "The id of the user that has been added"
+      },
+      {
+        "Variable": "firstname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "lastname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "email",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "password",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "language",
+        "Type": "string",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/user.md"
+  },
+  {
+    "type": "hook",
+    "name": "UserChangePassword",
+    "description": "Executed when a change of password occurs for a user.",
+    "parameters": [
+      {
+        "Variable": "userid",
+        "Type": "int",
+        "Notes": "The ID of the User being updated"
+      },
+      {
+        "Variable": "password",
+        "Type": "string",
+        "Notes": "The new password"
+      }
+    ],
+    "source_file": "hooks-reference/user.md"
+  },
+  {
+    "type": "hook",
+    "name": "UserEdit",
+    "description": "Executes when a user is edited.",
+    "parameters": [
+      {
+        "Variable": "user_id",
+        "Type": "int",
+        "Notes": ""
+      },
+      {
+        "Variable": "firstname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "lastname",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "email",
+        "Type": "string",
+        "Notes": ""
+      },
+      {
+        "Variable": "olddata",
+        "Type": "array",
+        "Notes": "An array of the previous user information"
+      }
+    ],
+    "source_file": "hooks-reference/user.md"
+  },
+  {
+    "type": "hook",
+    "name": "UserEmailVerificationComplete",
+    "description": "Executes upon successful completion of email verification by a user.",
+    "parameters": [
+      {
+        "Variable": "userId",
+        "Type": "int",
+        "Notes": ""
+      }
+    ],
+    "source_file": "hooks-reference/user.md"
+  }
+]

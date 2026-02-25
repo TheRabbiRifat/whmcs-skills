@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "GetTicketAttachment",
+  "description": "Retrieve a single attachment.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetTicketAttachment\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "relatedid",
+      "Type": "int",
+      "Description": "The unique id for the `type`",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "type",
+      "Type": "string",
+      "Description": "One of `ticket`, `reply`, `note`",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "index",
+      "Type": "int",
+      "Description": "The numerical index of the attachment to get",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getticketattachment.md"
+}

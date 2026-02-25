@@ -1,0 +1,80 @@
+{
+  "type": "api_command",
+  "name": "UpdatePayMethod",
+  "description": "Update a Credit Card Pay Method.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdatePayMethod\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The id of the client matching the Pay Method",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "paymethodid",
+      "Type": "int",
+      "Description": "The id of the payment method to update",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "card_number",
+      "Type": "string",
+      "Description": "Credit Card Number. The card number to update for a CreditCard or RemoteCreditCard Pay Method. Optional. Only provide if you wish to make an update",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "card_expiry",
+      "Type": "string",
+      "Description": "The expiry date to update for a CreditCard or RemoteCreditCard Pay Method. Format 'MMYY' eg 0122. Optional. Only provide if you wish to make an update",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "card_start",
+      "Type": "string",
+      "Description": "The start date to update for a CreditCard or RemoteCreditCard Pay Method. Format 'MMYY' 'eg' 0122. Optional. Only provide if you wish to make an update",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "card_issue_number",
+      "Type": "int",
+      "Description": "The issue_number to update for a CreditCard or RemoteCreditCard Pay Method. Optional. Only provide if you wish to make an update",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "bank_name",
+      "Type": "string",
+      "Description": "The name of the bank. Optional. Only provide if you wish to make an update",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "bank_account_type",
+      "Type": "string",
+      "Description": "The type of bank account (checking, credit etc). Optional. Only provide if you wish to make an update",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "bank_code",
+      "Type": "string",
+      "Description": "The bank code. Also called sort code or routing number. Optional. Only provide if you wish to make an update",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "bank_account",
+      "Type": "string",
+      "Description": "The account number. Required for BankAccount type. Optional. Only provide if you wish to make an update",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "set_as_default",
+      "Type": "bool",
+      "Description": "Should the new Pay Method be the client default",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updatepaymethod.md"
+}

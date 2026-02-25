@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "GetPermissionsList",
+  "description": "Retrieve a list of permissions that can be used when creating a user",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetPermissionsList\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getpermissionslist.md"
+}

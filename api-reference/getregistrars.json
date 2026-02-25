@@ -1,0 +1,14 @@
+{
+  "type": "api_command",
+  "name": "GetRegistrars",
+  "description": "Get Registrars.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetRegistrars\"",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getregistrars.md"
+}

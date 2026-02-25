@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "ModuleUnsuspend",
+  "description": "Runs an unsuspend action for a given service.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"ModuleUnsuspend\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "serviceid",
+      "Type": "int",
+      "Description": "The service ID to run the action for",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/moduleunsuspend.md"
+}

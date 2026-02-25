@@ -1,0 +1,110 @@
+{
+  "type": "api_command",
+  "name": "UpdateTicket",
+  "description": "Updates an existing ticket",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateTicket\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ticketid",
+      "Type": "int",
+      "Description": "The ticket Id to update",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "deptid",
+      "Type": "int",
+      "Description": "The department id of the ticket",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "The status of the ticket",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "subject",
+      "Type": "string",
+      "Description": "The subject of the ticket",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "If applicable, the Client ID to update the ticket for.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "name",
+      "Type": "string",
+      "Description": "The name of the person opening the ticket (if not a client)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "The email address of the person opening the ticket (if not a client)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "cc",
+      "Type": "string",
+      "Description": "The cc email addresses for the ticket",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "priority",
+      "Type": "string",
+      "Description": "The priority of the ticket ('Low', 'Medium', 'High')",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "created",
+      "Type": "string",
+      "Description": "The date and time the initial message will show as created. Format: ISO8601 or YYYY-MM-DD HH:mm:ss",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "flag",
+      "Type": "int",
+      "Description": "The id of the admin to flag the ticket to",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "removeFlag",
+      "Type": "bool",
+      "Description": "Remove the flag from the ticket",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "message",
+      "Type": "string",
+      "Description": "Update the ticket message",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "markdown",
+      "Type": "bool",
+      "Description": "Should markdown be used on the ticket output.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "customfields",
+      "Type": "string",
+      "Description": "Base64 encoded serialized array of custom field values",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "preventClientClosure",
+      "Type": "bool",
+      "Description": "Whether the client should be allowed to close the ticket. If you do not pass this while also passing a department id, tickets moving to a department with the setting enabled will inherit the department setting.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updateticket.md"
+}

@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "GetUserPermissions",
+  "description": "Provide the permissions of a user for a client.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetUserPermissions\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "user_id",
+      "Type": "int",
+      "Description": "The id of the user to retrieve the permissions for",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "client_id",
+      "Type": "int",
+      "Description": "The id of the client to retrieve the permissions for",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getuserpermissions.md"
+}

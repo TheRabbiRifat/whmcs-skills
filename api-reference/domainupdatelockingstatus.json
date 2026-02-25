@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "DomainUpdateLockingStatus",
+  "description": "Sends the Update Lock command to the registrar for the domain",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainUpdateLockingStatus\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The id of the domain to update the locking status for",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "lockstatus",
+      "Type": "bool",
+      "Description": "Should the domain lock be turned on",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/domainupdatelockingstatus.md"
+}

@@ -1,0 +1,92 @@
+{
+  "type": "api_command",
+  "name": "AddTransaction",
+  "description": "Add a transaction to the system",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"AddTransaction\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "paymentmethod",
+      "Type": "string",
+      "Description": "The payment method of the transaction in system format",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "The ID of the user to apply the transaction to",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "invoiceid",
+      "Type": "int",
+      "Description": "The ID of the invoice the transaction is for",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "transid",
+      "Type": "string",
+      "Description": "The unique transaction id for this payment",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "date",
+      "Type": "string",
+      "Description": "The date of the transaction in your Localisation Format (eg DD/MM/YYYY)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "currencyid",
+      "Type": "int",
+      "Description": "The currency id for the transaction if not associated with a user",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "description",
+      "Type": "string",
+      "Description": "The description of the transaction",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "amountin",
+      "Type": "float",
+      "Description": "The amount received by the payment",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "fees",
+      "Type": "float",
+      "Description": "The amount of fee charged on the transaction by the merchant - This can be negative",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "amountout",
+      "Type": "float",
+      "Description": "The amount paid out by the payment",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "rate",
+      "Type": "float",
+      "Description": "The exchange rate for the payment based on the default currency",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "credit",
+      "Type": "bool",
+      "Description": "Should the payment be applied to credit on the client account. Invoice ID must not be provided.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "allowduplicatetransid",
+      "Type": "bool",
+      "Description": "Should an already existing transaction id be allowed. Defaults to false.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/addtransaction.md"
+}

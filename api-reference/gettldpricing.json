@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "GetTLDPricing",
+  "description": "Retrieve TLD pricing",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetTLDPricing\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "currencyid",
+      "Type": "int",
+      "Description": "The currency ID to fetch pricing for. Pass this or clientid, but not both. clientid overrides currencyid.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The client ID to fetch pricing for. Pass this or clientid, but not both. clientid overrides currencyid.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/gettldpricing.md"
+}

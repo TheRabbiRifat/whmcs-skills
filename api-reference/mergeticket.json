@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "MergeTicket",
+  "description": "Merge tickets.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"MergeTicket\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ticketid",
+      "Type": "int",
+      "Description": "The unique ticket id that `mergeticketids` will be merged into",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "mergeticketids",
+      "Type": "string",
+      "Description": "A comma separated list of ticket ids to merge into `ticketid`",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "newsubject",
+      "Type": "string",
+      "Description": "An optional subject to be set on the `ticketid`",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/mergeticket.md"
+}

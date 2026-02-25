@@ -1,0 +1,32 @@
+{
+  "type": "api_command",
+  "name": "DomainTransfer",
+  "description": "Sends the Transfer command to the registrar for the domain",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DomainTransfer\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The id of the domain to be transferred *recommended*",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domain",
+      "Type": "string",
+      "Description": "The domain name to be transferred. This or $domainid is required",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "eppcode",
+      "Type": "int",
+      "Description": "Provide a new EPP Code for the Transfer Request",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/domaintransfer.md"
+}

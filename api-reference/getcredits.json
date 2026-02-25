@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "GetCredits",
+  "description": "Obtain the Credit Log for a Client Account",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetCredits\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "clientid",
+      "Type": "int",
+      "Description": "The Client to obtain the log for",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/getcredits.md"
+}

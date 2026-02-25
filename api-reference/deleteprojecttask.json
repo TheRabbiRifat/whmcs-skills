@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "DeleteProjectTask",
+  "description": "Deletes a task associated with a project",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeleteProjectTask\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "projectid",
+      "Type": "int",
+      "Description": "The project that owns the task being deleted",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "taskid",
+      "Type": "int",
+      "Description": "The task to be deleted",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/deleteprojecttask.md"
+}

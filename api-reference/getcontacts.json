@@ -1,0 +1,98 @@
+{
+  "type": "api_command",
+  "name": "GetContacts",
+  "description": "Obtain the Client Contacts that match passed criteria",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"GetContacts\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "limitstart",
+      "Type": "int",
+      "Description": "The offset for the returned log data (default: 0)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "limitnum",
+      "Type": "int",
+      "Description": "The number of records to return (default: 25)",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "userid",
+      "Type": "int",
+      "Description": "Find contacts for a specific client id",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "firstname",
+      "Type": "string",
+      "Description": "Find contacts with a specific first name",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "lastname",
+      "Type": "string",
+      "Description": "Find contacts with a specific last name",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "companyname",
+      "Type": "string",
+      "Description": "Find contacts with a specific company name",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "email",
+      "Type": "string",
+      "Description": "Find contacts with a specific email address",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "address1",
+      "Type": "string",
+      "Description": "Find contacts with a specific address line 1",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "address2",
+      "Type": "string",
+      "Description": "Find contacts with a specific address line 2",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "city",
+      "Type": "string",
+      "Description": "Find contacts with a specific city",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "state",
+      "Type": "string",
+      "Description": "Find contacts with a specific state",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "postcode",
+      "Type": "string",
+      "Description": "Find contacts with a specific post/zip code",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "country",
+      "Type": "string",
+      "Description": "Find contacts with a specific country",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "phonenumber",
+      "Type": "string",
+      "Description": "Find contacts with a specific phone number",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/getcontacts.md"
+}

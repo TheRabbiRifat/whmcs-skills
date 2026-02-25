@@ -1,0 +1,26 @@
+{
+  "type": "api_command",
+  "name": "BlockTicketSender",
+  "description": "Blocks a ticket sender.",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"BlockTicketSender\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "ticketid",
+      "Type": "int",
+      "Description": "The ticket the sender opened",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "delete",
+      "Type": "bool",
+      "Description": "Should the ticket also be deleted",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/blockticketsender.md"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "SendQuote",
+  "description": "Send a quote to the associated client",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"SendQuote\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "quoteid",
+      "Type": "int",
+      "Description": "The id of the quote to send",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/sendquote.md"
+}

@@ -1,0 +1,170 @@
+{
+  "type": "api_command",
+  "name": "UpdateClientDomain",
+  "description": "Updates a Client Domain",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"UpdateClientDomain\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "domainid",
+      "Type": "int",
+      "Description": "The ID of the client domain to update.",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "dnsmanagement",
+      "Type": "bool",
+      "Description": "Whether to enable or disable DNS management.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "emailforwarding",
+      "Type": "bool",
+      "Description": "Whether to enable or disable Email forwarding.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "idprotection",
+      "Type": "bool",
+      "Description": "Whether to enable or disable ID protection.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "donotrenew",
+      "Type": "bool",
+      "Description": "Whether to prevent renewal.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "type",
+      "Type": "string",
+      "Description": "The type of domain order ('Register' or 'Transfer').",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "regdate",
+      "Type": "string",
+      "Description": "The registration date of the domain. Format: Y-m-d",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "nextduedate",
+      "Type": "string",
+      "Description": "The next due date of the domain. Format: Y-m-d",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "expirydate",
+      "Type": "string",
+      "Description": "The expiration date of the domain. Format: Y-m-d",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "domain",
+      "Type": "string",
+      "Description": "The domain name to be changed to.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "firstpaymentamount",
+      "Type": "float",
+      "Description": "The first payment amount on the domain.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "recurringamount",
+      "Type": "float",
+      "Description": "The recurring amount for automatic renewal invoices.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "registrar",
+      "Type": "string",
+      "Description": "The registrar to associate with the domain. Example: enom, resellerclub, customregistrarname",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "regperiod",
+      "Type": "int",
+      "Description": "The registration period of the domain.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "paymentmethod",
+      "Type": "string",
+      "Description": "The payment method to associate in system format (for example, paypal).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "subscriptionid",
+      "Type": "string",
+      "Description": "The subscription ID to associate with the domain.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "status",
+      "Type": "string",
+      "Description": "The status to change the domain to.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "notes",
+      "Type": "string",
+      "Description": "The admin notes for the domain.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "promoid",
+      "Type": "int",
+      "Description": "The promotion ID to associate.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "autorecalc",
+      "Type": "bool",
+      "Description": "Whether to recalculate the recurring amount of the domain (this will ignore any passed $recurringamount).",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "updatens",
+      "Type": "bool",
+      "Description": "Whether to update the nameservers at the registrar.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns1",
+      "Type": "string",
+      "Description": "The first nameserver to save.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns2",
+      "Type": "string",
+      "Description": "The second nameserver to save.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns3",
+      "Type": "string",
+      "Description": "The third nameserver to save.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns4",
+      "Type": "string",
+      "Description": "The fourth nameserver to save.",
+      "Required": "Optional"
+    },
+    {
+      "Parameter": "ns5",
+      "Type": "string",
+      "Description": "The fifth nameserver to save.",
+      "Required": "Optional"
+    }
+  ],
+  "source_file": "api-reference/updateclientdomain.md"
+}

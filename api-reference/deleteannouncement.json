@@ -1,0 +1,20 @@
+{
+  "type": "api_command",
+  "name": "DeleteAnnouncement",
+  "description": "Delete an announcement",
+  "parameters": [
+    {
+      "Parameter": "action",
+      "Type": "string",
+      "Description": "\"DeleteAnnouncement\"",
+      "Required": "Required"
+    },
+    {
+      "Parameter": "announcementid",
+      "Type": "int",
+      "Description": "The id of the announcement to be deleted",
+      "Required": "Required"
+    }
+  ],
+  "source_file": "api-reference/deleteannouncement.md"
+}
