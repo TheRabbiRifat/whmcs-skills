@@ -2,9 +2,18 @@ import os
 import re
 import json
 
-SKILLS_DIR = "skills"
-if not os.path.exists(SKILLS_DIR):
-    os.makedirs(SKILLS_DIR)
+# Define paths relative to this script (whmcs-skills-kit/tools/convert_docs_to_skills.py)
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+KIT_ROOT = os.path.dirname(SCRIPT_DIR)
+REPO_ROOT = os.path.dirname(KIT_ROOT)
+
+MODULES_DIR = os.path.join(KIT_ROOT, "modules")
+GUIDE_DIR = os.path.join(KIT_ROOT, "guide")
+
+# Ensure directories exist
+for d in [MODULES_DIR, GUIDE_DIR]:
+    if not os.path.exists(d):
+        os.makedirs(d)
 
 def parse_markdown_table(file_path):
     """
@@ -93,15 +102,18 @@ def parse_markdown_sections(file_path):
 
     return sections
 
+def get_source_path(relative_path):
+    return os.path.join(REPO_ROOT, relative_path)
+
 def generate_provisioning_skills():
     print("Generating Provisioning Module skills...")
 
     # 1. Parse Parameters
-    params_file = "provisioning-modules/module-parameters.md"
+    params_file = get_source_path("provisioning-modules/module-parameters.md")
     params = parse_markdown_table(params_file)
 
     # 2. Parse Supported Functions
-    funcs_file = "provisioning-modules/supported-functions.md"
+    funcs_file = get_source_path("provisioning-modules/supported-functions.md")
     funcs = parse_markdown_sections(funcs_file)
 
     skill_data = {
@@ -119,7 +131,7 @@ def generate_provisioning_skills():
             "return_value": "string 'success' or error message"
         })
 
-    output_path = os.path.join(SKILLS_DIR, "provisioning_modules.json")
+    output_path = os.path.join(MODULES_DIR, "provisioning_modules.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
@@ -144,7 +156,8 @@ def generate_addon_skills():
         "functions": []
     }
 
-    for func_name, file_path in known_functions.items():
+    for func_name, rel_path in known_functions.items():
+        file_path = get_source_path(rel_path)
         if not os.path.exists(file_path):
             continue
 
@@ -177,10 +190,10 @@ def generate_addon_skills():
             "name": func_name,
             "description": description,
             "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
-            "source_file": file_path
+            "source_file": rel_path
         })
 
-    output_path = os.path.join(SKILLS_DIR, "addon_modules.json")
+    output_path = os.path.join(MODULES_DIR, "addon_modules.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
@@ -199,7 +212,7 @@ def generate_payment_skills():
     }
 
     # Merchant Gateway functions
-    merchant_file = "payment-gateways/merchant-gateway.md"
+    merchant_file = get_source_path("payment-gateways/merchant-gateway.md")
     if os.path.exists(merchant_file):
         funcs = parse_markdown_sections(merchant_file)
         # The file structure might not be strictly H2 sections for functions.
@@ -240,7 +253,7 @@ def generate_payment_skills():
                  })
 
     # Third Party Gateway functions (Link)
-    third_party_file = "payment-gateways/third-party-gateway.md"
+    third_party_file = get_source_path("payment-gateways/third-party-gateway.md")
     if os.path.exists(third_party_file):
         # usually just 'link' function
         skill_data["functions"].append({
@@ -250,7 +263,7 @@ def generate_payment_skills():
             "return_value": "HTML String"
         })
 
-    output_path = os.path.join(SKILLS_DIR, "payment_gateways.json")
+    output_path = os.path.join(MODULES_DIR, "payment_gateways.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
@@ -266,11 +279,11 @@ def generate_registrar_skills():
     }
 
     # Parse parameters
-    params_file = "domain-registrars/module-parameters.md"
+    params_file = get_source_path("domain-registrars/module-parameters.md")
     skill_data["common_parameters"] = parse_markdown_table(params_file)
 
     # Parse functions
-    funcs_file = "domain-registrars/function-index.md"
+    funcs_file = get_source_path("domain-registrars/function-index.md")
     funcs = parse_markdown_table(funcs_file)
 
     for row in funcs:
@@ -287,7 +300,7 @@ def generate_registrar_skills():
                 "return_value": "Various (see docs)"
             })
 
-    output_path = os.path.join(SKILLS_DIR, "registrar_modules.json")
+    output_path = os.path.join(MODULES_DIR, "registrar_modules.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
@@ -301,7 +314,7 @@ def generate_hook_skills():
         "hooks": []
     }
 
-    hooks_dir = "hooks-reference"
+    hooks_dir = get_source_path("hooks-reference")
     if os.path.exists(hooks_dir):
         for filename in os.listdir(hooks_dir):
             if not filename.endswith(".md") or filename == "index.md":
@@ -318,7 +331,7 @@ def generate_hook_skills():
                     "category": filename.replace(".md", "")
                 })
 
-    output_path = os.path.join(SKILLS_DIR, "hooks.json")
+    output_path = os.path.join(MODULES_DIR, "hooks.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
@@ -332,7 +345,7 @@ def generate_api_skills():
         "functions": []
     }
 
-    api_dir = "api-reference"
+    api_dir = get_source_path("api-reference")
     if os.path.exists(api_dir):
         for filename in os.listdir(api_dir):
             if not filename.endswith(".md") or filename == "index.md":
@@ -378,10 +391,10 @@ def generate_api_skills():
                 "command": command_name,
                 "description": description,
                 "parameters": params,
-                "documentation_file": filepath
+                "documentation_file": os.path.join("api-reference", filename)
             })
 
-    output_path = os.path.join(SKILLS_DIR, "api.json")
+    output_path = os.path.join(MODULES_DIR, "api.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
@@ -411,13 +424,15 @@ def generate_language_skills():
     print("Generating Language skills...")
     generate_generic_skills("languages", "languages.json", "WHMCS Language Files")
 
-def generate_generic_skills(source_dir, output_filename, description):
+def generate_generic_skills(source_rel_path, output_filename, description):
     skill_data = {
         "type": "guide",
-        "category": source_dir,
+        "category": source_rel_path,
         "description": description,
         "topics": []
     }
+
+    source_dir = get_source_path(source_rel_path)
 
     if os.path.exists(source_dir):
         for filename in os.listdir(source_dir):
@@ -432,10 +447,10 @@ def generate_generic_skills(source_dir, output_filename, description):
             skill_data["topics"].append({
                 "title": topic_name,
                 "content": sections, # This might be large, but it's modular by file at least
-                "file": filepath
+                "file": os.path.join(source_rel_path, filename)
             })
 
-    output_path = os.path.join(SKILLS_DIR, output_filename)
+    output_path = os.path.join(MODULES_DIR, output_filename)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
@@ -447,22 +462,23 @@ def generate_manifest():
         "role": "WHMCS Expert Developer",
         "description": "A comprehensive, modular set of skills for developing, debugging, and maintaining WHMCS modules, themes, and integrations.",
         "skills": [
-            {"name": "Provisioning Modules", "file": "provisioning_modules.json", "description": "Functions and parameters for provisioning products/services."},
-            {"name": "Addon Modules", "file": "addon_modules.json", "description": "Structure and functions for Admin Area addon modules."},
-            {"name": "Payment Gateways", "file": "payment_gateways.json", "description": "Interfaces for Merchant and Third-Party payment gateways."},
-            {"name": "Registrar Modules", "file": "registrar_modules.json", "description": "Functions for domain registration and management modules."},
-            {"name": "Hooks", "file": "hooks.json", "description": "Comprehensive list of system hooks and their parameters."},
-            {"name": "API", "file": "api.json", "description": "Reference for the WHMCS Local and External API commands."},
-            {"name": "Themes", "file": "themes.json", "description": "Guides and variables for Client Area and Admin Area theme development."},
-            {"name": "Mail Providers", "file": "mail_providers.json", "description": "Integration skills for custom Mail Providers."},
-            {"name": "Notification Providers", "file": "notification_providers.json", "description": "Integration skills for Notification Providers."},
-            {"name": "Advanced", "file": "advanced.json", "description": "Advanced topics including DB interaction, Authentication, and Logging."},
-            {"name": "OAuth", "file": "oauth.json", "description": "Implementing OAuth Single Sign-On and credentials."},
-            {"name": "Languages", "file": "languages.json", "description": "Working with WHMCS language files and overrides."}
+            {"name": "Provisioning Modules", "file": "modules/provisioning_modules.json", "description": "Functions and parameters for provisioning products/services."},
+            {"name": "Addon Modules", "file": "modules/addon_modules.json", "description": "Structure and functions for Admin Area addon modules."},
+            {"name": "Payment Gateways", "file": "modules/payment_gateways.json", "description": "Interfaces for Merchant and Third-Party payment gateways."},
+            {"name": "Registrar Modules", "file": "modules/registrar_modules.json", "description": "Functions for domain registration and management modules."},
+            {"name": "Hooks", "file": "modules/hooks.json", "description": "Comprehensive list of system hooks and their parameters."},
+            {"name": "API", "file": "modules/api.json", "description": "Reference for the WHMCS Local and External API commands."},
+            {"name": "Themes", "file": "modules/themes.json", "description": "Guides and variables for Client Area and Admin Area theme development."},
+            {"name": "Mail Providers", "file": "modules/mail_providers.json", "description": "Integration skills for custom Mail Providers."},
+            {"name": "Notification Providers", "file": "modules/notification_providers.json", "description": "Integration skills for Notification Providers."},
+            {"name": "Advanced", "file": "modules/advanced.json", "description": "Advanced topics including DB interaction, Authentication, and Logging."},
+            {"name": "OAuth", "file": "modules/oauth.json", "description": "Implementing OAuth Single Sign-On and credentials."},
+            {"name": "Languages", "file": "modules/languages.json", "description": "Working with WHMCS language files and overrides."},
+            {"name": "Best Practices", "file": "guide/SKILL.md", "description": "Core development guidelines and operational boundaries."}
         ]
     }
 
-    output_path = os.path.join(SKILLS_DIR, "manifest.json")
+    output_path = os.path.join(KIT_ROOT, "manifest.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
     print(f"Created {output_path}")
@@ -631,25 +647,25 @@ Capsule::schema()->create('mod_mymodule_data', function ($table) {
 
 ## 5. Module Development
 
-> **Note**: Refer to the respective JSON files in `skills/` for detailed function signatures and parameters.
+> **Note**: Refer to the respective JSON files in `modules/` for detailed function signatures and parameters.
 
 ### 5.1 Addon Modules
-*   **File**: `addon_modules.json`
+*   **File**: `modules/addon_modules.json`
 *   **Structure**: `modules/addons/{modulename}/`
 *   **Key Functions**: `_config`, `_activate`, `_deactivate`, `_upgrade`, `_output` (Admin), `_clientarea` (Client).
 
 ### 5.2 Provisioning (Server) Modules
-*   **File**: `provisioning_modules.json`
+*   **File**: `modules/provisioning_modules.json`
 *   **Structure**: `modules/servers/{modulename}/`
 *   **Key Functions**: `_MetaData`, `_CreateAccount`, `_SuspendAccount`, `_TerminateAccount`, `_ClientArea`.
 
 ### 5.3 Domain Registrar Modules
-*   **File**: `registrar_modules.json`
+*   **File**: `modules/registrar_modules.json`
 *   **Structure**: `modules/registrars/{modulename}/`
 *   **Key Functions**: `_getConfigArray`, `_RegisterDomain`, `_RenewDomain`, `_GetNameservers`, `_Sync`.
 
 ### 5.4 Payment Gateway Modules
-*   **File**: `payment_gateways.json`
+*   **File**: `modules/payment_gateways.json`
 *   **Structure**: `modules/gateways/{modulename}.php`
 *   **Key Functions**: `_link` (Third-Party), `_capture` (Merchant).
 
@@ -657,7 +673,7 @@ Capsule::schema()->create('mod_mymodule_data', function ($table) {
 
 ## 6. Action Hooks
 
-*   **File**: `hooks.json`
+*   **File**: `modules/hooks.json`
 *   **Usage**: `add_hook($hookPoint, $priority, $callbackFunction);`
 *   **Locations**: `/includes/hooks/` or within module `hooks.php`.
 
@@ -671,7 +687,7 @@ Capsule::schema()->create('mod_mymodule_data', function ($table) {
 
 ## 7. API Integration
 
-*   **File**: `api.json`
+*   **File**: `modules/api.json`
 *   **Internal**: Use `localAPI($command, $values)`. No auth required in hooks/modules.
 *   **External**: Use `WHMCS\Module\Guzzle` client.
 
@@ -683,7 +699,7 @@ $results = localAPI('GetClientsDetails', ['clientid' => $id, 'stats' => true]);
 
 ## 8. Templating & UI
 
-*   **File**: `themes.json`
+*   **File**: `modules/themes.json`
 *   **Engine**: Smarty v4 (WHMCS 9.x).
 *   **Syntax**: `{$variable}`, `{if $condition}...{/if}`, `{foreach $array as $item}...{/foreach}`.
 *   **No PHP**: `{php}` tags are forbidden.
@@ -736,37 +752,10 @@ function mymodule_upgrade($vars) {
 
 See `manifest.json` for the full list of generated skill files available in this package.
 """
-    output_path = os.path.join(SKILLS_DIR, "SKILL.md")
+    output_path = os.path.join(GUIDE_DIR, "SKILL.md")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(content)
     print(f"Created {output_path}")
-
-def generate_index():
-    index_content = """# WHMCS Module Development Skills
-
-This directory contains modular skills for developing WHMCS modules.
-
-## Meta
-* [Manifest (JSON)](manifest.json)
-* [System Prompt / SKILL.md](SKILL.md)
-
-## Skills
-* [Provisioning Modules](provisioning_modules.json)
-* [Addon Modules](addon_modules.json)
-* [Payment Gateways](payment_gateways.json)
-* [Registrar Modules](registrar_modules.json)
-* [Hooks](hooks.json)
-* [API](api.json)
-* [Themes](themes.json)
-* [Mail Providers](mail_providers.json)
-* [Notification Providers](notification_providers.json)
-* [Advanced](advanced.json)
-* [OAuth](oauth.json)
-* [Languages](languages.json)
-"""
-    with open(os.path.join(SKILLS_DIR, "skills.md"), "w", encoding="utf-8") as f:
-        f.write(index_content)
-    print("Created skills/skills.md")
 
 if __name__ == "__main__":
     generate_provisioning_skills()
@@ -783,4 +772,3 @@ if __name__ == "__main__":
     generate_language_skills()
     generate_manifest()
     generate_skill_md()
-    generate_index()

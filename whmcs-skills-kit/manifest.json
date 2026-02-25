@@ -5,63 +5,68 @@
   "skills": [
     {
       "name": "Provisioning Modules",
-      "file": "provisioning_modules.json",
+      "file": "modules/provisioning_modules.json",
       "description": "Functions and parameters for provisioning products/services."
     },
     {
       "name": "Addon Modules",
-      "file": "addon_modules.json",
+      "file": "modules/addon_modules.json",
       "description": "Structure and functions for Admin Area addon modules."
     },
     {
       "name": "Payment Gateways",
-      "file": "payment_gateways.json",
+      "file": "modules/payment_gateways.json",
       "description": "Interfaces for Merchant and Third-Party payment gateways."
     },
     {
       "name": "Registrar Modules",
-      "file": "registrar_modules.json",
+      "file": "modules/registrar_modules.json",
       "description": "Functions for domain registration and management modules."
     },
     {
       "name": "Hooks",
-      "file": "hooks.json",
+      "file": "modules/hooks.json",
       "description": "Comprehensive list of system hooks and their parameters."
     },
     {
       "name": "API",
-      "file": "api.json",
+      "file": "modules/api.json",
       "description": "Reference for the WHMCS Local and External API commands."
     },
     {
       "name": "Themes",
-      "file": "themes.json",
+      "file": "modules/themes.json",
       "description": "Guides and variables for Client Area and Admin Area theme development."
     },
     {
       "name": "Mail Providers",
-      "file": "mail_providers.json",
+      "file": "modules/mail_providers.json",
       "description": "Integration skills for custom Mail Providers."
     },
     {
       "name": "Notification Providers",
-      "file": "notification_providers.json",
+      "file": "modules/notification_providers.json",
       "description": "Integration skills for Notification Providers."
     },
     {
       "name": "Advanced",
-      "file": "advanced.json",
+      "file": "modules/advanced.json",
       "description": "Advanced topics including DB interaction, Authentication, and Logging."
     },
     {
       "name": "OAuth",
-      "file": "oauth.json",
+      "file": "modules/oauth.json",
       "description": "Implementing OAuth Single Sign-On and credentials."
     },
     {
       "name": "Languages",
-      "file": "languages.json",
+      "file": "modules/languages.json",
       "description": "Working with WHMCS language files and overrides."
+    },
+    {
+      "name": "Best Practices",
+      "file": "guide/SKILL.md",
+      "description": "Core development guidelines and operational boundaries."
     }
   ]
 }

@@ -160,25 +160,25 @@ Capsule::schema()->create('mod_mymodule_data', function ($table) {
 
 ## 5. Module Development
 
-> **Note**: Refer to the respective JSON files in `skills/` for detailed function signatures and parameters.
+> **Note**: Refer to the respective JSON files in `modules/` for detailed function signatures and parameters.
 
 ### 5.1 Addon Modules
-*   **File**: `addon_modules.json`
+*   **File**: `modules/addon_modules.json`
 *   **Structure**: `modules/addons/{modulename}/`
 *   **Key Functions**: `_config`, `_activate`, `_deactivate`, `_upgrade`, `_output` (Admin), `_clientarea` (Client).
 
 ### 5.2 Provisioning (Server) Modules
-*   **File**: `provisioning_modules.json`
+*   **File**: `modules/provisioning_modules.json`
 *   **Structure**: `modules/servers/{modulename}/`
 *   **Key Functions**: `_MetaData`, `_CreateAccount`, `_SuspendAccount`, `_TerminateAccount`, `_ClientArea`.
 
 ### 5.3 Domain Registrar Modules
-*   **File**: `registrar_modules.json`
+*   **File**: `modules/registrar_modules.json`
 *   **Structure**: `modules/registrars/{modulename}/`
 *   **Key Functions**: `_getConfigArray`, `_RegisterDomain`, `_RenewDomain`, `_GetNameservers`, `_Sync`.
 
 ### 5.4 Payment Gateway Modules
-*   **File**: `payment_gateways.json`
+*   **File**: `modules/payment_gateways.json`
 *   **Structure**: `modules/gateways/{modulename}.php`
 *   **Key Functions**: `_link` (Third-Party), `_capture` (Merchant).
 
@@ -186,7 +186,7 @@ Capsule::schema()->create('mod_mymodule_data', function ($table) {
 
 ## 6. Action Hooks
 
-*   **File**: `hooks.json`
+*   **File**: `modules/hooks.json`
 *   **Usage**: `add_hook($hookPoint, $priority, $callbackFunction);`
 *   **Locations**: `/includes/hooks/` or within module `hooks.php`.
 
@@ -200,7 +200,7 @@ Capsule::schema()->create('mod_mymodule_data', function ($table) {
 
 ## 7. API Integration
 
-*   **File**: `api.json`
+*   **File**: `modules/api.json`
 *   **Internal**: Use `localAPI($command, $values)`. No auth required in hooks/modules.
 *   **External**: Use `WHMCS\Module\Guzzle` client.
 
@@ -212,7 +212,7 @@ $results = localAPI('GetClientsDetails', ['clientid' => $id, 'stats' => true]);
 
 ## 8. Templating & UI
 
-*   **File**: `themes.json`
+*   **File**: `modules/themes.json`
 *   **Engine**: Smarty v4 (WHMCS 9.x).
 *   **Syntax**: `{$variable}`, `{if $condition}...{/if}`, `{foreach $array as $item}...{/foreach}`.
 *   **No PHP**: `{php}` tags are forbidden.
