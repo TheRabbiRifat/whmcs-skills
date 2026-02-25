@@ -440,11 +440,79 @@ def generate_generic_skills(source_dir, output_filename, description):
         json.dump(skill_data, f, indent=2)
     print(f"Created {output_path}")
 
+def generate_manifest():
+    print("Generating Skills Manifest...")
+    manifest = {
+        "version": "1.0",
+        "role": "WHMCS Expert Developer",
+        "description": "A comprehensive, modular set of skills for developing, debugging, and maintaining WHMCS modules, themes, and integrations.",
+        "skills": [
+            {"name": "Provisioning Modules", "file": "provisioning_modules.json", "description": "Functions and parameters for provisioning products/services."},
+            {"name": "Addon Modules", "file": "addon_modules.json", "description": "Structure and functions for Admin Area addon modules."},
+            {"name": "Payment Gateways", "file": "payment_gateways.json", "description": "Interfaces for Merchant and Third-Party payment gateways."},
+            {"name": "Registrar Modules", "file": "registrar_modules.json", "description": "Functions for domain registration and management modules."},
+            {"name": "Hooks", "file": "hooks.json", "description": "Comprehensive list of system hooks and their parameters."},
+            {"name": "API", "file": "api.json", "description": "Reference for the WHMCS Local and External API commands."},
+            {"name": "Themes", "file": "themes.json", "description": "Guides and variables for Client Area and Admin Area theme development."},
+            {"name": "Mail Providers", "file": "mail_providers.json", "description": "Integration skills for custom Mail Providers."},
+            {"name": "Notification Providers", "file": "notification_providers.json", "description": "Integration skills for Notification Providers."},
+            {"name": "Advanced", "file": "advanced.json", "description": "Advanced topics including DB interaction, Authentication, and Logging."},
+            {"name": "OAuth", "file": "oauth.json", "description": "Implementing OAuth Single Sign-On and credentials."},
+            {"name": "Languages", "file": "languages.json", "description": "Working with WHMCS language files and overrides."}
+        ]
+    }
+
+    output_path = os.path.join(SKILLS_DIR, "manifest.json")
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2)
+    print(f"Created {output_path}")
+
+def generate_system_prompt():
+    print("Generating System Prompt...")
+    prompt_content = """# Role: WHMCS Expert Developer
+
+You are an expert software engineer specializing in WHMCS development. You possess deep knowledge of the internal architecture, module systems (Provisioning, Addon, Registrar, Gateway), Hook system, and the API.
+
+## Capabilities
+
+1.  **Module Development**: You can create and debug modules for provisioning, payments, and domain registration.
+2.  **Hook Implementation**: You know how to use hooks to intervene in WHMCS lifecycle events.
+3.  **API Usage**: You are proficient in using the internal (LocalAPI) and external APIs.
+4.  **Theme Customization**: You understand Smarty templates and the WHMCS theme structure.
+
+## Knowledge Base (Skills)
+
+You have access to a modular set of JSON "skill" files. When answering user queries, you should identify the relevant domain and refer to the specific skill file for accurate function signatures, parameters, and behaviors.
+
+*   **Provisioning**: Use `provisioning_modules.json` for `CreateAccount`, `SuspendAccount`, etc.
+*   **Addons**: Use `addon_modules.json` for `_config`, `_activate`, `_output`.
+*   **Gateways**: Use `payment_gateways.json` for `capture`, `refund`, `link`.
+*   **Registrars**: Use `registrar_modules.json` for `RegisterDomain`, `GetNameservers`.
+*   **Hooks**: Use `hooks.json` to find the correct hook point (e.g., `ClientAdd`, `InvoicePaid`) and its variables.
+*   **API**: Use `api.json` for commands like `AddClient`, `OpenTicket`.
+*   **Themes**: Use `themes.json` for template variables and structure.
+
+## Guidelines
+
+*   **Code Quality**: Always produce secure, PSR-compliant PHP code.
+*   **Security**: Sanitize inputs (using `Capsule` or WHMCS helpers) and escape outputs.
+*   **Context**: Load only the specific skill JSON related to the user's immediate request to conserve context window.
+"""
+    output_path = os.path.join(SKILLS_DIR, "system_prompt.md")
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(prompt_content)
+    print(f"Created {output_path}")
+
 def generate_index():
     index_content = """# WHMCS Module Development Skills
 
 This directory contains modular skills for developing WHMCS modules.
 
+## Meta
+* [Manifest (JSON)](manifest.json)
+* [System Prompt / Persona](system_prompt.md)
+
+## Skills
 * [Provisioning Modules](provisioning_modules.json)
 * [Addon Modules](addon_modules.json)
 * [Payment Gateways](payment_gateways.json)
@@ -475,4 +543,6 @@ if __name__ == "__main__":
     generate_advanced_skills()
     generate_oauth_skills()
     generate_language_skills()
+    generate_manifest()
+    generate_system_prompt()
     generate_index()

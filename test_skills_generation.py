@@ -129,5 +129,16 @@ class TestSkillsGeneration(unittest.TestCase):
     def test_index_exists(self):
         self.assertTrue(os.path.exists("skills/skills.md"), "skills.md index file not found")
 
+    def test_manifest_skills(self):
+        file_path = "skills/manifest.json"
+        self.assertTrue(os.path.exists(file_path), "Manifest skills file not found")
+        with open(file_path, "r") as f:
+            data = json.load(f)
+        self.assertEqual(data.get("role"), "WHMCS Expert Developer")
+        self.assertTrue(len(data.get("skills")) > 0, "Skills list should not be empty")
+
+    def test_system_prompt_exists(self):
+        self.assertTrue(os.path.exists("skills/system_prompt.md"), "system_prompt.md file not found")
+
 if __name__ == "__main__":
     unittest.main()

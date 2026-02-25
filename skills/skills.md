@@ -2,6 +2,11 @@
 
 This directory contains modular skills for developing WHMCS modules.
 
+## Meta
+* [Manifest (JSON)](manifest.json)
+* [System Prompt / Persona](system_prompt.md)
+
+## Skills
 * [Provisioning Modules](provisioning_modules.json)
 * [Addon Modules](addon_modules.json)
 * [Payment Gateways](payment_gateways.json)
