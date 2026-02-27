@@ -79,28 +79,18 @@ whmcs-skills/
 │   ├── provisioning/
 │   └── hooks/
 │
-├── templates/                # 🎨 Smarty Templates
-│   ├── addon/
-│   │   ├── admin-dashboard.tpl
-│   │   └── client-widget.tpl
-│   ├── payment/
-│   └── email/
+├── guides/                   # 📋 Workflows & Resources
+│   ├── AI-INTEGRATION.md
+│   ├── BEST-PRACTICES.md
+│   ├── CHEATSHEET.md
+│   ├── QUICK-START.md
+│   └── troubleshooting.md
 │
-├── tools/                    # 🔧 Development Utilities
-│   ├── validation/
-│   │   ├── validate-module.py
-│   │   └── security-checker.py
-│   ├── generate/
-│   │   └── scaffold-module.py
-│   └── test/
+├── configs/                  # ⚙️ Configuration Templates
+│   └── (future environment configs)
 │
-├── config/                   # ⚙️ Environment Config
-│   ├── .cursorrules
-│   ├── .copilot-instructions
-│   ├── .antigravity-config
-│   └── .windsurf-context
-│
-└── archived/                 # 📦 Legacy (ignore)
+└── references/               # 📖 JSON Reference Data
+    └── (API specs, hooks, modules)
 ```
 
 ---
@@ -119,9 +109,9 @@ whmcs-skills/
 3. Follow: [docs/architecture/payment-gateways.md](./docs/architecture/payment-gateways.md)
 
 ### "My module has bugs"
-1. Check: [docs/guides/troubleshooting.md](./docs/guides/troubleshooting.md)
-2. Validate: Run `python3 tools/validation/validate-module.py`
-3. Review: [docs/guides/debugging.md](./docs/guides/debugging.md)
+1. Check: [docs/guides/troubleshooting.md](./guides/troubleshooting.md)
+2. Review: [docs/guides/debugging.md](./guides/debugging.md)
+3. Validate: Follow security checklist in [docs/guides/BEST-PRACTICES.md](./guides/BEST-PRACTICES.md)
 
 ### "I need to deploy to production"
 1. Follow: [docs/guides/deployment.md](./docs/guides/deployment.md)
@@ -217,15 +207,10 @@ Reference: SKILLS.md + reference/{module}_modules.json
 Study: samples/{module}/..."
 ```
 
-### Step 4: Validate & Deploy
+### Step 4: Deploy
 ```bash
-# Validate code quality
-python3 tools/validation/validate-module.py
-
-# Check security
-python3 tools/validation/security-checker.py
-
-# Deploy following docs/guides/deployment.md
+# Deploy following guides/deployment guide
+# Reference: guides/ folder for deployment & security checklists
 ```
 
 ---

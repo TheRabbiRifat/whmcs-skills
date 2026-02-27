@@ -304,11 +304,6 @@ Review this code against WHMCS 9.x standards:
 Check it against the security checklist and modernization standards.
 ```
 
-### 3. Run the validation script
-```bash
-python3 whmcs-skills-kit/tools/validate_module.py mymodule.php
-```
-
 ---
 
 ## What If Something Goes Wrong?

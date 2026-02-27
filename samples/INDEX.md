@@ -221,10 +221,9 @@ Examples:
 ## 🔗 Related Resources
 
 - [SKILLS.md](../SKILLS.md) - AI system prompt with full WHMCS expertise
-- [reference/](../reference/) - JSON reference specifications
+- [reference/](../references/) - JSON reference specifications
 - [docs/](../docs/) - Complete documentation
-- [tools/](../tools/) - Validation and generation utilities
-- [templates/](../templates/) - Smarty template examples
+- [guides/](../guides/) - Development guides and best practices
 
 ---
 
