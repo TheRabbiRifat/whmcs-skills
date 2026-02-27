@@ -1,0 +1,3 @@
+<?php
+
+$ cd ~/whmcs/templates/

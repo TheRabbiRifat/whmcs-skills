@@ -1,397 +1,294 @@
-# 🤖 WHMCS AI Skills Kit
-> **Professional WHMCS module development, supercharged with AI agents.**
+# WHMCS Skills Kit — Enterprise Development Framework
 
-Build production-ready WHMCS modules 10x faster using Github Copilot, Claude, Gemini, Anti Gravity, or Cursor.
+**Professional-grade AI-powered WHMCS module development platform**
 
-[![Status](https://img.shields.io/badge/status-production%20ready-green)]()
-[![WHMCS](https://img.shields.io/badge/WHMCS-8.x%20%7C%209.x-blue)]()
-[![PHP](https://img.shields.io/badge/PHP-7.4%20to%208.3-blue)]()
-[![License](https://img.shields.io/badge/license-GPL%202.0-blue)]()
+> Build production-ready WHMCS modules, integrations, and extensions using AI agents (Claude, GPT-4, Copilot, Cursor, etc.)
 
 ---
 
-## ⚡ Quick Start (60 Seconds)
+## 🚀 Quick Start
 
-### For GitHub Copilot
+1. **Load the skill**: Use [SKILLS.md](./SKILLS.md) as your AI system prompt
+2. **Pick your module type**: Addon | Payment Gateway | Provisioning | Registrar
+3. **Reference examples**: See `/samples` for real code
+4. **Deploy**: Follow `/docs/guides/deployment.md`
+
+**Time to first working module**: 5-15 minutes with AI
+
+---
+
+## 📁 Project Structure
+
 ```
-1. Create .copilot-instructions in project root
-2. Paste: whmcs-skills-kit/guide/SKILLS.md
-3. In chat: Create a payment gateway module
+whmcs-skills/
+├── SKILLS.md                 # ⭐ Core AI system prompt (START HERE)
+├── README.md                 # This file
+├── manifest.json             # Project metadata
+│
+├── docs/                     # 📚 Complete Documentation
+│   ├── quickstart.md         # 5-minute setup guide
+│   ├── architecture/         # Module type guides
+│   │   ├── addon-modules.md
+│   │   ├── payment-gateways.md
+│   │   ├── provisioning.md
+│   │   └── registrar-modules.md
+│   ├── patterns/             # Code & design patterns
+│   │   ├── database.md
+│   │   ├── security.md
+│   │   ├── error-handling.md
+│   │   ├── performance.md
+│   │   └── api-integration.md
+│   ├── reference/            # Quick lookup
+│   │   ├── naming-conventions.md
+│   │   ├── api-commands.md
+│   │   ├── hook-points.md
+│   │   └── cheatsheet.md
+│   ├── setup/                # IDE configuration
+│   │   ├── claude-api.md
+│   │   ├── cursor.md
+│   │   ├── vs-code.md
+│   │   └── windsurf.md
+│   ├── guides/               # Workflows & checklists
+│   │   ├── debugging.md
+│   │   ├── deployment.md
+│   │   ├── security-checklist.md
+│   │   └── troubleshooting.md
+│   └── examples/             # Real code scenarios
+│       ├── complete-addon.md
+│       ├── payment-gateway.md
+│       ├── provisioning.md
+│       └── hooks.md
+│
+├── reference/                # 📖 JSON Reference Data
+│   ├── addon_modules.json
+│   ├── payment_gateways.json
+│   ├── provisioning_modules.json
+│   ├── registrar_modules.json
+│   ├── hooks.json
+│   └── api.json
+│
+├── samples/                  # 💻 Real PHP Examples
+│   ├── addon/
+│   │   ├── complete-dashboard/
+│   │   ├── dashboard-widget.php
+│   │   └── client-area.php
+│   ├── gateways/
+│   │   ├── stripe.php
+│   │   ├── paypal.php
+│   │   └── custom-processor.php
+│   ├── provisioning/
+│   └── hooks/
+│
+├── templates/                # 🎨 Smarty Templates
+│   ├── addon/
+│   │   ├── admin-dashboard.tpl
+│   │   └── client-widget.tpl
+│   ├── payment/
+│   └── email/
+│
+├── tools/                    # 🔧 Development Utilities
+│   ├── validation/
+│   │   ├── validate-module.py
+│   │   └── security-checker.py
+│   ├── generate/
+│   │   └── scaffold-module.py
+│   └── test/
+│
+├── config/                   # ⚙️ Environment Config
+│   ├── .cursorrules
+│   ├── .copilot-instructions
+│   ├── .antigravity-config
+│   └── .windsurf-context
+│
+└── archived/                 # 📦 Legacy (ignore)
 ```
 
-### For Claude (API)
-```python
-with open('whmcs-skills-kit/guide/SKILLS.md') as f:
-    system = f.read()  # Use as system prompt
+---
+
+## 🎯 Common Tasks
+
+### "I want to build an addon module"
+1. Read: [docs/quickstart.md](./docs/quickstart.md)
+2. Load: [SKILLS.md](./SKILLS.md) + [reference/addon_modules.json](./reference/addon_modules.json)
+3. Study: [samples/addon/complete-dashboard](./samples/addon/complete-dashboard)
+4. Follow: [docs/architecture/addon-modules.md](./docs/architecture/addon-modules.md)
+
+### "I need to build a payment gateway"
+1. Load: [SKILLS.md](./SKILLS.md) + [reference/payment_gateways.json](./reference/payment_gateways.json)
+2. Study: [samples/gateways/stripe.php](./samples/gateways/stripe.php)
+3. Follow: [docs/architecture/payment-gateways.md](./docs/architecture/payment-gateways.md)
+
+### "My module has bugs"
+1. Check: [docs/guides/troubleshooting.md](./docs/guides/troubleshooting.md)
+2. Validate: Run `python3 tools/validation/validate-module.py`
+3. Review: [docs/guides/debugging.md](./docs/guides/debugging.md)
+
+### "I need to deploy to production"
+1. Follow: [docs/guides/deployment.md](./docs/guides/deployment.md)
+2. Check: [docs/guides/security-checklist.md](./docs/guides/security-checklist.md)
+3. Test: Run full test suite
+
+---
+
+## 📚 Documentation by Purpose
+
+| Need | Document |
+|------|----------|
+| **Getting started** | [quickstart.md](./docs/quickstart.md) |
+| **Choose module type** | [architecture/](./docs/architecture/) |
+| **Code patterns** | [patterns/](./docs/patterns/) |
+| **Quick lookup** | [reference/](./docs/reference/) |
+| **Set up IDE** | [setup/](./docs/setup/) |
+| **Common workflows** | [guides/](./docs/guides/) |
+| **See real code** | [samples/](./samples/) or [examples/](./docs/examples/) |
+
+---
+
+## 🤖 Supported AI Platforms
+
+| Platform | Setup |
+|----------|-------|
+| Claude 3.5 Sonnet | [docs/setup/claude-api.md](./docs/setup/claude-api.md) |
+| GitHub Copilot | [config/.copilot-instructions](./config/.copilot-instructions) |
+| Cursor IDE | [config/.cursorrules](./config/.cursorrules) |
+| VS Code | [docs/setup/vs-code.md](./docs/setup/vs-code.md) |
+| Windsurf | [config/.windsurf-context](./config/.windsurf-context) |
+| AntiGravity | [config/.antigravity-config](./config/.antigravity-config) |
+
+---
+
+## ✨ Key Features
+
+✅ **Production-Ready** — Enterprise-grade code standards  
+✅ **Secure by Default** — Security baked into every pattern  
+✅ **AI-Optimized** — Structures that work with AI agents  
+✅ **Comprehensive** — Every module type covered  
+✅ **Well-Documented** — 100+ pages of guidance  
+✅ **Real Examples** — Copy-paste ready code  
+✅ **Validation Tools** — Automated quality checks  
+✅ **Professional** — Follows WHMCS & PHP best practices  
+
+---
+
+## 🏗️ What You Can Build
+
+- ✅ **Addon Modules** — Admin dashboards, management tools
+- ✅ **Payment Gateways** — Stripe, PayPal, custom processors
+- ✅ **Provisioning Modules** — Server automation
+- ✅ **Registrar Modules** — Domain registration
+- ✅ **Action Hooks** — Event automation
+- ✅ **API Integrations** — Third-party services
+- ✅ **Custom Themes** — Client area customization
+
+---
+
+## 🎓 Platform Support
+
+| | WHMCS 8.x | WHMCS 9.x | PHP 7.4 | PHP 8.0-8.3 |
+|---|-----------|-----------|---------|-------------|
+| **Addon** | ✅ | ✅ | ✅ | ✅ |
+| **Gateway** | ✅ | ✅ | ✅ | ✅ |
+| **Provisioning** | ✅ | ✅ | ✅ | ✅ |
+| **Registrar** | ✅ | ✅ | ✅ | ✅ |
+| **Hooks** | ✅ | ✅ | ✅ | ✅ |
+
+---
+
+## 🚀 Getting Started (5 Minutes)
+
+### Step 1: Load the skill
+```
+Use SKILLS.md as your AI system prompt
 ```
 
-### For Gemini (API)
+### Step 2: Choose your module
+```
+Addon Module      → docs/architecture/addon-modules.md
+Payment Gateway   → docs/architecture/payment-gateways.md
+Provisioning      → docs/architecture/provisioning.md
+Registrar         → docs/architecture/registrar-modules.md
+Action Hooks      → docs/architecture/action-hooks.md
+```
+
+### Step 3: Ask your AI
+```
+"Build me a {module type} that {does something}
+Reference: SKILLS.md + reference/{module}_modules.json
+Study: samples/{module}/..."
+```
+
+### Step 4: Validate & Deploy
 ```bash
-export GOOGLE_API_KEY="your-key"
-python3 GEMINI-API-SETUP.py  # See GEMINI-API-SETUP.md
-```
+# Validate code quality
+python3 tools/validation/validate-module.py
 
-### For Anti Gravity / Cursor
-```
-Create .antigravity-config or .cursorrules:
-@whmcs-skills-kit/guide/SKILLS.md
-```
+# Check security
+python3 tools/validation/security-checker.py
 
-### For VS Code
-```
-Use .vscode/settings.json (included)
-+ Install GitHub Copilot extension
-```
-
-👉 **[Full setup guides → AI-INTEGRATION.md](whmcs-skills-kit/guide/AI-INTEGRATION.md)**
-
----
-
-## 🎯 What Is This?
-
-A **complete skill package** that turns any AI agent into a WHMCS expert developer:
-
-- ✅ **Expert System Prompt** — Enforces WHMCS best practices, security, PSR-12 standards
-- ✅ **Complete API Reference** — 200+ WHMCS API commands with parameters
-- ✅ **Module Templates** — Ready-to-customize boilerplate for all module types
-- ✅ **1000+ Code Samples** — Real PHP snippets for every common task
-- ✅ **Security Checklist** — Production-ready validation & compliance
-- ✅ **Real Scenarios** — Copy-paste prompts for addon modules, payment gateways, provisioning, etc.
-- ✅ **Troubleshooting Guide** — Debug 30+ common issues
-- ✅ **Validation Tools** — Python scripts to validate your code
-
----
-
-## � Directory Structure
-
-```
-whmcs-skills-kit/                      # ← AI Skills Start Here
-├── guide/
-│   ├── SKILLS.md                      # Core AI system prompt (LOAD THIS FIRST)
-│   ├── QUICK-START.md                 # 5-minute tutorial
-│   ├── AI-INTEGRATION.md              # Setup for your AI editor
-│   ├── EXAMPLES-AND-PROMPTS.md        # Copy-paste prompts (25+ scenarios)
-│   ├── CHEATSHEET.md                  # Quick reference
-│   ├── BEST-PRACTICES.md              # Advanced patterns
-│   ├── TROUBLESHOOTING.md             # Debug guide
-│   └── README.md                      # Navigation guide
-├── modules/                           # JSON reference data
-│   ├── api.json                       # 200+ API commands
-│   ├── hooks.json                     # 100+ hook points
-│   ├── addon_modules.json             # Addon module config
-│   ├── provisioning_modules.json      # Server provisioning
-│   ├── registrar_modules.json         # Domain registrars
-│   ├── payment_gateways.json          # Payment integration
-│   ├── themes.json                    # Theme variables
-│   └── ...
-├── samples/                           # 1000+ PHP code snippets
-│   ├── addon_*.php                    # Addon examples
-│   ├── api_*.php                      # API call examples
-│   ├── hooks_*.php                    # Hook implementations
-│   ├── provisioning_*.php             # Server module examples
-│   └── ...
-├── templates/                         # Module boilerplate
-│   └── README.md                      # Copy & customize
-├── tools/
-│   └── validate_module.py             # Code validation
-└── README.md                          # (you are here)
+# Deploy following docs/guides/deployment.md
 ```
 
 ---
 
-## 🚀 Use Cases
+## 📖 Full Navigation
 
-| Goal | Load This | Time |
-|------|-----------|------|
-| Build **Addon Module** | `SKILLS.md` + `addon_modules.json` | 5 min |
-| Build **Payment Gateway** | `SKILLS.md` + `payment_gateways.json` | 10 min |
-| Build **Provisioning Module** | `SKILLS.md` + `provisioning_modules.json` | 15 min |
-| Build **Domain Registrar** | `SKILLS.md` + `registrar_modules.json` | 15 min |
-| Write **Action Hooks** | `SKILLS.md` + `hooks.json` | 2 min |
-| Debug **Existing Module** | `SKILLS.md` + `TROUBLESHOOTING.md` | 5 min |
-| Validate **Code Quality** | Run `validate_module.py` | 1 min |
+```
+START HERE
+  ↓
+[SKILLS.md]  ← Core system prompt
+  ↓
+[docs/quickstart.md]  ← 5-minute overview
+  ↓
+Choose your module type (docs/architecture/)
+  ↓
+Load reference data (reference/)
+  ↓
+Study samples (samples/)
+  ↓
+Follow patterns (docs/patterns/)
+  ↓
+Deploy with checklist (docs/guides/)
+```
 
 ---
 
-## 📚 Navigation
+## 🔗 Quick Links
 
-### 🆕 First Time?
-1. **[QUICK-START.md](whmcs-skills-kit/guide/QUICK-START.md)** — Get your first module working in 5 minutes
-2. **[AI-INTEGRATION.md](whmcs-skills-kit/guide/AI-INTEGRATION.md)** — Setup your AI editor (Cursor, Copilot, Windsurf)
-3. **[EXAMPLES-AND-PROMPTS.md](whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md)** — Pick a real scenario and copy the prompt
-
-### 🎯 Building Modules?
-1. **[SKILLS.md](whmcs-skills-kit/guide/SKILLS.md)** — Load this as your AI's system prompt
-2. **[templates/README.md](whmcs-skills-kit/templates/README.md)** — Use starter templates
-3. **[CHEATSHEET.md](whmcs-skills-kit/guide/CHEATSHEET.md)** — Quick reference while building
-
-### 🔧 Advanced Development?
-1. **[BEST-PRACTICES.md](whmcs-skills-kit/guide/BEST-PRACTICES.md)** — Enterprise patterns
-2. **[TROUBLESHOOTING.md](whmcs-skills-kit/guide/TROUBLESHOOTING.md)** — Solve any issue
-3. **`samples/` folder** — Study real code examples
-4. **`modules/` folder** — Reference API & hook specifications
-
-### 🐛 Something Broken?
-1. Check **[TROUBLESHOOTING.md](whmcs-skills-kit/guide/TROUBLESHOOTING.md)** (30+ common issues)
-2. Run **[validate_module.py](whmcs-skills-kit/tools/validate_module.py)** to check code quality
-3. Ask your AI agent for help (load SKILLS.md + TROUBLESHOOTING.md)
-
----
-
-## � AI Agent Setup (Pick Your Tool)
-
-### 1. GitHub Copilot (VS Code, JetBrains, Neovim)
-```bash
-# File: .copilot-instructions (included)
-Reference: whmcs-skills-kit/guide/AI-INTEGRATION.md
-```
-[Full Setup →](whmcs-skills-kit/guide/AI-INTEGRATION.md#using-with-github-copilot)
-
-### 2. Claude (Direct API)
-```bash
-# Setup: CLAUDE-API-SETUP.md (included)
-# Use SKILLS.md as system prompt
-```
-[Full Setup →](CLAUDE-API-SETUP.md)
-
-### 3. Google Gemini (API)
-```bash
-# Setup: GEMINI-API-SETUP.md (included)
-# Get API key at makersuite.google.com/app/apikey
-```
-[Full Setup →](GEMINI-API-SETUP.md)
-
-### 4. Anti Gravity IDE
-```bash
-# File: .antigravity-config (included)
-# Auto-loads SKILLS.md and module references
-```
-[Full Setup →](.antigravity-config)
-
-### 5. Cursor IDE / Windsurf
-```bash
-# File: .cursorrules or .windsurf-context (included)
-@whmcs-skills-kit/guide/SKILLS.md
-```
-[Cursor Setup →](whmcs-skills-kit/guide/AI-INTEGRATION.md#using-with-cursor-ide) | [Windsurf Setup →](whmcs-skills-kit/guide/AI-INTEGRATION.md#using-with-windsurf)
-
-### 6. VS Code with Extensions
-```bash
-# File: .vscode/settings.json (included)
-# Install: GitHub Copilot extension
-```
-[Full Setup →](whmcs-skills-kit/guide/AI-INTEGRATION.md#using-with-vs-code)
-
----
-
-## 🎓 Example: Build Your First Module (2 Minutes)
-
-**Step 1: Load the skill**
-```
-@whmcs-skills-kit/guide/SKILLS.md
-@whmcs-skills-kit/modules/addon_modules.json
-```
-
-**Step 2: Ask your AI**
-```
-Build an addon module called "order_tracker" that:
-- Displays client order history as a chart on admin dashboard
-- Uses Capsule ORM
-- Includes proper error handling
-- Follows WHMCS 9.x standards
-```
-
-**Step 3: Validate**
-```bash
-python3 whmcs-skills-kit/tools/validate_module.py modules/addons/order_tracker/
-```
-
-**Step 4: Deploy**
-```bash
-cp -r modules/addons/order_tracker /path/to/whmcs/modules/addons/
-```
-
-✅ **Done! Production-ready module, built by AI.**
-
----
-
-## ✨ Supported WHMCS & AI Agents
-
-| Component | Support |
-|-----------|---------|
-| **WHMCS 8.x** (8.11+) | ✅ Full support |
-| **WHMCS 9.x** | ✅ Full support |
-| **PHP 7.4** | ✅ Supported |
-| **PHP 8.0-8.3** | ✅ Full support |
-| **Claude 3.5 Sonnet** | ✅ Tested |
-| **GPT-4o** | ✅ Tested |
-| **GitHub Copilot** | ✅ Tested |
-| **Google Gemini** | ✅ Tested |
-| **Anti Gravity IDE** | ✅ Tested |
-| **Cursor IDE** | ✅ Tested |
-| **VS Code** | ✅ Tested |
-| **Windsurf** | ✅ Tested |
-
----
-
-## 📖 Complete File Guide
-
-| File | Purpose | Read When |
-|------|---------|-----------|
-| **[SKILLS.md](whmcs-skills-kit/guide/SKILLS.md)** | Core AI system prompt | Building any module |
-| **[QUICK-START.md](whmcs-skills-kit/guide/QUICK-START.md)** | 5-min tutorial | First time |
-| **[AI-INTEGRATION.md](whmcs-skills-kit/guide/AI-INTEGRATION.md)** | Setup guides (5 editors) | Setting up your AI |
-| **[EXAMPLES-AND-PROMPTS.md](whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md)** | 25+ real scenarios | Need a prompt to copy |
-| **[CHEATSHEET.md](whmcs-skills-kit/guide/CHEATSHEET.md)** | One-page reference | Quick lookups |
-| **[BEST-PRACTICES.md](whmcs-skills-kit/guide/BEST-PRACTICES.md)** | Advanced patterns | Optimizing code |
-| **[TROUBLESHOOTING.md](whmcs-skills-kit/guide/TROUBLESHOOTING.md)** | Debug 30+ issues | Something's broken |
-| **[templates/README.md](whmcs-skills-kit/templates/README.md)** | Module boilerplate | Starting a new module |
-
----
-
-## ⚙️ AI Configuration Files
-
-| File | AI Platform | Purpose |
-|------|-------------|---------|
-| **.copilot-instructions** | GitHub Copilot | Direct system prompt for Copilot |
-| **CLAUDE-API-SETUP.md** | Claude (Anthropic) | API setup, Python examples, usage patterns |
-| **GEMINI-API-SETUP.md** | Google Gemini | API setup, batch processing, streaming |
-| **.antigravity-config** | Anti Gravity IDE | Context rules & auto-loading |
-| **.cursorrules** | Cursor IDE | Rule-based context loading |
-| **.windsurf-context** | Windsurf IDE | Multi-priority context strategy |
-| **.vscode/settings.json** | VS Code | PHP formatting, linting, extensions |
-
----
-
-## 🔒 Security & Quality
-
-Every module generated with this skill includes:
-
-✅ Access guards & CSRF protection  
-✅ SQL injection prevention (Capsule ORM)  
-✅ XSS prevention (template escaping)  
-✅ Credential encryption  
-✅ Comprehensive error handling  
-✅ PSR-12 code standards  
-✅ Automated validation via `validate_module.py`  
-
----
-
-## 🌟 Real-World Examples
-
-### Addon Module: Client Dashboard Widget
-```
-@whmcs-skills-kit/guide/SKILLS.md
-@whmcs-skills-kit/modules/addon_modules.json
-
-Create an addon that shows clients their next invoice due date,
-current balance, and domain expiration dates. Include caching.
-```
-**Result**: 200-line production module in < 2 minutes
-
-### Payment Gateway: Stripe Integration
-```
-@whmcs-skills-kit/guide/SKILLS.md
-@whmcs-skills-kit/modules/payment_gateways.json
-
-Build a Stripe payment gateway with webhook handling,
-SCA support, and automatic invoice marking.
-```
-**Result**: Full merchant gateway in < 5 minutes
-
-### Provisioning Module: cPanel/WHM
-```
-@whmcs-skills-kit/guide/SKILLS.md
-@whmcs-skills-kit/modules/provisioning_modules.json
-
-Create a cPanel provisioning module with account creation,
-suspension, termination, and password reset features.
-```
-**Result**: Complete hosting module in < 10 minutes
-
-👉 **[See 25+ more examples →](whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md)**
+| | |
+|---|---|
+| 🎯 **Start** | [SKILLS.md](./SKILLS.md) |
+| 📚 **Learn** | [docs/quickstart.md](./docs/quickstart.md) |
+| 💻 **Code** | [samples/](./samples/) |
+| 🏗️ **Architecture** | [docs/architecture/](./docs/architecture/) |
+| 🔧 **Patterns** | [docs/patterns/](./docs/patterns/) |
+| 📖 **Reference** | [docs/reference/](./docs/reference/) |
+| ⚙️ **Setup** | [docs/setup/](./docs/setup/) |
+| 🚀 **Deploy** | [docs/guides/deployment.md](./docs/guides/deployment.md) |
 
 ---
 
 ## 💡 Pro Tips
 
-1. **Load SKILLS.md first** — It's the foundation for everything
-2. **Use + operators** — Keep your prompts focused and add files as needed
-3. **Validate output** — Run `validate_module.py` on generated code
-4. **Check samples/** — Study real code from the 1000+ snippets
-5. **Read TROUBLESHOOTING.md** — 80% of issues are covered there
+1. **Always load SKILLS.md first** — It's your AI's expertise guide
+2. **Use reference JSON files** — They contain module specifications
+3. **Study samples before building** — Real code is better than theory
+4. **Run validation tools** — Catch issues before deployment
+5. **Follow security checklist** — Non-negotiable for production
+6. **Keep patterns consistent** — Makes maintenance easier
 
 ---
 
-## 🛠️ Tools Included
+## 🆘 Need Help?
 
-### Module Validator
-```bash
-# Validate single file
-python3 whmcs-skills-kit/tools/validate_module.py modules/addons/mymodule/mymodule.php
-
-# Validate entire module
-python3 whmcs-skills-kit/tools/validate_module.py modules/addons/mymodule/
-
-# Output as JSON (for CI/CD)
-python3 whmcs-skills-kit/tools/validate_module.py --json modules/addons/mymodule/
-```
-
-Checks for:
-- Missing required functions
-- Security issues (SQL injection, XSS, etc.)
-- Coding standard violations
-- Missing language files
-- And much more!
+- **Getting started?** → [docs/quickstart.md](./docs/quickstart.md)
+- **Module structure?** → [docs/architecture/](./docs/architecture/)
+- **Code patterns?** → [docs/patterns/](./docs/patterns/)
+- **Something broken?** → [docs/guides/troubleshooting.md](./docs/guides/troubleshooting.md)
+- **Quick reference?** → [docs/reference/cheatsheet.md](./docs/reference/cheatsheet.md)
+- **Real examples?** → [samples/](./samples/)
 
 ---
 
-## 📊 What's Included
+**Version 2.0 | Professional AI-Driven WHMCS Development**
 
-| Component | Count |
-|-----------|-------|
-| **Core Guides** | 8 comprehensive docs |
-| **API Specifications** | 200+ commands |
-| **Hook Points** | 100+ documented |
-| **Code Samples** | 1000+ snippets |
-| **Module Templates** | 5 types |
-| **Real Scenarios** | 25+ with prompts |
-| **Security Checks** | 20+ validations |
-
----
-
-## 🤝 Contributing
-
-Found a bug? Want to improve the skill? Have a scenario to add?
-
-**Please contribute!** This kit improves with community input.
-
----
-
-## � Support
-
-- **Questions?** → Check [TROUBLESHOOTING.md](whmcs-skills-kit/guide/TROUBLESHOOTING.md)
-- **Need setup help?** → See [AI-INTEGRATION.md](whmcs-skills-kit/guide/AI-INTEGRATION.md)  
-- **Want examples?** → Browse [EXAMPLES-AND-PROMPTS.md](whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md)
-- **Official WHMCS Docs** → https://developers.whmcs.com/
-
----
-
-## 📄 License
-
-Professional WHMCS development skill kit. Educational and commercial use permitted.
-
----
-
-## 🚀 Get Started Now
-
-1. **[Open QUICK-START.md](whmcs-skills-kit/guide/QUICK-START.md)** (5 min read)
-2. **[Setup your AI editor](whmcs-skills-kit/guide/AI-INTEGRATION.md)** (2 min setup)
-3. **[Pick a scenario](whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md)** (1 min)
-4. **[Build your module!](whmcs-skills-kit/guide/SKILLS.md)** (5-15 min with AI)
-
-**That's it. You're building production-ready WHMCS modules with AI.** 🎉
-
----
-
-*Professional AI-assisted WHMCS development. Built by developers, for developers.*
+Built for: Claude, GPT-4, Copilot, Cursor, VS Code, Windsurf, Anti-Gravity IDE
