@@ -5,7 +5,7 @@ Build production-ready WHMCS modules 10x faster using Github Copilot, Claude, Ge
 
 [![Status](https://img.shields.io/badge/status-production%20ready-green)]()
 [![WHMCS](https://img.shields.io/badge/WHMCS-8.x%20%7C%209.x-blue)]()
-[![PHP](https://img.shields.io/badge/PHP-8.1%2B-purple)]()
+[![PHP](https://img.shields.io/badge/PHP-7.4%20to%208.3-blue)]()
 [![License](https://img.shields.io/badge/license-GPL%202.0-blue)]()
 
 ---
@@ -221,7 +221,8 @@ cp -r modules/addons/order_tracker /path/to/whmcs/modules/addons/
 |-----------|---------|
 | **WHMCS 8.x** (8.11+) | ✅ Full support |
 | **WHMCS 9.x** | ✅ Full support |
-| **PHP 8.1+** | ✅ Required |
+| **PHP 7.4** | ✅ Supported |
+| **PHP 8.0-8.3** | ✅ Full support |
 | **Claude 3.5 Sonnet** | ✅ Tested |
 | **GPT-4o** | ✅ Tested |
 | **GitHub Copilot** | ✅ Tested |

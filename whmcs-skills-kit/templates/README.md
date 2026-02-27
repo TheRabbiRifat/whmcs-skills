@@ -30,7 +30,7 @@
  * @license    GPL-2.0
  */
 
-declare(strict_types=1);
+// declare(strict_types=1);  // PHP 8.0+ only; remove for PHP 7.4 compatibility
 
 defined("WHMCS") or die("Access Denied");
 
@@ -369,7 +369,7 @@ $_LANG['success'] = 'Operation completed successfully';
 
 ```php
 <?php
-declare(strict_types=1);
+// declare(strict_types=1);  // PHP 8.0+ only; remove for PHP 7.4 compatibility
 
 defined("WHMCS") or die("Access Denied");
 
@@ -453,7 +453,7 @@ function myhost_ClientArea(array $params): array {
 
 ```php
 <?php
-declare(strict_types=1);
+// declare(strict_types=1);  // PHP 8.0+ only; remove for PHP 7.4 compatibility
 
 defined("WHMCS") or die("Access Denied");
 
@@ -507,7 +507,7 @@ function myregistrar_Sync(string $domain): array {
 
 ```php
 <?php
-declare(strict_types=1);
+// declare(strict_types=1);  // PHP 8.0+ only; remove for PHP 7.4 compatibility
 
 defined("WHMCS") or die("Access Denied");
 
@@ -570,7 +570,7 @@ function mypaymentgateway_capture(array $params): array {
 
 ```php
 <?php
-declare(strict_types=1);
+// declare(strict_types=1);  // PHP 8.0+ only; remove for PHP 7.4 compatibility
 
 defined("WHMCS") or die("Access Denied");
 

@@ -4,14 +4,14 @@ description: >
   Senior WHMCS Developer & Architect skill for AI coding agents. Builds,
   debugs, and maintains WHMCS Addon Modules, Provisioning (Server) Modules,
   Domain Registrar Modules, Payment Gateway Modules, and Action Hooks.
-  Enforces WHMCS 8.x / 9.x best practices, modern PHP 8.1+ standards,
-  Laravel Capsule ORM, Smarty v4 templating, and PSR-1/PSR-2 coding style.
+  Enforces WHMCS 8.x / 9.x best practices, PHP 7.4-8.3 compatibility,
+  Laravel Capsule ORM, Smarty v3/v4 templating, and PSR-1/PSR-2 coding style.
   Use this skill whenever a user needs to create, modify, debug, or audit
   any WHMCS module, hook, or integration.
 license: GPL-2.0
 compatibility: >
   Works with all AI coding agents including Claude Code, GitHub Copilot,
-  Cursor, Windsurf, VS Code, Amp, Goose, and OpenCode. Requires PHP 8.1+
+  Cursor, Windsurf, VS Code, and others. Requires PHP 7.4-8.3
   and WHMCS 8.x or 9.x environment for generated code.
 metadata:
   author: Jules (AI Agent)
@@ -96,11 +96,19 @@ metadata:
 
 | Component          | WHMCS 8.x (8.11+)       | WHMCS 9.x               |
 |--------------------|--------------------------|--------------------------|
-| **PHP**            | 8.1 min, 8.2 recommended | 8.2 min, 8.3 recommended |
+| **PHP**            | 7.4 - 8.3 (7.4+ min) | 8.0 - 8.3 (8.0+ min) |
 | **Smarty**         | v3.1.x                   | v4.3.4                   |
 | **GuzzleHTTP**     | v7.4                     | v7.4.5                   |
 | **Illuminate**     | v7.x                     | v9.0                     |
 | **MySQL/MariaDB**  | 5.7+ / 10.2+             | 8.0+ / 10.6+            |
+
+### PHP Version Notes
+
+- **PHP 7.4**: Supported (use array syntax `[]` instead of `array()` where possible, avoid strict_types)
+- **PHP 8.0-8.3**: Fully supported (strict_types recommended, named arguments available, match expression support)
+- **Type Hints**: Optional in PHP 7.4 for backward compatibility; use when possible on PHP 8.0+
+- **Union Types**: Available in PHP 8.0+; use for PHP 8.0+ targets only
+- **Named Arguments**: Available in PHP 8.0+; avoid for PHP 7.4 compatibility
 
 ---
 
@@ -112,7 +120,9 @@ metadata:
 ✓  Indent with 4 spaces.
 ✓  No trailing whitespace.
 ✓  Follow PSR-1 & PSR-2.
-✓  Use strict_types declaration: declare(strict_types=1);
+✓  Strict types: Optional. Add declare(strict_types=1) for PHP 8.0+; omit for PHP 7.4 compatibility.
+✓  Type hints: Use for PHP 8.0+ (recommended); optional for PHP 7.4.
+✓  Comments: Inline comments for complex logic; DocBlocks for all functions.
 ```
 
 ### Naming Conventions
