@@ -1,0 +1,41 @@
+{
+  "type": "guide",
+  "category": "languages",
+  "description": "WHMCS Language Files",
+  "topics": [
+    {
+      "title": "Translating",
+      "content": {
+        "Examples": "```\n$_LANG['examplestring'] = \"The price you will pay today is :price\";\n```\n\nCorrect Translation = \" 'ay' yIbuS DaHjaj :price \"\nIncorrect Translation = \" 'ay' yIbuS DaHjaj :'ay' \"\n\nThis would display :'ay' instead of the price on the translated page.\n\n```\n$_LANG['examplestring'] = \"Today is a good day to purchase your domain $domain for cheap!\";\n```\n\nCorrect Translation = \" DaHjaj QaQ jaj yer $domain je' qutlh! \"\nIncorrect Translation = \" DaHjaj QaQ jaj yer $yer je' qutlh! \"\n\nThis would display everything but $yer: \"DaHjaj QaQ jaj yer je' qutlh!\"\n\n```\n$_LANG['examplestring'] = \"Honor your house with a server for only %s a year! (%s a month)\n```\n\nCorrect Translation = \"tuqwIj neH %s jabwI' pop! (%s net jar)\"\nIncorrect Translation 1 = \"tuqwIj je jabwI' pop! (%s net jar pagh %s)\"\nIncorrect Translation 2 = \"tuqwIj %s net jar jabwI' pop!\"\n\nIn the first wrong translation, \"net jar pagh\" means \"X a month, or Y a year\". Because WHMCS will be replacing these in the original order, you'll end up showing the prices backwards.\n\nIn the second wrong translation, we removed the part talking about the yearly price and only mention the monthly price. However, WHMCS will still replace the first %s it sees with the yearly price, so you'll end up quoting the yearly price as monthly."
+      },
+      "file": "languages/translating.md"
+    },
+    {
+      "title": "Overrides",
+      "content": {
+        "Using Overrides": "Steps for customising language strings via overrides are as follows:\n\n1. Create a directory named `overrides` within the `/path/to/whmcs/lang/` directory.\n2. Create or copy the language file you want to override. For example, to create an override for the English language you create `/path/to/whmcs/lang/overrides/english.php`\n3. Open the newly created file in your preferred editor.\n4. Start the file with a PHP tag `<?php` indicating PHP code is to be used.\n5. Enter the variable(s) you wish to override. For example, if you wanted to change \"Welcome to our members area\" you would locate the proper variable within `/path/to/whmcs/lang/english.php` and place it into the overrides english file with your preferred change:\n\n`/path/to/whmcs/lang/english.php`\n```\n$_LANG['headertext'] = \"Welcome to our members area.\";\n```\n\n`/path/to/whmcs/lang/overrides/english.php`\n```\n$_LANG['headertext'] = \"Welcome home!\";\n```\n\n6. For each variable you wish you change, repeat step #5. For example, a completed overrides file should look something like this:\n\n`/path/to/whmcs/lang/overrides/english.php`\n```\n<?php\n$_LANG['headertext'] = \"Welcome home!\";\n$_LANG['addtocart'] = \"Add to Basket\";\n$_LANG['cartproductaddons'] = \"Product Extras\";\n```\n\n7. Save, and you're done!"
+      },
+      "file": "languages/overrides.md"
+    },
+    {
+      "title": "Locales",
+      "content": {},
+      "file": "languages/locales.md"
+    },
+    {
+      "title": "Encoding",
+      "content": {},
+      "file": "languages/encoding.md"
+    },
+    {
+      "title": "Contributing",
+      "content": {},
+      "file": "languages/contributing.md"
+    },
+    {
+      "title": "Adding A Language",
+      "content": {},
+      "file": "languages/adding-a-language.md"
+    }
+  ]
+}

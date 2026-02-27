@@ -1,0 +1,154 @@
+{
+  "// WHMCS AI Skills Kit Configuration for VS Code": "See whmcs-skills-kit/guide/AI-INTEGRATION.md for setup",
+  
+  "// === Editor Settings for PHP/WHMCS Development ===": "",
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "junstyle.php-cs-fixer",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  
+  "// === PHP Linting & Analysis ===": "",
+  "[php]": {
+    "editor.defaultFormatter": "junstyle.php-cs-fixer",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
+  "php.validate.executablePath": "php",
+  "php.validate.run": "onSave",
+  
+  "// === PHP Intelephense for autocomplete ===": "",
+  "intelephense.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/vendor/**"
+  ],
+  "intelephense.stubs": [
+    "apache",
+    "bcmath",
+    "bz2",
+    "calendar",
+    "curl",
+    "ctype",
+    "date",
+    "dba",
+    "dom",
+    "enchant",
+    "fileinfo",
+    "filter",
+    "ftp",
+    "gd",
+    "gettext",
+    "hash",
+    "iconv",
+    "json",
+    "libxml",
+    "mbstring",
+    "mysql",
+    "mysqli",
+    "password",
+    "pcre",
+    "pdo",
+    "reflection",
+    "regex",
+    "session",
+    "simplexml",
+    "spl",
+    "sqlite3",
+    "standard",
+    "tokenizer",
+    "xml",
+    "xmlreader",
+    "xmlwriter",
+    "xdebug",
+    "zip",
+    "zlib"
+  ],
+  
+  "// === File Associations ===": "",
+  "files.associations": {
+    "*.tpl": "smarty",
+    "*.module": "php"
+  },
+  
+  "// === Exclude files from workspace ===": "",
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": false,
+    "**/node_modules": false,
+    "**/vendor": false,
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  },
+  
+  "// === Exclude from search ===": "",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/vendor": true,
+    "**/.git": true
+  },
+  
+  "// === Python (for validate_module.py) ===": "",
+  "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  
+  "// === Code Formatting (PSR-12) ===": "",
+  "php-cs-fixer.onsave": true,
+  "php-cs-fixer.rules": "@PSR12",
+  "php-cs-fixer.lastDownloadedVersion": "3.13.0",
+  
+  "// === Copilot Configuration ===": "",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false
+  },
+  
+  "// === GitHub Copilot Chat ===": "",
+  "github.copilot.chat.localeOverride": "en",
+  
+  "// === Terminal ===": "",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "args": ["-NoExit", "-Command", "cd ${workspaceFolder}"]
+    }
+  },
+  
+  "// === File Watcher for WHMCS ===": "",
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/vendor/**": true
+  },
+  
+  "// === Markdown Preview ===": "",
+  "markdown.preview.breaks": true,
+  "[markdown]": {
+    "editor.wordWrap": "on"
+  },
+  
+  "// === Debugging (Xdebug for PHP) ===": "",
+  "debug.onTaskErrors": "abort",
+  
+  "// === Smart Indent ===": "",
+  "editor.indentSize": "tabSize",
+  "editor.autoIndent": "full",
+  
+  "// === Word Wrap ===": "",
+  "editor.wordWrap": "off",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  
+  "// === Ruler for PSR-12 line length ===": "",
+  "editor.rulers": [80, 120]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "guide",
+  "category": "oauth",
+  "description": "WHMCS OAuth Integration",
+  "topics": [
+    {
+      "title": "Introduction",
+      "content": {},
+      "file": "oauth/introduction.md"
+    },
+    {
+      "title": "Further Reading",
+      "content": {},
+      "file": "oauth/further-reading.md"
+    },
+    {
+      "title": "Auth Workflow",
+      "content": {},
+      "file": "oauth/auth-workflow.md"
+    },
+    {
+      "title": "Api",
+      "content": {},
+      "file": "oauth/api.md"
+    }
+  ]
+}

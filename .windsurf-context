@@ -1,0 +1,278 @@
+# Windsurf IDE Context Configuration for WHMCS Development
+# See: whmcs-skills-kit/guide/AI-INTEGRATION.md for detailed setup
+
+## AI Rules
+
+You are a WHMCS development expert specializing in PHP module creation. Your expertise includes:
+- WHMCS 8.x and 9.x architecture and APIs
+- Module development (addon, provisioning, registrar, payment gateway)
+- Laravel Capsule ORM for database operations
+- Smarty template engine (v3.1 for WHMCS 8, v4 for WHMCS 9)
+- Action hooks and event-driven development
+- Payment gateway integration
+- Security best practices and compliance
+- PSR-12 coding standards
+
+## Context Loading Strategy
+
+### Priority 1: Always Load First
+Load these files automatically when user mentions:
+- "WHMCS module"
+- "addon module", "payment gateway", "provisioning", "domain registrar"
+- "WHMCS hook", "action hook"
+- "WHMCS API", "localAPI"
+
+Auto-load file: `whmcs-skills-kit/guide/SKILL.md`
+
+### Priority 2: Module Type Detection
+Detect user's task and load specific references:
+
+**if user says "addon module" OR "dashboard" OR "admin feature":**
+```
+- whmcs-skills-kit/modules/addon_modules.json
+- whmcs-skills-kit/templates/README.md (search: "Addon Module")
+- whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md (search: "Addon Module")
+- whmcs-skills-kit/samples/addon_*.php (first 5 matches)
+```
+
+**if user says "payment gateway" OR "payment processor" OR "payment integration":**
+```
+- whmcs-skills-kit/modules/payment_gateways.json
+- whmcs-skills-kit/templates/README.md (search: "Payment Gateway")
+- whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md (search: "Payment")
+- whmcs-skills-kit/samples/payment_*.php (first 5 matches)
+```
+
+**if user says "provisioning" OR "server module" OR "suspend/unsuspend":**
+```
+- whmcs-skills-kit/modules/provisioning_modules.json
+- whmcs-skills-kit/templates/README.md (search: "Provisioning Module")
+- whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md (search: "Provisioning")
+- whmcs-skills-kit/samples/provisioning_*.php
+```
+
+**if user says "registrar" OR "domain registration" OR "domain renewal":**
+```
+- whmcs-skills-kit/modules/registrar_modules.json
+- whmcs-skills-kit/templates/README.md (search: "Registrar Module")
+- whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md (search: "Registrar")
+- whmcs-skills-kit/samples/registrar_*.php
+```
+
+**if user says "hook" OR "action hook" OR "event" OR "trigger":**
+```
+- whmcs-skills-kit/modules/hooks.json
+- whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md (search: "Hooks")
+- whmcs-skills-kit/samples/hooks_*.php
+```
+
+**if user says "API" OR "localAPI" OR "external API":**
+```
+- whmcs-skills-kit/modules/api.json
+- whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md (search: "API Integration")
+- whmcs-skills-kit/samples/api_*.php
+```
+
+### Priority 3: Debugging and Troubleshooting
+Load when user encounters issues:
+
+**if user says "error", "not working", "debug", "issue":**
+```
+- whmcs-skills-kit/guide/TROUBLESHOOTING.md
+- whmcs-skills-kit/guide/CHEATSHEET.md (search: "Debugging")
+```
+
+### Priority 4: Learning and Best Practices
+Load for advanced guidance:
+
+**if user says "best practice", "security", "optimization", "performance":**
+```
+- whmcs-skills-kit/guide/BEST-PRACTICES.md
+```
+
+**if user is starting fresh or says "getting started", "hello", "setup":**
+```
+- whmcs-skills-kit/guide/QUICK-START.md
+- whmcs-skills-kit/guide/README.md
+```
+
+## Code Generation Rules
+
+Apply these rules when generating any WHMCS code:
+
+1. **Security Headers**: Every PHP file must start with:
+   ```php
+   defined("WHMCS") or die("Access Denied");
+   ```
+
+2. **Language Files**: Create `lang/english.php` with strings:
+   ```php
+   return array(
+       'friendlyName' => 'Module Name',
+       'description' => 'Description',
+   );
+   ```
+
+3. **Database Operations**: Always use Capsule ORM:
+   ```php
+   use Illuminate\Database\Capsule\Manager as Capsule;
+   
+   Capsule::table('tablename')->where(...)->get();
+   ```
+
+4. **Schema Creation**: Use schema builder:
+   ```php
+   if (!Capsule::schema()->hasTable('table')) {
+       Capsule::schema()->create('table', function ($table) {
+           $table->increments('id');
+           $table->string('name');
+       });
+   }
+   ```
+
+5. **API Calls**: Use Guzzle for external APIs:
+   ```php
+   $client = new \GuzzleHttp\Client();
+   $response = $client->post('https://api.example.com', [...]);
+   ```
+
+6. **Logging**: Log important operations:
+   ```php
+   logModuleCall('modulename', 'function', $request, $response);
+   logActivity('Module action description');
+   ```
+
+7. **Error Handling**: Wrap risky operations:
+   ```php
+   try {
+       // External API call or risky operation
+   } catch (\Exception $e) {
+       logModuleCall('module', 'func', [], ['error' => $e->getMessage()]);
+       return ['status' => 'error', 'msg' => $e->getMessage()];
+   }
+   ```
+
+8. **Input Validation**: Validate/sanitize all input:
+   ```php
+   $input = isset($_POST['field']) ? $_POST['field'] : '';
+   if (empty($input)) {
+       return ['status' => 'error', 'msg' => 'Field required'];
+   }
+   // Sanitize/validate
+   ```
+
+9. **Smarty Templates**: Use proper escaping:
+   ```smarty
+   {$variable nofilter} {* Trusted content *}
+   {$variable} {* Auto-escaped *}
+   {php}echo $value;{/php}
+   ```
+
+10. **Coding Standard**: Follow PSR-12:
+    - Indent with 4 spaces
+    - Use `declare(strict_types=1);`
+    - Proper naming: camelCase for functions/variables, PascalCase for classes
+    - Type hints on all function parameters
+
+## WHMCS Versions
+
+Support both:
+- **WHMCS 8.x**: PHP 8.1+, Smarty 3.1, Capsule 7-9
+- **WHMCS 9.x**: PHP 8.2+, Smarty 4, Capsule 7-9
+
+Reference WHMCS version from context and use version-appropriate patterns.
+
+## Quality Assurance
+
+After code generation, remind user to:
+
+1. **Validate Code**:
+   ```bash
+   python3 whmcs-skills-kit/tools/validate_module.py module_path
+   ```
+
+2. **Run Tests**:
+   - Test in WHMCS admin area
+   - Test in client area (if applicable)
+   - Check error logs: `View Logs > Module Log`
+
+3. **Security Checklist**:
+   - [ ] Input validation on all user inputs
+   - [ ] SQL injection prevention (use Capsule)
+   - [ ] XSS prevention (use template escaping)
+   - [ ] Access control checks
+   - [ ] Sensitive data encryption
+   - [ ] Log sensitive operations
+
+## File Structure Template
+
+```
+modulename/
+├── modules/
+│   └── addons/                    (for addon modules)
+│       └── modulename/
+│           ├── modulename.php     (main file)
+│           ├── hooks.php          (if using hooks)
+│           ├── lang/
+│           │   └── english.php
+│           ├── templates/
+│           │   └── dashboard.tpl
+│           └── assets/
+│               ├── css/
+│               └── js/
+├── provisioning_modules/          (for provisioning)
+│   └── modulename/
+│       ├── modulename.php
+│       └── lang/
+│           └── english.php
+└── registrars/                    (for registrars)
+    └── modulename/
+        ├── modulename.php
+        └── lang/
+            └── english.php
+```
+
+## Helpful Commands
+
+Show when user asks "how do I":
+
+- **Get all clients**: `localAPI('GetClients', ['limitnum' => 100])`
+- **Get client by ID**: `localAPI('GetClientsDetails', ['clientid' => 123])`
+- **Create invoice**: `localAPI('CreateInvoice', ['userid' => 123, ...])`
+- **Log activity**: `logActivity('Description of action');`
+- **Encrypt value**: `encrypt('value_to_encrypt')`
+- **Decrypt value**: `decrypt('encrypted_value')`
+- **Get config option**: `getConfigOption('option_name')`
+- **Get module setting**: `Capsule::table('tblmodulesettings')->...`
+
+## Discovery
+
+When user provides file paths or asks to analyze WHMCS code:
+1. Load the specified file
+2. Cross-reference against `SKILL.md` for best practices
+3. Run security/quality patterns from `BEST-PRACTICES.md`
+4. Use `TROUBLESHOOTING.md` if issues detected
+5. Suggest improvements based on `CHEATSHEET.md` patterns
+
+## Support Resources
+
+- **Quick Start**: whmcs-skills-kit/guide/QUICK-START.md (5 min tutorial)
+- **Examples**: whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md (25+ scenarios)
+- **Quick Ref**: whmcs-skills-kit/guide/CHEATSHEET.md (syntax & patterns)
+- **Debugging**: whmcs-skills-kit/guide/TROUBLESHOOTING.md (30+ issues)
+- **Advanced**: whmcs-skills-kit/guide/BEST-PRACTICES.md (enterprise patterns)
+
+## Module Time Estimates
+
+Set expectations:
+- **Action Hooks**: 2 minutes (simple event automation)
+- **Addon Module**: 5-10 minutes (dashboard, admin features)
+- **Payment Gateway**: 10-15 minutes (payment processor)
+- **Provisioning Module**: 10-20 minutes (server management)
+- **Domain Registrar**: 15-30 minutes (domain operations)
+
+---
+
+**Configuration Version**: 1.0
+**Last Updated**: 2024
+**Compatible With**: WHMCS 8.x, 9.x

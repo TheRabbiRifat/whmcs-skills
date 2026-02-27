@@ -1,0 +1,42 @@
+{
+  "type": "guide",
+  "category": "notification-providers",
+  "description": "WHMCS Notification Provider Modules",
+  "topics": [
+    {
+      "title": "Provider Settings",
+      "content": {
+        "Validating User Supplied Setting Values": "Upon submission of provider settings, the user provided values can be validated using the `testConnection` method.\n\nIf validation fails, simply throw an exception to abort the save action and display an error message to the end user. The error message will be the message provided within the exception so make it user friendly!\n\n```\n/**\n * Test connection.\n *\n * @param array $settings\n *\n * @return array\n */\npublic function testConnection($settings)\n{\n    $api_username = $settings['api_username'];\n    $api_password = $settings['api_password'];\n\n    // Attempt to connect to API service to verify input credentials\n    // and upon error, throw an exception.\n\n    throw new \\Exception('Unable to authenticate with supplied API username and password');\n}\n```"
+      },
+      "file": "notification-providers/provider-settings.md"
+    },
+    {
+      "title": "Send Notification",
+      "content": {},
+      "file": "notification-providers/send-notification.md"
+    },
+    {
+      "title": "Getting Started",
+      "content": {
+        "Sample Module": "The `Email` notification module that ships with WHMCS is not encoded so the source code is viewable. We recommend using this as a starting point for a custom module. This module can be found in the `/modules/notifications/Email` directory.",
+        "Choosing a Name": "Notification Modules are stored in the `/modules/notifications/` directory.\n\nEach module has its own subdirectory within which all files relating to that module should be stored.\n\nAt its simplest, a notification module is a PHP file containing a class that implements the [NotificationModuleInterface](https://docs.whmcs.com/classes/7.4/WHMCS/Module/Contracts/NotificationModuleInterface.html).\n\nTo get started creating a new notification module, follow the steps below.\n\n1. *Choose a name* for your module. Module names should be a single word, consisting of only letters and numbers. Names must begin with a letter, and must be unique.\n2. *Create a new directory* using your desired module name.\n3. *Create a new file* within the directory with the filename `Yourmodulename.php`\n4. *Add the following code* to the file, replacing all instances of `Yourmodulename` with the name of your module as appropriate.\n\n```\n<?php\n\nnamespace WHMCS\\Module\\Notification\\Yourmodulename;\n\nuse WHMCS\\Module\\Contracts\\NotificationModuleInterface;\n\n/**\n * Yourmodulename\n *\n * @copyright Copyright (c) WHMCS Limited 2005-2017\n * @license http://www.example.com/\n */\nclass Yourmodulename implements NotificationModuleInterface\n{\n}\n```\n\nFor more information on the NotificationModuleInterface, please refer to https://docs.whmcs.com/classes/7.4/WHMCS/Module/Contracts/NotificationModuleInterface.html"
+      },
+      "file": "notification-providers/getting-started.md"
+    },
+    {
+      "title": "Initialisation",
+      "content": {},
+      "file": "notification-providers/initialisation.md"
+    },
+    {
+      "title": "Dynamic Fields",
+      "content": {},
+      "file": "notification-providers/dynamic-fields.md"
+    },
+    {
+      "title": "Notification Settings",
+      "content": {},
+      "file": "notification-providers/notification-settings.md"
+    }
+  ]
+}

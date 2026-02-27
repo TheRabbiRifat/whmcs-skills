@@ -1,0 +1,71 @@
+{
+  "module_type": "addon",
+  "description": "Skills for developing WHMCS Addon Modules. These modules provide additional functionality within WHMCS.",
+  "functions": [
+    {
+      "name": "Config",
+      "description": "Defines module configuration. Example:\nfunction demo_config() {\n    $configarray = array(\n    \"name\" => \"Addon Example\",\n    \"description\" => \"This is a sample config function for an addon module\",\n    \"version\" => \"1.0\",\n    \"author\" => \"WHMCS\",\n    \"fields\" => array(\n        \"option1\" => array (\"FriendlyName\" => \"Option1\", \"Type\" => \"text\", \"Size\" => \"25\",\n                              \"Description\" => \"Textbox\", \"Default\" => \"Example\", ),\n        \"option2\" => array (\"FriendlyName\" => \"Option2\", \"Type\" => \"password\", \"Size\" => \"25\",\n                              \"Description\" => \"Password\", ),\n        \"option3\" => array (\"FriendlyName\" => \"Option3\", \"Type\" => \"yesno\", \"Size\" => \"25\",\n                              \"Description\" => \"Sample Check Box\", ),\n        \"option4\" => array (\"FriendlyName\" => \"Option4\", \"Type\" => \"dropdown\", \"Options\" =>\n                              \"1,2,3,4,5\", \"Description\" => \"Sample Dropdown\", \"Default\" => \"3\", ),\n        \"option5\" => array (\"FriendlyName\" => \"Option5\", \"Type\" => \"radio\", \"Options\" =>\n                              \"Demo1,Demo2,Demo3\", \"Description\" => \"Radio Options Demo\", ),\n        \"option6\" => array (\"FriendlyName\" => \"Option6\", \"Type\" => \"textarea\", \"Rows\" => \"3\",\n                              \"Cols\" => \"50\", \"Description\" => \"Description goes here\", \"Default\" => \"Test\", ),\n    ));\n    return $configarray;\n}",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/configuration.md",
+      "examples": [
+        "function demo_config() {\n    $configarray = array(\n    \"name\" => \"Addon Example\",\n    \"description\" => \"This is a sample config function for an addon module\",\n    \"version\" => \"1.0\",\n    \"author\" => \"WHMCS\",\n    \"fields\" => array(\n        \"option1\" => array (\"FriendlyName\" => \"Option1\", \"Type\" => \"text\", \"Size\" => \"25\",\n                              \"Description\" => \"Textbox\", \"Default\" => \"Example\", ),\n        \"option2\" => array (\"FriendlyName\" => \"Option2\", \"Type\" => \"password\", \"Size\" => \"25\",\n                              \"Description\" => \"Password\", ),\n        \"option3\" => array (\"FriendlyName\" => \"Option3\", \"Type\" => \"yesno\", \"Size\" => \"25\",\n                              \"Description\" => \"Sample Check Box\", ),\n        \"option4\" => array (\"FriendlyName\" => \"Option4\", \"Type\" => \"dropdown\", \"Options\" =>\n                              \"1,2,3,4,5\", \"Description\" => \"Sample Dropdown\", \"Default\" => \"3\", ),\n        \"option5\" => array (\"FriendlyName\" => \"Option5\", \"Type\" => \"radio\", \"Options\" =>\n                              \"Demo1,Demo2,Demo3\", \"Description\" => \"Radio Options Demo\", ),\n        \"option6\" => array (\"FriendlyName\" => \"Option6\", \"Type\" => \"textarea\", \"Rows\" => \"3\",\n                              \"Cols\" => \"50\", \"Description\" => \"Description goes here\", \"Default\" => \"Test\", ),\n    ));\n    return $configarray;\n}"
+      ]
+    },
+    {
+      "name": "Activate",
+      "description": "See /app/addon-modules/installation-uninstallation.md for details.",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/installation-uninstallation.md",
+      "examples": [
+        "function addonmodule_activate()\n{\n    // Create custom tables and schema required by your module\n    try {\n        Capsule::schema()\n            ->create(\n                'mod_addonexample',\n                function ($table) {\n                    /** @var \\Illuminate\\Database\\Schema\\Blueprint $table */\n                    $table->increments('id');\n                    $table->text('demo');\n                }\n            );\n        return [\n            // Supported values here include: success, error or info\n            'status' => 'success',\n            'description' => 'This is a demo module only. '\n                . 'In a real module you might report a success or instruct a '\n                    . 'user how to get started with it here.',\n        ];\n    } catch (\\Exception $e) {\n        return [\n            // Supported values here include: success, error or info\n            'status' => \"error\",\n            'description' => 'Unable to create mod_addonexample: ' . $e->getMessage(),\n        ];\n    }\n}",
+        "function addonmodule_deactivate()\n{\n    // Undo any database and schema modifications made by your module here\n    try {\n        Capsule::schema()\n            ->dropIfExists('mod_addonexample');\n        return [\n            // Supported values here include: success, error or info\n            'status' => 'success',\n            'description' => 'This is a demo module only. '\n                . 'In a real module you might report a success here.',\n        ];\n    } catch (\\Exception $e) {\n        return [\n            // Supported values here include: success, error or info\n            \"status\" => \"error\",\n            \"description\" => \"Unable to drop mod_addonexample: {$e->getMessage()}\",\n        ];\n    }\n}"
+      ]
+    },
+    {
+      "name": "Deactivate",
+      "description": "See /app/addon-modules/installation-uninstallation.md for details.",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/installation-uninstallation.md",
+      "examples": [
+        "function addonmodule_activate()\n{\n    // Create custom tables and schema required by your module\n    try {\n        Capsule::schema()\n            ->create(\n                'mod_addonexample',\n                function ($table) {\n                    /** @var \\Illuminate\\Database\\Schema\\Blueprint $table */\n                    $table->increments('id');\n                    $table->text('demo');\n                }\n            );\n        return [\n            // Supported values here include: success, error or info\n            'status' => 'success',\n            'description' => 'This is a demo module only. '\n                . 'In a real module you might report a success or instruct a '\n                    . 'user how to get started with it here.',\n        ];\n    } catch (\\Exception $e) {\n        return [\n            // Supported values here include: success, error or info\n            'status' => \"error\",\n            'description' => 'Unable to create mod_addonexample: ' . $e->getMessage(),\n        ];\n    }\n}",
+        "function addonmodule_deactivate()\n{\n    // Undo any database and schema modifications made by your module here\n    try {\n        Capsule::schema()\n            ->dropIfExists('mod_addonexample');\n        return [\n            // Supported values here include: success, error or info\n            'status' => 'success',\n            'description' => 'This is a demo module only. '\n                . 'In a real module you might report a success here.',\n        ];\n    } catch (\\Exception $e) {\n        return [\n            // Supported values here include: success, error or info\n            \"status\" => \"error\",\n            \"description\" => \"Unable to drop mod_addonexample: {$e->getMessage()}\",\n        ];\n    }\n}"
+      ]
+    },
+    {
+      "name": "Upgrade",
+      "description": "See /app/addon-modules/upgrades.md for details.",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/upgrades.md",
+      "examples": [
+        "function addonmodule_upgrade($vars)\n{\n    $currentlyInstalledVersion = $vars['version'];\n\n    // Perform SQL schema changes required by the upgrade to version 1.1 of your module\n    if ($currentlyInstalledVersion < 1.1) {\n        $schema = Capsule::schema();\n        // Alter the table and add a new text column called \"demo2\"\n        $schema->table('mod_addonexample', function($table) {\n            $table->text('demo2');\n        });\n    }\n\n    //Perform SQL schema changes required by the upgrade to version 1.2 of your module\n    if ($currentlyInstalledVersion < 1.2) {\n        $schema = Capsule::schema();\n        // Alter the table and add a new text column called \"demo3\"\n        $schema->table('mod_addonexample', function($table) {\n            $table->text('demo3');\n        });\n    }\n}"
+      ]
+    },
+    {
+      "name": "Output",
+      "description": "Defines admin area output. Example:\nfunction demo_output($vars) {\n\n    $modulelink = $vars['modulelink'];\n    $version = $vars['version'];\n    $option1 = $vars['option1'];\n    $option2 = $vars['option2'];\n    $option3 = $vars['option3'];\n    $option4 = $vars['option4'];\n    $option5 = $vars['option5'];\n    $option6 = $vars['option6'];\n    $LANG = $vars['_lang'];\n\n    echo '<p>The date & time are currently ' . date(\"Y-m-d H:i:s\") . '</p>';\n\n}",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/admin-area-output.md",
+      "examples": [
+        "function demo_output($vars) {\n\n    $modulelink = $vars['modulelink'];\n    $version = $vars['version'];\n    $option1 = $vars['option1'];\n    $option2 = $vars['option2'];\n    $option3 = $vars['option3'];\n    $option4 = $vars['option4'];\n    $option5 = $vars['option5'];\n    $option6 = $vars['option6'];\n    $LANG = $vars['_lang'];\n\n    echo '<p>The date & time are currently ' . date(\"Y-m-d H:i:s\") . '</p>';\n\n}"
+      ]
+    },
+    {
+      "name": "Sidebar",
+      "description": "See /app/addon-modules/admin-area-output.md for details.",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/admin-area-output.md",
+      "examples": [
+        "function demo_output($vars) {\n\n    $modulelink = $vars['modulelink'];\n    $version = $vars['version'];\n    $option1 = $vars['option1'];\n    $option2 = $vars['option2'];\n    $option3 = $vars['option3'];\n    $option4 = $vars['option4'];\n    $option5 = $vars['option5'];\n    $option6 = $vars['option6'];\n    $LANG = $vars['_lang'];\n\n    echo '<p>The date & time are currently ' . date(\"Y-m-d H:i:s\") . '</p>';\n\n}"
+      ]
+    },
+    {
+      "name": "ClientArea",
+      "description": "See /app/addon-modules/client-area-output.md for details.",
+      "arguments": "$vars (array) for Output/ClientArea, none for Config (returns array)",
+      "source_file": "addon-modules/client-area-output.md",
+      "examples": [
+        "function demo_clientarea($vars) {\n \n    $modulelink = $vars['modulelink'];\n    $version = $vars['version'];\n    $option1 = $vars['option1'];\n    $option2 = $vars['option2'];\n    $option3 = $vars['option3'];\n    $option4 = $vars['option4'];\n    $option5 = $vars['option5'];\n    $option6 = $vars['option6'];\n    $LANG = $vars['_lang'];\n \n    return array(\n        'pagetitle' => 'Addon Module',\n        'breadcrumb' => array('index.php?m=demo'=>'Demo Addon'),\n        'templatefile' => 'clienthome',\n        'requirelogin' => true, # accepts true/false\n        'forcessl' => false, # accepts true/false\n        'vars' => array(\n            'testvar' => 'demo',\n            'anothervar' => 'value',\n            'sample' => 'test',\n        ),\n    );\n \n}"
+      ]
+    }
+  ]
+}
