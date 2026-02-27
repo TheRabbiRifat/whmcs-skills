@@ -23,7 +23,7 @@ All configuration files are **ready to use immediately** - no additional setup n
 ## 📦 What's Included
 
 ### Core Skill Files (8 guides)
-- **SKILL.md** (267 lines) — Core AI expertise system prompt
+- **SKILLS.md** (267 lines) — Core AI expertise system prompt
 - **QUICK-START.md** — 5-minute getting started tutorial
 - **AI-INTEGRATION.md** — Platform-specific setup guides
 - **EXAMPLES-AND-PROMPTS.md** — 25+ real-world scenarios
@@ -71,7 +71,7 @@ All configuration files are **ready to use immediately** - no additional setup n
 ```bash
 # Already in your project root
 # Just start using Copilot with WHMCS questions
-# It will auto-load SKILL.md rules
+# It will auto-load SKILLS.md rules
 
 # Try in Copilot chat:
 # "Create an addon module that shows client dashboard stats"
@@ -210,7 +210,7 @@ All configuration files are **ready to use immediately** - no additional setup n
 
 ### I want **quick IDE integration** (2 min setup):
 → Use **Cursor IDE** or **GitHub Copilot in VS Code**
-- Install extension, auto-loads SKILL.md
+- Install extension, auto-loads SKILLS.md
 - Works offline in IDE
 - No API costs
 
@@ -265,7 +265,7 @@ All configuration files are **ready to use immediately** - no additional setup n
 # 1. Install Cursor IDE or VS Code + Copilot
 # 2. Open this project
 # 3. In chat: "Build addon module for [task]"
-# 4. Use @whmcs-skills-kit/guide/SKILL.md
+# 4. Use @whmcs-skills-kit/guide/SKILLS.md
 # 5. Done! (5-15 min to production code)
 ```
 
@@ -354,7 +354,7 @@ python3 whmcs-skills-kit/tools/validate_module.py modules/addons/mymodule/
 
 ## 💡 Pro Tips
 
-1. **Load SKILL.md first** in every conversation
+1. **Load SKILLS.md first** in every conversation
 2. **Use module JSON files** for your specific task
 3. **Validate early & often** - catch errors before deployment
 4. **Save money with Gemini** - same quality, 1/10th cost
@@ -389,7 +389,7 @@ python3 whmcs-skills-kit/tools/validate_module.py modules/addons/mymodule/
 2. Sign in with GitHub account
 3. Open this project
 4. In Copilot chat: "Create an addon module for [task]"
-5. Use @whmcs-skills-kit/guide/SKILL.md
+5. Use @whmcs-skills-kit/guide/SKILLS.md
 
 # Option 2: Claude API (Recommend for complex features)
 1. Go to https://console.anthropic.com
@@ -401,7 +401,7 @@ python3 whmcs-skills-kit/tools/validate_module.py modules/addons/mymodule/
 # Option 3: Cursor IDE (Recommend for daily development)
 1. Download and install https://cursor.com
 2. Open this project folder
-3. Start coding - SKILL.md loads automatically
+3. Start coding - SKILLS.md loads automatically
 4. In chat: ask anything about WHMCS
 
 # Option 4: Google Gemini API (Recommend for cost-efficiency)

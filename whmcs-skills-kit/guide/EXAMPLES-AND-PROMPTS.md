@@ -24,7 +24,7 @@
 **Business Need**: Display order statistics on the admin dashboard
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/addon_modules.json
 @whmcs-skills-kit/samples/addon_admin-area-output_sample_1.php
 
@@ -52,7 +52,7 @@ Include unit tests.
 **Business Need**: Show clients special announcements in their client area
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/addon_modules.json
 @whmcs-skills-kit/samples/addon_client-area-output_sample_1.php
 
@@ -77,7 +77,7 @@ Include database initialization in _activate function.
 **Business Need**: Track and display client dashboard activities
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/addon_modules.json
 
 I need an addon that tracks client activities:
@@ -106,7 +106,7 @@ Include:
 **Business Need**: Automate hosting account provisioning on cPanel servers
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/provisioning_modules.json
 @whmcs-skills-kit/samples/
 
@@ -138,7 +138,7 @@ Include:
 **Business Need**: Provision virtualized containers for clients
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/provisioning_modules.json
 
 Create a provisioning module for Docker-based VPS:
@@ -167,7 +167,7 @@ Include configuration fields for:
 **Business Need**: Manage email accounts and servers
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/provisioning_modules.json
 
 Create a provisioning module for managed email hosting:
@@ -198,7 +198,7 @@ Include:
 **Business Need**: Register and manage domains via Namecheap API
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/registrar_modules.json
 @whmcs-skills-kit/samples/registrar_*.php
 
@@ -229,7 +229,7 @@ Include:
 **Business Need**: Manage domains through Cloudflare's registrar service
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/registrar_modules.json
 
 Create a registrar module for Cloudflare:
@@ -260,7 +260,7 @@ Include:
 **Business Need**: Accept payments directly via Stripe
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/payment_gateways.json
 @whmcs-skills-kit/samples/payment_merchant_merchant-gateway_sample_1.php
 @whmcs-skills-kit/samples/payment_merchant_merchant-gateway_sample_2.php
@@ -293,7 +293,7 @@ Features:
 **Business Need**: Redirect payments to PayPal
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/payment_gateways.json
 @whmcs-skills-kit/samples/payment_thirdparty_third-party-gateway_sample_1.php
 
@@ -324,7 +324,7 @@ Include:
 **Business Need**: Accept Bitcoin/Ethereum payments
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/payment_gateways.json
 
 Create a cryptocurrency payment gateway:
@@ -357,7 +357,7 @@ Include:
 **Business Need**: Automate actions when new clients register
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/hooks.json
 
 Create a hook-based addon for client onboarding:
@@ -386,7 +386,7 @@ Include hooks for:
 **Business Need**: Automatically process invoices and send reminders
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/hooks.json
 
 Create hooks for invoice automation:
@@ -413,7 +413,7 @@ Implement hooks:
 **Business Need**: Add features to support ticketing
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/hooks.json
 
 Create hooks to enhance support tickets:
@@ -444,7 +444,7 @@ Implement hooks:
 **Business Need**: Keep clients synchronized between WHMCS and external CRM
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/api.json
 
 Create an addon that syncs WHMCS data to external CRM:
@@ -474,7 +474,7 @@ Include:
 **Business Need**: Build advanced reports pulling WHMCS API data
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/api.json
 
 Create an addon with custom API-based reporting:
@@ -508,7 +508,7 @@ Include:
 **Business Need**: Update old WHMCS 6.x module to WHMCS 9.x standards
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/addon_modules.json
 @whmcs-skills-kit/samples/addon_*.php
 
@@ -537,7 +537,7 @@ Generate the modernized version with explanation of all changes.
 **Business Need**: Fix a module that won't activate
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/guide/QUICK-START.md (Gotchas section)
 
 My addon module won't activate. Here's the error message:
@@ -566,8 +566,8 @@ Check for:
 **Business Need**: Speed up a slow module
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
-@whmcs-skills-kit/guide/SKILL.md (Section 4: Database Operations)
+@whmcs-skills-kit/guide/SKILLS.md
+@whmcs-skills-kit/guide/SKILLS.md (Section 4: Database Operations)
 
 My admin dashboard widget is loading slowly. Here's the code:
 
@@ -594,7 +594,7 @@ Explain the performance improvements made.
 **Business Need**: Send real-time notifications to clients and admins
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/notification_providers.json
 
 Create an advanced notification system addon:
@@ -623,7 +623,7 @@ Include:
 **Business Need**: Manage SSL certificates for hosted domains
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/provisioning_modules.json
 
 Create a provisioning module for SSL certificates:
@@ -652,7 +652,7 @@ Include:
 **Business Need**: Build a complete SAAS product with WHMCS
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/provisioning_modules.json
 
 Create a complete SAAS addon module:
@@ -685,7 +685,7 @@ Highly complex - include:
 Copy this template for your own scenarios:
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/[RELEVANT_JSON_FILES]
 @whmcs-skills-kit/samples/[RELEVANT_SAMPLES]
 

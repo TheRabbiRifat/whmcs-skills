@@ -7,7 +7,7 @@
 ## TL;DR
 
 ```
-1. Load SKILL.md as your system prompt
+1. Load SKILLS.md as your system prompt
 2. Ask the AI to build what you need
 3. Validate against the security checklist
 4. Deploy
@@ -19,19 +19,19 @@
 
 ### For Cursor Users
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 Build me a complete Addon Module that displays stats on the admin dashboard.
 ```
 
 ### For Copilot Users
 ```
 Create a WHMCS Addon Module with admin dashboard.
-Reference: whmcs-skills-kit/guide/SKILL.md
+Reference: whmcs-skills-kit/guide/SKILLS.md
 ```
 
 ### For VS Code
 ```
-Open whmcs-skills-kit/guide/SKILL.md
+Open whmcs-skills-kit/guide/SKILLS.md
 Then ask Copilot: Build an invoice payment processor module.
 ```
 
@@ -44,7 +44,7 @@ Then ask Copilot: Build an invoice payment processor module.
 1. **Tell the AI what you want**
 
    ```
-   @whmcs-skills-kit/guide/SKILL.md
+   @whmcs-skills-kit/guide/SKILLS.md
    @whmcs-skills-kit/modules/addon_modules.json
    
    I want to create an addon that adds a widget to the client area
@@ -75,7 +75,7 @@ Then ask Copilot: Build an invoice payment processor module.
 ### "Build me a Payment Gateway"
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/payment_gateways.json
 @whmcs-skills-kit/samples/payment_merchant_merchant-gateway_sample_1.php
 
@@ -91,7 +91,7 @@ Include webhook handling, error handling, and logging.
 ### "Build me a Provisioning Module for [Provider]"
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/provisioning_modules.json
 @whmcs-skills-kit/samples/
 
@@ -110,7 +110,7 @@ Create a provisioning module for Linode that:
 ### "Build me a Registrar Module"
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/registrar_modules.json
 
 Create a registrar module for [registrar] that:
@@ -128,7 +128,7 @@ Create a registrar module for [registrar] that:
 ### "I need a Hook that does X"
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/hooks.json
 
 Write a hook that executes every time a ticket is created.
@@ -297,7 +297,7 @@ php -l modules/addons/mymodule/mymodule.php
 ### 2. Ask AI to validate
 ```
 Review this code against WHMCS 9.x standards:
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 
 [paste your code]
 
@@ -315,7 +315,7 @@ python3 whmcs-skills-kit/tools/validate_module.py mymodule.php
 
 ### Module won't activate
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 
 My addon module won't activate. Here's the config:
 [paste code]
@@ -333,7 +333,7 @@ My TicketOpen hook isn't firing. Is the hook point correct?
 
 ### Database errors
 ```
-@whmcs-skills-kit/guide/SKILL.md (Section 4)
+@whmcs-skills-kit/guide/SKILLS.md (Section 4)
 
 I'm getting database errors. Verify my Capsule ORM usage:
 [paste code]
@@ -345,7 +345,7 @@ I'm getting database errors. Verify my Capsule ORM usage:
 
 1. **Pick a module type** (from table above)
 2. **Prepare your request** with specific details
-3. **Load the skill** (`@SKILL.md` + module JSON)
+3. **Load the skill** (`@SKILLS.md` + module JSON)
 4. **Ask the AI** to build it
 5. **Validate** against the checklist
 6. **Deploy!**
@@ -354,7 +354,7 @@ I'm getting database errors. Verify my Capsule ORM usage:
 
 ## Resources
 
-- **Main Guide**: `whmcs-skills-kit/guide/SKILL.md`
+- **Main Guide**: `whmcs-skills-kit/guide/SKILLS.md`
 - **Integration Guide**: `whmcs-skills-kit/guide/AI-INTEGRATION.md` (detailed AI setup)
 - **Manifest**: `whmcs-skills-kit/manifest.json` (what's available)
 - **Official WHMCS Docs**: https://developers.whmcs.com/

@@ -22,7 +22,7 @@ Load these files automatically when user mentions:
 - "WHMCS hook", "action hook"
 - "WHMCS API", "localAPI"
 
-Auto-load file: `whmcs-skills-kit/guide/SKILL.md`
+Auto-load file: `whmcs-skills-kit/guide/SKILLS.md`
 
 ### Priority 2: Module Type Detection
 Detect user's task and load specific references:
@@ -249,7 +249,7 @@ Show when user asks "how do I":
 
 When user provides file paths or asks to analyze WHMCS code:
 1. Load the specified file
-2. Cross-reference against `SKILL.md` for best practices
+2. Cross-reference against `SKILLS.md` for best practices
 3. Run security/quality patterns from `BEST-PRACTICES.md`
 4. Use `TROUBLESHOOTING.md` if issues detected
 5. Suggest improvements based on `CHEATSHEET.md` patterns

@@ -15,13 +15,13 @@ Build production-ready WHMCS modules 10x faster using Github Copilot, Claude, Ge
 ### For GitHub Copilot
 ```
 1. Create .copilot-instructions in project root
-2. Paste: whmcs-skills-kit/guide/SKILL.md
+2. Paste: whmcs-skills-kit/guide/SKILLS.md
 3. In chat: Create a payment gateway module
 ```
 
 ### For Claude (API)
 ```python
-with open('whmcs-skills-kit/guide/SKILL.md') as f:
+with open('whmcs-skills-kit/guide/SKILLS.md') as f:
     system = f.read()  # Use as system prompt
 ```
 
@@ -34,7 +34,7 @@ python3 GEMINI-API-SETUP.py  # See GEMINI-API-SETUP.md
 ### For Anti Gravity / Cursor
 ```
 Create .antigravity-config or .cursorrules:
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 ```
 
 ### For VS Code
@@ -67,7 +67,7 @@ A **complete skill package** that turns any AI agent into a WHMCS expert develop
 ```
 whmcs-skills-kit/                      # ← AI Skills Start Here
 ├── guide/
-│   ├── SKILL.md                       # Core AI system prompt (LOAD THIS FIRST)
+│   ├── SKILLS.md                      # Core AI system prompt (LOAD THIS FIRST)
 │   ├── QUICK-START.md                 # 5-minute tutorial
 │   ├── AI-INTEGRATION.md              # Setup for your AI editor
 │   ├── EXAMPLES-AND-PROMPTS.md        # Copy-paste prompts (25+ scenarios)
@@ -103,12 +103,12 @@ whmcs-skills-kit/                      # ← AI Skills Start Here
 
 | Goal | Load This | Time |
 |------|-----------|------|
-| Build **Addon Module** | `SKILL.md` + `addon_modules.json` | 5 min |
-| Build **Payment Gateway** | `SKILL.md` + `payment_gateways.json` | 10 min |
-| Build **Provisioning Module** | `SKILL.md` + `provisioning_modules.json` | 15 min |
-| Build **Domain Registrar** | `SKILL.md` + `registrar_modules.json` | 15 min |
-| Write **Action Hooks** | `SKILL.md` + `hooks.json` | 2 min |
-| Debug **Existing Module** | `SKILL.md` + `TROUBLESHOOTING.md` | 5 min |
+| Build **Addon Module** | `SKILLS.md` + `addon_modules.json` | 5 min |
+| Build **Payment Gateway** | `SKILLS.md` + `payment_gateways.json` | 10 min |
+| Build **Provisioning Module** | `SKILLS.md` + `provisioning_modules.json` | 15 min |
+| Build **Domain Registrar** | `SKILLS.md` + `registrar_modules.json` | 15 min |
+| Write **Action Hooks** | `SKILLS.md` + `hooks.json` | 2 min |
+| Debug **Existing Module** | `SKILLS.md` + `TROUBLESHOOTING.md` | 5 min |
 | Validate **Code Quality** | Run `validate_module.py` | 1 min |
 
 ---
@@ -121,7 +121,7 @@ whmcs-skills-kit/                      # ← AI Skills Start Here
 3. **[EXAMPLES-AND-PROMPTS.md](whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md)** — Pick a real scenario and copy the prompt
 
 ### 🎯 Building Modules?
-1. **[SKILL.md](whmcs-skills-kit/guide/SKILL.md)** — Load this as your AI's system prompt
+1. **[SKILLS.md](whmcs-skills-kit/guide/SKILLS.md)** — Load this as your AI's system prompt
 2. **[templates/README.md](whmcs-skills-kit/templates/README.md)** — Use starter templates
 3. **[CHEATSHEET.md](whmcs-skills-kit/guide/CHEATSHEET.md)** — Quick reference while building
 
@@ -134,7 +134,7 @@ whmcs-skills-kit/                      # ← AI Skills Start Here
 ### 🐛 Something Broken?
 1. Check **[TROUBLESHOOTING.md](whmcs-skills-kit/guide/TROUBLESHOOTING.md)** (30+ common issues)
 2. Run **[validate_module.py](whmcs-skills-kit/tools/validate_module.py)** to check code quality
-3. Ask your AI agent for help (load SKILL.md + TROUBLESHOOTING.md)
+3. Ask your AI agent for help (load SKILLS.md + TROUBLESHOOTING.md)
 
 ---
 
@@ -150,7 +150,7 @@ Reference: whmcs-skills-kit/guide/AI-INTEGRATION.md
 ### 2. Claude (Direct API)
 ```bash
 # Setup: CLAUDE-API-SETUP.md (included)
-# Use SKILL.md as system prompt
+# Use SKILLS.md as system prompt
 ```
 [Full Setup →](CLAUDE-API-SETUP.md)
 
@@ -164,14 +164,14 @@ Reference: whmcs-skills-kit/guide/AI-INTEGRATION.md
 ### 4. Anti Gravity IDE
 ```bash
 # File: .antigravity-config (included)
-# Auto-loads SKILL.md and module references
+# Auto-loads SKILLS.md and module references
 ```
 [Full Setup →](.antigravity-config)
 
 ### 5. Cursor IDE / Windsurf
 ```bash
 # File: .cursorrules or .windsurf-context (included)
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 ```
 [Cursor Setup →](whmcs-skills-kit/guide/AI-INTEGRATION.md#using-with-cursor-ide) | [Windsurf Setup →](whmcs-skills-kit/guide/AI-INTEGRATION.md#using-with-windsurf)
 
@@ -188,7 +188,7 @@ Reference: whmcs-skills-kit/guide/AI-INTEGRATION.md
 
 **Step 1: Load the skill**
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/addon_modules.json
 ```
 
@@ -238,7 +238,7 @@ cp -r modules/addons/order_tracker /path/to/whmcs/modules/addons/
 
 | File | Purpose | Read When |
 |------|---------|-----------|
-| **[SKILL.md](whmcs-skills-kit/guide/SKILL.md)** | Core AI system prompt | Building any module |
+| **[SKILLS.md](whmcs-skills-kit/guide/SKILLS.md)** | Core AI system prompt | Building any module |
 | **[QUICK-START.md](whmcs-skills-kit/guide/QUICK-START.md)** | 5-min tutorial | First time |
 | **[AI-INTEGRATION.md](whmcs-skills-kit/guide/AI-INTEGRATION.md)** | Setup guides (5 editors) | Setting up your AI |
 | **[EXAMPLES-AND-PROMPTS.md](whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md)** | 25+ real scenarios | Need a prompt to copy |
@@ -281,7 +281,7 @@ Every module generated with this skill includes:
 
 ### Addon Module: Client Dashboard Widget
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/addon_modules.json
 
 Create an addon that shows clients their next invoice due date,
@@ -291,7 +291,7 @@ current balance, and domain expiration dates. Include caching.
 
 ### Payment Gateway: Stripe Integration
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/payment_gateways.json
 
 Build a Stripe payment gateway with webhook handling,
@@ -301,7 +301,7 @@ SCA support, and automatic invoice marking.
 
 ### Provisioning Module: cPanel/WHM
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/provisioning_modules.json
 
 Create a cPanel provisioning module with account creation,
@@ -315,7 +315,7 @@ suspension, termination, and password reset features.
 
 ## 💡 Pro Tips
 
-1. **Load SKILL.md first** — It's the foundation for everything
+1. **Load SKILLS.md first** — It's the foundation for everything
 2. **Use + operators** — Keep your prompts focused and add files as needed
 3. **Validate output** — Run `validate_module.py` on generated code
 4. **Check samples/** — Study real code from the 1000+ snippets
@@ -388,7 +388,7 @@ Professional WHMCS development skill kit. Educational and commercial use permitt
 1. **[Open QUICK-START.md](whmcs-skills-kit/guide/QUICK-START.md)** (5 min read)
 2. **[Setup your AI editor](whmcs-skills-kit/guide/AI-INTEGRATION.md)** (2 min setup)
 3. **[Pick a scenario](whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md)** (1 min)
-4. **[Build your module!](whmcs-skills-kit/guide/SKILL.md)** (5-15 min with AI)
+4. **[Build your module!](whmcs-skills-kit/guide/SKILLS.md)** (5-15 min with AI)
 
 **That's it. You're building production-ready WHMCS modules with AI.** 🎉
 

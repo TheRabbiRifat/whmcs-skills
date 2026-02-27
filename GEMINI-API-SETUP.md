@@ -103,7 +103,7 @@ genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-pro')
 
 # Read skill system prompt
-with open('whmcs-skills-kit/guide/SKILL.md', 'r') as f:
+with open('whmcs-skills-kit/guide/SKILLS.md', 'r') as f:
     skill_prompt = f.read()
 
 # Create conversation
@@ -135,7 +135,7 @@ genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-pro')
 
 # Read skill and troubleshooting
-with open('whmcs-skills-kit/guide/SKILL.md', 'r') as f:
+with open('whmcs-skills-kit/guide/SKILLS.md', 'r') as f:
     skill = f.read()
 with open('whmcs-skills-kit/guide/TROUBLESHOOTING.md', 'r') as f:
     troubleshooting = f.read()
@@ -168,7 +168,7 @@ genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-pro')
 
 # Load skill
-with open('whmcs-skills-kit/guide/SKILL.md', 'r') as f:
+with open('whmcs-skills-kit/guide/SKILLS.md', 'r') as f:
     skill = f.read()
 
 # Module requests
@@ -232,7 +232,7 @@ image = genai.upload_file(image_path)
 
 response = model.generate_content([
     "Analyze this WHMCS error screenshot and tell me the root cause. "
-    "Then generate the fix. Use expertise from whmcs-skills-kit/guide/SKILL.md",
+    "Then generate the fix. Use expertise from whmcs-skills-kit/guide/SKILLS.md",
     image
 ])
 
@@ -274,7 +274,7 @@ api_key = os.getenv('GOOGLE_API_KEY')
 genai.configure(api_key=api_key)
 
 # Read skill once
-with open('whmcs-skills-kit/guide/SKILL.md', 'r') as f:
+with open('whmcs-skills-kit/guide/SKILLS.md', 'r') as f:
     skill = f.read()
 
 # Reuse skill in chat (more efficient)
@@ -437,7 +437,7 @@ Recommended folder structure:
 ```
 whmcs-gemini-tools/
 ├── config.py              # API key and settings
-├── skill_loader.py        # Load SKILL.md
+├── skill_loader.py        # Load SKILLS.md
 ├── module_generator.py    # Generate modules
 ├── batch_processor.py     # Process multiple modules
 ├── validator.py           # Validate output
@@ -455,7 +455,7 @@ from pathlib import Path
 
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 SKILL_KIT_PATH = Path('whmcs-skills-kit')
-SKILL_PROMPT = (SKILL_KIT_PATH / 'guide' / 'SKILL.md').read_text()
+SKILL_PROMPT = (SKILL_KIT_PATH / 'guide' / 'SKILLS.md').read_text()
 
 MODEL = 'gemini-pro'  # or gemini-1.5-flash for speed
 MAX_TOKENS = 2048
@@ -494,7 +494,7 @@ TEMPERATURE = 0.7  # Lower for consistency, higher for creativity
 2. Install: `pip install google-generativeai`
 3. Set environment variable: `GOOGLE_API_KEY=your-key`
 4. Copy code examples above
-5. Load SKILL.md from whmcs-skills-kit/guide/
+5. Load SKILLS.md from whmcs-skills-kit/guide/
 6. Start generating WHMCS modules!
 7. Validate with: `python3 whmcs-skills-kit/tools/validate_module.py`
 

@@ -3,11 +3,11 @@
 # Reference: whmcs-skills-kit/guide/AI-INTEGRATION.md
 
 # Primary skill: Load this for ALL WHMCS development tasks
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 
 # Rules for code generation
 You are an expert WHMCS PHP developer. Follow these principles:
-1. Always load the SKILL.md file first
+1. Always load the SKILLS.md file first
 2. Use Capsule ORM for database operations (never raw SQL)
 3. Enforce PSR-12 coding standards
 4. Add proper error handling and logging

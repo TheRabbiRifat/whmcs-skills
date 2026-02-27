@@ -168,8 +168,8 @@ class TestSkillsGeneration(unittest.TestCase):
         self.assertTrue(len(data.get("skills")) > 0, "Skills list should not be empty")
 
     def test_skill_md_exists(self):
-        file_path = os.path.join(GUIDE_DIR, "SKILL.md")
-        self.assertTrue(os.path.exists(file_path), "SKILL.md file not found")
+        file_path = os.path.join(GUIDE_DIR, "SKILLS.md")
+        self.assertTrue(os.path.exists(file_path), "SKILLS.md file not found")
 
 if __name__ == "__main__":
     unittest.main()

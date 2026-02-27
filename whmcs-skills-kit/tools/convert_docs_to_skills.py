@@ -550,7 +550,7 @@ def generate_manifest():
             {"name": "Advanced", "file": "modules/advanced.json", "description": "Advanced topics including DB interaction, Authentication, and Logging."},
             {"name": "OAuth", "file": "modules/oauth.json", "description": "Implementing OAuth Single Sign-On and credentials."},
             {"name": "Languages", "file": "modules/languages.json", "description": "Working with WHMCS language files and overrides."},
-            {"name": "Best Practices", "file": "guide/SKILL.md", "description": "Core development guidelines and operational boundaries."}
+            {"name": "Best Practices", "file": "guide/SKILLS.md", "description": "Core development guidelines and operational boundaries."}
         ]
     }
 
@@ -560,7 +560,7 @@ def generate_manifest():
     print(f"Created {output_path}")
 
 def generate_skill_md():
-    print("Generating SKILL.md...")
+    print("Generating SKILLS.md...")
     content = r"""---
 name: whmcs-dev-skills
 description: >
@@ -828,7 +828,7 @@ function mymodule_upgrade($vars) {
 
 See `manifest.json` for the full list of generated skill files available in this package.
 """
-    output_path = os.path.join(GUIDE_DIR, "SKILL.md")
+    output_path = os.path.join(GUIDE_DIR, "SKILLS.md")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(content)
     print(f"Created {output_path}")

@@ -24,7 +24,7 @@ You are a senior WHMCS PHP developer with expertise in:
 ## Key Reference Files
 
 ### Always Load First
-- `whmcs-skills-kit/guide/SKILL.md` - Core expertise and rules
+- `whmcs-skills-kit/guide/SKILLS.md` - Core expertise and rules
 
 ### Module-Specific References
 - `whmcs-skills-kit/modules/addon_modules.json` - For addon modules

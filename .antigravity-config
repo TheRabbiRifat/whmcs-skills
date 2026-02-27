@@ -35,41 +35,41 @@ You are a WHMCS development expert. When the user mentions WHMCS, load the follo
 
 ### When user asks about "addon module" or "dashboard":
 Load automatically:
-- `@whmcs-skills-kit/guide/SKILL.md`
+- `@whmcs-skills-kit/guide/SKILLS.md`
 - `@whmcs-skills-kit/modules/addon_modules.json`
 - `@whmcs-skills-kit/templates/README.md` (addon section)
 - `@whmcs-skills-kit/samples/addon_dashboard.php` (first example)
 
 ### When user asks about "payment gateway" or "payment processor":
 Load automatically:
-- `@whmcs-skills-kit/guide/SKILL.md`
+- `@whmcs-skills-kit/guide/SKILLS.md`
 - `@whmcs-skills-kit/modules/payment_gateways.json`
 - `@whmcs-skills-kit/templates/README.md` (payment section)
 - `@whmcs-skills-kit/samples/payment_example.php`
 
 ### When user asks about "provisioning" or "server module":
 Load automatically:
-- `@whmcs-skills-kit/guide/SKILL.md`
+- `@whmcs-skills-kit/guide/SKILLS.md`
 - `@whmcs-skills-kit/modules/provisioning_modules.json`
 - `@whmcs-skills-kit/templates/README.md` (provisioning section)
 - `@whmcs-skills-kit/samples/provisioning_*.php`
 
 ### When user asks about "domain registrar" or "registrar module":
 Load automatically:
-- `@whmcs-skills-kit/guide/SKILL.md`
+- `@whmcs-skills-kit/guide/SKILLS.md`
 - `@whmcs-skills-kit/modules/registrar_modules.json`
 - `@whmcs-skills-kit/templates/README.md` (registrar section)
 - `@whmcs-skills-kit/samples/registrar_*.php`
 
 ### When user asks about "hook" or "action hook" or "event":
 Load automatically:
-- `@whmcs-skills-kit/guide/SKILL.md`
+- `@whmcs-skills-kit/guide/SKILLS.md`
 - `@whmcs-skills-kit/modules/hooks.json`
 - `@whmcs-skills-kit/samples/hooks_*.php`
 
 ### When user asks about "API" or "external integration":
 Load automatically:
-- `@whmcs-skills-kit/guide/SKILL.md`
+- `@whmcs-skills-kit/guide/SKILLS.md`
 - `@whmcs-skills-kit/modules/api.json`
 - `@whmcs-skills-kit/guide/EXAMPLES-AND-PROMPTS.md` (API section)
 
@@ -81,7 +81,7 @@ Load automatically:
 ### When user asks "best practice" or "security" or "optimize":
 Load automatically:
 - `@whmcs-skills-kit/guide/BEST-PRACTICES.md`
-- `@whmcs-skills-kit/guide/SKILL.md`
+- `@whmcs-skills-kit/guide/SKILLS.md`
 
 ---
 
@@ -265,7 +265,7 @@ modules/
 When user wants to build a module, show this pattern:
 
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/addon_modules.json
 
 Create an addon module called "quick_stats" that:
@@ -285,7 +285,7 @@ Create an addon module called "quick_stats" that:
 
 1. **Start**: `whmcs-skills-kit/guide/QUICK-START.md` (5 min)
 2. **Setup**: `whmcs-skills-kit/guide/AI-INTEGRATION.md` (2 min)
-3. **Learn**: `whmcs-skills-kit/guide/SKILL.md` + `CHEATSHEET.md` (15 min)
+3. **Learn**: `whmcs-skills-kit/guide/SKILLS.md` + `CHEATSHEET.md` (15 min)
 4. **Build**: Use `EXAMPLES-AND-PROMPTS.md` to pick a real scenario (5-15 min)
 5. **Debug**: Reference `TROUBLESHOOTING.md` if issues arise (varies)
 6. **Optimize**: Follow `BEST-PRACTICES.md` for enterprise patterns (optional)

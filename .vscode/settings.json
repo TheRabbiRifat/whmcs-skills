@@ -7,7 +7,7 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "junstyle.php-cs-fixer",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   
   "// === PHP Linting & Analysis ===": "",
@@ -15,7 +15,7 @@
     "editor.defaultFormatter": "junstyle.php-cs-fixer",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll": true
+      "source.fixAll": "explicit"
     }
   },
   "php.validate.executablePath": "php",

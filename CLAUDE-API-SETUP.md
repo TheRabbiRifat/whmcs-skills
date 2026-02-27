@@ -40,7 +40,7 @@ You are a senior WHMCS development expert with 10+ years of experience. Your exp
 
 Load these documentation files from whmcs-skills-kit/ when relevant:
 
-- **guide/SKILL.md** - Full expertise system prompt (load first)
+- **guide/SKILLS.md** - Full expertise system prompt (load first)
 - **guide/QUICK-START.md** - 5-minute getting started guide
 - **guide/CHEATSHEET.md** - PHP syntax, Capsule queries, patterns
 - **guide/EXAMPLES-AND-PROMPTS.md** - 25+ real-world scenarios
@@ -59,7 +59,7 @@ Load these documentation files from whmcs-skills-kit/ when relevant:
 ## Usage Patterns
 
 ### Pattern 1: Quick Module Generation
-**Prompt**: "Generate a {type} module that {does something}. Use whmcs-skills-kit/guide/SKILL.md as reference."
+**Prompt**: "Generate a {type} module that {does something}. Use whmcs-skills-kit/guide/SKILLS.md as reference."
 
 **Expected Context**:
 - Module type (addon, payment gateway, provisioning, registrar, hook)
@@ -143,7 +143,7 @@ For API calls, structure your requests efficiently:
 
 ### Efficient Context Loading (Option 1)
 ```
-1. Send base SKILL.md (~5K tokens)
+1. Send base SKILLS.md (~5K tokens)
 2. Send module-specific JSON (~1-2K tokens)  
 3. Send code/question (your tokens)
 4. Send templates/examples as needed
@@ -151,7 +151,7 @@ For API calls, structure your requests efficiently:
 
 ### Efficient Context Loading (Option 2 - Summary Mode)
 ```
-1. Send concise summary of SKILL.md key rules
+1. Send concise summary of SKILLS.md key rules
 2. Send specific module JSON
 3. Send relevant code examples (3-5 snippets)
 4. Send your specific request
@@ -167,14 +167,14 @@ import anthropic
 client = anthropic.Anthropic(api_key="your-api-key")
 
 # Read the skill system prompt
-with open("whmcs-skills-kit/guide/SKILL.md", "r") as f:
+with open("whmcs-skills-kit/guide/SKILLS.md", "r") as f:
     skill_prompt = f.read()
 
 # Create a message
 message = client.messages.create(
     model="claude-3-5-sonnet-20241022",
     max_tokens=2048,
-    system=skill_prompt,  # Use SKILL.md as system prompt
+    system=skill_prompt,  # Use SKILLS.md as system prompt
     messages=[
         {
             "role": "user",
@@ -203,7 +203,7 @@ modules = [
 
 # Process each in sequence
 results = []
-with open("whmcs-skills-kit/guide/SKILL.md", "r") as f:
+with open("whmcs-skills-kit/guide/SKILLS.md", "r") as f:
     system_prompt = f.read()
 
 for module in modules:
@@ -256,7 +256,7 @@ python3 whmcs-skills-kit/tools/validate_module.py modules/my_module/
 ## Common Requests
 
 ### "Build a {type} module that does X"
-→ Use **Pattern 1** with SKILL.md + module JSON
+→ Use **Pattern 1** with SKILLS.md + module JSON
 
 ### "Why is my module throwing an error?"
 → Use **Pattern 2** with TROUBLESHOOTING.md
@@ -291,7 +291,7 @@ python3 whmcs-skills-kit/tools/validate_module.py modules/my_module/
 **Budget Tips**:
 - Use Haiku for simple fixes, Sonnet for generation, Opus for complex debugging
 - Use batch processing to amortize API call overhead
-- Cache SKILL.md and module JSONs to reduce token usage
+- Cache SKILLS.md and module JSONs to reduce token usage
 - Summarize long error logs before sending
 
 ## Support & Resources
@@ -306,7 +306,7 @@ python3 whmcs-skills-kit/tools/validate_module.py modules/my_module/
 
 1. Create API key at console.anthropic.com
 2. Choose a model (Sonnet recommended for best results)
-3. Load SKILL.md from whmcs-skills-kit/guide/
+3. Load SKILLS.md from whmcs-skills-kit/guide/
 4. Use one of the 5 patterns above
 5. Validate generated code with tools/validate_module.py
 6. Deploy to your WHMCS test environment

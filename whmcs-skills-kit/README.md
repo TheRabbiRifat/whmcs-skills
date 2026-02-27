@@ -8,7 +8,7 @@
 
 This skill kit empowers AI coding agents (Cursor, Copilot, Windsurf, Claude) to build, debug, and maintain WHMCS modules with enterprise-grade quality. It combines:
 
-- **Expert Guidance**: SKILL.md with comprehensive best practices
+- **Expert Guidance**: SKILLS.md with comprehensive best practices
 - **Integration Guides**: Step-by-step setup for your favorite AI editor
 - **Code Templates**: Ready-to-customize module boilerplate
 - **Real Scenarios**: Copy-paste prompts for common tasks
@@ -22,7 +22,7 @@ This skill kit empowers AI coding agents (Cursor, Copilot, Windsurf, Claude) to 
 
 | Document | Purpose |
 |----------|---------|
-| [SKILL.md](./guide/SKILL.md) | Core skill: Best practices & standards |
+| [SKILLS.md](./guide/SKILLS.md) | Core skill: Best practices & standards |
 | [QUICK-START.md](./guide/QUICK-START.md) | 5-minute setup & first module |
 | [AI-INTEGRATION.md](./guide/AI-INTEGRATION.md) | Setup for Cursor, Copilot, Windsurf, Claude |
 | [EXAMPLES-AND-PROMPTS.md](./guide/EXAMPLES-AND-PROMPTS.md) | Copy-paste prompts for real projects |
@@ -38,7 +38,7 @@ This skill kit empowers AI coding agents (Cursor, Copilot, Windsurf, Claude) to 
 ```
 whmcs-skills-kit/
 ├── guide/                           # Documentation
-│   ├── SKILL.md                     # Core skill definition
+│   ├── SKILLS.md                    # Core skill definition
 │   ├── QUICK-START.md              # Get started in 5 minutes
 │   ├── AI-INTEGRATION.md           # AI agent integration guide
 │   ├── EXAMPLES-AND-PROMPTS.md     # Real-world scenarios
@@ -86,11 +86,11 @@ whmcs-skills-kit/
 1. Read [QUICK-START.md](./guide/QUICK-START.md) — Get your first module building
 2. Choose your AI editor and follow setup in [AI-INTEGRATION.md](./guide/AI-INTEGRATION.md)
 3. Pick a task from [EXAMPLES-AND-PROMPTS.md](./guide/EXAMPLES-AND-PROMPTS.md)
-4. Ask your AI agent to build it, loading the SKILL.md file
+4. Ask your AI agent to build it, loading the SKILLS.md file
 
 ### For Experienced Developers
 
-1. Review [SKILL.md](./guide/SKILL.md) — Understand the rules and standards
+1. Review [SKILLS.md](./guide/SKILLS.md) — Understand the rules and standards
 2. Use [CHEATSHEET.md](./guide/CHEATSHEET.md) for quick lookups
 3. Reference [BEST-PRACTICES.md](./guide/BEST-PRACTICES.md) for advanced patterns
 4. Copy templates from [templates/README.md](./templates/README.md)
@@ -170,7 +170,7 @@ This skill kit enforces WHMCS excellence across 5 core areas:
 
 ```
 Load this in .cursorrules:
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 
 In chat:
 @whmcs-skills-kit/modules/addon_modules.json
@@ -190,7 +190,7 @@ Create .copilot-instructions in project root with:
 [See AI-INTEGRATION.md for full template]
 
 In chat:
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/hooks.json
 
 Write a hook that...
@@ -206,7 +206,7 @@ Write a hook that...
 Create .windsurf-context with module type mappings
 
 In chat:
-@skill: whmcs-skills-kit/guide/SKILL.md
+@skill: whmcs-skills-kit/guide/SKILLS.md
 @api: whmcs-skills-kit/modules/api.json
 
 Build a provisioning module...
@@ -221,7 +221,7 @@ Build a provisioning module...
 ```
 Use @file: mentions in chat
 
-@file:whmcs-skills-kit/guide/SKILL.md
+@file:whmcs-skills-kit/guide/SKILLS.md
 @file:whmcs-skills-kit/modules/payment_gateways.json
 
 Create a Stripe payment gateway...
@@ -236,7 +236,7 @@ Create a Stripe payment gateway...
 ```python
 import anthropic
 
-with open('whmcs-skills-kit/guide/SKILL.md') as f:
+with open('whmcs-skills-kit/guide/SKILLS.md') as f:
     skill = f.read()
 
 client = anthropic.Anthropic()
@@ -256,7 +256,7 @@ message = client.messages.create(
 
 ### Step 1: Load the Skill
 ```
-@whmcs-skills-kit/guide/SKILL.md
+@whmcs-skills-kit/guide/SKILLS.md
 @whmcs-skills-kit/modules/addon_modules.json
 ```
 
@@ -297,7 +297,7 @@ cp -r modules/addons/client_signup_widget/ /path/to/whmcs/modules/addons/
 - **Module structure?** → [templates/README.md](./templates/README.md)
 
 ### 🔧 Building
-- **Core rules?** → [SKILL.md](./guide/SKILL.md)
+- **Core rules?** → [SKILLS.md](./guide/SKILLS.md)
 - **Best practices?** → [BEST-PRACTICES.md](./guide/BEST-PRACTICES.md)
 - **Real scenarios?** → [EXAMPLES-AND-PROMPTS.md](./guide/EXAMPLES-AND-PROMPTS.md)
 
@@ -313,12 +313,12 @@ The skill is modular to save tokens:
 
 | Task | Load This | Cost |
 |------|-----------|------|
-| Quick fix | SKILL.md section only | ~2K tokens |
-| Start new addon | SKILL.md + addon_modules.json | ~8K tokens |
-| Payment gateway | SKILL.md + payment_gateways.json | ~10K tokens |
+| Quick fix | SKILLS.md section only | ~2K tokens |
+| Start new addon | SKILLS.md + addon_modules.json | ~8K tokens |
+| Payment gateway | SKILLS.md + payment_gateways.json | ~10K tokens |
 | Full project | All modules | ~30K tokens |
 
-**Strategy**: Load SKILL.md always, then add specific module JSON only when needed.
+**Strategy**: Load SKILLS.md always, then add specific module JSON only when needed.
 
 ---
 
@@ -335,7 +335,7 @@ Before deploying ANY module, verify:
 - ✅ Error handling — Try/catch around external operations
 - ✅ Language file — Has all English strings
 
-See [SKILL.md Section 9](./guide/SKILL.md#9-security-checklist) for full checklist.
+See [SKILLS.md Section 9](./guide/SKILLS.md#9-security-checklist) for full checklist.
 
 ---
 
@@ -435,7 +435,7 @@ This skill kit is provided as educational and development assistance for WHMCS m
 
 1. **First time?** →  Read [QUICK-START.md](./guide/QUICK-START.md) (5 min)
 2. **Choose AI?** → Follow [AI-INTEGRATION.md](./guide/AI-INTEGRATION.md)
-3. **Load skill** → Use `whmcs-skills-kit/guide/SKILL.md` as system prompt
+3. **Load skill** → Use `whmcs-skills-kit/guide/SKILLS.md` as system prompt
 4. **Ask away!** → Pick a scenario from [EXAMPLES-AND-PROMPTS.md](./guide/EXAMPLES-AND-PROMPTS.md)
 
 **Happy developing! 🚀**
