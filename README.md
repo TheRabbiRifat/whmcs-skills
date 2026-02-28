@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="#-quick-install"><img src="https://img.shields.io/badge/install-one_command-00d4aa?style=for-the-badge" alt="Quick Install"></a>
-  <a href="#-compatible-agents"><img src="https://img.shields.io/badge/agents-8+_supported-7c5cfc?style=for-the-badge" alt="Compatible Agents"></a>
+  <a href="#-compatible-agents"><img src="https://img.shields.io/badge/agents-6+_supported-7c5cfc?style=for-the-badge" alt="Compatible Agents"></a>
   <a href="#-whats-inside"><img src="https://img.shields.io/badge/samples-765+-0ea5e9?style=for-the-badge" alt="Code Samples"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL_2.0-e11d48?style=for-the-badge" alt="License"></a>
 </p>
@@ -37,25 +37,23 @@ Built on the [Agent Skills Specification](https://agentskills.io/specification) 
 
 ## ⚡ Quick Install
 
-### One Command
+### One Command (from GitHub)
 
 ```bash
-npx ai-agent-skills install whmcs-dev-skills
+npx github:TheRabbiRifat/whmcs-skills install
 ```
 
-That's it. The skill installs to the right location for your AI agent automatically.
+That's it. Installs WHMCS skills for **Claude** (default agent) automatically.
 
 ### Install for a Specific Agent
 
 ```bash
-npx ai-agent-skills install whmcs-dev-skills              # Claude Code (default)
-npx ai-agent-skills install whmcs-dev-skills --agent cursor    # Cursor IDE
-npx ai-agent-skills install whmcs-dev-skills --agent vscode    # GitHub Copilot
-npx ai-agent-skills install whmcs-dev-skills --agent windsurf  # Windsurf
-npx ai-agent-skills install whmcs-dev-skills --agent amp       # Amp
-npx ai-agent-skills install whmcs-dev-skills --agent goose     # Goose
-npx ai-agent-skills install whmcs-dev-skills --agent opencode  # OpenCode
-npx ai-agent-skills install whmcs-dev-skills --agent project   # Any project
+npx github:TheRabbiRifat/whmcs-skills install --agent claude        # Claude Code (default)
+npx github:TheRabbiRifat/whmcs-skills install --agent cursor        # Cursor IDE
+npx github:TheRabbiRifat/whmcs-skills install --agent vscode        # GitHub Copilot / VS Code
+npx github:TheRabbiRifat/whmcs-skills install --agent jules         # Jules
+npx github:TheRabbiRifat/whmcs-skills install --agent antigravity   # Antigravity
+npx github:TheRabbiRifat/whmcs-skills install --agent project       # Any project (generic)
 ```
 
 ### Manual Install
@@ -136,7 +134,7 @@ The brain of the operation — a 1600+ line comprehensive instruction set coveri
 - Operational boundaries (ALWAYS/NEVER)
 - Anti-pattern protection
 - Context-efficient structure
-- Works with 8+ AI agents
+- Works with 6+ AI agents
 
 </td>
 </tr>
@@ -146,16 +144,14 @@ The brain of the operation — a 1600+ line comprehensive instruction set coveri
 
 ## 🤖 Compatible Agents
 
-| Agent | Skills Directory | Install Flag |
-|:------|:-----------------|:-------------|
-| [Claude Code](https://claude.ai) | `~/.claude/skills/` | `--agent claude` |
-| [GitHub Copilot](https://github.com/features/copilot) | `.github/skills/` | `--agent vscode` |
-| [Cursor IDE](https://cursor.sh) | `.cursor/skills/` | `--agent cursor` |
-| [Windsurf](https://codeium.com/windsurf) | `.windsurf/skills/` | `--agent windsurf` |
-| [Gemini](https://deepmind.google) | `.gemini/skills/` | — |
-| [Amp](https://amp.dev) | `~/.amp/skills/` | `--agent amp` |
-| [Goose](https://github.com/block/goose) | `~/.config/goose/skills/` | `--agent goose` |
-| [OpenCode](https://opencode.ai) | `~/.opencode/skills/` | `--agent opencode` |
+| Agent | Install Path | Install Command |
+|:------|:-------------|:----------------|
+| [Claude Code](https://claude.ai) | `~/.ai-skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent claude` |
+| [Cursor IDE](https://cursor.sh) | `~/.cursor/skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent cursor` |
+| [GitHub Copilot](https://github.com/features/copilot) | `./.vscode/ai-skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent vscode` |
+| [Jules](https://jules.google) | `~/.jules/skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent jules` |
+| [Antigravity](https://deepmind.google) | `~/.antigravity/skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent antigravity` |
+| Any Project | `./ai-skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent project` |
 
 ---
 
@@ -166,11 +162,11 @@ The brain of the operation — a 1600+ line comprehensive instruction set coveri
 
 ```bash
 # Option 1: npx (recommended)
-npx ai-agent-skills install whmcs-dev-skills
+npx github:TheRabbiRifat/whmcs-skills install --agent claude
 
 # Option 2: Manual
-mkdir -p ~/.claude/skills/whmcs-dev-skills
-cp SKILL.md ~/.claude/skills/whmcs-dev-skills/
+mkdir -p ~/.ai-skills/whmcs
+cp SKILL.md ~/.ai-skills/whmcs/
 ```
 
 The skill is automatically available in all Claude Code sessions.
@@ -181,12 +177,12 @@ The skill is automatically available in all Claude Code sessions.
 <summary><strong>GitHub Copilot (VS Code)</strong></summary>
 
 ```bash
-# Option 1: npx
-npx ai-agent-skills install whmcs-dev-skills --agent vscode
+# Option 1: npx (recommended)
+npx github:TheRabbiRifat/whmcs-skills install --agent vscode
 
-# Option 2: As a skill file
-mkdir -p .github/skills/whmcs-dev-skills
-cp SKILL.md .github/skills/whmcs-dev-skills/
+# Option 2: Manual — As a skill file
+mkdir -p .vscode/ai-skills/whmcs
+cp SKILL.md .vscode/ai-skills/whmcs/
 
 # Option 3: As copilot instructions
 cp SKILL.md .github/copilot-instructions.md
@@ -200,20 +196,16 @@ cp SKILL.md .github/copilot-instructions.md
 <summary><strong>Cursor IDE</strong></summary>
 
 ```bash
-# Option 1: npx
-npx ai-agent-skills install whmcs-dev-skills --agent cursor
+# Option 1: npx (recommended)
+npx github:TheRabbiRifat/whmcs-skills install --agent cursor
 
-# Option 2: Project-level (recommended)
-mkdir -p .cursor/skills/whmcs-dev-skills
-cp SKILL.md .cursor/skills/whmcs-dev-skills/
+# Option 2: Manual — Project-level
+mkdir -p .cursor/skills/whmcs
+cp SKILL.md .cursor/skills/whmcs/
 
-# Option 3: Global
-mkdir -p ~/.cursor/skills/whmcs-dev-skills
-cp SKILL.md ~/.cursor/skills/whmcs-dev-skills/
-
-# Option 4: As Cursor Rule
+# Option 3: As Cursor Rule
 mkdir -p .cursor/rules
-cp SKILL.md .cursor/rules/whmcs-dev-skills.mdc
+cp SKILL.md .cursor/rules/whmcs-skills.mdc
 ```
 
 > You can also import via `Cursor Settings → Rules, Commands → Add Rule → Remote Rule (GitHub)`.
@@ -221,60 +213,46 @@ cp SKILL.md .cursor/rules/whmcs-dev-skills.mdc
 </details>
 
 <details>
-<summary><strong>Windsurf (Codeium)</strong></summary>
+<summary><strong>Jules</strong></summary>
+
+```bash
+# Option 1: npx (recommended)
+npx github:TheRabbiRifat/whmcs-skills install --agent jules
+
+# Option 2: Manual
+mkdir -p ~/.jules/skills/whmcs
+cp SKILL.md ~/.jules/skills/whmcs/
+```
+
+</details>
+
+<details>
+<summary><strong>Antigravity</strong></summary>
+
+```bash
+# Option 1: npx (recommended)
+npx github:TheRabbiRifat/whmcs-skills install --agent antigravity
+
+# Option 2: Manual
+mkdir -p ~/.antigravity/skills/whmcs
+cp SKILL.md ~/.antigravity/skills/whmcs/
+```
+
+</details>
+
+<details>
+<summary><strong>Any Project (Generic)</strong></summary>
 
 ```bash
 # Option 1: npx
-npx ai-agent-skills install whmcs-dev-skills --agent windsurf
+npx github:TheRabbiRifat/whmcs-skills install --agent project
 
-# Option 2: Project-level
-mkdir -p .windsurf/rules
-cp SKILL.md .windsurf/rules/whmcs-dev-skills.md
-
-# Option 3: As project rules
-cp SKILL.md .windsurfrules
-
-# Option 4: Global rules
-cat SKILL.md >> ~/.codeium/windsurf/memories/global_rules.md
+# Option 2: Manual
+mkdir -p ai-skills/whmcs
+cp SKILL.md ai-skills/whmcs/
 ```
 
-</details>
-
-<details>
-<summary><strong>Gemini (Google AI)</strong></summary>
-
-```bash
-# Project-level skill
-mkdir -p .gemini/skills/whmcs-dev-skills
-cp SKILL.md .gemini/skills/whmcs-dev-skills/
-
-# Or as agent instructions
-mkdir -p .agent/skills
-cp SKILL.md .agent/skills/whmcs-dev-skills.md
-```
-
-</details>
-
-<details>
-<summary><strong>Amp / Goose / OpenCode / Other</strong></summary>
-
-```bash
-# Amp
-mkdir -p ~/.amp/skills/whmcs-dev-skills
-cp SKILL.md ~/.amp/skills/whmcs-dev-skills/
-
-# Goose
-mkdir -p ~/.config/goose/skills/whmcs-dev-skills
-cp SKILL.md ~/.config/goose/skills/whmcs-dev-skills/
-
-# OpenCode
-mkdir -p ~/.opencode/skills/whmcs-dev-skills
-cp SKILL.md ~/.opencode/skills/whmcs-dev-skills/
-
-# Any agent (generic)
-mkdir -p .skills/whmcs-dev-skills
-cp SKILL.md .skills/whmcs-dev-skills/
-```
+Or simply place the `SKILL.md` file in whatever directory your agent reads skill/instruction files from.
 
 </details>
 
@@ -283,46 +261,30 @@ cp SKILL.md .skills/whmcs-dev-skills/
 ## 📁 Repository Structure
 
 ```
-whmcs-dev-skills/
+whmcs-skills/
 ├── SKILL.md              ← The comprehensive AI agent skill (1600+ lines)
 ├── README.md             ← This file
 ├── LICENSE               ← GPL-2.0 License
+├── package.json          ← Node.js CLI wrapper (for npx install)
 ├── banner.png            ← Repository banner
 │
+├── bin/                  ← CLI entry point
+│   └── whmcs-skills.js
+│
+├── src/                  ← CLI source
+│   ├── install.js
+│   └── agents/
+│       ├── claude.js
+│       ├── cursor.js
+│       ├── vscode.js
+│       ├── jules.js
+│       ├── antigravity.js
+│       └── project.js
+│
 ├── docs/                 ← Architecture, patterns, examples, setup
-│   ├── architecture/
-│   ├── examples/
-│   ├── patterns/
-│   ├── reference/
-│   └── setup/
-│
 ├── guides/               ← Best practices, cheatsheet, troubleshooting
-│   ├── BEST-PRACTICES.md
-│   ├── CHEATSHEET.md
-│   ├── EXAMPLES-AND-PROMPTS.md
-│   ├── AI-INTEGRATION.md
-│   ├── QUICK-START.md
-│   └── troubleshooting.md
-│
 ├── references/           ← JSON reference data (12 files)
-│   ├── api.json
-│   ├── hooks.json
-│   ├── addon_modules.json
-│   ├── provisioning_modules.json
-│   ├── registrar_modules.json
-│   ├── payment_gateways.json
-│   ├── themes.json
-│   └── ...
-│
 └── samples/              ← 765+ PHP code examples
-    ├── addon/
-    ├── api/              (334 files)
-    ├── hooks/            (339 files)
-    ├── advanced/
-    ├── gateways/
-    ├── registrar/
-    ├── themes/
-    └── ...
 ```
 
 ---
@@ -345,7 +307,7 @@ Built from deep research of:
 <details>
 <summary><strong>Does this work with my AI agent?</strong></summary>
 
-Yes. This skill follows the [Agent Skills Specification](https://agentskills.io), supported by Claude Code, GitHub Copilot, Cursor, Windsurf, Gemini, Amp, Goose, OpenCode, and any agent that reads `SKILL.md` files.
+Yes. This skill follows the [Agent Skills Specification](https://agentskills.io), supported by Claude Code, GitHub Copilot, Cursor, Jules, Antigravity, and any agent that reads `SKILL.md` files.
 
 </details>
 

@@ -1,5 +1,5 @@
 ---
-name: whmcs-dev-skills
+name: whmcs-skills
 description: >
   Senior WHMCS Developer & Architect skill for AI coding agents. Builds,
   debugs, and maintains all WHMCS module types: Addon, Provisioning (Server),

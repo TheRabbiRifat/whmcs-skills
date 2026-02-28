@@ -1,0 +1,29 @@
+{
+  "name": "whmcs-skills",
+  "version": "0.1.0",
+  "description": "AI agent skill for WHMCS module development — install via npx",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "whmcs-skills": "./bin/whmcs-skills.js"
+  },
+  "keywords": [
+    "whmcs",
+    "ai-skills",
+    "agent-skills",
+    "ai",
+    "modules",
+    "php"
+  ],
+  "author": "Rabbi Rifat <hello@therabbirifat.com>",
+  "license": "GPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRabbiRifat/whmcs-skills.git"
+  },
+  "homepage": "https://github.com/TheRabbiRifat/whmcs-skills#readme",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0"
+  }
+}
