@@ -705,7 +705,7 @@ Capsule::table('tblclients')->get();
 ---
 
 For more help, check:
-- **SKILLS.md**: Core rules and standards
+- **SKILL.md**: Core rules and standards
 - **CHEATSHEET.md**: Quick reference
 - **EXAMPLES-AND-PROMPTS.md**: Real scenarios
 - Official **WHMCS Developers Forum**: https://developers.whmcs.com/

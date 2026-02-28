@@ -25,7 +25,7 @@
 
 The WHMCS Developer Skills Kit transforms static documentation into **actionable intelligence** for AI coding agents. Rather than searching endless docs, AI agents can access:
 
-- **System Prompt**: `SKILLS.md` — enforces best practices, security standards, and operational boundaries
+- **System Prompt**: `SKILL.md` — enforces best practices, security standards, and operational boundaries
 - **Modular Knowledge Bases**: JSON files for APIs, Hooks, Modules, etc.
 - **Code Samples**: Pre-extracted PHP snippets for common tasks
 - **Manifest**: A directory of all available skill modules
@@ -46,15 +46,15 @@ The WHMCS Developer Skills Kit transforms static documentation into **actionable
 Clone or navigate to your WHMCS documentation folder:
 
 ```bash
-cd /path/to/whmcs-skills/whmcs-skills-kit/
+cd /path/to/whmcs-skills/
 ```
 
 You should have:
 
 ```
-whmcs-skills-kit/
+
 ├── guide/
-│   ├── SKILLS.md                    # Main system prompt
+│   ├── SKILL.md                    # Main system prompt
 │   └── AI-INTEGRATION.md           # This file
 ├── modules/
 │   ├── api.json
@@ -93,14 +93,14 @@ touch .cursorrules
 ```
 # WHMCS Development Skill
 You are an expert WHMCS developer. Follow the guidelines in:
-- File: whmcs-skills-kit/guide/SKILLS.md
-- Manifest: whmcs-skills-kit/manifest.json
+- File: SKILL.md
+- Manifest: manifest.json
 
 When building modules, always:
 1. Check manifest.json for the module type
 2. Reference the appropriate JSON file (e.g., modules/addon_modules.json)
 3. Load samples from samples/ folder
-4. Follow the security checklist in SKILLS.md section 9
+4. Follow the security checklist in SKILL.md section 9
 
 Load context for specific tasks:
 - Payment Gateway? → Load modules/payment_gateways.json
@@ -108,10 +108,10 @@ Load context for specific tasks:
 - API integration? → Load modules/api.json
 ```
 
-3. In Cursor, press `Ctrl+K` and mention the SKILLS.md file:
+3. In Cursor, press `Ctrl+K` and mention the SKILL.md file:
 
 ```
-@whmcs-skills-kit/guide/SKILLS.md
+@SKILL.md
 I need to create a payment gateway module. What's the structure?
 ```
 
@@ -120,8 +120,8 @@ I need to create a payment gateway module. What's the structure?
 In any Cursor chat:
 
 ```
-@whmcs-skills-kit/guide/SKILLS.md
-@whmcs-skills-kit/modules/payment_gateways.json
+@SKILL.md
+@references/payment_gateways.json
 
 Help me create a Stripe payment gateway module for WHMCS 9.x
 ```
@@ -144,9 +144,9 @@ You are an expert WHMCS developer. Always enforce:
 - WHMCS 8.x/9.x best practices
 
 Reference documentation:
-- Main Skill Guide: whmcs-skills-kit/guide/SKILLS.md
-- Module Types: whmcs-skills-kit/manifest.json
-- Code Samples: whmcs-skills-kit/samples/
+- Main Skill Guide: SKILL.md
+- Module Types: manifest.json
+- Code Samples: samples/
 
 For any task, first consult the relevant JSON module file
 and then provide sample code patterns from the samples/ folder.
@@ -155,16 +155,16 @@ and then provide sample code patterns from the samples/ folder.
 2. Use Copilot Chat with file references:
 
 ```
-@whmcs-skills-kit/guide/SKILLS.md
+@SKILL.md
 Write a complete Addon Module for WHMCS 9.x
 ```
 
 ### Method 2: Inline Chat with Context Links
 
 ```
-Based on whmcs-skills-kit/modules/addon_modules.json,
+Based on references/addon_modules.json,
 create an admin dashboard widget addon. Follow the patterns
-in whmcs-skills-kit/samples/addon_*.php examples.
+in samples/addon_*.php examples.
 ```
 
 ---
@@ -180,9 +180,9 @@ in whmcs-skills-kit/samples/addon_*.php examples.
 
 ```json
 {
-  "skillPath": "whmcs-skills-kit/guide/SKILLS.md",
-  "modulePath": "whmcs-skills-kit/modules/",
-  "samplesPath": "whmcs-skills-kit/samples/",
+  "skillPath": "SKILL.md",
+  "modulePath": "references/",
+  "samplesPath": "samples/",
   "moduleTypes": {
     "addon": "modules/addon_modules.json",
     "provisioning": "modules/provisioning_modules.json",
@@ -197,8 +197,8 @@ in whmcs-skills-kit/samples/addon_*.php examples.
 ### Method 2: Chat with Document References
 
 ```
-@skill: whmcs-skills-kit/guide/SKILLS.md
-@api: whmcs-skills-kit/modules/api.json
+@skill: SKILL.md
+@api: references/api.json
 
 Build a provisioning module that creates accounts on a remote server.
 Include error handling and logging per the security checklist.
@@ -217,7 +217,7 @@ Include error handling and logging per the security checklist.
 ```json
 {
   "codeium.enableConfigCommand": true,
-  "codeium.contextPath": "whmcs-skills-kit/guide/SKILLS.md"
+  "codeium.contextPath": "SKILL.md"
 }
 ```
 
@@ -226,19 +226,19 @@ Include error handling and logging per the security checklist.
 ```markdown
 # WHMCS Development Skill
 
-Reference: `whmcs-skills-kit/guide/SKILLS.md`
+Reference: `SKILL.md`
 
 When generating code:
 - Load the appropriate skill file first
 - Check samples/ for patterns
-- Validate against security checklist (Section 9 of SKILLS.md)
+- Validate against security checklist (Section 9 of SKILL.md)
 ```
 
 ### Method 2: Usage in Copilot Chat
 
 ```
-@file:whmcs-skills-kit/guide/SKILLS.md
-@file:whmcs-skills-kit/modules/hooks.json
+@file:SKILL.md
+@file:references/hooks.json
 
 I need to write a hook that runs when an invoice is paid.
 Follow WHMCS best practices and security standards.
@@ -265,13 +265,13 @@ def create_whmcs_expert(task_description, file_context=None):
     client = anthropic.Anthropic()
     
     # Load main skill guide
-    skill_md = load_skill_file('whmcs-skills-kit/guide/SKILLS.md')
+    skill_md = load_skill_file('SKILL.md')
     
     # Load additional context if specified
     context = skill_md
     if file_context:
         for file_path in file_context:
-            context += "\n\n---\n\n" + load_skill_file(f'whmcs-skills-kit/{file_path}')
+            context += "\n\n---\n\n" + load_skill_file(f'{file_path}')
     
     # Call Claude with skill
     message = client.messages.create(
@@ -308,11 +308,11 @@ import anthropic
 client = anthropic.Anthropic()
 
 # Read skill guide
-with open('whmcs-skills-kit/guide/SKILLS.md', 'r') as f:
+with open('SKILL.md', 'r') as f:
     skill_guide = f.read()
 
 # Read module reference
-with open('whmcs-skills-kit/modules/hooks.json', 'r') as f:
+with open('references/hooks.json', 'r') as f:
     hooks_reference = json.load(f)
 
 system_prompt = f"""
@@ -350,15 +350,15 @@ Large language models have token limits. Load context strategically:
 
 | Task Type | Required Files | Estimated Tokens |
 |-----------|----------------|------------------|
-| API Integration | `SKILLS.md` + `api.json` | ~8K |
-| Payment Gateway | `SKILLS.md` + `payment_gateways.json` + samples | ~12K |
-| Action Hook | `SKILLS.md` + `hooks.json` | ~15K |
-| Complete Addon Module | `SKILLS.md` + `addon_modules.json` + samples | ~20K |
-| Database Query | `SKILLS.md` (section 4 only) + relevant sample | ~4K |
+| API Integration | `SKILL.md` + `api.json` | ~8K |
+| Payment Gateway | `SKILL.md` + `payment_gateways.json` + samples | ~12K |
+| Action Hook | `SKILL.md` + `hooks.json` | ~15K |
+| Complete Addon Module | `SKILL.md` + `addon_modules.json` + samples | ~20K |
+| Database Query | `SKILL.md` (section 4 only) + relevant sample | ~4K |
 
 ### Context Loading Strategy
 
-1. **Always load**: `SKILLS.md` (core rules and standards)
+1. **Always load**: `SKILL.md` (core rules and standards)
 2. **Load for task**: The specific module type JSON
 3. **Load if stuck**: Relevant sample code from `samples/`
 4. **Load only once**: Manifest is just a directory reference
@@ -367,7 +367,7 @@ Large language models have token limits. Load context strategically:
 
 ```
 # For a small bugfix, load minimal context:
-@file:whmcs-skills-kit/guide/SKILLS.md (Section 4: Database Operations)
+@file:SKILL.md (Section 4: Database Operations)
 
 Fix this SQL injection vulnerability in my Capsule query...
 ```
@@ -382,9 +382,9 @@ Fix this SQL injection vulnerability in my Capsule query...
 I need to build a provisioning module for [cloud provider].
 
 Reference files:
-@whmcs-skills-kit/guide/SKILLS.md
-@whmcs-skills-kit/modules/provisioning_modules.json
-@whmcs-skills-kit/samples/provisioning_*.php
+@SKILL.md
+@references/provisioning_modules.json
+@samples/provisioning_*.php
 
 Requirements:
 - Account creation with custom parameters
@@ -401,8 +401,8 @@ This hook isn't firing when clients are added. Here's the code:
 [paste code]
 
 Reference:
-@whmcs-skills-kit/guide/SKILLS.md (Section 6: Action Hooks)
-@whmcs-skills-kit/modules/hooks.json
+@SKILL.md (Section 6: Action Hooks)
+@references/hooks.json
 
 Help me debug according to WHMCS best practices.
 ```
@@ -416,8 +416,8 @@ I need to:
 - Mark it as paid
 
 Show me the proper way using WHMCS standards:
-@whmcs-skills-kit/guide/SKILLS.md (Section 7: API Integration)
-@whmcs-skills-kit/modules/api.json
+@SKILL.md (Section 7: API Integration)
+@references/api.json
 ```
 
 ### Pattern 4: "Refactor my old code"
@@ -427,9 +427,9 @@ This is my old WHMCS 7.x addon module:
 [paste code]
 
 Modernize it to WHMCS 9.x standards:
-@whmcs-skills-kit/guide/SKILLS.md
-@whmcs-skills-kit/modules/addon_modules.json
-@whmcs-skills-kit/samples/addon_*.php
+@SKILL.md
+@references/addon_modules.json
+@samples/addon_*.php
 
 Make it follow PSR-12, use Capsule ORM, and enforce the security checklist.
 ```
@@ -442,7 +442,7 @@ Make it follow PSR-12, use Capsule ORM, and enforce the security checklist.
 
 | File | Purpose | When to Load |
 |------|---------|--------------|
-| `guide/SKILLS.md` | Core rules, standards, boundaries | Always |
+| `guide/SKILL.md` | Core rules, standards, boundaries | Always |
 | `manifest.json` | Directory of all available modules | Once, for reference |
 
 ### Module References (JSON)
@@ -475,23 +475,23 @@ All files in `samples/` follow the naming pattern: `{module_type}_{topic}_{numbe
 
 ### When Generating Code
 
-1. ✅ **Start with SKILLS.md** — It defines all constraints
+1. ✅ **Start with SKILL.md** — It defines all constraints
 2. ✅ **Check the JSON files** — They have detailed function signatures
 3. ✅ **Look at samples** — They show real patterns
-4. ✅ **Validate against checklist** — SKILLS.md Section 9 (Security)
+4. ✅ **Validate against checklist** — SKILL.md Section 9 (Security)
 5. ✅ **Explain decisions** — Why you chose a particular approach
 
 ### When Debugging
 
-1. ✅ **Check SKILLS.md Section 12** — Common Pitfalls
+1. ✅ **Check SKILL.md Section 12** — Common Pitfalls
 2. ✅ **Validate patterns** — Does it match samples?
 3. ✅ **Review security** — Is input validated? DB safe?
 4. ✅ **Test locally first** — Don't deploy untested
 
 ### When Migrating Code
 
-1. ✅ **Reference SKILLS.md Section 11** — Upgrade patterns
-2. ✅ **Check version requirements** — SKILLS.md Section 2
+1. ✅ **Reference SKILL.md Section 11** — Upgrade patterns
+2. ✅ **Check version requirements** — SKILL.md Section 2
 3. ✅ **Modernize standards** — Use Capsule, Smarty v4, etc.
 4. ✅ **Run the validation script** — Test against standards
 
@@ -508,7 +508,7 @@ It should support regular payments and subscriptions.
 ### AI Agent Response (with loaded context)
 
 1. **Loads files**:
-   - `guide/SKILLS.md` → Gets standards and boundaries
+   - `guide/SKILL.md` → Gets standards and boundaries
    - `modules/payment_gateways.json` → Understands structure
    - `samples/payment_*` → Gets code patterns
 
@@ -532,7 +532,7 @@ It should support regular payments and subscriptions.
 - Check file paths are relative to project root
 
 ### "AI generating old-style code"
-- Include `guide/SKILLS.md` explicitly in every request
+- Include `guide/SKILL.md` explicitly in every request
 - Mention "WHMCS 8.x+", "PSR-12", "Capsule ORM"
 
 ### "Context too long"
@@ -542,7 +542,7 @@ It should support regular payments and subscriptions.
 
 ### "Code doesn't validate"
 - Run the validation script (see next section)
-- Check against SKILLS.md Section 12
+- Check against SKILL.md Section 12
 - Share output with AI agent for fixing
 
 ---
@@ -558,6 +558,6 @@ It should support regular payments and subscriptions.
 ---
 
 For questions, consult:
-- `whmcs-skills-kit/guide/SKILLS.md` (main reference)
-- `whmcs-skills-kit/manifest.json` (what's available)
+- `SKILL.md` (main reference)
+- `manifest.json` (what's available)
 - Official WHMCS docs: https://developers.whmcs.com/

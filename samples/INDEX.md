@@ -220,7 +220,7 @@ Examples:
 
 ## 🔗 Related Resources
 
-- [SKILLS.md](../SKILLS.md) - AI system prompt with full WHMCS expertise
+- [SKILL.md](../SKILL.md) - AI system prompt with full WHMCS expertise
 - [reference/](../references/) - JSON reference specifications
 - [docs/](../docs/) - Complete documentation
 - [guides/](../guides/) - Development guides and best practices
