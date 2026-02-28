@@ -440,7 +440,7 @@ logActivity("Error processing payment: " . $error);
 ## Version Requirements
 
 | Component | WHMCS 8.x | WHMCS 9.x |
-|-----------|-----------|-----------|
+|:----------|:----------|:----------|
 | PHP | 8.1+ | 8.2+ |
 | Smarty | v3.1 | v4.3 |
 | GuzzleHTTP | v7.4 | v7.4.5 |

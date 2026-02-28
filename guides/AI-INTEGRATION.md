@@ -1,8 +1,8 @@
 # AI Integration Guide: WHMCS Development Skills
 
-**Last Updated**: February 27, 2026  
-**Skill Version**: 1.0.0  
-**Target AI Agents**: Claude, GitHub Copilot, Cursor IDE, Windsurf, VS Code, OpenCode
+**Last Updated**: February 28, 2026  
+**Skill Version**: 4.0.0  
+**Target AI Agents**: Claude, GitHub Copilot, Cursor IDE, Windsurf, VS Code, Gemini, OpenCode
 
 ---
 

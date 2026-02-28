@@ -1,122 +1,168 @@
-# 🧠 WHMCS Dev Skills
-
 <p align="center">
-  <img src="banner.png" alt="WHMCS Dev Skills Banner" width="100%">
+  <img src="banner.png" alt="WHMCS Dev Skills" width="100%">
 </p>
 
-### AI Agent Skill for WHMCS Module Development
+<h1 align="center">WHMCS Dev Skills</h1>
 
-An industrial-grade skill file that turns any AI coding agent into a **Senior WHMCS Developer & Architect**.
+<p align="center">
+  <strong>The definitive AI agent skill for WHMCS module development</strong>
+</p>
 
-[Quick Install](#-quick-install) • [What It Covers](#-what-it-covers) • [IDE Setup](#️-ide-setup-guides) • [Compatible Agents](#-compatible-agents) • [Contributing](#-contributing)
+<p align="center">
+  <a href="#-quick-install"><img src="https://img.shields.io/badge/install-one_command-00d4aa?style=for-the-badge" alt="Quick Install"></a>
+  <a href="#-compatible-agents"><img src="https://img.shields.io/badge/agents-8+_supported-7c5cfc?style=for-the-badge" alt="Compatible Agents"></a>
+  <a href="#-whats-inside"><img src="https://img.shields.io/badge/samples-765+-0ea5e9?style=for-the-badge" alt="Code Samples"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL_2.0-e11d48?style=for-the-badge" alt="License"></a>
+</p>
+
+<p align="center">
+  <a href="#-quick-install">Quick Install</a> · <a href="#-whats-inside">What's Inside</a> · <a href="#-compatible-agents">Compatible Agents</a> · <a href="#%EF%B8%8F-ide-setup">IDE Setup</a> · <a href="#-contributing">Contributing</a>
+</p>
+
+---
+
+## 🧠 What Is This?
+
+This repository contains **[`SKILL.md`](SKILL.md)** — a comprehensive instruction set designed for AI coding agents. When loaded, it transforms any AI into a **Senior WHMCS Developer & Architect** that writes **production-ready, secure, and maintainable** code following WHMCS 8.x / 9.x best practices.
+
+> Think of it as a "brain transplant" for your AI assistant — giving it deep expertise in WHMCS development that goes far beyond what's available in general training data.
+
+```
+Just one file: SKILL.md
+```
+
+Built on the [Agent Skills Specification](https://agentskills.io/specification) — the universal open standard for AI agent skills.
 
 ---
 
 ## ⚡ Quick Install
 
-### One Command (Recommended)
-
-```
-npx ai-agent-skills install whmcs-dev-skills
-```
-
-That's it. The skill installs to the right location for your agent automatically.
-
-#### Install for a Specific Agent
+### One Command
 
 ```bash
-# Claude Code (default)
 npx ai-agent-skills install whmcs-dev-skills
+```
 
-# Cursor IDE
-npx ai-agent-skills install whmcs-dev-skills --agent cursor
+That's it. The skill installs to the right location for your AI agent automatically.
 
-# VS Code / GitHub Copilot
-npx ai-agent-skills install whmcs-dev-skills --agent vscode
+### Install for a Specific Agent
 
-# Windsurf
-npx ai-agent-skills install whmcs-dev-skills --agent windsurf
-
-# Amp
-npx ai-agent-skills install whmcs-dev-skills --agent amp
-
-# Goose
-npx ai-agent-skills install whmcs-dev-skills --agent goose
-
-# OpenCode
-npx ai-agent-skills install whmcs-dev-skills --agent opencode
-
-# Any project (generic)
-npx ai-agent-skills install whmcs-dev-skills --agent project
+```bash
+npx ai-agent-skills install whmcs-dev-skills              # Claude Code (default)
+npx ai-agent-skills install whmcs-dev-skills --agent cursor    # Cursor IDE
+npx ai-agent-skills install whmcs-dev-skills --agent vscode    # GitHub Copilot
+npx ai-agent-skills install whmcs-dev-skills --agent windsurf  # Windsurf
+npx ai-agent-skills install whmcs-dev-skills --agent amp       # Amp
+npx ai-agent-skills install whmcs-dev-skills --agent goose     # Goose
+npx ai-agent-skills install whmcs-dev-skills --agent opencode  # OpenCode
+npx ai-agent-skills install whmcs-dev-skills --agent project   # Any project
 ```
 
 ### Manual Install
 
 ```bash
-# Clone the repository
 git clone https://github.com/TheRabbiRifat/whmcs-skills.git
-
-# Then copy to your agent's skills directory (see IDE Setup below)
+# Then copy SKILL.md to your agent's skills directory (see IDE Setup below)
 ```
 
 ---
 
-## 📖 What Is This?
+## ✨ What's Inside
 
-This repository contains a **SKILL.md** file — a comprehensive instruction set designed for AI coding agents. When loaded, it transforms the AI into a WHMCS expert that writes **production-ready, secure, and maintainable** code following WHMCS 8.x / 9.x best practices.
+### Core Skill (`SKILL.md`)
 
-```
-SKILL.md
-```
+The brain of the operation — a 1600+ line comprehensive instruction set covering:
 
-The skill follows the [Agent Skills Specification](https://agentskills.io/specification) — the universal open standard for AI agent skills — making it compatible with every major AI coding agent.
+| Category | Details |
+|:---------|:--------|
+| 🔧 **Module Types** | Addon, Provisioning, Registrar, Payment Gateway, Mail Provider, Notification Provider |
+| 🗄️ **Database** | Capsule ORM, schema creation, migrations, transactions, pagination, batch ops |
+| 🔌 **API** | `localAPI()` integration, GuzzleHTTP external calls, webhook handling |
+| 🎨 **Templating** | Smarty v4, CSRF protection, output escaping, admin/client area UI |
+| 🔒 **Security** | 13-point checklist, input validation, credential encryption, XSS/CSRF prevention |
+| ⚠️ **Anti-Patterns** | 18+ documented pitfalls with correct solutions |
+| 🐛 **Debugging** | Quick diagnosis table, debugging tools, PHP 8.x error fixes |
+| 📁 **Structure** | Project templates for every module type |
+
+### Supplementary Resources
+
+| Directory | Contents | Files |
+|:----------|:---------|:------|
+| [`docs/`](docs/) | Architecture, patterns, examples, setup guides | 10 |
+| [`guides/`](guides/) | Best practices, cheatsheet, troubleshooting, AI integration | 7 |
+| [`references/`](references/) | JSON reference data (API, Hooks, Modules) | 12 |
+| [`samples/`](samples/) | Real PHP code examples across 12 categories | 765+ |
+
+> **Note:** `SKILL.md` is **fully self-contained**. The supplementary directories provide deeper reference material but are **not required** for the skill to work.
 
 ---
 
-## ✨ What It Covers
+## 🛡️ Key Highlights
 
-| Area | Examples |
-|------|----------|
-| `localAPI` | `GetClientsDetails`, `CreateInvoice`, `OpenTicket` |
-| `GuzzleHTTP` | External API calls with proper error handling |
-| `logModuleCall` | API debugging with credential scrubbing |
-| `logActivity` | System activity logging best practices |
-| `Capsule ORM` | All database operations, schema, migrations |
-| `Smarty v4` | Templates, escaping, CSRF protection |
+<table>
+<tr>
+<td width="50%">
 
-### Key Highlights
+### 🔒 Security-First
+- Forces Capsule ORM
+- CSRF protection built-in
+- Credential scrubbing
+- Input validation patterns
 
-- 🔒 **Security-first** — Forces Capsule ORM, CSRF protection, credential scrubbing
-- 🆕 **WHMCS 9.x ready** — Covers Smarty v4, Illuminate v9, PHP 8.2+ breaking changes
-- 📋 **Production-ready code** — Every template is battle-tested, not hello-world
-- ⚠️ **Anti-pattern protection** — 18+ real-world failures developers actually make
-- 📁 **Proper structure** — Directory templates matching official WHMCS samples
-- 🧩 **All module types** — Addon, Provisioning, Registrar, Payment Gateway, Mail Provider, Notification Provider
-- 🐛 **Debugging guide** — Quick diagnosis checklist for common issues
-- 📚 **765+ code samples** — Supplementary PHP examples across 12 categories
+</td>
+<td width="50%">
+
+### 🆕 WHMCS 9.x Ready
+- Smarty v4 compliance
+- Illuminate v9 updates
+- PHP 8.2+ compatibility
+- Breaking change awareness
+
+</td>
+</tr>
+<tr>
+<td>
+
+### 📋 Production-Ready
+- Battle-tested templates
+- Complete module scaffolds
+- Full error handling
+- Logging best practices
+
+</td>
+<td>
+
+### ⚡ AI-Optimized
+- Operational boundaries (ALWAYS/NEVER)
+- Anti-pattern protection
+- Context-efficient structure
+- Works with 8+ AI agents
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🤖 Compatible Agents
 
-This skill works with every major AI coding agent that supports the [Agent Skills specification](https://agentskills.io):
-
 | Agent | Skills Directory | Install Flag |
-|-------|-----------------|--------------|
-| Claude Code | `~/.claude/skills/` | `--agent claude` |
-| GitHub Copilot | `.github/skills/` | `--agent vscode` |
-| Cursor IDE | `.cursor/skills/` | `--agent cursor` |
-| Windsurf | `.windsurf/skills/` | `--agent windsurf` |
-| Amp | `~/.amp/skills/` | `--agent amp` |
-| Goose | `~/.config/goose/skills/` | `--agent goose` |
-| OpenCode | `~/.opencode/skills/` | `--agent opencode` |
-| Generic | `.skills/` | `--agent project` |
+|:------|:-----------------|:-------------|
+| [Claude Code](https://claude.ai) | `~/.claude/skills/` | `--agent claude` |
+| [GitHub Copilot](https://github.com/features/copilot) | `.github/skills/` | `--agent vscode` |
+| [Cursor IDE](https://cursor.sh) | `.cursor/skills/` | `--agent cursor` |
+| [Windsurf](https://codeium.com/windsurf) | `.windsurf/skills/` | `--agent windsurf` |
+| [Gemini](https://deepmind.google) | `.gemini/skills/` | — |
+| [Amp](https://amp.dev) | `~/.amp/skills/` | `--agent amp` |
+| [Goose](https://github.com/block/goose) | `~/.config/goose/skills/` | `--agent goose` |
+| [OpenCode](https://opencode.ai) | `~/.opencode/skills/` | `--agent opencode` |
 
 ---
 
-## 🛠️ IDE Setup Guides
+## 🛠️ IDE Setup
 
-### Claude Code
+<details>
+<summary><strong>Claude Code</strong></summary>
 
 ```bash
 # Option 1: npx (recommended)
@@ -129,61 +175,73 @@ cp SKILL.md ~/.claude/skills/whmcs-dev-skills/
 
 The skill is automatically available in all Claude Code sessions.
 
-### GitHub Copilot (VS Code)
+</details>
+
+<details>
+<summary><strong>GitHub Copilot (VS Code)</strong></summary>
 
 ```bash
 # Option 1: npx
 npx ai-agent-skills install whmcs-dev-skills --agent vscode
 
-# Option 2: Manual — As a skill file
+# Option 2: As a skill file
 mkdir -p .github/skills/whmcs-dev-skills
 cp SKILL.md .github/skills/whmcs-dev-skills/
 
-# Option 3: Manual — As copilot instructions
+# Option 3: As copilot instructions
 cp SKILL.md .github/copilot-instructions.md
 ```
 
-> **Tip:** After adding the file, open VS Code, and Copilot will automatically apply these instructions to all suggestions in the repository.
+> After adding the file, Copilot will automatically apply these instructions to all suggestions.
 
-### Cursor IDE
+</details>
+
+<details>
+<summary><strong>Cursor IDE</strong></summary>
 
 ```bash
 # Option 1: npx
 npx ai-agent-skills install whmcs-dev-skills --agent cursor
 
-# Option 2: Manual — Project-level (recommended)
+# Option 2: Project-level (recommended)
 mkdir -p .cursor/skills/whmcs-dev-skills
 cp SKILL.md .cursor/skills/whmcs-dev-skills/
 
-# Option 3: Manual — Global (applies to all projects)
+# Option 3: Global
 mkdir -p ~/.cursor/skills/whmcs-dev-skills
 cp SKILL.md ~/.cursor/skills/whmcs-dev-skills/
 
-# Option 4: As a Cursor Rule (.mdc format)
+# Option 4: As Cursor Rule
 mkdir -p .cursor/rules
 cp SKILL.md .cursor/rules/whmcs-dev-skills.mdc
 ```
 
-> **Tip:** You can also import directly via `Cursor Settings → Rules, Commands → Add Rule → Remote Rule (GitHub)` and point it to this repo.
+> You can also import via `Cursor Settings → Rules, Commands → Add Rule → Remote Rule (GitHub)`.
 
-### Windsurf (Codeium)
+</details>
+
+<details>
+<summary><strong>Windsurf (Codeium)</strong></summary>
 
 ```bash
 # Option 1: npx
 npx ai-agent-skills install whmcs-dev-skills --agent windsurf
 
-# Option 2: Manual — Project-level
+# Option 2: Project-level
 mkdir -p .windsurf/rules
 cp SKILL.md .windsurf/rules/whmcs-dev-skills.md
 
-# Option 3: Manual — As project rules
+# Option 3: As project rules
 cp SKILL.md .windsurfrules
 
-# Option 4: Manual — Global rules
+# Option 4: Global rules
 cat SKILL.md >> ~/.codeium/windsurf/memories/global_rules.md
 ```
 
-### Gemini (Google AI)
+</details>
+
+<details>
+<summary><strong>Gemini (Google AI)</strong></summary>
 
 ```bash
 # Project-level skill
@@ -195,26 +253,30 @@ mkdir -p .agent/skills
 cp SKILL.md .agent/skills/whmcs-dev-skills.md
 ```
 
-### Amp
+</details>
+
+<details>
+<summary><strong>Amp / Goose / OpenCode / Other</strong></summary>
 
 ```bash
-# Option 1: npx
-npx ai-agent-skills install whmcs-dev-skills --agent amp
-
-# Option 2: Manual
+# Amp
 mkdir -p ~/.amp/skills/whmcs-dev-skills
 cp SKILL.md ~/.amp/skills/whmcs-dev-skills/
-```
 
-### Any Other Agent
+# Goose
+mkdir -p ~/.config/goose/skills/whmcs-dev-skills
+cp SKILL.md ~/.config/goose/skills/whmcs-dev-skills/
 
-```bash
-# Project-level (works with any agent)
+# OpenCode
+mkdir -p ~/.opencode/skills/whmcs-dev-skills
+cp SKILL.md ~/.opencode/skills/whmcs-dev-skills/
+
+# Any agent (generic)
 mkdir -p .skills/whmcs-dev-skills
 cp SKILL.md .skills/whmcs-dev-skills/
 ```
 
-Or simply place the `SKILL.md` file in whatever directory your agent reads skill/instruction files from.
+</details>
 
 ---
 
@@ -222,54 +284,98 @@ Or simply place the `SKILL.md` file in whatever directory your agent reads skill
 
 ```
 whmcs-dev-skills/
-├── SKILL.md          # 📘 The comprehensive AI agent skill file (1600+ lines, 16 sections)
-├── README.md         # 📖 This file — documentation & install guide
-├── LICENSE           # ⚖️ GPL-2.0 License
-├── banner.png        # 🎨 Repository banner image
-├── .gitignore        # 🙈 Git ignore rules
+├── SKILL.md              ← The comprehensive AI agent skill (1600+ lines)
+├── README.md             ← This file
+├── LICENSE               ← GPL-2.0 License
+├── banner.png            ← Repository banner
 │
-├── docs/             # 📚 Supplementary documentation (architecture, patterns, examples)
-├── guides/           # 📋 Detailed guides (best practices, cheatsheet, troubleshooting, AI integration)
-├── references/       # 📖 JSON reference data (API, Hooks, Modules — 12 files)
-└── samples/          # 💻 Real PHP code examples (765+ files across 12 categories)
+├── docs/                 ← Architecture, patterns, examples, setup
+│   ├── architecture/
+│   ├── examples/
+│   ├── patterns/
+│   ├── reference/
+│   └── setup/
+│
+├── guides/               ← Best practices, cheatsheet, troubleshooting
+│   ├── BEST-PRACTICES.md
+│   ├── CHEATSHEET.md
+│   ├── EXAMPLES-AND-PROMPTS.md
+│   ├── AI-INTEGRATION.md
+│   ├── QUICK-START.md
+│   └── troubleshooting.md
+│
+├── references/           ← JSON reference data (12 files)
+│   ├── api.json
+│   ├── hooks.json
+│   ├── addon_modules.json
+│   ├── provisioning_modules.json
+│   ├── registrar_modules.json
+│   ├── payment_gateways.json
+│   ├── themes.json
+│   └── ...
+│
+└── samples/              ← 765+ PHP code examples
+    ├── addon/
+    ├── api/              (334 files)
+    ├── hooks/            (339 files)
+    ├── advanced/
+    ├── gateways/
+    ├── registrar/
+    ├── themes/
+    └── ...
 ```
-
-> **Note:** The `SKILL.md` is **fully self-contained** — the supplementary directories (`docs/`, `guides/`, `references/`, `samples/`) provide additional detail for users who want deeper reference material but are **not required** for the skill to function.
 
 ---
 
-## 🔬 Research-Backed
+## 🔬 Research & Sources
 
-This skill file was built from deep research of:
+Built from deep research of:
 
-- ✅ [WHMCS Official Developer Documentation](https://developers.whmcs.com/) — Every module type page
-- ✅ [WHMCS GitHub Sample Modules](https://github.com/WHMCS) — All 5 official samples
+- ✅ [WHMCS Official Developer Docs](https://developers.whmcs.com/) — every module type
+- ✅ [WHMCS GitHub Samples](https://github.com/WHMCS) — all 5 official repos
 - ✅ WHMCS 8.x → 9.x breaking changes — Smarty v4, Illuminate v9, PHP 8.2+
-- ✅ Common developer issues from [WHMCS Community Forums](https://whmcs.community/)
-- ✅ Security best practices and anti-patterns from real-world deployments
-- ✅ [Agent Skills Specification](https://agentskills.io/specification) — Universal skill format
+- ✅ [WHMCS Community Forums](https://whmcs.community/) — common developer pitfalls
+- ✅ Real-world security best practices and anti-patterns
+- ✅ [Agent Skills Specification](https://agentskills.io/specification) — universal skill format
 
 ---
 
 ## ❓ FAQ
 
-**Does this work with my AI agent?**
-This skill follows the [Agent Skills Specification](https://agentskills.io), which is supported by Claude Code, GitHub Copilot, Cursor, Windsurf, Amp, Goose, OpenCode, and any agent that reads `SKILL.md` files.
+<details>
+<summary><strong>Does this work with my AI agent?</strong></summary>
 
-**Do I need Node.js?**
-Only if you use the `npx` install method. You can also manually copy the `SKILL.md` file to the appropriate directory for your agent.
+Yes. This skill follows the [Agent Skills Specification](https://agentskills.io), supported by Claude Code, GitHub Copilot, Cursor, Windsurf, Gemini, Amp, Goose, OpenCode, and any agent that reads `SKILL.md` files.
 
-**Will this modify my WHMCS installation?**
-No! This skill file only provides instructions to your AI coding agent. It doesn't touch your WHMCS installation, database, or configuration in any way.
+</details>
 
-**Does it support WHMCS 9.x?**
-Yes! The skill includes specific guidance for WHMCS 9.x breaking changes including Smarty v4, Illuminate v9, and PHP 8.2+ requirements.
+<details>
+<summary><strong>Do I need Node.js?</strong></summary>
 
-**Can I use this commercially?**
-Absolutely. The skill is GPL-2.0 licensed. Use it for personal, commercial, or open-source module development.
+Only for the `npx` install method. You can also manually copy `SKILL.md` to the appropriate directory.
 
-**Why not just use the WHMCS developer docs?**
-This skill is specifically formatted for AI agents — it includes operational boundaries (ALWAYS/NEVER rules), anti-pattern protection, security checklists, and production-ready code templates that documentation alone doesn't provide. The AI uses this as a continuous reference while coding.
+</details>
+
+<details>
+<summary><strong>Will this modify my WHMCS installation?</strong></summary>
+
+No. This skill file only provides instructions to your AI coding agent. It doesn't touch your WHMCS installation, database, or configuration.
+
+</details>
+
+<details>
+<summary><strong>Does it support WHMCS 9.x?</strong></summary>
+
+Yes. Includes specific guidance for WHMCS 9.x breaking changes including Smarty v4, Illuminate v9, and PHP 8.2+ requirements.
+
+</details>
+
+<details>
+<summary><strong>Why not just use the WHMCS developer docs?</strong></summary>
+
+This skill is specifically formatted for AI agents — it includes operational boundaries (ALWAYS/NEVER rules), anti-pattern protection, security checklists, and production-ready code templates that documentation alone doesn't provide.
+
+</details>
 
 ---
 
@@ -279,24 +385,25 @@ Contributions are welcome! Whether it's fixing a typo, adding a new hook point, 
 
 1. Fork this repository
 2. Create a feature branch: `git checkout -b feature/awesome-improvement`
-3. Make your changes to `SKILL.md`
+3. Make your changes
 4. Commit: `git commit -m "feat: add awesome improvement"`
 5. Push: `git push origin feature/awesome-improvement`
 6. Open a Pull Request
 
-### Contribution Ideas
+### Ideas for Contributions
 
-- 📝 Add more WHMCS 9.x breaking changes as they're discovered
-- 🪝 Document additional hook points with examples
-- 🔒 Add more security best practices
-- 🐛 Document common bugs and their fixes
+- 📝 Document more WHMCS 9.x breaking changes
+- 🪝 Add hook point examples
+- 🔒 Expand security best practices
+- 🐛 Document common bugs and fixes
 - 🌍 Add non-English language file examples
+- 💻 Add provisioning module samples
 
 ---
 
-## ⭐ Star History
+## ⭐ Support
 
-If this skill saved you time building WHMCS modules, please give it a ⭐!
+If this skill saved you time building WHMCS modules, please give it a **⭐** on GitHub!
 
 ---
 
@@ -306,9 +413,10 @@ This project is licensed under the [GNU GPL v2.0](LICENSE).
 
 ---
 
-## 👤 Author
+<p align="center">
+  <a href="https://therabbirifat.com">🌐 therabbirifat.com</a> · <a href="https://github.com/TheRabbiRifat">🐙 @TheRabbiRifat</a>
+</p>
 
-[🌐 therabbirifat.com](https://therabbirifat.com)
-[🐙 @TheRabbiRifat](https://github.com/TheRabbiRifat)
-
-Built with ❤️ for the WHMCS developer community · If this helped you, consider giving it a ⭐ on GitHub!
+<p align="center">
+  Built with ❤️ for the WHMCS developer community
+</p>

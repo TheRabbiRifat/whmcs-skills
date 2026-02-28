@@ -2,9 +2,9 @@
 name: whmcs-dev-skills
 description: >
   Senior WHMCS Developer & Architect skill for AI coding agents. Builds,
-  debugs, and maintains WHMCS Addon Modules, Provisioning (Server) Modules,
-  Domain Registrar Modules, Payment Gateway Modules, and Action Hooks.
-  Enforces WHMCS 8.x / 9.x best practices, PHP 7.4-8.3 compatibility,
+  debugs, and maintains all WHMCS module types: Addon, Provisioning (Server),
+  Domain Registrar, Payment Gateway, Mail Provider, and Notification Provider.
+  Enforces WHMCS 8.x / 9.x best practices, PHP 8.1–8.3 compatibility,
   Laravel Capsule ORM, Smarty v3/v4 templating, and PSR-1/PSR-2 coding style.
   Use this skill whenever a user needs to create, modify, debug, or audit
   any WHMCS module, hook, or integration.
@@ -12,18 +12,22 @@ license: GPL-2.0
 compatibility: >
   Works with all AI coding agents including Claude Code, GitHub Copilot,
   Cursor, Windsurf, VS Code, Gemini, Amp, Goose, OpenCode, and others.
-  Requires PHP 7.4-8.3 and WHMCS 8.x or 9.x environment for generated code.
+  Requires PHP 8.1–8.3 and WHMCS 8.x or 9.x environment for generated code.
 metadata:
   author: Rabbi Rifat
-  version: "3.0.0"
+  version: "4.0.0"
+  category: web-hosting
+  tags: [whmcs, php, modules, hooks, api, billing, hosting]
+  min_whmcs: "8.11"
 ---
 
 # WHMCS Dev Skills — AI Agent Skill
 
-> **Scope**: Full-stack WHMCS module development covering Addon Modules,
-> Provisioning (Server) Modules, Domain Registrar Modules, Payment Gateway
-> Modules (Third-Party, Merchant, Tokenised), Action Hooks, Internal/External
-> API integration, and Theme/Template customisation.
+> **Scope** — Full-stack WHMCS module development: Addon Modules ·
+> Provisioning (Server) Modules · Domain Registrar Modules · Payment Gateway
+> Modules (Third-Party, Merchant, Tokenised) · Mail Provider Modules ·
+> Notification Provider Modules · Action Hooks · Internal & External API
+> Integration · Theme & Template Customisation.
 
 ---
 
@@ -71,7 +75,7 @@ metadata:
 - Prefix custom database tables with `mod_` (e.g., `mod_yourmodule_data`).
 - Provide a `lang/english.php` language file for every module.
 - Run unit/integration tests before committing module changes.
-- Write code compatible with **PHP 8.1+** (prefer 8.2 / 8.3) with strict type hints.
+- Write code compatible with **PHP 8.1+** (prefer 8.2 / 8.3) with `declare(strict_types=1)` and type hints.
 - Use CSRF tokens (`{csrf_field}`) in all forms.
 - Scrub credentials from `logModuleCall()` using the `$replaceVars` parameter.
 - Check `Capsule::schema()->hasTable()` before creating tables in `_activate`.
@@ -103,8 +107,8 @@ metadata:
 ## 2. Platform Requirements
 
 | Component          | WHMCS 8.x (8.11+)       | WHMCS 9.x               |
-|--------------------|--------------------------|--------------------------|
-| **PHP**            | 7.4 – 8.3 (7.4+ min)    | 8.2 – 8.3 (8.2+ min)    |
+|:-------------------|:-------------------------|:-------------------------|
+| **PHP**            | 8.1 – 8.3               | 8.2 – 8.3               |
 | **Smarty**         | v3.1.x                   | v4.3.4                   |
 | **GuzzleHTTP**     | v7.4                     | v7.4.5                   |
 | **Illuminate**     | v7.x                     | v9.0                     |
@@ -121,9 +125,9 @@ metadata:
 
 ### PHP Version Notes
 
-- **PHP 7.4**: Supported by WHMCS 8.x only. Use `[]` array syntax, avoid `strict_types`.
-- **PHP 8.0–8.3**: Fully supported. `strict_types` recommended, named arguments available.
-- **Type hints**: Optional in PHP 7.4 for backward compatibility; use when targeting PHP 8.0+.
+- **PHP 8.1+**: Minimum for modern WHMCS 8.11+. Use `declare(strict_types=1)`, enums, fibers, readonly properties.
+- **PHP 8.2+**: Required for WHMCS 9.x. Dynamic properties deprecated — declare properties explicitly.
+- **PHP 8.3**: Fully supported. Use typed class constants, `json_validate()`, `#[Override]` attribute.
 
 ---
 
@@ -135,8 +139,8 @@ metadata:
 ✓  Indent with 4 spaces — no tabs.
 ✓  No trailing whitespace.
 ✓  Follow PSR-1 & PSR-2.
-✓  Strict types: Add declare(strict_types=1) for PHP 8.0+; omit for PHP 7.4 compat.
-✓  Type hints: Use for PHP 8.0+ (recommended); optional for PHP 7.4.
+✓  Strict types: Always add declare(strict_types=1).
+✓  Type hints: Use parameter and return types on all functions.
 ✓  Comments: Inline comments for complex logic; DocBlocks for all functions.
 ✓  UTF-8 encoding without BOM.
 ```
@@ -144,7 +148,7 @@ metadata:
 ### Naming Conventions
 
 | Element             | Convention                     | Example                  |
-|---------------------|--------------------------------|--------------------------|
+|:--------------------|:-------------------------------|:-------------------------|
 | Module Directory    | lowercase, letters & numbers   | `mymodule`               |
 | Module Functions    | `{modulename}_FunctionName`    | `mymodule_config()`      |
 | Hook Functions      | Unique prefixed name           | `mymodule_hookClientAdd` |
@@ -225,7 +229,7 @@ function mymodule_activate() {
 ### Column Types Quick Reference
 
 | Type                          | SQL Equivalent       |
-|-------------------------------|----------------------|
+|:------------------------------|:---------------------|
 | `increments('id')`            | AUTO_INCREMENT INT   |
 | `string('name')`              | VARCHAR(255)         |
 | `string('email', 100)`        | VARCHAR(100)         |
@@ -418,7 +422,7 @@ function mymodule_clientarea($vars) {
 #### Configuration Field Types
 
 | Type       | Usage                  |
-|------------|------------------------|
+|:-----------|:-----------------------|
 | `text`     | Simple text input      |
 | `password` | Hidden password field  |
 | `textarea` | Multi-line text        |
@@ -1330,7 +1334,7 @@ function mymodule_upgrade($vars) {
 ### 🔴 Critical — Will Break Your Module
 
 | # | Anti-Pattern | Correct Approach |
-|---|-------------|------------------|
+|:--|:------------|:-----------------|
 | 1 | Using `mysql_*` or `mysqli_*` functions | Use `Capsule` ORM |
 | 2 | Building SQL with string concatenation | Use Capsule parameter binding |
 | 3 | Using `{php}` tags in Smarty templates | Use Smarty syntax: `{$var}`, `{if}`, `{foreach}` |
@@ -1341,7 +1345,7 @@ function mymodule_upgrade($vars) {
 ### 🟡 Common Mistakes
 
 | # | Anti-Pattern | Correct Approach |
-|---|-------------|------------------|
+|:--|:------------|:-----------------|
 | 7 | Hardcoded file paths (`/var/www/whmcs/`) | Use `ROOTDIR . '/modules/'` |
 | 8 | Storing API keys in plain text | Use `encrypt()` / `decrypt()` |
 | 9 | Echoing in `_clientarea` | Return array with `templatefile` and `vars` |
@@ -1353,7 +1357,7 @@ function mymodule_upgrade($vars) {
 ### 🟢 Performance / Best Practice
 
 | # | Anti-Pattern | Correct Approach |
-|---|-------------|------------------|
+|:--|:------------|:-----------------|
 | 14 | Loading all records without pagination | Use `->limit()` and `->skip()` |
 | 15 | N+1 query problem in loops | Use `->join()` or batch queries |
 | 16 | Individual inserts inside loops | Use batch `->insert([...])` |
@@ -1550,7 +1554,7 @@ php vendor/bin/phpunit tests/
 ### Quick Diagnosis Checklist
 
 | Symptom | Likely Cause | Fix |
-|---------|-------------|-----|
+|:--------|:------------|:----|
 | Module won't activate | Return type wrong | Return `['status' => 'success']` array, **not** a string |
 | "Access Denied" | Missing WHMCS guard | Add `defined("WHMCS") or die("Access Denied");` as first line |
 | Fatal error in module | PHP syntax error | Run `php -l modules/addons/mymodule/mymodule.php` |
