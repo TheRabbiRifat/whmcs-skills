@@ -1,0 +1,20 @@
+# Exclude development/tooling files from the npm package
+# (Only bin/, src/, SKILL.md, guides/, references/, samples/, docs/ are needed)
+
+# Git
+.git/
+.gitignore
+
+# Editor configs
+.vscode/
+.agent/
+
+# Configs folder (not needed by users)
+configs/
+
+# Root-level markdown docs that aren't skill content
+ANTIGRAVITY_QUICK_REFERENCE.md
+banner.png
+
+# Node
+node_modules/
