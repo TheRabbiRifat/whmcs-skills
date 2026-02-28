@@ -2,7 +2,7 @@
 
 **Last Updated**: February 28, 2026  
 **Skill Version**: 4.0.0  
-**Target AI Agents**: Claude, GitHub Copilot, Cursor IDE, Windsurf, VS Code, Gemini, OpenCode
+**Target AI Agents**: Claude, GitHub Copilot, Cursor IDE, Windsurf, VS Code, Antigravity IDE, Gemini, OpenCode
 
 ---
 
@@ -15,9 +15,10 @@
 5. [Using with Windsurf](#using-with-windsurf)
 6. [Using with VS Code](#using-with-vs-code)
 7. [Using with Claude (API)](#using-with-claude-api)
-8. [Loading Context Strategically](#loading-context-strategically)
-9. [Chat Patterns for WHMCS Development](#chat-patterns-for-whmcs-development)
-10. [Skill Files Quick Reference](#skill-files-quick-reference)
+8. [Using with Antigravity IDE](#using-with-antigravity-ide)
+9. [Loading Context Strategically](#loading-context-strategically)
+10. [Chat Patterns for WHMCS Development](#chat-patterns-for-whmcs-development)
+11. [Skill Files Quick Reference](#skill-files-quick-reference)
 
 ---
 
@@ -341,6 +342,66 @@ message = client.messages.create(
 
 print(message.content[0].text)
 ```
+
+---
+
+## Using with Antigravity IDE
+
+**Antigravity IDE** (by Google DeepMind) auto-scans two locations for skills at startup:
+
+| Scope | Path |
+|-------|------|
+| **Global** | `~/.gemini/antigravity/skills/<skill-name>/SKILL.md` |
+| **Workspace** | `<project-root>/.agent/skills/<skill-name>/SKILL.md` |
+
+Each skill folder must contain a `SKILL.md` with YAML frontmatter. The WHMCS `SKILL.md` already includes the correct frontmatter.
+
+### Method 1: Global Install (Recommended)
+
+```bash
+npx github:TheRabbiRifat/whmcs-skills install --agent antigravity
+```
+
+This installs to `~/.gemini/antigravity/skills/whmcs/`. **Restart Antigravity** — the skill loads automatically. No manual configuration needed.
+
+### Method 2: Workspace Install
+
+Copy the skill into your WHMCS project so AI assistance is scoped to that project:
+
+```bash
+# From your WHMCS project root:
+mkdir -p .agent/skills/whmcs
+cp ~/.gemini/antigravity/skills/whmcs/SKILL.md .agent/skills/whmcs/SKILL.md
+```
+
+> **Tip**: The `TheRabbiRifat/whmcs-skills` repository already includes a `.agent/skills/whmcs/SKILL.md`,
+> so opening this repo directly in Antigravity gives you the skill with zero setup.
+
+### Usage in Antigravity
+
+Once installed, use reference files via `@file:` mentions for deeper context:
+
+```
+@file:.gemini/antigravity/skills/whmcs/references/payment_gateways.json
+
+Build a complete Stripe payment gateway module for WHMCS 9.x.
+```
+
+```
+@file:.gemini/antigravity/skills/whmcs/references/hooks.json
+
+Show me all invoice-related hooks and write a hook that runs when an invoice is paid.
+```
+
+### Troubleshooting
+
+If the skill does not load, verify the path exists and restart Antigravity:
+
+```bash
+ls ~/.gemini/antigravity/skills/whmcs/SKILL.md
+```
+
+See the full guide: [docs/setup/antigravity.md](../docs/setup/antigravity.md)
 
 ---
 

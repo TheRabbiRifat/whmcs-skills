@@ -150,7 +150,7 @@ The brain of the operation — a 1600+ line comprehensive instruction set coveri
 | [Cursor IDE](https://cursor.sh) | `~/.cursor/skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent cursor` |
 | [GitHub Copilot](https://github.com/features/copilot) | `./.vscode/ai-skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent vscode` |
 | [Jules](https://jules.google) | `~/.jules/skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent jules` |
-| [Antigravity](https://deepmind.google) | `~/.antigravity/skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent antigravity` |
+| [Antigravity](https://deepmind.google) | `~/.gemini/antigravity/skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent antigravity` |
 | Any Project | `./ai-skills/whmcs/` | `npx github:TheRabbiRifat/whmcs-skills install --agent project` |
 
 ---
@@ -229,14 +229,25 @@ cp SKILL.md ~/.jules/skills/whmcs/
 <details>
 <summary><strong>Antigravity</strong></summary>
 
-```bash
-# Option 1: npx (recommended)
-npx github:TheRabbiRifat/whmcs-skills install --agent antigravity
+Antigravity auto-scans `~/.gemini/antigravity/skills/` at startup — no manual paste needed.
 
-# Option 2: Manual
-mkdir -p ~/.antigravity/skills/whmcs
-cp SKILL.md ~/.antigravity/skills/whmcs/
+```bash
+# Global install (recommended — works in all projects)
+npx github:TheRabbiRifat/whmcs-skills install --agent antigravity
 ```
+
+Then **restart Antigravity**. The skill loads automatically. ✅
+
+```bash
+# Workspace install (project-specific)
+mkdir -p .agent/skills/whmcs
+cp ~/.gemini/antigravity/skills/whmcs/SKILL.md .agent/skills/whmcs/SKILL.md
+```
+
+> **Bonus**: This repository ships `.agent/skills/whmcs/SKILL.md` — opening it in Antigravity
+> activates the skill with zero setup.
+
+**Full guide**: [docs/setup/antigravity.md](docs/setup/antigravity.md)
 
 </details>
 
@@ -267,6 +278,11 @@ whmcs-skills/
 ├── LICENSE               ← GPL-2.0 License
 ├── package.json          ← Node.js CLI wrapper (for npx install)
 ├── banner.png            ← Repository banner
+│
+├── .agent/               ← Workspace-level Antigravity skills (auto-loaded)
+│   └── skills/
+│       └── whmcs/
+│           └── SKILL.md  ← Symlinked skill — opening this repo activates it
 │
 ├── bin/                  ← CLI entry point
 │   └── whmcs-skills.js
