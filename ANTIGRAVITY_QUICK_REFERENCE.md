@@ -11,13 +11,16 @@ Antigravity IDE auto-loads skills from these paths **at startup** (no manual pas
 
 ---
 
-## 1-Minute Setup
+## ⚡ 60-Second Setup
 
 ```bash
+# 1. Install globally (one time)
 npx github:TheRabbiRifat/whmcs-skills install --agent antigravity
-```
 
-Then **restart Antigravity**. The skill auto-loads. Done. ✅
+# 2. Restart Antigravity (Cmd/Ctrl + Shift + P → "Restart Agent")
+
+# 3. Done! ✅
+```
 
 ---
 
@@ -69,24 +72,25 @@ Build a Stripe payment gateway module.
 
 ## Troubleshooting
 
-### Skill not found
+### Skill not found/not loading
 ```bash
-# Check path exists
+# Verify path exists:
 ls ~/.gemini/antigravity/skills/whmcs/SKILL.md
 
-# Re-install if missing
+# Restart Antigravity:
+# Cmd/Ctrl + Shift + P → "Restart Agent"
+
+# Re-install if needed:
 npx github:TheRabbiRifat/whmcs-skills install --agent antigravity
 ```
-Then restart Antigravity.
 
-### Old-style code generated
-- Path might be wrong — check with `ls` above
-- Make sure SKILL.md has YAML frontmatter at the top (`name:` / `description:`)
+### Generated code is old-style
+- Verify SKILL.md has proper YAML frontmatter at the top (`name:` and `description:` fields)
+- Try a prompt that explicitly mentions WHMCS module types
+- Check the agent's reasoning trace (Cmd/Ctrl + Shift + P → "Show Agent Trace")
 
-### Old incorrect path exists
-```bash
-rm -rf ~/.antigravity/skills  # Remove old/wrong path
-```
+### Having issues?
+Open an issue: [GitHub Issues](https://github.com/TheRabbiRifat/whmcs-skills/issues)
 
 ---
 
